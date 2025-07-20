@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Ammar Khan - Engineering the Impossible</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="nav-logo-text">TheMR</span>
+                <span class="nav-logo-cursor">_</span>
+            </div>
+            <div class="nav-menu">
+                <button class="nav-trigger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Full Screen Menu -->
+    <div class="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-links">
+                <a href="#home" class="menu-link" data-text="Home">Home</a>
+                <a href="#about" class="menu-link" data-text="About">About</a>
+                <a href="#experience" class="menu-link" data-text="Experience">Experience</a>
+                <a href="#projects" class="menu-link" data-text="Projects">Projects</a>
+                <a href="#skills" class="menu-link" data-text="Skills">Skills</a>
+                <a href="#publications" class="menu-link" data-text="Publications">Publications</a>
+                <a href="#contact" class="menu-link" data-text="Contact">Contact</a>
+            </div>
+            <div class="menu-footer">
+                <div class="theme-toggle">
+                    <span>Dark</span>
+                    <button class="theme-switch" aria-label="Toggle theme">
+                        <span class="theme-switch-inner"></span>
+                    </button>
+                    <span>Light</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+            <div class="hero-particles"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="hero-line">
+                            <span class="hero-word">Muhammad</span>
+                            <span class="hero-word">Ammar</span>
+                            <span class="hero-word">Khan</span>
+                        </span>
+                    </h1>
+                    <div class="hero-subtitle">
+                        <span class="typed-text"></span>
+                        <span class="typed-cursor">|</span>
+                    </div>
+                    <p class="hero-description">
+                        Engineering novel solutions at the intersection of 
+                        <span class="highlight">Cryptography</span>, 
+                        <span class="highlight">AI</span>, and 
+                        <span class="highlight">System Architecture</span>
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m-7-7l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="code-dot" style="background: #ff5f56;"></span>
+                            <span class="code-dot" style="background: #ffbd2e;"></span>
+                            <span class="code-dot" style="background: #27c93f;"></span>
+                            <span class="code-title">innovate.cpp</span>
+                        </div>
+                        <pre class="code-content"><code><span class="keyword">template</span> &lt;<span class="keyword">typename</span> <span class="type">Challenge</span>&gt;
+<span class="keyword">struct</span> <span class="class">Engineer</span> 
+{
+    <span class="keyword">auto</span> <span class="function">solve</span>(<span class="type">Challenge</span>&& problem) 
+    {
+        <span class="keyword">return</span> <span class="function">innovate</span>()
+            | <span class="function">architect</span>()
+            | <span class="function">implement</span>()
+            | <span class="function">optimize</span>();
+    }
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-number">01.</span>
+                    About
+                </h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        As a lifelong computer enthusiast with an innate drive to innovate and engineer novel solutions, 
+                        I've cultivated deep expertise in <strong>Cyber Security</strong>, <strong>Ethical Hacking</strong>, 
+                        <strong>Artificial Intelligence</strong>, and <strong>Game Development</strong> from an early age.
+                    </p>
+                    <p>
+                        My passion for pushing technological boundaries is complemented by advanced skills in modern C++, 
+                        cryptography, and cutting-edge software engineering practices. Throughout my journey, I've consistently 
+                        sought to create what hasn't been built before, approaching complex challenges with a systematic 
+                        engineering mindset.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-count="3.73">0</span>
+                            <span class="stat-label">CGPA</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="7">0</span>
+                            <span class="stat-label">Years of Passion</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="15">0</span>
+                            <span class="stat-label">Major Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="https://i.imgur.com/WiI2OZb.png" alt="Muhammad Ammar Khan">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="floating-badges">
+                        <div class="badge badge-1">C++23</div>
+                        <div class="badge badge-2">Security</div>
+                        <div class="badge badge-3">AI</div>
+                        <div class="badge badge-4">.NET</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-number">02.</span>
+                    Experience
+                </h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">.NET Developer & Architecture Consultant</h3>
+                            <span class="timeline-company">ACE Money Transfer</span>
+                            <span class="timeline-date">June 2023 - Present</span>
+                        </div>
+                        <div class="timeline-body">
+                            <ul class="timeline-list">
+                                <li>Architected mission-critical systems including the 'ACE Password Vault' with bespoke security architecture</li>
+                                <li>Led UI/UX design initiatives for enterprise management suites, gaining recognition from executive leadership</li>
+                                <li>Transformed company's ERP project scope to serve entire ACE Group of Companies</li>
+                                <li>Engineered advanced cryptographic solutions using C++ and .NET</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">.NET 9</span>
+                                <span class="tag">Angular</span>
+                                <span class="tag">Cryptography</span>
+                                <span class="tag">System Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">Intern</h3>
+                            <span class="timeline-company">TeqHolic</span>
+                            <span class="timeline-date">3 Months</span>
+                        </div>
+                        <div class="timeline-body">
+                            <ul class="timeline-list">
+                                <li>Developed frontend applications using Flutter and Firebase</li>
+                                <li>Built Chirp, a social media application similar to Twitter</li>
+                                <li>Developed Sara Kuch, an e-commerce application using Shopify REST API</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span class="tag">Flutter</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">REST API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-number">03.</span>
+                    Featured Projects
+                </h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Project cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-number">04.</span>
+                    Technical Arsenal
+                </h2>
+            </div>
+            <div class="skills-container">
+                <!-- Skills will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section with enhanced Cybersecurity -->
+    <section id="publications" class="section publications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-number">05.</span>
+                    Publications & Research
+                </h2>
+            </div>
+            <div class="publications-container">
+                <!-- Research Papers Section -->
+                <div class="publication-category research-papers">
+                    <div class="category-header">
+                        <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                        <h3 class="category-title">Academic Research</h3>
+                    </div>
+                    <div class="research-papers-grid">
+                        <!-- Papers will be inserted by JS -->
+                    </div>
+                </div>
+
+                <!-- Cybersecurity Publications Section -->
+                <div class="publication-category cyber-publications">
+                    <div class="category-header">
+                        <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                        <h3 class="category-title">Cybersecurity Publications</h3>
+                    </div>
+                    <div class="cyber-content">
+                        <div class="cyber-intro">
+                            <div class="cyber-achievement">
+                                <span class="achievement-icon">🏆</span>
+                                <div class="achievement-text">
+                                    <h4>2nd Most-Read Article on Null Byte</h4>
+                                    <p>Android Device Security Assessments (2018-2020)</p>
+                                </div>
+                            </div>
+                            <div class="author-badge">
+                                <span class="author-label">Published as</span>
+                                <span class="author-name">H4ck3R_777</span>
+                                <a href="https://null-byte.wonderhowto.com/how-to/h4ck3r-777/" target="_blank" rel="noopener" class="profile-link">
+                                    View Profile
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cyber-articles">
+                            <h4 class="articles-title">Featured Article Series</h4>
+                            <div class="article-grid">
+                                <!-- Articles will be inserted by JS -->
+                            </div>
+                        </div>
+                        <div class="cyber-impact">
+                            <div class="impact-card">
+                                <span class="impact-number">13</span>
+                                <span class="impact-label">Countries Reached</span>
+                            </div>
+                            <div class="impact-card">
+                                <span class="impact-number">4+</span>
+                                <span class="impact-label">Years of Impact</span>
+                            </div>
+                            <div class="impact-card">
+                                <span class="impact-number">1000s</span>
+                                <span class="impact-label">Security Professionals Educated</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-number">06.</span>
+                    Get In Touch
+                </h2>
+            </div>
+            <div class="contact-content">
+                <p class="contact-text">
+                    <em>Let's build something extraordinary together.</em>
+                </p>
+                <div class="contact-links">
+                    <a href="https://github.com/TheMR-777" class="contact-link" target="_blank" rel="noopener">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://wa.me/923145401405" class="contact-link" target="_blank" rel="noopener">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                        WhatsApp
+                    </a>
+                    <a href="mailto:m.shahzad.ms72@gmail.com" class="contact-link">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                <em>Crafted with precision & passion</em>
+            </p>
+        </div>
+    </footer>
+
+    <script src="portfolio-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
