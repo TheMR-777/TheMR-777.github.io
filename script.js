@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeTypingEffect();
     initializeScrollAnimations();
     initializeCounters();
+    loadProfileImage();
     loadProjects();
     loadSkills();
     loadPublications();
@@ -21,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // Theme Management
 function initializeTheme() {
     const themeSwitch = document.querySelector('.theme-switch');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const navTrigger = document.querySelector('.nav-trigger');
     const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
     
@@ -29,6 +32,13 @@ function initializeTheme() {
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+        
+        // Auto close menu when theme changes
+        if (menuOverlay.classList.contains('active')) {
+            navTrigger.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     });
 }
 
@@ -68,18 +78,36 @@ function initializeCursor() {
         }, 100);
     });
     
-    // Cursor effects on hover
-    const hoverElements = document.querySelectorAll('a, button, .project-card, .skill-item');
-    hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'scale(2)';
-            follower.style.transform = 'scale(1.5)';
+    // Function to add cursor effects to elements
+    function addCursorEffects(selector) {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+                follower.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+                follower.classList.remove('cursor-hover');
+            });
         });
-        el.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'scale(1)';
-            follower.style.transform = 'scale(1)';
-        });
-    });
+    }
+    
+    // Initial cursor effects
+    addCursorEffects('a, button, .project-card, .skill-item');
+    
+    // Add cursor effects to dynamically loaded elements
+    setTimeout(() => {
+        addCursorEffects('.clickable-card, .research-paper, .article-item, .profile-link, .clickable-link');
+    }, 100);
+    
+    // Re-apply cursor effects after publications load
+    setTimeout(() => {
+        addCursorEffects('.clickable-card, .research-paper, .article-item, .profile-link, .clickable-link');
+    }, 500);
+    
+    // Ensure all interactive elements use custom cursor only
+    document.body.style.cursor = 'none';
 }
 
 // Typing Effect
@@ -131,6 +159,14 @@ function initializeScrollAnimations() {
     }, { threshold: 0.1 });
     
     revealElements.forEach(el => revealOnScroll.observe(el));
+}
+
+// Load Profile Image
+function loadProfileImage() {
+    const profileImg = document.getElementById('profile-image');
+    if (profileImg) {
+        profileImg.src = portfolioData.personal.profileImage;
+    }
 }
 
 // Counter Animation
@@ -230,18 +266,30 @@ function loadPublications() {
     const researchGrid = document.querySelector('.research-papers-grid');
     portfolioData.publications.research.forEach(paper => {
         const paperEl = document.createElement('div');
-        paperEl.className = 'project-card research-paper';
+        paperEl.className = 'project-card research-paper clickable-card';
         paperEl.innerHTML = `
             <h4 class="paper-title">${paper.title}</h4>
             <p class="paper-authors">${paper.authors}</p>
             <p class="paper-journal">${paper.journal}</p>
-            <a href="${paper.link}" target="_blank" rel="noopener" class="paper-link">
-                View Paper
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                </svg>
-            </a>
         `;
+        
+        // Make entire card clickable
+        paperEl.addEventListener('click', () => {
+            window.open(paper.link, '_blank', 'noopener');
+        });
+        
+        // Add keyboard accessibility
+        paperEl.setAttribute('tabindex', '0');
+        paperEl.setAttribute('role', 'button');
+        paperEl.setAttribute('aria-label', `View paper: ${paper.title}`);
+        
+        paperEl.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                window.open(paper.link, '_blank', 'noopener');
+            }
+        });
+        
         researchGrid.appendChild(paperEl);
     });
     
@@ -249,19 +297,41 @@ function loadPublications() {
     const articleGrid = document.querySelector('.article-grid');
     portfolioData.publications.cyberSecurity.articles.forEach(article => {
         const articleEl = document.createElement('div');
-        articleEl.className = 'article-item';
+        articleEl.className = 'article-item clickable-card';
         articleEl.innerHTML = `
             <h5 class="article-title">${article.title}</h5>
             <p class="article-description">${article.description}</p>
-            <a href="${article.link}" target="_blank" rel="noopener" class="article-link">
-                Read Article
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                </svg>
-            </a>
         `;
+        
+        // Make entire card clickable
+        articleEl.addEventListener('click', () => {
+            window.open(article.link, '_blank', 'noopener');
+        });
+        
+        // Add keyboard accessibility
+        articleEl.setAttribute('tabindex', '0');
+        articleEl.setAttribute('role', 'button');
+        articleEl.setAttribute('aria-label', `Read article: ${article.title}`);
+        
+        articleEl.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                window.open(article.link, '_blank', 'noopener');
+            }
+        });
+        
         articleGrid.appendChild(articleEl);
     });
+
+    // Update H4ck3R_777 profile link - make it more clickable
+    const profileLink = document.querySelector('.author-badge .profile-link');
+    if (profileLink) {
+        profileLink.classList.add('clickable-link');
+        profileLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open(portfolioData.publications.cyberSecurity.profileLink, '_blank', 'noopener');
+        });
+    }
 
     // Update impact cards with new data
     const impactCards = document.querySelectorAll('.impact-card');
