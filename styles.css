@@ -698,32 +698,86 @@ body {
 
 .image-container {
     position: relative;
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: hidden;
+    max-width: 400px;
+    margin: 0 auto;
+    background: var(--color-surface);
+    padding: 8px;
+    border: 2px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.image-container:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
 }
 
 [data-theme="light"] .image-container {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, var(--color-surface) 0%, rgba(99, 102, 241, 0.05) 100%);
+}
+
+[data-theme="dark"] .image-container {
+    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
+    background: linear-gradient(135deg, var(--color-surface) 0%, rgba(0, 255, 136, 0.05) 100%);
 }
 
 .image-container img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 16px;
+    position: relative;
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.image-container:hover img {
+    transform: scale(1.02);
 }
 
 .image-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(0, 255, 136, 0.1), rgba(0, 204, 255, 0.1));
-    mix-blend-mode: screen;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border-radius: 16px;
+    background: linear-gradient(45deg, rgba(0, 255, 136, 0.08), rgba(0, 204, 255, 0.08));
+    mix-blend-mode: overlay;
+    z-index: 1;
+    transition: var(--transition);
 }
 
 [data-theme="light"] .image-overlay {
-    background: linear-gradient(45deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+    background: linear-gradient(45deg, rgba(99, 102, 241, 0.08), rgba(236, 72, 153, 0.08));
+    mix-blend-mode: multiply;
+}
+
+.image-container:hover .image-overlay {
+    opacity: 0.7;
+}
+
+.image-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: linear-gradient(45deg, var(--color-accent), var(--color-accent-alt));
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 0;
+}
+
+.image-container:hover .image-frame {
+    opacity: 0.1;
+}
+
+[data-theme="light"] .image-frame {
+    background: linear-gradient(45deg, var(--color-accent), var(--color-accent-alt));
 }
 
 .floating-badges {
@@ -820,6 +874,27 @@ body {
 
 @media (max-width: 768px) {
     .timeline-marker { left: -37px; }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        text-align: center;
+    }
+    
+    .image-container {
+        max-width: 300px;
+        order: -1;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-visual {
+        order: -1;
+        margin-bottom: var(--space-lg);
+    }
 }
 
 .timeline-content {

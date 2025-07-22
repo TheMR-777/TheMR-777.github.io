@@ -8,7 +8,7 @@ const portfolioData = {
             "AI-Powered Innovation Engineer",
             "Creating What Hasn't Been Built Before"
         ],
-        profileBanner: "https://i.imgur.com/WiI2OZb.png",
+        profileBanner: "https://0x0.st/8nLx.png",
         location: "District Jhelum, Punjab, Pakistan",
         phone: "+92 314 5401405",
         social: {
