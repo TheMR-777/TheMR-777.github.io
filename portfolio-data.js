@@ -25,6 +25,7 @@ const portfolioData = {
             role: "Lead Developer & System Architect",
             description: "Designed an Ultra-Wideband (UWB) simulation system for MIMOS Berhad, enabling users to interactively generate real-time heatmaps of signal coverage and intersections, and also localize objects in the room.",
             technologies: ["C# 13", ".NET 9", "WPF", "Python 3.13", "NumPy", "SciPy", "Matplotlib"],
+            icon: "map-pin",
             featured: true
         },
         {
@@ -33,6 +34,16 @@ const portfolioData = {
             role: "Architecture Consultant & UI/UX Engineer",
             description: "Transformed a single-company solution into a multi-tenant platform capable of serving entire enterprise groups. Engineered sophisticated approval workflows and administrative systems.",
             technologies: ["Angular 20", "C# 13", ".NET 9", "MySQL", "GraphQL", "Redis"],
+            icon: "network",
+            featured: true
+        },
+        {
+            id: 4,
+            title: "Employee Monitoring Suite",
+            role: "Lead Developer & System Architect",
+            description: "Overcame significant OS-level challenges to deliver reliable, high-performance tracking. Received executive-level recognition for design excellence.",
+            technologies: ["C# 13", ".NET 9", "AvaloniaUI", "Blazor", "GraphQL", "Microsoft SQL Server"],
+            icon: "monitor",
             featured: true
         },
         {
@@ -41,6 +52,7 @@ const portfolioData = {
             role: "Lead Architect & Security Engineer",
             description: "Engineered a sophisticated password management system with a security-first architecture, implementing multiple layers of protection beyond industry standards.",
             technologies: [".NET", "Blazor PWA", "Modern Cryptography"],
+            icon: "shield",
             featured: true
         },
         {
@@ -50,14 +62,7 @@ const portfolioData = {
             description: "Modern C++ cryptography library with innovative range-like syntax, reducing development time by 10x while maintaining security integrity.",
             technologies: ["C++23", "OpenSSL 3.0+", "Ranges & Concepts", "Template Metaprogramming"],
             github: "https://github.com/TheMR-777/mr_crypt",
-            featured: true
-        },
-        {
-            id: 4,
-            title: "Employee Monitoring Suite",
-            role: "Lead Developer & System Architect",
-            description: "Overcame significant OS-level challenges to deliver reliable, high-performance tracking. Received executive-level recognition for design excellence.",
-            technologies: ["C# 13", ".NET 9", "AvaloniaUI", "Blazor", "GraphQL", "Microsoft SQL Server"],
+            icon: "key",
             featured: true
         },
         {
@@ -66,6 +71,7 @@ const portfolioData = {
             role: "Lead Developer & System Architect",
             description: "Developed a student records management system after surveying 10+ professors across different fields at our university. Built a fully decentralized Flutter application that uses professors' own Google accounts for data storage, allowing easy access via Google Sheets and Excel export for reports. Focused on simplicity and minimalism to deliver exactly what professors needed most.",
             technologies: ["Flutter", "Google Sheets API", "Google Drive API", "Google Authentication"],
+            icon: "graduation-cap",
             featured: true
         },
         {
@@ -74,6 +80,7 @@ const portfolioData = {
             role: "Cyber Security Researcher",
             description: "Pioneered innovative approaches to mobile security, with articles becoming second most-read on Null Byte platform (2018-2020).",
             technologies: ["Android OS", "Security Analysis", "Mobile-to-Mobile Testing"],
+            icon: "smartphone",
             featured: false
         }
     ],

@@ -19,6 +19,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000);
 });
 
+// Project Icon Generator
+function getProjectIcon(iconType) {
+    const icons = {
+        'map-pin': `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>`,
+        building: `<rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M8 7h8M8 11h8M8 15h8"/><circle cx="6" cy="7" r="1"/><circle cx="6" cy="11" r="1"/><circle cx="6" cy="15" r="1"/>`,
+        network: `<circle cx="12" cy="12" r="4"/><path d="M8 12h8M12 8v8"/><circle cx="6" cy="6" r="1.5"/><circle cx="18" cy="6" r="1.5"/><circle cx="6" cy="18" r="1.5"/><circle cx="18" cy="18" r="1.5"/><line x1="7.5" y1="7.5" x2="10" y2="10"/><line x1="16.5" y1="7.5" x2="14" y2="10"/><line x1="7.5" y1="16.5" x2="10" y2="14"/><line x1="16.5" y1="16.5" x2="14" y2="14"/>`,
+        monitor: `<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><circle cx="12" cy="10" r="3"/>`,
+        shield: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>`,
+        key: `<path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>`,
+        'graduation-cap': `<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>`,
+        smartphone: `<rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>`,
+        default: `<path d="M3 3h18v18H3zM12 8v8m-4-4h8"/>`
+    };
+    
+    return icons[iconType] || icons.default;
+}
+
 // Theme Management
 function initializeTheme() {
     const themeSwitch = document.querySelector('.theme-switch');
@@ -98,12 +115,12 @@ function initializeCursor() {
     
     // Add cursor effects to dynamically loaded elements
     setTimeout(() => {
-        addCursorEffects('.clickable-card, .research-paper, .article-item, .profile-link, .clickable-link');
+        addCursorEffects('.clickable-card, .research-paper, .article-item, .profile-link, .clickable-link, .author-badge');
     }, 100);
     
     // Re-apply cursor effects after publications load
     setTimeout(() => {
-        addCursorEffects('.clickable-card, .research-paper, .article-item, .profile-link, .clickable-link');
+        addCursorEffects('.clickable-card, .research-paper, .article-item, .profile-link, .clickable-link, .author-badge');
     }, 500);
     
     // Ensure all interactive elements use custom cursor only
@@ -214,8 +231,8 @@ function loadProjects() {
         projectCard.className = 'project-card';
         projectCard.innerHTML = `
             <div class="project-header">
-                <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 3h18v18H3zM12 8v8m-4-4h8"/>
+                <svg class="project-icon" data-icon="${project.icon}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    ${getProjectIcon(project.icon)}
                 </svg>
                 <div class="project-links">
                     ${project.github ? `
@@ -323,13 +340,24 @@ function loadPublications() {
         articleGrid.appendChild(articleEl);
     });
 
-    // Update H4ck3R_777 profile link - make it more clickable
-    const profileLink = document.querySelector('.author-badge .profile-link');
-    if (profileLink) {
-        profileLink.classList.add('clickable-link');
-        profileLink.addEventListener('click', (e) => {
-            e.preventDefault();
+    // Update H4ck3R_777 profile badge - make entire card clickable
+    const authorBadge = document.querySelector('.author-badge');
+    if (authorBadge) {
+        // Make entire badge clickable
+        authorBadge.addEventListener('click', () => {
             window.open(portfolioData.publications.cyberSecurity.profileLink, '_blank', 'noopener');
+        });
+        
+        // Add keyboard accessibility
+        authorBadge.setAttribute('tabindex', '0');
+        authorBadge.setAttribute('role', 'button');
+        authorBadge.setAttribute('aria-label', 'View H4ck3R_777 profile on Null Byte');
+        
+        authorBadge.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                window.open(portfolioData.publications.cyberSecurity.profileLink, '_blank', 'noopener');
+            }
         });
     }
 

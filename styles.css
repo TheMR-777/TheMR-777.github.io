@@ -1486,16 +1486,35 @@ body {
 .author-badge {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: var(--space-sm);
-    height: 100%;
-    justify-content: center;
+    padding: var(--space-sm) var(--space-md);
     background-color: var(--color-bg);
     border-radius: 8px;
     border: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
 }
 
 [data-theme="light"] .author-badge {
     background-color: var(--color-bg-secondary);
+}
+
+.author-badge:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-accent);
+    box-shadow: 
+        0 0 0 1px rgba(0, 255, 136, 0.3),
+        0 8px 20px rgba(0, 255, 136, 0.1);
+}
+
+[data-theme="light"] .author-badge:hover {
+    box-shadow: 
+        0 0 0 1px rgba(99, 102, 241, 0.3),
+        0 8px 20px rgba(99, 102, 241, 0.1);
 }
 
 .author-label {
@@ -1510,6 +1529,77 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-accent);
+}
+
+.profile-hint {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.author-badge:hover .profile-hint {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Add shimmer and dot effects to author badge */
+.author-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 255, 136, 0.1) 50%, 
+        transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+}
+
+[data-theme="light"] .author-badge::before {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(99, 102, 241, 0.1) 50%, 
+        transparent 100%
+    );
+}
+
+.author-badge:hover::before {
+    opacity: 1;
+    animation: shimmer 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.author-badge::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+
+.author-badge:hover::after {
+    opacity: 0.7;
+    transform: scale(1);
+    animation: pulse-dot 2s infinite;
+}
+
+/* Ensure content is above effects */
+.author-badge > * {
+    position: relative;
+    z-index: 3;
 }
 
 .profile-link {
