@@ -23,18 +23,9 @@ const portfolioData = {
             id: 7,
             title: "UWB Indoor Positioning Simulation System",
             role: "Lead Developer & System Architect",
-            description: "Designed an Ultra-Wideband (UWB) simulation system for MIMOS Berhad, enabling users to interactively generate real-time heatmaps of signal coverage and intersections, and also localize objects in the room.",
+            description: "Built an Ultra-Wideband simulation system for MIMOS Berhad with interactive real-time heatmaps and precise object localization capabilities.",
             technologies: ["C# 13", ".NET 9", "WPF", "Python 3.13", "NumPy", "SciPy", "Matplotlib"],
             icon: "map-pin",
-            featured: true
-        },
-        {
-            id: 1,
-            title: "Enterprise Resource Planning (ERP) System",
-            role: "Architecture Consultant & UI/UX Engineer",
-            description: "Transformed a single-company solution into a multi-tenant platform capable of serving entire enterprise groups. Engineered sophisticated approval workflows and administrative systems.",
-            technologies: ["Angular 20", "C# 13", ".NET 9", "MySQL", "GraphQL", "Redis"],
-            icon: "network",
             featured: true
         },
         {
@@ -44,6 +35,15 @@ const portfolioData = {
             description: "Overcame significant OS-level challenges to deliver reliable, high-performance tracking. Received executive-level recognition for design excellence.",
             technologies: ["C# 13", ".NET 9", "AvaloniaUI", "Blazor", "GraphQL", "Microsoft SQL Server"],
             icon: "monitor",
+            featured: true
+        },
+        {
+            id: 1,
+            title: "Enterprise Resource Planning (ERP) System",
+            role: "Architecture Consultant & Full-Stack Engineer",
+            description: "Transformed single-company solution into multi-tenant enterprise platform with sophisticated approval workflows and administrative systems.",
+            technologies: ["Angular 20", "C# 13", ".NET 9", "MySQL", "GraphQL", "Redis"],
+            icon: "network",
             featured: true
         },
         {
@@ -69,8 +69,9 @@ const portfolioData = {
             id: 5,
             title: "Costaz (Final Year Project)",
             role: "Lead Developer & System Architect",
-            description: "Developed a student records management system after surveying 10+ professors across different fields at our university. Built a fully decentralized Flutter application that uses professors' own Google accounts for data storage, allowing easy access via Google Sheets and Excel export for reports. Focused on simplicity and minimalism to deliver exactly what professors needed most.",
+            description: "Built decentralized student records system using professors' Google accounts for storage. Features seamless Google Sheets integration and Excel export based on university-wide surveys.",
             technologies: ["Flutter", "Google Sheets API", "Google Drive API", "Google Authentication"],
+            github: "https://github.com/TheMR-777/Costaz",
             icon: "graduation-cap",
             featured: true
         },

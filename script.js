@@ -248,7 +248,9 @@ function loadProjects() {
             <p class="project-role">${project.role}</p>
             <p class="project-description">${project.description}</p>
             <div class="project-tech">
-                ${project.technologies.map(tech => `<span>${tech}</span>`).join(' · ')}
+                <div class="project-tech-grid">
+                    ${project.technologies.map(tech => `<span class="project-tech-item">${tech}</span>`).join('')}
+                </div>
             </div>
         `;
         projectsGrid.appendChild(projectCard);
