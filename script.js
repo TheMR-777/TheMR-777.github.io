@@ -285,7 +285,7 @@ function loadPublications() {
     const researchGrid = document.querySelector('.research-papers-grid');
     portfolioData.publications.research.forEach(paper => {
         const paperEl = document.createElement('div');
-        paperEl.className = 'project-card research-paper clickable-card';
+        paperEl.className = 'article-item research-paper clickable-card';
         paperEl.innerHTML = `
             <h4 class="paper-title">${paper.title}</h4>
             <p class="paper-authors">${paper.authors}</p>

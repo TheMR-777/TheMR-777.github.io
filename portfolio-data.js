@@ -17,11 +17,11 @@ const portfolioData = {
             email: "mailto:m.shahzad.ms72@gmail.com"
         }
     },
-    
+
     featuredProjects: [
         {
             id: 7,
-            title: "UWB Indoor Positioning Simulation System",
+            title: "UWB Indoor Positioning Simulation",
             role: "Lead Developer & System Architect",
             description: "Built an Ultra-Wideband simulation system for MIMOS Berhad with interactive real-time heatmaps and precise object localization capabilities.",
             technologies: ["C# 13", ".NET 9", "WPF", "Python 3.13", "NumPy", "SciPy", "Matplotlib"],
@@ -39,7 +39,7 @@ const portfolioData = {
         },
         {
             id: 1,
-            title: "Enterprise Resource Planning (ERP) System",
+            title: "Enterprise Resource Planning Suite",
             role: "Architecture Consultant & Full-Stack Engineer",
             description: "Transformed single-company solution into multi-tenant enterprise platform with sophisticated approval workflows and administrative systems.",
             technologies: ["Angular 20", "C# 13", ".NET 9", "MySQL", "GraphQL", "Redis"],
@@ -85,7 +85,7 @@ const portfolioData = {
             featured: false
         }
     ],
-    
+
     skillCategories: [
         {
             title: "Programming Languages",
@@ -118,7 +118,7 @@ const portfolioData = {
             skills: ["MySQL", "SQL Server", "SQLite", "Redis", "EAV Design", "Stored Procedures"]
         }
     ],
-    
+
     publications: {
         research: [
             {
@@ -156,7 +156,7 @@ const portfolioData = {
                     link: "https://null-byte.wonderhowto.com/how-to/install-metasploit-framework-android-devices-part-1-termux-0189396/"
                 },
                 {
-                    title: "Multi-threaded Password Cracking with John the Ripper",
+                    title: "Multi-threaded Password Cracking with John-the-Ripper",
                     description: "Enhance password cracking efficiency using multiple threads",
                     link: "https://null-byte.wonderhowto.com/how-to/use-multiple-threads-cpus-while-cracking-passwords-with-john-ripper-free-version-0189544/"
                 },
