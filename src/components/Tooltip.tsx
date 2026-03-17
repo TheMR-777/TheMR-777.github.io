@@ -16,6 +16,7 @@ interface TooltipProps {
     onClick: () => void;
   };
   delay?: number;
+  hideDelay?: number;
 }
 
 export const Tooltip: React.FC<TooltipProps> = ({
@@ -23,11 +24,12 @@ export const Tooltip: React.FC<TooltipProps> = ({
   content,
   action,
   delay = 500,
+  hideDelay = 200,
 }) => {
   const [position, setPosition] = useState<'top' | 'bottom'>('top');
   const triggerRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
-  const { isVisible, showWithDelay, showNow, hide, toggle } = useDelayedVisibility(delay);
+  const { isVisible, showWithDelay, showNow, hide, toggle } = useDelayedVisibility(delay, hideDelay);
 
   const updatePosition = useCallback(() => {
     if (!triggerRef.current) return;

@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 /**
  * Shared delayed-visibility state manager for hover/focus driven overlays.
  */
-export function useDelayedVisibility(delay = 500) {
+export function useDelayedVisibility(delay = 500, hideDelay = 0) {
   const [isVisible, setIsVisible] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -24,8 +24,15 @@ export function useDelayedVisibility(delay = 500) {
 
   const hide = useCallback(() => {
     cancelPending();
-    setIsVisible(false);
-  }, [cancelPending]);
+    if (hideDelay > 0) {
+      timeoutRef.current = setTimeout(() => {
+        setIsVisible(false);
+        timeoutRef.current = null;
+      }, hideDelay);
+    } else {
+      setIsVisible(false);
+    }
+  }, [cancelPending, hideDelay]);
 
   const showNow = useCallback(() => {
     cancelPending();
