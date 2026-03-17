@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Code2, Layers, Wrench, Brain, Award, GraduationCap, Sparkles, BookOpen, Shield, Cpu, Zap } from "lucide-react";
 import { SkillTooltip } from "../components/SkillTooltip";
 import { portfolioData } from "../data/portfolio";
+import { SCROLL_ANIMATION_VP } from "../constants/animations";
 
 const { preUniversityEducation } = portfolioData;
 
@@ -128,7 +129,7 @@ export function Skills() {
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10"
       >
@@ -143,7 +144,7 @@ export function Skills() {
       {/* Mentor Influence Card */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.02, ease: [0.16, 1, 0.3, 1] }}
         className="mb-6 p-5 rounded-xl bg-layer border border-stroke"
       >
@@ -166,7 +167,7 @@ export function Skills() {
         {/* Programming Languages */}
         <motion.section
           initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
           transition={{ duration: 0.4, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
           className="p-6 rounded-xl bg-layer border border-stroke"
         >
@@ -247,7 +248,7 @@ export function Skills() {
         {/* Frameworks & Tools */}
         <motion.section
           initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
           transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="p-6 rounded-xl bg-layer border border-stroke"
         >
@@ -319,7 +320,7 @@ export function Skills() {
         <motion.section
           id="skills-core"
           initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
           transition={{ duration: 0.4, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="p-6 rounded-xl bg-layer border border-stroke"
         >
@@ -360,7 +361,7 @@ export function Skills() {
         {/* Certifications */}
         <motion.section
           initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
           transition={{ duration: 0.4, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="p-6 rounded-xl bg-layer border border-stroke"
         >
@@ -429,7 +430,7 @@ export function Skills() {
                         <motion.div 
                           className="absolute left-0 right-0 bottom-full mb-2 z-50 pointer-events-none"
                           initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={SCROLL_ANIMATION_VP}
                           exit={{ opacity: 0, y: 4, scale: 0.98 }}
                           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                         >
@@ -535,7 +536,7 @@ export function Skills() {
       {/* AI as Force Multiplier */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
         className="mt-6 p-6 rounded-xl bg-layer border border-stroke overflow-hidden"
       >
@@ -621,7 +622,7 @@ export function Skills() {
       {/* DSA Mastery */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
         className="mt-6 p-6 rounded-xl bg-layer border border-stroke overflow-hidden"
       >
@@ -658,7 +659,7 @@ export function Skills() {
       <motion.section
         id="skills-education"
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
         className="mt-6 p-6 rounded-xl bg-layer border border-stroke overflow-hidden"
       >

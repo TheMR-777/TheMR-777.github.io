@@ -9,6 +9,7 @@ import { portfolioData, type Experience, type AceProject } from "../data/portfol
 import DetailSheet from "../components/DetailSheet";
 import { Tooltip } from "../components/Tooltip";
 import type { NavigationOptions, TabId } from "../App";
+import { SCROLL_ANIMATION_VP } from "../constants/animations";
 
 // Navigation function type
 type NavigateFn = (tab: TabId | NavigationOptions) => void;
@@ -88,7 +89,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="mb-12"
       >
@@ -124,7 +125,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
             >
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
                 transition={{ delay: 0.1 + idx * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className="relative p-4 rounded-xl bg-layer border border-stroke hover:border-accent/40 hover:bg-layer-hover transition-all duration-300 group cursor-default overflow-hidden"
               >
@@ -155,7 +156,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
               <motion.div
                 key={job.company}
                 initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
                 transition={{ duration: 0.4, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="relative pl-0 sm:pl-12"
               >
@@ -268,7 +269,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
                                   <motion.div
                                     key={project.name}
                                     initial={{ opacity: 0, x: -12 }}
-                                    animate={{ opacity: 1, x: 0 }}
+                                    whileInView={{ opacity: 1, x: 0 }} viewport={SCROLL_ANIMATION_VP}
                                     transition={{ delay: pIdx * 0.04, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                                     onClick={(e) => {
                                       e.stopPropagation();
@@ -320,7 +321,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
                                   <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, y: 4 }}
-                                    animate={{ opacity: 1, y: 0 }}
+                                    whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
                                     transition={{ delay: 0.2 + idx * 0.03, duration: 0.3 }}
                                     className="flex items-start gap-2.5 text-xs text-text-secondary p-3 rounded-lg bg-mica border border-stroke/30 hover:border-stroke transition-colors"
                                   >
@@ -335,7 +336,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
                             {onNavigate && (
                               <motion.button
                                 initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
+                                whileInView={{ opacity: 1 }} viewport={SCROLL_ANIMATION_VP}
                                 transition={{ delay: 0.3 }}
                                 onClick={(e) => {
                                   e.stopPropagation();

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Lightbulb, Compass, Target, Layers, Sparkles, Infinity, BookOpen } from 'lucide-react';
+import { SCROLL_ANIMATION_VP } from '../constants/animations';
 
 const Philosophy = () => {
   const principles = [
@@ -69,7 +70,7 @@ const Philosophy = () => {
           
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }} viewport={SCROLL_ANIMATION_VP}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex items-center gap-3 mb-6 sm:mb-8">
@@ -104,7 +105,7 @@ const Philosophy = () => {
         <section className="py-8 sm:py-10 pl-0 lg:pl-12 border-l-0 lg:border-l border-stroke/50">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="relative p-6 lg:p-8 rounded-xl bg-layer border border-stroke">
@@ -138,7 +139,7 @@ const Philosophy = () => {
         <section className="py-10 sm:py-12 pl-0 lg:pl-12 border-l-0 lg:border-l border-stroke/50">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
             transition={{ duration: 0.5, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex items-center gap-3 mb-8 sm:mb-10">
@@ -153,7 +154,7 @@ const Philosophy = () => {
                 <motion.div
                   key={step.title}
                   initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
                   transition={{ duration: 0.4, delay: 0.2 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                   className="group relative"
                 >
@@ -179,7 +180,7 @@ const Philosophy = () => {
                     {step.discovery && (
                       <motion.div 
                         initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
                         transition={{ duration: 0.4, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                         className="ml-10 mt-6 p-5 rounded-xl bg-mica border border-stroke"
                       >
@@ -207,7 +208,7 @@ const Philosophy = () => {
         <section className="py-10 sm:py-12 pl-0 lg:pl-12 border-l-0 lg:border-l border-stroke/50">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
             transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex items-center gap-3 mb-8 sm:mb-10">
@@ -244,7 +245,7 @@ const Philosophy = () => {
                 <motion.div
                   key={item.verb}
                   initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  whileInView={{ opacity: 1, scale: 1 }} viewport={SCROLL_ANIMATION_VP}
                   transition={{ duration: 0.3, delay: 0.35 + index * 0.05 }}
                   className="group relative p-4 sm:p-5 rounded-xl bg-layer border border-stroke hover:border-accent/40 hover:bg-layer-hover transition-all duration-500 ease-out overflow-hidden min-h-[100px] sm:min-h-[110px]"
                 >
@@ -295,7 +296,7 @@ const Philosophy = () => {
         <section className="py-10 sm:py-12 pl-0 lg:pl-12 border-l-0 lg:border-l border-stroke/50">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
             transition={{ duration: 0.5, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex items-center gap-3 mb-8 sm:mb-10">
@@ -310,7 +311,7 @@ const Philosophy = () => {
                 <motion.div
                   key={principle.title}
                   initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
                   transition={{ duration: 0.4, delay: 0.4 + index * 0.05, ease: [0.16, 1, 0.3, 1] }}
                   className="principle-card group p-6 rounded-xl bg-layer border border-stroke hover:border-accent/30 hover:bg-layer-hover transition-all"
                 >
@@ -337,7 +338,7 @@ const Philosophy = () => {
         <section className="py-10 sm:py-12 pl-0 lg:pl-12 border-l-0 lg:border-l border-stroke/50">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
             transition={{ duration: 0.5, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex items-center gap-3 mb-8 sm:mb-10">
@@ -383,7 +384,7 @@ const Philosophy = () => {
         <section className="py-16 sm:py-20 pl-0 lg:pl-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
             transition={{ duration: 0.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="text-center"
           >

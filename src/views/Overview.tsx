@@ -3,6 +3,7 @@ import { ArrowRight, MapPin, Github, Linkedin, Globe, Mail } from "lucide-react"
 import { portfolioData } from "../data/portfolio";
 import { Tooltip } from "../components/Tooltip";
 import type { TabId, NavigationOptions } from "../App";
+import { SCROLL_ANIMATION_VP } from "../constants/animations";
 
 interface OverviewProps {
   onNavigate: (tabOrOptions: TabId | NavigationOptions) => void;
@@ -17,7 +18,7 @@ export function Overview({ onNavigate }: OverviewProps) {
       <section className="mb-16">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Status Badge */}
@@ -87,7 +88,7 @@ export function Overview({ onNavigate }: OverviewProps) {
       <motion.section 
         className="mb-16"
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -181,7 +182,7 @@ export function Overview({ onNavigate }: OverviewProps) {
       <motion.section 
         className="mb-16"
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="flex items-center justify-between mb-5">
@@ -217,7 +218,7 @@ export function Overview({ onNavigate }: OverviewProps) {
       <motion.section 
         className="mb-16"
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="flex items-center justify-between mb-5">
@@ -265,7 +266,7 @@ export function Overview({ onNavigate }: OverviewProps) {
       <motion.section
         className="mb-16"
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="flex items-center justify-between mb-5">
@@ -319,7 +320,7 @@ export function Overview({ onNavigate }: OverviewProps) {
       {/* Personal Craft Teaser */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="flex items-center justify-between mb-5">
@@ -368,7 +369,7 @@ export function Overview({ onNavigate }: OverviewProps) {
       {/* Signature */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        whileInView={{ opacity: 1 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ delay: 0.5, duration: 0.6 }}
         className="mt-20 mb-8 flex flex-col items-center text-center"
       >

@@ -23,6 +23,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { portfolioData } from "../data/portfolio";
+import { SCROLL_ANIMATION_VP } from "../constants/animations";
 
 export function About() {
   const {
@@ -49,7 +50,7 @@ export function About() {
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10"
       >
@@ -64,7 +65,7 @@ export function About() {
       {/* Profile Section */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10 p-6 rounded-xl bg-layer border border-stroke"
       >
@@ -203,7 +204,7 @@ export function About() {
       {/* About Summary */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10 p-6 rounded-xl bg-layer border border-stroke"
       >
@@ -215,7 +216,7 @@ export function About() {
       {/* Journey Timeline */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10"
       >
@@ -255,7 +256,7 @@ export function About() {
       {/* Beyond Engineering */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10"
       >
@@ -294,7 +295,7 @@ export function About() {
       {/* Publications */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10"
       >
@@ -347,7 +348,7 @@ export function About() {
       {/* CyberMACS Erasmus Mundus */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10"
       >
@@ -392,7 +393,7 @@ export function About() {
       {/* Community Leadership */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10"
         id="about-community"
@@ -492,7 +493,7 @@ export function About() {
       {/* Open Source Contributions */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10"
       >
@@ -532,7 +533,7 @@ export function About() {
       {/* Quantum Research */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10"
       >
@@ -572,7 +573,7 @@ export function About() {
       {/* Vulnerability Discoveries */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10"
       >
@@ -619,7 +620,7 @@ export function About() {
       {/* Security Research — Null Byte Articles */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
         <h2 className="text-lg font-semibold text-text-primary mb-5">

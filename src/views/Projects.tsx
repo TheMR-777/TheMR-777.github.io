@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, ChevronRight, AlertCircle, Lightbulb, Target, Github, Wrench, Sparkles, ArrowUpRight } from "lucide-react";
 import { portfolioData, type Project, type PersonalProject } from "../data/portfolio";
 import DetailSheet from "../components/DetailSheet";
+import { SCROLL_ANIMATION_VP } from "../constants/animations";
 
 export function Projects() {
   const { projects, personalProjects } = portfolioData;
@@ -14,7 +15,7 @@ export function Projects() {
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="mb-12"
       >
@@ -30,7 +31,7 @@ export function Projects() {
       <motion.section
         id="flagship-projects"
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
         className="mb-16"
       >
@@ -48,7 +49,7 @@ export function Projects() {
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
               transition={{ duration: 0.4, delay: 0.08 + index * 0.04, ease: [0.16, 1, 0.3, 1] }}
             >
               <div
@@ -99,7 +100,7 @@ export function Projects() {
       <motion.section
         id="personal-craft"
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="flex items-center gap-3 mb-2">
@@ -119,7 +120,7 @@ export function Projects() {
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
               transition={{ duration: 0.35, delay: 0.25 + index * 0.04, ease: [0.16, 1, 0.3, 1] }}
             >
               <div
