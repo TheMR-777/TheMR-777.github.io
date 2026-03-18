@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Lightbulb, Compass, Target, Layers, Sparkles, Infinity, BookOpen } from 'lucide-react';
+import { Lightbulb, Compass, Target, Layers, Sparkles, Infinity, BookOpen, ExternalLink } from 'lucide-react';
 import { SCROLL_ANIMATION_VP } from '../constants/animations';
 
 const Philosophy = () => {
@@ -55,6 +55,25 @@ const Philosophy = () => {
       title: 'Succeeding Within the Failures',
       content: 'Sometimes the original goal remains out of reach—but along the way, I stumble upon something profound. A technique. An insight. A connection I hadn\'t anticipated.',
       highlight: 'Failure isn\'t an endpoint—it\'s a checkpoint where unexpected treasures reveal themselves.',
+      phasedDiscovery: {
+        title: 'The Granite 2000000 Incident',
+        period: 'July 2022 · University, 5th Semester',
+        phases: [
+          {
+            label: 'The Corruption',
+            content: 'After three years away from gaming, I launched Far Cry 6 during summer holidays — and was truly feeling it again. Then, mid-autosave, the electricity cut out. When power returned, the game greeted me with a cryptic \'Error: Granite 2000000.\' Months of progress, gone. The internet had no solution — it was an open, unresolved issue across the Far Cry community.',
+          },
+          {
+            label: 'The Investigation',
+            content: 'I refused to accept it. Drawing on my background in data recovery, I located the save files and began a forensic examination. One file — the autosave — was the right size but filled entirely with null bytes. A dead end, until I noticed something: each save file had a numbered counterpart (e.g., _01 and _02). I opened the counterpart of the corrupted file — and it had real data. I replaced the corrupted autosave with its counterpart, loaded the game — and it resumed from the exact moment of interruption.',
+          },
+          {
+            label: 'The Aftermath',
+            content: "I didn't just fix it and move on. I repeated the process multiple times to understand the mechanics, then distilled everything into a 40-second YouTube video — every step explained with utmost clarity while respecting the viewer's time. I shared it across forums where the issue was open. It went viral. The fix proved applicable to Far Cry 5, New Dawn, and Far Cry 4 as well. I still receive appreciation comments to this day.",
+          },
+        ],
+        link: 'https://www.youtube.com/watch?v=cPH_SZKI_Cg',
+      },
     },
   ];
 
@@ -176,7 +195,7 @@ const Philosophy = () => {
                       </p>
                     </div>
 
-                    {/* Discovery Story — appears for "The Beauty in Fundamentals" */}
+                    {/* Discovery Story — simple format (Horner's Method) */}
                     {step.discovery && (
                       <motion.div 
                         initial={{ opacity: 0, y: 8 }}
@@ -195,6 +214,73 @@ const Philosophy = () => {
                         <p className="text-sm text-text-secondary leading-relaxed pl-10">
                           {step.discovery.story}
                         </p>
+                      </motion.div>
+                    )}
+
+                    {/* Phased Discovery Story — multi-phase narrative (Granite 2000000) */}
+                    {step.phasedDiscovery && (
+                      <motion.div 
+                        initial={{ opacity: 0, y: 8 }}
+                        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
+                        transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                        className="ml-10 mt-6 rounded-xl bg-mica border border-stroke overflow-hidden"
+                      >
+                        {/* Header */}
+                        <div className="p-5 pb-4">
+                          <div className="flex items-start gap-3">
+                            <div className="w-7 h-7 rounded-lg bg-accent-subtle flex items-center justify-center flex-shrink-0">
+                              <Lightbulb className="w-3.5 h-3.5 text-accent" />
+                            </div>
+                            <div className="pt-0.5">
+                              <h4 className="text-sm font-semibold text-text-primary">
+                                {step.phasedDiscovery.title}
+                              </h4>
+                              <span className="text-xs text-text-tertiary mt-0.5 block">
+                                {step.phasedDiscovery.period}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Phases — vertical mini-timeline */}
+                        <div className="px-5 pb-2">
+                          {step.phasedDiscovery.phases.map((phase, phaseIndex) => (
+                            <motion.div
+                              key={phase.label}
+                              initial={{ opacity: 0, x: -6 }}
+                              whileInView={{ opacity: 1, x: 0 }} viewport={SCROLL_ANIMATION_VP}
+                              transition={{ duration: 0.35, delay: 0.5 + phaseIndex * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                              className="relative pl-6 pb-5 last:pb-3"
+                            >
+                              {/* Timeline connector */}
+                              {phaseIndex < step.phasedDiscovery!.phases.length - 1 && (
+                                <div className="absolute left-[5px] top-[10px] bottom-0 w-px bg-gradient-to-b from-accent/30 to-accent/5" />
+                              )}
+                              {/* Timeline dot */}
+                              <div className="absolute left-0 top-[5px] w-[11px] h-[11px] rounded-full border-2 border-accent/50 bg-mica" />
+
+                              <span className="text-xs font-semibold text-accent uppercase tracking-wider">
+                                {phase.label}
+                              </span>
+                              <p className="text-sm text-text-secondary leading-relaxed mt-1.5">
+                                {phase.content}
+                              </p>
+                            </motion.div>
+                          ))}
+                        </div>
+
+                        {/* YouTube link footer */}
+                        <div className="border-t border-stroke/60 px-5 py-3">
+                          <a
+                            href={step.phasedDiscovery.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-xs font-medium text-accent hover:text-accent-light transition-colors group/link"
+                          >
+                            <span>Watch the Fix on YouTube</span>
+                            <ExternalLink className="w-3 h-3 opacity-60 group-hover/link:opacity-100 transition-opacity" />
+                          </a>
+                        </div>
                       </motion.div>
                     )}
                   </div>
