@@ -519,9 +519,9 @@ export function Skills() {
                   className="group relative"
                 >
                   <span className="px-2.5 py-1.5 text-xs rounded-md bg-mica border border-stroke text-text-secondary inline-flex items-center gap-1.5 hover:border-accent/30 transition-colors cursor-default">
-                    <span className="font-medium text-text-primary">{model.name}</span>
+                    <span className="font-medium text-text-primary leading-none">{model.name}</span>
                     {model.variants && (
-                      <span className="text-[10px] text-text-disabled hidden sm:inline">
+                      <span className="text-[10px] text-text-disabled hidden sm:inline leading-none">
                         {model.variants}
                       </span>
                     )}
@@ -542,9 +542,9 @@ export function Skills() {
                   key={tool.name}
                   className="px-2.5 py-1.5 text-xs rounded-md bg-mica border border-stroke text-text-secondary inline-flex items-center gap-1.5 hover:border-accent/30 transition-colors cursor-default"
                 >
-                  <span className="font-medium text-text-primary">{tool.name}</span>
+                  <span className="font-medium text-text-primary leading-none">{tool.name}</span>
                   {tool.note && (
-                    <span className="text-[10px] text-text-disabled hidden sm:inline">
+                    <span className="text-[10px] text-text-disabled hidden sm:inline leading-none">
                       {tool.note}
                     </span>
                   )}

@@ -95,12 +95,13 @@ export function Projects() {
                   tone="muted"
                   className="gap-1.5"
                   itemClassName="px-2 py-0.5 text-[10px] rounded-md"
-                />
-                {project.tech.length > 4 && (
-                  <span className="inline-block mt-2 text-[10px] text-text-disabled">
-                    +{project.tech.length - 4}
-                  </span>
-                )}
+                >
+                  {project.tech.length > 4 && (
+                    <span className="px-2 py-0.5 text-[10px] rounded-md text-text-disabled">
+                      +{project.tech.length - 4}
+                    </span>
+                  )}
+                </TagList>
               </Surface>
             </motion.div>
           ))}
@@ -157,12 +158,13 @@ export function Projects() {
                     tone="muted"
                     className="gap-1.5 mt-2.5"
                     itemClassName="px-1.5 py-0.5 text-[10px] rounded"
-                  />
-                  {project.tech.length > 3 && (
-                    <span className="inline-block mt-2 text-[10px] text-text-disabled px-1">
-                      +{project.tech.length - 3}
-                    </span>
-                  )}
+                  >
+                    {project.tech.length > 3 && (
+                      <span className="px-1.5 py-0.5 text-[10px] rounded text-text-disabled">
+                        +{project.tech.length - 3}
+                      </span>
+                    )}
+                  </TagList>
                 </div>
 
                 <div className="flex items-center gap-1.5 flex-shrink-0 pt-0.5">

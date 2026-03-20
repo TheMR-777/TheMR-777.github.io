@@ -7,6 +7,7 @@ interface TagListProps {
   tone?: TagTone;
   className?: string;
   itemClassName?: string;
+  children?: React.ReactNode;
 }
 
 const toneClasses: Record<TagTone, string> = {
@@ -18,7 +19,7 @@ const toneClasses: Record<TagTone, string> = {
 /**
  * Compact reusable tag renderer for technologies, partners, and metadata chips.
  */
-export function TagList({ items, tone = "accent", className, itemClassName }: TagListProps) {
+export function TagList({ items, tone = "accent", className, itemClassName, children }: TagListProps) {
   return (
     <div className={cn("flex flex-wrap gap-2", className)}>
       {items.map((item) => (
@@ -29,6 +30,7 @@ export function TagList({ items, tone = "accent", className, itemClassName }: Ta
           {item}
         </span>
       ))}
+      {children}
     </div>
   );
 }
