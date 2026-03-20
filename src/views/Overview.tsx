@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Github, Linkedin, Globe, Mail } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { portfolioData } from "../data/portfolio";
 import { Tooltip } from "../components/Tooltip";
-import type { TabId, NavigationOptions } from "../App";
+import { SectionHeader } from "../components/SectionHeader";
+import { Surface } from "../components/Surface";
+import type { NavigateFn } from "../types/navigation";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
+import { overviewSocialLinks } from "../config/social";
 
 interface OverviewProps {
-  onNavigate: (tabOrOptions: TabId | NavigationOptions) => void;
+  onNavigate: NavigateFn;
 }
 
 export function Overview({ onNavigate }: OverviewProps) {
@@ -47,36 +50,18 @@ export function Overview({ onNavigate }: OverviewProps) {
 
           {/* Social Links */}
           <div className="flex items-center gap-3">
-            <a
-              href={personal.social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 rounded-lg bg-layer border border-stroke text-text-secondary hover:text-accent hover:border-stroke-hover transition-colors"
-            >
-              <Github className="w-4 h-4" strokeWidth={1.5} />
-            </a>
-            <a
-              href={personal.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 rounded-lg bg-layer border border-stroke text-text-secondary hover:text-accent hover:border-stroke-hover transition-colors"
-            >
-              <Linkedin className="w-4 h-4" strokeWidth={1.5} />
-            </a>
-            <a
-              href={personal.social.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 rounded-lg bg-layer border border-stroke text-text-secondary hover:text-accent hover:border-stroke-hover transition-colors"
-            >
-              <Globe className="w-4 h-4" strokeWidth={1.5} />
-            </a>
-            <a
-              href={`mailto:${personal.email}`}
-              className="p-2.5 rounded-lg bg-layer border border-stroke text-text-secondary hover:text-accent hover:border-stroke-hover transition-colors"
-            >
-              <Mail className="w-4 h-4" strokeWidth={1.5} />
-            </a>
+            {overviewSocialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                className="p-2.5 rounded-lg bg-layer border border-stroke text-text-secondary hover:text-accent hover:border-stroke-hover transition-colors"
+              >
+                <link.icon className="w-4 h-4" strokeWidth={1.5} />
+              </a>
+            ))}
           </div>
         </motion.div>
       </section>
@@ -184,17 +169,14 @@ export function Overview({ onNavigate }: OverviewProps) {
         whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="flex items-center justify-between mb-5">
-          <h2 className="text-lg font-semibold text-text-primary">
-            Core Expertise
-          </h2>
-          <button 
-            onClick={() => onNavigate({ tab: "skills", section: "skills-core" })}
-            className="flex items-center gap-1 text-xs text-text-tertiary hover:text-accent transition-colors"
-          >
-            View all <ArrowRight className="w-3 h-3" />
-          </button>
-        </div>
+        <SectionHeader
+          title="Core Expertise"
+          action={{
+            label: "View all",
+            onClick: () => onNavigate({ tab: "skills", section: "skills-core" }),
+            icon: ArrowRight,
+          }}
+        />
 
         <div className="flex flex-wrap" style={{ gap: '12px 8px' }}>
           {skills.core.map((skill) => (
@@ -220,17 +202,14 @@ export function Overview({ onNavigate }: OverviewProps) {
         whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="flex items-center justify-between mb-5">
-          <h2 className="text-lg font-semibold text-text-primary">
-            Recent Experience
-          </h2>
-          <button 
-            onClick={() => onNavigate("experience")}
-            className="flex items-center gap-1 text-xs text-text-tertiary hover:text-accent transition-colors"
-          >
-            View all <ArrowRight className="w-3 h-3" />
-          </button>
-        </div>
+        <SectionHeader
+          title="Recent Experience"
+          action={{
+            label: "View all",
+            onClick: () => onNavigate("experience"),
+            icon: ArrowRight,
+          }}
+        />
 
         <div className="space-y-3">
           {experience.slice(0, 2).map((job) => (
@@ -268,17 +247,14 @@ export function Overview({ onNavigate }: OverviewProps) {
         whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="flex items-center justify-between mb-5">
-          <h2 className="text-lg font-semibold text-text-primary">
-            Featured Projects
-          </h2>
-          <button 
-            onClick={() => onNavigate("projects")}
-            className="flex items-center gap-1 text-xs text-text-tertiary hover:text-accent transition-colors"
-          >
-            View all <ArrowRight className="w-3 h-3" />
-          </button>
-        </div>
+        <SectionHeader
+          title="Featured Projects"
+          action={{
+            label: "View all",
+            onClick: () => onNavigate("projects"),
+            icon: ArrowRight,
+          }}
+        />
 
         <div className="grid md:grid-cols-2 gap-4">
           {projects.slice(0, 4).map((project) => (
@@ -322,29 +298,24 @@ export function Overview({ onNavigate }: OverviewProps) {
         whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="flex items-center justify-between mb-5">
-          <div className="flex items-center gap-2">
-            <h2 className="text-lg font-semibold text-text-primary">
-              Personal Craft
-            </h2>
-            <span className="text-xs text-text-disabled">
-              — tools that transform
-            </span>
-          </div>
-          <button 
-            onClick={() => onNavigate({ tab: "projects", section: "personal-craft" })}
-            className="flex items-center gap-1 text-xs text-text-tertiary hover:text-accent transition-colors"
-          >
-            View all <ArrowRight className="w-3 h-3" />
-          </button>
-        </div>
+        <SectionHeader
+          title="Personal Craft"
+          subtitle="tools that transform"
+          action={{
+            label: "View all",
+            onClick: () => onNavigate({ tab: "projects", section: "personal-craft" }),
+            icon: ArrowRight,
+          }}
+        />
 
         <div className="space-y-2">
           {portfolioData.personalProjects.slice(0, 3).map((project) => (
-            <div
+            <Surface
               key={project.title}
               onClick={() => onNavigate("projects")}
-              className="group flex items-center gap-4 p-4 rounded-xl bg-layer border border-stroke cursor-pointer hover:bg-layer-hover hover:border-stroke-hover transition-colors"
+              interactive
+              padding="md"
+              className="group flex items-center gap-4 cursor-pointer"
             >
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
@@ -360,7 +331,7 @@ export function Overview({ onNavigate }: OverviewProps) {
                 </p>
               </div>
               <ArrowRight className="w-3.5 h-3.5 text-text-disabled group-hover:text-text-tertiary group-hover:translate-x-0.5 transition-all flex-shrink-0" />
-            </div>
+            </Surface>
           ))}
         </div>
       </motion.section>

@@ -1,12 +1,6 @@
-import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
+import {
   X,
-  Sparkles,
-  Wrench,
-  Github,
-  Linkedin,
-  Mail,
   Command,
   Sun,
   Moon,
@@ -15,7 +9,10 @@ import {
 } from "lucide-react";
 import { cn } from "../utils/cn";
 import { useTheme, accentColors } from "../contexts/ThemeContext";
-import type { TabId } from "../App";
+import type { TabId } from "../types/navigation";
+import { mobileExtraNavItems } from "../config/navigation";
+import { profileSocialLinks } from "../config/social";
+import { useBodyScrollLock } from "../hooks/useBodyScrollLock";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -25,39 +22,16 @@ interface MobileMenuProps {
   onOpenCommandPalette: () => void;
 }
 
-const extraNavItems: { id: TabId; label: string; icon: typeof Sparkles }[] = [
-  { id: "philosophy", label: "Philosophy", icon: Sparkles },
-  { id: "skills", label: "Skills & Credentials", icon: Wrench },
-];
-
-import { portfolioData } from "../data/portfolio";
-
-const socialLinks = [
-  { href: portfolioData.personal.social.github, icon: Github, label: "GitHub" },
-  { href: portfolioData.personal.social.linkedin, icon: Linkedin, label: "LinkedIn" },
-  { href: `mailto:${portfolioData.personal.email}`, icon: Mail, label: "Email" },
-];
-
-export function MobileMenu({ 
-  isOpen, 
-  onClose, 
+export function MobileMenu({
+  isOpen,
+  onClose,
   activeTab,
   setActiveTab,
   onOpenCommandPalette,
 }: MobileMenuProps) {
   const { accent, setAccent, resolvedMode, setMode } = useTheme();
 
-  // Lock body scroll when open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
+  useBodyScrollLock(isOpen);
 
   const handleNavigation = (tab: TabId) => {
     setActiveTab(tab);
@@ -87,11 +61,11 @@ export function MobileMenu({
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
-            transition={{ 
-              type: "spring", 
-              stiffness: 400, 
+            transition={{
+              type: "spring",
+              stiffness: 400,
               damping: 40,
-              mass: 0.8
+              mass: 0.8,
             }}
             className="fixed inset-x-0 bottom-0 z-50 lg:hidden max-h-[85vh] flex flex-col bg-mica rounded-t-2xl border-t border-stroke shadow-dialog overflow-hidden"
           >
@@ -104,7 +78,7 @@ export function MobileMenu({
             <div className="flex items-center justify-between px-5 pb-4 border-b border-divider">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <div 
+                  <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-semibold text-base shadow-sm"
                     style={{ backgroundColor: "var(--accent-color)" }}
                   >
@@ -136,7 +110,7 @@ export function MobileMenu({
                 <p className="text-[10px] font-medium text-text-tertiary uppercase tracking-wider px-3 mb-2">
                   More Pages
                 </p>
-                {extraNavItems.map((item) => {
+                {mobileExtraNavItems.map((item) => {
                   const isActive = activeTab === item.id;
                   return (
                     <button
@@ -150,16 +124,16 @@ export function MobileMenu({
                       )}
                     >
                       <div className="flex items-center gap-3">
-                        <item.icon 
+                        <item.icon
                           className={cn(
                             "w-5 h-5",
                             isActive ? "text-accent" : "text-text-tertiary"
-                          )} 
-                          strokeWidth={1.5} 
+                          )}
+                          strokeWidth={1.5}
                         />
                         <span className="font-medium">{item.label}</span>
                       </div>
-                      <ChevronRight 
+                      <ChevronRight
                         className={cn(
                           "w-4 h-4",
                           isActive ? "text-accent" : "text-text-disabled"
@@ -215,8 +189,8 @@ export function MobileMenu({
                         onClick={() => setMode(mode)}
                         className={cn(
                           "flex-1 py-2.5 px-3 rounded-xl text-sm font-medium capitalize transition-all duration-150",
-                          (mode === "system" ? resolvedMode : mode) === resolvedMode && 
-                          (mode === "system" || mode === resolvedMode)
+                          (mode === "system" ? resolvedMode : mode) === resolvedMode &&
+                            (mode === "system" || mode === resolvedMode)
                             ? "bg-accent-subtle text-accent border border-accent/20"
                             : "bg-layer border border-stroke text-text-secondary hover:bg-layer-hover"
                         )}
@@ -239,10 +213,10 @@ export function MobileMenu({
                         key={color.name}
                         onClick={() => setAccent(color)}
                         className="aspect-square rounded-xl flex items-center justify-center transition-all duration-150 hover:scale-105 active:scale-95"
-                        style={{ 
+                        style={{
                           backgroundColor: color.value,
-                          boxShadow: accent.name === color.name 
-                            ? `0 0 0 2px var(--bg-mica), 0 0 0 4px ${color.value}` 
+                          boxShadow: accent.name === color.name
+                            ? `0 0 0 2px var(--bg-mica), 0 0 0 4px ${color.value}`
                             : 'none'
                         }}
                         title={color.name}
@@ -269,7 +243,7 @@ export function MobileMenu({
                   Connect
                 </p>
                 <div className="flex justify-center gap-2">
-                  {socialLinks.map((link) => (
+                  {profileSocialLinks.map((link) => (
                     <a
                       key={link.label}
                       href={link.href}

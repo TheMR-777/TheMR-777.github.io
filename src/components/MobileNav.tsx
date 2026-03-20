@@ -1,26 +1,16 @@
 import { motion } from "framer-motion";
 import { 
-  Home, 
-  User, 
-  Briefcase, 
-  FolderKanban, 
   Menu,
 } from "lucide-react";
 import { cn } from "../utils/cn";
-import type { TabId } from "../App";
+import type { TabId } from "../types/navigation";
+import { mobilePrimaryNavItems } from "../config/navigation";
 
 interface MobileNavProps {
   activeTab: TabId;
   setActiveTab: (tab: TabId) => void;
   onOpenMenu: () => void;
 }
-
-const navItems: { id: TabId; label: string; icon: typeof Home }[] = [
-  { id: "home", label: "Home", icon: Home },
-  { id: "about", label: "About", icon: User },
-  { id: "experience", label: "Experience", icon: Briefcase },
-  { id: "projects", label: "Projects", icon: FolderKanban },
-];
 
 export function MobileNav({ activeTab, setActiveTab, onOpenMenu }: MobileNavProps) {
   return (
@@ -29,7 +19,7 @@ export function MobileNav({ activeTab, setActiveTab, onOpenMenu }: MobileNavProp
       <div className="absolute inset-0 bg-mica/95 backdrop-blur-2xl border-t border-stroke shadow-[0_-4px_16px_rgba(0,0,0,0.08)]" />
       {/* Safe area spacer for notched devices */}
       <div className="relative flex items-stretch justify-around px-2 h-16 pb-safe">
-        {navItems.map((item) => {
+        {mobilePrimaryNavItems.map((item) => {
           const isActive = activeTab === item.id;
           return (
             <button

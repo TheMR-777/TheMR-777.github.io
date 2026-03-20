@@ -1,9 +1,23 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, ChevronRight, AlertCircle, Lightbulb, Target, Github, Wrench, Sparkles, ArrowUpRight } from "lucide-react";
+import {
+  ExternalLink,
+  ChevronRight,
+  AlertCircle,
+  Lightbulb,
+  Target,
+  Github,
+  Wrench,
+  Sparkles,
+  ArrowUpRight,
+} from "lucide-react";
 import { portfolioData, type Project, type PersonalProject } from "../data/portfolio";
 import DetailSheet from "../components/DetailSheet";
+import { DetailSection } from "../components/DetailSection";
+import { Surface } from "../components/Surface";
+import { TagList } from "../components/TagList";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
+import { hasArchitecturalPhilosophy } from "../lib/portfolioGuards";
 
 export function Projects() {
   const { projects, personalProjects } = portfolioData;
@@ -52,9 +66,10 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
               transition={{ duration: 0.4, delay: 0.08 + index * 0.04, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div
+              <Surface
                 onClick={() => setSelectedProject(project)}
-                className="group h-full p-5 rounded-xl bg-layer border border-stroke cursor-pointer hover:bg-layer-hover hover:border-stroke-hover transition-colors"
+                interactive
+                className="group h-full cursor-pointer"
               >
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div className="min-w-0">
@@ -65,9 +80,9 @@ export function Projects() {
                       {project.title}
                     </h3>
                   </div>
-                  <ChevronRight 
-                    className="w-4 h-4 text-text-disabled group-hover:text-text-tertiary group-hover:translate-x-0.5 transition-all flex-shrink-0 mt-1" 
-                    strokeWidth={1.5} 
+                  <ChevronRight
+                    className="w-4 h-4 text-text-disabled group-hover:text-text-tertiary group-hover:translate-x-0.5 transition-all flex-shrink-0 mt-1"
+                    strokeWidth={1.5}
                   />
                 </div>
 
@@ -75,22 +90,18 @@ export function Projects() {
                   {project.summary}
                 </p>
 
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tech.slice(0, 4).map((t) => (
-                    <span
-                      key={t}
-                      className="px-2 py-0.5 text-[10px] rounded-md bg-layer-active border border-stroke text-text-tertiary"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                  {project.tech.length > 4 && (
-                    <span className="px-2 py-0.5 text-[10px] text-text-disabled">
-                      +{project.tech.length - 4}
-                    </span>
-                  )}
-                </div>
-              </div>
+                <TagList
+                  items={project.tech.slice(0, 4)}
+                  tone="muted"
+                  className="gap-1.5"
+                  itemClassName="px-2 py-0.5 text-[10px] rounded-md"
+                />
+                {project.tech.length > 4 && (
+                  <span className="inline-block mt-2 text-[10px] text-text-disabled">
+                    +{project.tech.length - 4}
+                  </span>
+                )}
+              </Surface>
             </motion.div>
           ))}
         </div>
@@ -123,11 +134,12 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
               transition={{ duration: 0.35, delay: 0.25 + index * 0.04, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div
+              <Surface
                 onClick={() => setSelectedPersonal(project)}
-                className="group flex items-start gap-4 p-4 rounded-xl bg-layer border border-stroke cursor-pointer hover:bg-layer-hover hover:border-stroke-hover transition-colors"
+                interactive
+                padding="md"
+                className="group flex items-start gap-4 cursor-pointer"
               >
-                {/* Left: Title & Category */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1.5">
                     <h3 className="text-sm font-medium text-text-primary group-hover:text-accent transition-colors truncate">
@@ -140,25 +152,19 @@ export function Projects() {
                   <p className="text-xs text-text-secondary leading-relaxed line-clamp-2">
                     {project.description}
                   </p>
-                  {/* Tech inline */}
-                  <div className="flex flex-wrap gap-1.5 mt-2.5">
-                    {project.tech.slice(0, 3).map((t) => (
-                      <span
-                        key={t}
-                        className="px-1.5 py-0.5 text-[10px] rounded bg-layer-active border border-stroke text-text-tertiary"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                    {project.tech.length > 3 && (
-                      <span className="text-[10px] text-text-disabled px-1">
-                        +{project.tech.length - 3}
-                      </span>
-                    )}
-                  </div>
+                  <TagList
+                    items={project.tech.slice(0, 3)}
+                    tone="muted"
+                    className="gap-1.5 mt-2.5"
+                    itemClassName="px-1.5 py-0.5 text-[10px] rounded"
+                  />
+                  {project.tech.length > 3 && (
+                    <span className="inline-block mt-2 text-[10px] text-text-disabled px-1">
+                      +{project.tech.length - 3}
+                    </span>
+                  )}
                 </div>
 
-                {/* Right: Links */}
                 <div className="flex items-center gap-1.5 flex-shrink-0 pt-0.5">
                   {project.link && (
                     <a
@@ -184,12 +190,12 @@ export function Projects() {
                       <Github className="w-3.5 h-3.5" strokeWidth={1.5} />
                     </a>
                   )}
-                  <ChevronRight 
-                    className="w-3.5 h-3.5 text-text-disabled group-hover:text-text-tertiary group-hover:translate-x-0.5 transition-all" 
-                    strokeWidth={1.5} 
+                  <ChevronRight
+                    className="w-3.5 h-3.5 text-text-disabled group-hover:text-text-tertiary group-hover:translate-x-0.5 transition-all"
+                    strokeWidth={1.5}
                   />
                 </div>
-              </div>
+              </Surface>
             </motion.div>
           ))}
         </div>
@@ -209,48 +215,36 @@ export function Projects() {
             </p>
 
             {selectedProject.challenge && (
-              <div>
-                <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <AlertCircle className="w-3.5 h-3.5" />
-                  The Challenge
-                </h4>
-                <p className="text-sm text-text-secondary leading-relaxed p-4 rounded-lg bg-layer border border-stroke">
-                  {selectedProject.challenge}
-                </p>
-              </div>
+              <DetailSection title="The Challenge" icon={AlertCircle}>
+                <Surface padding="md" className="rounded-lg">
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {selectedProject.challenge}
+                  </p>
+                </Surface>
+              </DetailSection>
             )}
 
-            {/* Architectural Philosophy - if exists */}
-            {'architecturalPhilosophy' in selectedProject && selectedProject.architecturalPhilosophy && (
-              <div>
-                <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-2">
-                  Architectural Philosophy
-                </h4>
+            {hasArchitecturalPhilosophy(selectedProject) && (
+              <DetailSection title="Architectural Philosophy">
                 <div className="p-4 rounded-lg bg-accent-subtle border border-accent/20">
                   <p className="text-sm text-text-primary leading-relaxed italic">
-                    {String(selectedProject.architecturalPhilosophy)}
+                    {selectedProject.architecturalPhilosophy}
                   </p>
                 </div>
-              </div>
+              </DetailSection>
             )}
 
             {selectedProject.approach && (
-              <div>
-                <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <Lightbulb className="w-3.5 h-3.5" />
-                  The Approach
-                </h4>
-                <p className="text-sm text-text-secondary leading-relaxed p-4 rounded-lg bg-layer border border-stroke">
-                  {selectedProject.approach}
-                </p>
-              </div>
+              <DetailSection title="The Approach" icon={Lightbulb}>
+                <Surface padding="md" className="rounded-lg">
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {selectedProject.approach}
+                  </p>
+                </Surface>
+              </DetailSection>
             )}
 
-            <div>
-              <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3 flex items-center gap-2">
-                <Target className="w-3.5 h-3.5" />
-                Measurable Impact
-              </h4>
+            <DetailSection title="Measurable Impact" icon={Target}>
               <ul className="space-y-2 pl-5">
                 {selectedProject.impact.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-sm text-text-secondary">
@@ -259,23 +253,11 @@ export function Projects() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </DetailSection>
 
-            <div>
-              <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3">
-                Technologies
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {selectedProject.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="px-3 py-1.5 text-xs rounded-lg bg-accent-subtle text-accent font-medium"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <DetailSection title="Technologies">
+              <TagList items={selectedProject.tech} tone="accent" />
+            </DetailSection>
 
             {selectedProject.link && selectedProject.link !== "#" && (
               <a
@@ -301,45 +283,25 @@ export function Projects() {
       >
         {selectedPersonal && (
           <>
-            {/* The Story */}
-            <div>
-              <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3 flex items-center gap-2">
-                <Lightbulb className="w-3.5 h-3.5" />
-                The Story
-              </h4>
+            <DetailSection title="The Story" icon={Lightbulb}>
               <p className="text-sm text-text-secondary leading-relaxed">
                 {selectedPersonal.description}
               </p>
-            </div>
+            </DetailSection>
 
-            {/* Origin */}
-            <div className="p-4 rounded-lg bg-layer border border-stroke">
+            <Surface padding="md" className="rounded-lg">
               <span className="text-[10px] uppercase tracking-wider text-text-tertiary font-medium">
                 Origin
               </span>
               <p className="text-sm text-text-secondary mt-1">
                 {selectedPersonal.origin}
               </p>
-            </div>
+            </Surface>
 
-            {/* Tech */}
-            <div>
-              <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3">
-                Built With
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {selectedPersonal.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="px-3 py-1.5 text-xs rounded-lg bg-accent-subtle text-accent font-medium"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <DetailSection title="Built With">
+              <TagList items={selectedPersonal.tech} tone="accent" />
+            </DetailSection>
 
-            {/* Links */}
             <div className="flex gap-3">
               {selectedPersonal.link && (
                 <a

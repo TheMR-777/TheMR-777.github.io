@@ -1,45 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Code2, Layers, Wrench, Brain, Award, GraduationCap, Sparkles, BookOpen, Shield, Cpu, Zap } from "lucide-react";
 import { SkillTooltip } from "../components/SkillTooltip";
 import { portfolioData } from "../data/portfolio";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
+import { useIsMobile } from "../hooks/useIsMobile";
+import { useDelayedHover } from "../hooks/useDelayedHover";
 
 const { preUniversityEducation } = portfolioData;
-
-// Hook to detect mobile
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 640);
-    check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
-  return isMobile;
-};
-
-// Hook for delayed hover state (for premium tooltip feel)
-const useDelayedHover = (delay: number = 500) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const onMouseEnter = () => {
-    timeoutRef.current = setTimeout(() => setIsVisible(true), delay);
-  };
-  const onMouseLeave = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-    setIsVisible(false);
-  };
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
-  return { isVisible, onMouseEnter, onMouseLeave };
-};
 
 // Skill proficiency bar component
 function SkillBar({ level, years }: { level: string; years: string }) {

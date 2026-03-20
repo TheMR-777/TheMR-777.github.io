@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronDown } from 'lucide-react';
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 interface DetailSheetProps {
   isOpen: boolean;
@@ -10,25 +11,27 @@ interface DetailSheetProps {
   children: React.ReactNode;
 }
 
-const DetailSheet: React.FC<DetailSheetProps> = ({ 
-  isOpen, 
-  onClose, 
-  title, 
+const DetailSheet: React.FC<DetailSheetProps> = ({
+  isOpen,
+  onClose,
+  title,
   subtitle,
-  children 
+  children,
 }) => {
+  useBodyScrollLock(isOpen);
+
   // Handle ESC key
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
+
     if (isOpen) {
       window.addEventListener('keydown', handleEsc);
-      document.body.style.overflow = 'hidden';
     }
+
     return () => {
       window.removeEventListener('keydown', handleEsc);
-      document.body.style.overflow = '';
     };
   }, [isOpen, onClose]);
 
@@ -51,11 +54,11 @@ const DetailSheet: React.FC<DetailSheetProps> = ({
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
-            transition={{ 
-              type: "spring", 
-              stiffness: 400, 
+            transition={{
+              type: 'spring',
+              stiffness: 400,
               damping: 40,
-              mass: 0.8
+              mass: 0.8,
             }}
             className="fixed inset-y-0 right-0 z-50 w-full sm:w-[480px] lg:w-[540px] hidden sm:flex flex-col bg-content border-l border-stroke shadow-dialog"
             role="dialog"
@@ -68,8 +71,8 @@ const DetailSheet: React.FC<DetailSheetProps> = ({
             <header className="flex-shrink-0 px-6 py-5 border-b border-divider bg-mica">
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0 flex-1">
-                  <h2 
-                    id="sheet-title-desktop" 
+                  <h2
+                    id="sheet-title-desktop"
                     className="text-lg font-semibold text-text-primary tracking-tight truncate"
                   >
                     {title}
@@ -109,11 +112,11 @@ const DetailSheet: React.FC<DetailSheetProps> = ({
             initial={{ y: '100%' }}
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
-            transition={{ 
-              type: "spring", 
-              stiffness: 400, 
+            transition={{
+              type: 'spring',
+              stiffness: 400,
               damping: 40,
-              mass: 0.8
+              mass: 0.8,
             }}
             className="fixed inset-0 z-50 flex flex-col bg-content sm:hidden"
             role="dialog"
@@ -133,8 +136,8 @@ const DetailSheet: React.FC<DetailSheetProps> = ({
                 </button>
                 {/* Title */}
                 <div className="flex-1 min-w-0">
-                  <h2 
-                    id="sheet-title-mobile" 
+                  <h2
+                    id="sheet-title-mobile"
                     className="text-base font-semibold text-text-primary tracking-tight truncate"
                   >
                     {title}

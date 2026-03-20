@@ -7,12 +7,13 @@ import {
 } from "lucide-react";
 import { portfolioData, type Experience, type AceProject } from "../data/portfolio";
 import DetailSheet from "../components/DetailSheet";
+import { DetailSection } from "../components/DetailSection";
+import { Surface } from "../components/Surface";
+import { TagList } from "../components/TagList";
 import { Tooltip } from "../components/Tooltip";
-import type { NavigationOptions, TabId } from "../App";
+import type { NavigateFn } from "../types/navigation";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
-
-// Navigation function type
-type NavigateFn = (tab: TabId | NavigationOptions) => void;
+import { getArchitecturalHighlights } from "../lib/portfolioGuards";
 
 interface ExperienceProps {
   onNavigate?: NavigateFn;
@@ -35,6 +36,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
   const [selectedExp, setSelectedExp] = useState<Experience | null>(null);
   const [selectedAceProject, setSelectedAceProject] = useState<AceProject | null>(null);
   const [expandedCompany, setExpandedCompany] = useState<string | null>("ACE Money Transfer");
+  const architecturalHighlights = selectedAceProject ? getArchitecturalHighlights(selectedAceProject) : [];
 
   // Key impact stats across all experiences
   const impactStats = [
@@ -368,7 +370,6 @@ export function Experience({ onNavigate }: ExperienceProps) {
       >
         {selectedExp && (
           <>
-            {/* Period & Location */}
             <div className="flex flex-wrap items-center gap-4 text-sm text-text-secondary">
               <span className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" strokeWidth={1.5} />
@@ -380,23 +381,14 @@ export function Experience({ onNavigate }: ExperienceProps) {
               </span>
             </div>
 
-            {/* Description */}
-            <div>
-              <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-2">
-                Overview
-              </h4>
+            <DetailSection title="Overview">
               <p className="text-sm text-text-secondary leading-relaxed">
                 {selectedExp.description}
               </p>
-            </div>
+            </DetailSection>
 
-            {/* Highlights */}
             {selectedExp.highlights && selectedExp.highlights.length > 0 && (
-              <div>
-                <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  Key Highlights
-                </h4>
+              <DetailSection title="Key Highlights" icon={Sparkles}>
                 <div className="space-y-2">
                   {selectedExp.highlights.map((highlight, idx) => (
                     <div key={idx} className="flex items-start gap-2.5 text-sm text-text-secondary">
@@ -405,22 +397,14 @@ export function Experience({ onNavigate }: ExperienceProps) {
                     </div>
                   ))}
                 </div>
-              </div>
+              </DetailSection>
             )}
 
-            {/* Modules */}
             {selectedExp.modules && selectedExp.modules.length > 0 && (
-              <div>
-                <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  Core Modules Engineered
-                </h4>
+              <DetailSection title="Core Modules Engineered" icon={Sparkles}>
                 <div className="space-y-3">
                   {selectedExp.modules.map((mod, idx) => (
-                    <div
-                      key={idx}
-                      className="p-4 rounded-lg bg-layer border border-stroke"
-                    >
+                    <Surface key={idx} padding="md" className="rounded-lg">
                       <h5 className="text-sm font-medium text-text-primary mb-1">
                         {mod.name}
                       </h5>
@@ -430,19 +414,14 @@ export function Experience({ onNavigate }: ExperienceProps) {
                       <span className="text-[10px] text-accent font-medium">
                         → {mod.impact}
                       </span>
-                    </div>
+                    </Surface>
                   ))}
                 </div>
-              </div>
+              </DetailSection>
             )}
 
-            {/* Impact */}
             {selectedExp.impact && selectedExp.impact.length > 0 && (
-              <div>
-                <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <Target className="w-3.5 h-3.5" />
-                  Measurable Impact
-                </h4>
+              <DetailSection title="Measurable Impact" icon={Target}>
                 <ul className="space-y-2 pl-5">
                   {selectedExp.impact.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-sm text-text-secondary">
@@ -451,25 +430,12 @@ export function Experience({ onNavigate }: ExperienceProps) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </DetailSection>
             )}
 
-            {/* Tech Stack */}
-            <div>
-              <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3">
-                Technologies
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {selectedExp.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="px-3 py-1.5 text-xs rounded-lg bg-accent-subtle text-accent font-medium"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <DetailSection title="Technologies">
+              <TagList items={selectedExp.tech} tone="accent" />
+            </DetailSection>
           </>
         )}
       </DetailSheet>
@@ -483,28 +449,19 @@ export function Experience({ onNavigate }: ExperienceProps) {
       >
         {selectedAceProject && (
           <>
-            {/* Period */}
             <div className="flex items-center gap-2 text-sm text-text-secondary">
               <Calendar className="w-4 h-4" strokeWidth={1.5} />
               {selectedAceProject.period}
             </div>
 
-            {/* Description */}
-            <div>
-              <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-2">
-                Overview
-              </h4>
+            <DetailSection title="Overview">
               <p className="text-sm text-text-secondary leading-relaxed">
                 {selectedAceProject.description}
               </p>
-            </div>
+            </DetailSection>
 
-            {/* Architectural Philosophy - if exists */}
             {selectedAceProject.architecturalPhilosophy && (
-              <div>
-                <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-2">
-                  Architectural Philosophy
-                </h4>
+              <DetailSection title="Architectural Philosophy">
                 <div className="p-4 rounded-lg bg-accent-subtle border border-accent/20">
                   <p className="text-sm text-text-primary leading-relaxed italic">
                     {selectedAceProject.architecturalPhilosophy}
@@ -520,52 +477,37 @@ export function Experience({ onNavigate }: ExperienceProps) {
                     ))}
                   </div>
                 )}
-              </div>
+              </DetailSection>
             )}
 
-            {/* Approach - if exists */}
             {selectedAceProject.approach && (
-              <div>
-                <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-2">
-                  The Approach
-                </h4>
-                <p className="text-sm text-text-secondary leading-relaxed p-4 rounded-lg bg-layer border border-stroke">
-                  {selectedAceProject.approach}
-                </p>
-              </div>
+              <DetailSection title="The Approach">
+                <Surface padding="md" className="rounded-lg">
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {selectedAceProject.approach}
+                  </p>
+                </Surface>
+              </DetailSection>
             )}
 
-            {/* Architectural Highlights - if exists (for infrastructure projects) */}
-            {'architecturalHighlights' in selectedAceProject && selectedAceProject.architecturalHighlights && (
-              <div>
-                <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <Cog className="w-3.5 h-3.5" />
-                  Architectural Highlights
-                </h4>
-                <div className="p-4 rounded-lg bg-layer border border-stroke space-y-2">
-                  {(selectedAceProject.architecturalHighlights as string[]).map((highlight, idx) => (
+            {architecturalHighlights.length > 0 && (
+              <DetailSection title="Architectural Highlights" icon={Cog}>
+                <Surface padding="md" className="rounded-lg space-y-2">
+                  {architecturalHighlights.map((highlight, idx) => (
                     <div key={idx} className="flex items-start gap-2.5 text-sm text-text-secondary">
                       <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
                       {highlight}
                     </div>
                   ))}
-                </div>
-              </div>
+                </Surface>
+              </DetailSection>
             )}
 
-            {/* Modules - if exists */}
             {selectedAceProject.modules && selectedAceProject.modules.length > 0 && (
-              <div>
-                <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  Core Modules
-                </h4>
+              <DetailSection title="Core Modules" icon={Sparkles}>
                 <div className="space-y-3">
                   {selectedAceProject.modules.map((mod, idx) => (
-                    <div
-                      key={idx}
-                      className="p-4 rounded-lg bg-layer border border-stroke"
-                    >
+                    <Surface key={idx} padding="md" className="rounded-lg">
                       <h5 className="text-sm font-medium text-text-primary mb-1">
                         {mod.name}
                       </h5>
@@ -575,38 +517,20 @@ export function Experience({ onNavigate }: ExperienceProps) {
                       <span className="text-[10px] text-accent font-medium">
                         → {mod.impact}
                       </span>
-                    </div>
+                    </Surface>
                   ))}
                 </div>
-              </div>
+              </DetailSection>
             )}
 
-            {/* Partners - if exists */}
             {selectedAceProject.partners && (
-              <div>
-                <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3">
-                  Partners Integrated
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {selectedAceProject.partners.map((partner) => (
-                    <span
-                      key={partner}
-                      className="px-3 py-1.5 text-xs rounded-lg bg-layer border border-stroke text-text-primary"
-                    >
-                      {partner}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <DetailSection title="Partners Integrated">
+                <TagList items={selectedAceProject.partners} tone="default" />
+              </DetailSection>
             )}
 
-            {/* Impact */}
             {selectedAceProject.impact && selectedAceProject.impact.length > 0 && (
-              <div>
-                <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <Target className="w-3.5 h-3.5" />
-                  Measurable Impact
-                </h4>
+              <DetailSection title="Measurable Impact" icon={Target}>
                 <ul className="space-y-2 pl-5">
                   {selectedAceProject.impact.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-sm text-text-secondary">
@@ -615,25 +539,12 @@ export function Experience({ onNavigate }: ExperienceProps) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </DetailSection>
             )}
 
-            {/* Tech Stack */}
-            <div>
-              <h4 className="text-xs font-medium text-text-tertiary uppercase tracking-wider mb-3">
-                Technologies
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {selectedAceProject.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="px-3 py-1.5 text-xs rounded-lg bg-accent-subtle text-accent font-medium"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <DetailSection title="Technologies">
+              <TagList items={selectedAceProject.tech} tone="accent" />
+            </DetailSection>
           </>
         )}
       </DetailSheet>

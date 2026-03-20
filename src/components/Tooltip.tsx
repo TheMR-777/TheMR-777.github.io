@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useIsMobile } from '../hooks/useIsMobile';
+import { useDelayedVisibility } from '../hooks/useDelayedVisibility';
 
 interface TooltipProps {
   children: React.ReactNode;
@@ -16,80 +18,63 @@ interface TooltipProps {
   delay?: number;
 }
 
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 640);
-    check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
-  return isMobile;
-};
-
-export const Tooltip: React.FC<TooltipProps> = ({ 
-  children, 
-  content, 
+export const Tooltip: React.FC<TooltipProps> = ({
+  children,
+  content,
   action,
-  delay = 500 
+  delay = 500,
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
   const [position, setPosition] = useState<'top' | 'bottom'>('top');
   const triggerRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isMobile = useIsMobile();
+  const { isVisible, showWithDelay, showNow, hide, toggle } = useDelayedVisibility(delay);
 
-  const showTooltip = () => {
-    timeoutRef.current = setTimeout(() => {
-      if (triggerRef.current) {
-        const rect = triggerRef.current.getBoundingClientRect();
-        const spaceAbove = rect.top;
-        const spaceBelow = window.innerHeight - rect.bottom;
-        setPosition(spaceAbove > spaceBelow ? 'top' : 'bottom');
-      }
-      setIsVisible(true);
-    }, delay);
-  };
+  const updatePosition = useCallback(() => {
+    if (!triggerRef.current) return;
+
+    const rect = triggerRef.current.getBoundingClientRect();
+    const spaceAbove = rect.top;
+    const spaceBelow = window.innerHeight - rect.bottom;
+    setPosition(spaceAbove > spaceBelow ? 'top' : 'bottom');
+  }, []);
+
+  const showTooltip = useCallback(() => {
+    updatePosition();
+    showWithDelay();
+  }, [showWithDelay, updatePosition]);
 
   const hideTooltip = useCallback(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    setIsVisible(false);
-  }, []);
+    hide();
+  }, [hide]);
 
   const handleTap = () => {
     if (isMobile) {
-      setIsVisible(prev => !prev);
+      updatePosition();
+      toggle();
     }
   };
 
   // Close on outside tap (mobile)
   useEffect(() => {
     if (!isMobile || !isVisible) return;
+
     const handleOutsideTap = (e: TouchEvent | MouseEvent) => {
       if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
-        setIsVisible(false);
+        hide();
       }
     };
+
     document.addEventListener('touchstart', handleOutsideTap);
     document.addEventListener('mousedown', handleOutsideTap);
+
     return () => {
       document.removeEventListener('touchstart', handleOutsideTap);
       document.removeEventListener('mousedown', handleOutsideTap);
     };
-  }, [isMobile, isVisible]);
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
+  }, [isMobile, isVisible, hide]);
 
   return (
-    <div 
+    <div
       ref={triggerRef}
       className="relative inline-block"
       onMouseEnter={!isMobile ? showTooltip : undefined}
@@ -151,16 +136,16 @@ export const Tooltip: React.FC<TooltipProps> = ({
                   ${position === 'top' ? 'bottom-full mb-2' : 'top-full mt-2'}
                   left-1/2 -translate-x-1/2
                 `}
-                onMouseEnter={() => setIsVisible(true)}
+                onMouseEnter={showNow}
                 onMouseLeave={hideTooltip}
               >
                 {/* Arrow */}
-                <div 
+                <div
                   className={`
-                    absolute left-1/2 -translate-x-1/2 w-2 h-2 
+                    absolute left-1/2 -translate-x-1/2 w-2 h-2
                     bg-mica-alt border-stroke rotate-45
-                    ${position === 'top' 
-                      ? 'bottom-[-5px] border-r border-b' 
+                    ${position === 'top'
+                      ? 'bottom-[-5px] border-r border-b'
                       : 'top-[-5px] border-l border-t'
                     }
                   `}

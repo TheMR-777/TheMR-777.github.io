@@ -1,44 +1,20 @@
 import { motion } from "framer-motion";
 import { 
-  Home, 
-  User, 
-  Briefcase, 
-  FolderKanban, 
-  Wrench,
-  Sparkles,
-  Github,
-  Linkedin,
-  Mail,
   Command,
   Sun,
   Moon,
 } from "lucide-react";
 import { cn } from "../utils/cn";
 import { useTheme } from "../contexts/ThemeContext";
-import type { TabId } from "../App";
+import type { TabId } from "../types/navigation";
+import { sidebarNavItems } from "../config/navigation";
+import { profileSocialLinks } from "../config/social";
 
 interface SidebarProps {
   activeTab: TabId;
   setActiveTab: (tab: TabId) => void;
   onOpenCommandPalette: () => void;
 }
-
-const navItems: { id: TabId; label: string; icon: typeof Home }[] = [
-  { id: "home", label: "Home", icon: Home },
-  { id: "about", label: "About", icon: User },
-  { id: "philosophy", label: "Philosophy", icon: Sparkles },
-  { id: "experience", label: "Experience", icon: Briefcase },
-  { id: "projects", label: "Projects", icon: FolderKanban },
-  { id: "skills", label: "Skills", icon: Wrench },
-];
-
-import { portfolioData } from "../data/portfolio";
-
-const socialLinks = [
-  { href: portfolioData.personal.social.github, icon: Github, label: "GitHub" },
-  { href: portfolioData.personal.social.linkedin, icon: Linkedin, label: "LinkedIn" },
-  { href: `mailto:${portfolioData.personal.email}`, icon: Mail, label: "Email" },
-];
 
 export function Sidebar({ activeTab, setActiveTab, onOpenCommandPalette }: SidebarProps) {
   const { resolvedMode, setMode } = useTheme();
@@ -95,7 +71,7 @@ export function Sidebar({ activeTab, setActiveTab, onOpenCommandPalette }: Sideb
         <div className="text-[10px] font-medium text-text-tertiary uppercase tracking-wider px-3 py-2">
           Navigate
         </div>
-        {navItems.map((item) => {
+        {sidebarNavItems.map((item) => {
           const isActive = activeTab === item.id;
           return (
             <button
@@ -149,7 +125,7 @@ export function Sidebar({ activeTab, setActiveTab, onOpenCommandPalette }: Sideb
 
         {/* Social Links */}
         <div className="flex items-center justify-center gap-1">
-          {socialLinks.map((link) => (
+          {profileSocialLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}

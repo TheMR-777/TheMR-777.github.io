@@ -10,14 +10,10 @@ import { Projects } from "./views/Projects";
 import { Skills } from "./views/Skills";
 import { About } from "./views/About";
 import Philosophy from "./views/Philosophy";
-
-export type TabId = "home" | "about" | "philosophy" | "experience" | "projects" | "skills";
-
-// Navigation with optional section targeting
-export interface NavigationOptions {
-  tab: TabId;
-  section?: string;
-}
+import type { NavigateFn, TabId } from "./types/navigation";
+import { resolveNavigationTarget } from "./lib/navigation";
+import { useCommandHotkey } from "./hooks/useCommandHotkey";
+import { useSectionTargetScroll } from "./hooks/useSectionTargetScroll";
 
 export function App() {
   const [activeTab, setActiveTab] = useState<TabId>("home");
@@ -27,14 +23,10 @@ export function App() {
   const mainRef = useRef<HTMLElement>(null);
 
   // Smart navigation handler
-  const handleNavigate = useCallback((tabOrOptions: TabId | NavigationOptions) => {
-    if (typeof tabOrOptions === "string") {
-      setActiveTab(tabOrOptions);
-      setTargetSection(null);
-    } else {
-      setActiveTab(tabOrOptions.tab);
-      setTargetSection(tabOrOptions.section || null);
-    }
+  const handleNavigate = useCallback<NavigateFn>((tabOrOptions) => {
+    const next = resolveNavigationTarget(tabOrOptions);
+    setActiveTab(next.tab);
+    setTargetSection(next.section);
   }, []);
 
   // Scroll to top when tab changes
@@ -44,36 +36,16 @@ export function App() {
     }
   }, [activeTab]);
 
-  // Scroll to section after navigation (if specified)
-  useEffect(() => {
-    if (targetSection) {
-      // Longer delay to allow view to fully render
-      const timer = setTimeout(() => {
-        const element = document.getElementById(targetSection);
-        if (element && mainRef.current) {
-          const elementTop = element.getBoundingClientRect().top;
-          const mainTop = mainRef.current.getBoundingClientRect().top;
-          const offset = elementTop - mainTop + mainRef.current.scrollTop - 32;
-          mainRef.current.scrollTo({ top: offset, behavior: "smooth" });
-        }
-        setTargetSection(null);
-      }, 350);
-      return () => clearTimeout(timer);
-    }
-  }, [targetSection, activeTab]);
+  useSectionTargetScroll({
+    containerRef: mainRef,
+    activeTabKey: activeTab,
+    targetSection,
+    clearTarget: () => setTargetSection(null),
+  });
 
-  // Global keyboard shortcut for command palette
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if ((e.metaKey || e.ctrlKey) && e.key === "k") {
-      e.preventDefault();
-      setCommandPaletteOpen((prev) => !prev);
-    }
-  }, []);
-
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [handleKeyDown]);
+  useCommandHotkey({
+    onToggle: () => setCommandPaletteOpen((prev) => !prev),
+  });
 
   const renderView = () => {
     switch (activeTab) {

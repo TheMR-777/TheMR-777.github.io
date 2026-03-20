@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useDelayedVisibility } from '../hooks/useDelayedVisibility';
 
 interface SkillTooltipProps {
   children: React.ReactNode;
@@ -12,37 +13,18 @@ export const SkillTooltip: React.FC<SkillTooltipProps> = ({
   content,
   delay = 500,
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { isVisible, showWithDelay, hide } = useDelayedVisibility(delay);
 
   const showTooltip = () => {
     if (!content) return;
-    timeoutRef.current = setTimeout(() => {
-      setIsVisible(true);
-    }, delay);
+    showWithDelay();
   };
-
-  const hideTooltip = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-    setIsVisible(false);
-  };
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
 
   return (
     <div
       className="relative"
       onMouseEnter={showTooltip}
-      onMouseLeave={hideTooltip}
+      onMouseLeave={hide}
     >
       {children}
 

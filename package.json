@@ -13,10 +13,12 @@
   "dependencies": {
     "clsx": "^2.1.1",
     "framer-motion": "^12.30.0",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.563.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "vitest": "^4.1.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.17",
@@ -27,8 +29,7 @@
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
     "vite": "^7.2.4",
-    "vite-plugin-singlefile": "^2.3.0",
-    "gh-pages": "^6.3.0"
+    "vite-plugin-singlefile": "^2.3.0"
   },
   "homepage": "https://TheMR-777.github.io/MyPortfolio-v3"
 }

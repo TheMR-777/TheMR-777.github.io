@@ -890,7 +890,7 @@ export const portfolioData = {
   ]
 };
 
-export type Project = typeof portfolioData.projects[0];
-export type PersonalProject = typeof portfolioData.personalProjects[0];
-export type Experience = typeof portfolioData.experience[0];
-export type AceProject = NonNullable<typeof portfolioData.experience[0]['aceProjects']>[0];
+export type Project = (typeof portfolioData.projects)[number];
+export type PersonalProject = (typeof portfolioData.personalProjects)[number];
+export type Experience = (typeof portfolioData.experience)[number];
+export type AceProject = NonNullable<(typeof portfolioData.experience)[number]["aceProjects"]>[number];

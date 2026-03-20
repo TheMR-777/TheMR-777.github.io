@@ -2,43 +2,23 @@ import { useEffect, useState, useMemo, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Search,
-  Home,
-  User,
-  Briefcase,
-  FolderKanban,
-  Wrench,
-  Sparkles,
-  Sun,
-  Moon,
-  Monitor,
-  Palette,
-  Github,
-  Linkedin,
-  Mail,
-  FileText,
   Command,
   ArrowRight,
 } from "lucide-react";
 import { cn } from "../utils/cn";
-import { useTheme, accentColors, type AccentColor } from "../contexts/ThemeContext";
-import type { TabId } from "../App";
-import { portfolioData } from "../data/portfolio";
+import { useTheme } from "../contexts/ThemeContext";
+import type { TabId } from "../types/navigation";
+import type { CommandItem } from "../types/command";
+import {
+  buildCommands,
+  filterCommands,
+  groupCommands,
+} from "../config/commandRegistry";
 
 interface CommandPaletteProps {
   isOpen: boolean;
   onClose: () => void;
   onNavigate: (tab: TabId) => void;
-}
-
-interface CommandItem {
-  id: string;
-  label: string;
-  description?: string;
-  icon: typeof Home;
-  category: "navigation" | "theme" | "accent" | "links";
-  action: () => void;
-  keywords?: string[];
-  accent?: AccentColor;
 }
 
 export function CommandPalette({ isOpen, onClose, onNavigate }: CommandPaletteProps) {
@@ -48,179 +28,27 @@ export function CommandPalette({ isOpen, onClose, onNavigate }: CommandPalettePr
   const listRef = useRef<HTMLDivElement>(null);
   const { mode, setMode, accent, setAccent } = useTheme();
 
-  // Define all commands
+  // Define all commands from central registry
   const commands = useMemo<CommandItem[]>(() => {
-    const navCommands: CommandItem[] = [
-      {
-        id: "nav-home",
-        label: "Home",
-        description: "Go to overview",
-        icon: Home,
-        category: "navigation",
-        action: () => { onNavigate("home"); onClose(); },
-        keywords: ["home", "overview", "main", "dashboard"],
-      },
-      {
-        id: "nav-about",
-        label: "About",
-        description: "Personal information",
-        icon: User,
-        category: "navigation",
-        action: () => { onNavigate("about"); onClose(); },
-        keywords: ["about", "me", "info", "personal", "bio"],
-      },
-      {
-        id: "nav-philosophy",
-        label: "Philosophy",
-        description: "Engineering mindset & principles",
-        icon: Sparkles,
-        category: "navigation",
-        action: () => { onNavigate("philosophy"); onClose(); },
-        keywords: ["philosophy", "mindset", "principles", "values", "driving force"],
-      },
-      {
-        id: "nav-experience",
-        label: "Experience",
-        description: "Work history",
-        icon: Briefcase,
-        category: "navigation",
-        action: () => { onNavigate("experience"); onClose(); },
-        keywords: ["experience", "work", "job", "career", "history"],
-      },
-      {
-        id: "nav-projects",
-        label: "Projects",
-        description: "Portfolio projects",
-        icon: FolderKanban,
-        category: "navigation",
-        action: () => { onNavigate("projects"); onClose(); },
-        keywords: ["projects", "portfolio", "work", "showcase"],
-      },
-      {
-        id: "nav-skills",
-        label: "Skills",
-        description: "Technical expertise",
-        icon: Wrench,
-        category: "navigation",
-        action: () => { onNavigate("skills"); onClose(); },
-        keywords: ["skills", "tech", "stack", "expertise", "abilities"],
-      },
-    ];
-
-    const themeCommands: CommandItem[] = [
-      {
-        id: "theme-light",
-        label: "Light Mode",
-        description: mode === "light" ? "Currently active" : "Switch to light theme",
-        icon: Sun,
-        category: "theme",
-        action: () => { setMode("light"); onClose(); },
-        keywords: ["light", "bright", "day", "theme"],
-      },
-      {
-        id: "theme-dark",
-        label: "Dark Mode",
-        description: mode === "dark" ? "Currently active" : "Switch to dark theme",
-        icon: Moon,
-        category: "theme",
-        action: () => { setMode("dark"); onClose(); },
-        keywords: ["dark", "night", "theme"],
-      },
-      {
-        id: "theme-system",
-        label: "System Theme",
-        description: mode === "system" ? "Currently active" : "Follow system preference",
-        icon: Monitor,
-        category: "theme",
-        action: () => { setMode("system"); onClose(); },
-        keywords: ["system", "auto", "preference", "theme"],
-      },
-    ];
-
-    const accentCommands: CommandItem[] = accentColors.map((color) => ({
-      id: `accent-${color.name.toLowerCase()}`,
-      label: color.name,
-      description: accent.name === color.name ? "Currently active" : `Set ${color.name} as accent`,
-      icon: Palette,
-      category: "accent" as const,
-      action: () => { setAccent(color); onClose(); },
-      keywords: [color.name.toLowerCase(), "color", "accent", "theme"],
-      accent: color,
-    }));
-
-    const linkCommands: CommandItem[] = [
-      {
-        id: "link-github",
-        label: "GitHub",
-        description: "View GitHub profile",
-        icon: Github,
-        category: "links",
-        action: () => { window.open(portfolioData.personal.social.github, "_blank"); onClose(); },
-        keywords: ["github", "code", "repository", "source"],
-      },
-      {
-        id: "link-linkedin",
-        label: "LinkedIn",
-        description: "Connect on LinkedIn",
-        icon: Linkedin,
-        category: "links",
-        action: () => { window.open(portfolioData.personal.social.linkedin, "_blank"); onClose(); },
-        keywords: ["linkedin", "professional", "network", "connect"],
-      },
-      {
-        id: "link-email",
-        label: "Send Email",
-        description: portfolioData.personal.email,
-        icon: Mail,
-        category: "links",
-        action: () => { window.open(`mailto:${portfolioData.personal.email}`, "_blank"); onClose(); },
-        keywords: ["email", "mail", "contact", "message"],
-      },
-      {
-        id: "link-cv",
-        label: "View CV Dataset",
-        description: "Complete professional profile",
-        icon: FileText,
-        category: "links",
-        action: () => { window.open("https://github.com/TheMR-777/TheMR-777/blob/main/cv-dataset.md", "_blank"); onClose(); },
-        keywords: ["cv", "resume", "dataset", "profile"],
-      },
-    ];
-
-    return [...navCommands, ...themeCommands, ...accentCommands, ...linkCommands];
+    return buildCommands({
+      mode,
+      accent,
+      onNavigate,
+      onClose,
+      setMode,
+      setAccent,
+      openExternal: (url: string) => window.open(url, "_blank"),
+    });
   }, [mode, accent, setMode, setAccent, onNavigate, onClose]);
 
   // Filter commands based on query
   const filteredCommands = useMemo(() => {
-    if (!query.trim()) return commands;
-    const lowerQuery = query.toLowerCase();
-    return commands.filter((cmd) => {
-      const matchLabel = cmd.label.toLowerCase().includes(lowerQuery);
-      const matchDesc = cmd.description?.toLowerCase().includes(lowerQuery);
-      const matchKeywords = cmd.keywords?.some((k) => k.includes(lowerQuery));
-      return matchLabel || matchDesc || matchKeywords;
-    });
+    return filterCommands(commands, query);
   }, [commands, query]);
 
   // Group filtered commands by category
   const groupedCommands = useMemo(() => {
-    const groups: { category: string; items: CommandItem[] }[] = [];
-    const categoryOrder = ["navigation", "theme", "accent", "links"];
-    const categoryLabels: Record<string, string> = {
-      navigation: "Navigation",
-      theme: "Appearance",
-      accent: "Accent Colors",
-      links: "Quick Links",
-    };
-
-    categoryOrder.forEach((cat) => {
-      const items = filteredCommands.filter((cmd) => cmd.category === cat);
-      if (items.length > 0) {
-        groups.push({ category: categoryLabels[cat], items });
-      }
-    });
-
-    return groups;
+    return groupCommands(filteredCommands);
   }, [filteredCommands]);
 
   // Reset state when opened
@@ -328,7 +156,7 @@ export function CommandPalette({ isOpen, onClose, onNavigate }: CommandPalettePr
                   groupedCommands.map((group) => (
                     <div key={group.category} className="mb-2 last:mb-0">
                       <div className="px-2 py-1.5 text-[11px] font-medium text-text-tertiary uppercase tracking-wider">
-                        {group.category}
+                        {group.label}
                       </div>
                       {group.items.map((item) => {
                         globalIndex++;
