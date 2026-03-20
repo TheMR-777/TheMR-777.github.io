@@ -6,11 +6,9 @@
 :root {
   /* Typography — Segoe UI preferred for Fluent feel. Inter is the fallback with full italic support. */
   font-family: "Segoe UI Variable", "Segoe UI", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  
   /* Dynamic Accent - Default to Lavender */
   --accent-hsl: 265 40% 56%;
   --accent-color: #8764B8;
-  
   /* Timing */
   --duration-fast: 100ms;
   --duration-normal: 200ms;
@@ -29,38 +27,31 @@ body {
 :root,
 [data-theme="dark"] {
   color-scheme: dark;
-  
   --bg-solid: #1a1a1a;
   --bg-mica: #242424;
   --bg-mica-alt: #2c2c2c;
   --bg-content: #181818;
-  
   --layer-default: rgba(255, 255, 255, 0.045);
   --layer-alt: rgba(255, 255, 255, 0.06);
   --layer-hover: rgba(255, 255, 255, 0.08);
   --layer-active: rgba(255, 255, 255, 0.035);
-  
   --stroke-card: rgba(255, 255, 255, 0.0837);
   --stroke-surface: rgba(255, 255, 255, 0.0578);
   --stroke-divider: rgba(255, 255, 255, 0.0803);
   --stroke-focus: hsl(var(--accent-hsl));
-  
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.786);
   --text-tertiary: rgba(255, 255, 255, 0.544);
   --text-disabled: rgba(255, 255, 255, 0.364);
   --text-accent: hsl(var(--accent-hsl) / 1);
-  
   --accent-default: hsl(var(--accent-hsl));
   --accent-light: hsl(var(--accent-hsl) / 0.9);
   --accent-subtle: hsl(var(--accent-hsl) / 0.15);
   --accent-subtle-hover: hsl(var(--accent-hsl) / 0.22);
-  
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.32);
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.32);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.48);
   --shadow-dialog: 0 24px 48px rgba(0, 0, 0, 0.56);
-  
   --overlay: rgba(0, 0, 0, 0.5);
 }
 
@@ -69,38 +60,31 @@ body {
    ============================================ */
 [data-theme="light"] {
   color-scheme: light;
-  
   --bg-solid: #ffffff;
   --bg-mica: #f5f5f5;
   --bg-mica-alt: #fafafa;
   --bg-content: #fefefe;
-  
   --layer-default: rgba(255, 255, 255, 0.7);
   --layer-alt: rgba(255, 255, 255, 0.5);
   --layer-hover: rgba(0, 0, 0, 0.04);
   --layer-active: rgba(0, 0, 0, 0.025);
-  
   --stroke-card: rgba(0, 0, 0, 0.0578);
   --stroke-surface: rgba(0, 0, 0, 0.0373);
   --stroke-divider: rgba(0, 0, 0, 0.0803);
   --stroke-focus: hsl(var(--accent-hsl));
-  
   --text-primary: #1a1a1a;
   --text-secondary: rgba(0, 0, 0, 0.706);
   --text-tertiary: rgba(0, 0, 0, 0.5);
   --text-disabled: rgba(0, 0, 0, 0.364);
   --text-accent: hsl(var(--accent-hsl) / 1);
-  
   --accent-default: hsl(var(--accent-hsl));
   --accent-light: hsl(var(--accent-hsl) / 0.85);
   --accent-subtle: hsl(var(--accent-hsl) / 0.1);
   --accent-subtle-hover: hsl(var(--accent-hsl) / 0.18);
-  
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
   --shadow-dialog: 0 24px 48px rgba(0, 0, 0, 0.18);
-  
   --overlay: rgba(0, 0, 0, 0.3);
 }
 
@@ -112,33 +96,27 @@ body {
   --color-mica-alt: var(--bg-mica-alt);
   --color-solid: var(--bg-solid);
   --color-content: var(--bg-content);
-  
   --color-layer: var(--layer-default);
   --color-layer-alt: var(--layer-alt);
   --color-layer-hover: var(--layer-hover);
   --color-layer-active: var(--layer-active);
-  
   --color-stroke: var(--stroke-card);
   --color-stroke-surface: var(--stroke-surface);
   --color-stroke-hover: var(--stroke-divider);
   --color-divider: var(--stroke-divider);
-  
   --color-accent: var(--accent-default);
   --color-accent-light: var(--accent-light);
   --color-accent-subtle: var(--accent-subtle);
   --color-accent-subtle-hover: var(--accent-subtle-hover);
-  
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-tertiary: var(--text-tertiary);
   --color-text-disabled: var(--text-disabled);
   --color-text-accent: var(--text-accent);
-  
   --shadow-sm: var(--shadow-sm);
   --shadow-md: var(--shadow-md);
   --shadow-lg: var(--shadow-lg);
   --shadow-dialog: var(--shadow-dialog);
-  
   --color-overlay: var(--overlay);
 }
 
@@ -378,6 +356,40 @@ a:focus-visible,
   border-radius: 1px;
 }
 
+/* Discovery Artifact Card */
+.discovery-artifact {
+  position: relative;
+  overflow: hidden;
+}
+
+.discovery-artifact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-default), transparent);
+  opacity: 0.35;
+}
+
+.discovery-artifact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(var(--accent-hsl) / 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(30%, -40%);
+}
+
+[data-theme="light"] .discovery-artifact::after {
+  background: radial-gradient(circle, hsl(var(--accent-hsl) / 0.035) 0%, transparent 70%);
+}
+
 /* Principle card hover effect */
 .principle-card {
   position: relative;
@@ -402,6 +414,78 @@ a:focus-visible,
 
 .principle-card:hover::before {
   opacity: 1;
+}
+
+/* ============================================
+   Transform Card — "Rack Focus" Hover
+   Cinematic depth-of-field shift: resting state
+   recedes and blurs, revealed state sharpens in.
+   ============================================ */
+.transform-card {
+  --card-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+/* Subtle ambient accent glow on hover */
+.transform-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 50%, hsl(var(--accent-hsl) / 0.06) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 700ms var(--card-ease);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.transform-card:hover::after {
+  opacity: 1;
+}
+
+/* Resting state — scales down and blurs out on hover */
+.transform-card .card-resting {
+  z-index: 1;
+  transition:
+    opacity 320ms var(--card-ease),
+    transform 400ms var(--card-ease),
+    filter 380ms var(--card-ease);
+}
+
+.transform-card:hover .card-resting {
+  opacity: 0;
+  transform: scale(0.82);
+  filter: blur(6px);
+}
+
+/* Icon micro-pulse — brief "spark" before departure */
+.transform-card .card-resting .card-icon {
+  transition:
+    transform 200ms var(--card-ease),
+    color 200ms var(--card-ease);
+}
+
+.transform-card:hover .card-resting .card-icon {
+  transform: scale(1.25);
+  color: var(--accent-default);
+}
+
+/* Revealed state — arrives from below, sharpens into focus */
+.transform-card .card-revealed {
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(10px) scale(0.97);
+  filter: blur(4px);
+  transition:
+    opacity 450ms var(--card-ease) 140ms,
+    transform 450ms var(--card-ease) 140ms,
+    filter 380ms var(--card-ease) 200ms;
+}
+
+.transform-card:hover .card-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
 
 /* Elegant blockquote */

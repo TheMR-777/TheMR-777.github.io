@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Lightbulb, Compass, Target, Layers, Sparkles, Infinity, BookOpen, ExternalLink } from 'lucide-react';
+import { Lightbulb, Compass, Target, Layers, Sparkles, Infinity, BookOpen, ExternalLink, Play } from 'lucide-react';
 import { SCROLL_ANIMATION_VP } from '../constants/animations';
 
 const Philosophy = () => {
@@ -57,19 +57,19 @@ const Philosophy = () => {
       highlight: 'Failure isn\'t an endpoint—it\'s a checkpoint where unexpected treasures reveal themselves.',
       phasedDiscovery: {
         title: 'The Granite 2000000 Incident',
-        period: 'July 2022 · University, 5th Semester',
+        period: 'July 2022 · Summer Holidays',
         phases: [
           {
-            label: 'The Corruption',
-            content: 'After three years away from gaming, I launched Far Cry 6 during summer holidays — and was truly feeling it again. Then, mid-autosave, the electricity cut out. When power returned, the game greeted me with a cryptic \'Error: Granite 2000000.\' Months of progress, gone. The internet had no solution — it was an open, unresolved issue across the Far Cry community.',
+            label: 'The Blackout',
+            content: 'After three years away from gaming, I was deep into Far Cry 6 and genuinely enjoying it again. Then, mid-autosave, electricity went out. On reboot, the game showed "Error: Granite 2000000." Months of progress looked gone, and no real fix existed online.',
           },
           {
-            label: 'The Investigation',
-            content: 'I refused to accept it. Drawing on my background in data recovery, I located the save files and began a forensic examination. One file — the autosave — was the right size but filled entirely with null bytes. A dead end, until I noticed something: each save file had a numbered counterpart (e.g., _01 and _02). I opened the counterpart of the corrupted file — and it had real data. I replaced the corrupted autosave with its counterpart, loaded the game — and it resumed from the exact moment of interruption.',
+            label: 'The Discovery',
+            content: 'Using my data recovery instincts, I inspected the save files. One autosave had the right size but only null bytes. Then I noticed each file had a numbered counterpart (_01 / _02). The counterpart had real data. I replaced the corrupted file with it and loaded the game from the exact interrupted moment.',
           },
           {
-            label: 'The Aftermath',
-            content: "I didn't just fix it and move on. I repeated the process multiple times to understand the mechanics, then distilled everything into a 40-second YouTube video — every step explained with utmost clarity while respecting the viewer's time. I shared it across forums where the issue was open. It went viral. The fix proved applicable to Far Cry 5, New Dawn, and Far Cry 4 as well. I still receive appreciation comments to this day.",
+            label: 'The Ripple',
+            content: 'I validated the method repeatedly, then compressed the fix into a 40-second YouTube tutorial. It spread quickly across forums and helped players in Far Cry 5, New Dawn, and Far Cry 4 too. I still receive appreciation comments today.',
           },
         ],
         link: 'https://www.youtube.com/watch?v=cPH_SZKI_Cg',
@@ -86,7 +86,6 @@ const Philosophy = () => {
         {/* ─── Hero Section ─── */}
         <section className="relative pb-12 sm:pb-16 pl-0 lg:pl-12">
           <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-accent/5 blur-3xl animate-pulse-subtle pointer-events-none" />
-          
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }} viewport={SCROLL_ANIMATION_VP}
@@ -108,7 +107,6 @@ const Philosophy = () => {
 
             <div className="relative">
               <div className="absolute left-0 top-1 bottom-1 w-0.5 rounded-full bg-accent/50" />
-              
               <p className="pl-5 text-lg lg:text-xl text-text-secondary font-light leading-relaxed">
                 The scale of the goal has{' '}
                 <span className="text-text-primary">never</span>{' '}
@@ -129,7 +127,6 @@ const Philosophy = () => {
           >
             <div className="relative p-6 lg:p-8 rounded-xl bg-layer border border-stroke">
               <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
-              
               <div className="flex gap-5">
                 <div className="hidden sm:flex flex-col items-center pt-1">
                   <div className="w-8 h-8 rounded-lg bg-accent-subtle flex items-center justify-center">
@@ -137,7 +134,6 @@ const Philosophy = () => {
                   </div>
                   <div className="flex-1 w-px bg-gradient-to-b from-accent/20 to-transparent mt-3" />
                 </div>
-                
                 <div className="flex-1 min-w-0">
                   <p className="text-base lg:text-lg text-text-secondary leading-relaxed">
                     Whether I'm architecting a comprehensive system like the{' '}
@@ -184,11 +180,9 @@ const Philosophy = () => {
                          {step.title}
                       </h3>
                     </div>
-                    
                     <p className="text-text-secondary leading-relaxed pl-10">
                       {step.content}
                     </p>
-                    
                     <div className="ml-10 mt-4 pl-4 border-l-2 border-accent/30 py-1">
                       <p className="text-accent text-sm font-medium leading-relaxed italic">
                         "{step.highlight}"
@@ -201,7 +195,7 @@ const Philosophy = () => {
                         initial={{ opacity: 0, y: 8 }}
                         whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
                         transition={{ duration: 0.4, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="ml-10 mt-6 p-5 rounded-xl bg-mica border border-stroke"
+                        className="ml-10 mt-6 p-5 rounded-xl discovery-artifact bg-mica border border-stroke"
                       >
                         <div className="flex items-start gap-3 mb-3">
                           <div className="w-7 h-7 rounded-lg bg-accent-subtle flex items-center justify-center flex-shrink-0">
@@ -217,33 +211,36 @@ const Philosophy = () => {
                       </motion.div>
                     )}
 
-                    {/* Phased Discovery Story — multi-phase narrative (Granite 2000000) */}
+                    {/* Granite story — concise, premium narrative card */}
                     {step.phasedDiscovery && (
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0, y: 8 }}
                         whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
                         transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="ml-10 mt-6 rounded-xl bg-mica border border-stroke overflow-hidden"
+                        className="ml-10 mt-6 rounded-xl discovery-artifact bg-mica border border-stroke overflow-hidden"
                       >
-                        {/* Header */}
-                        <div className="p-5 pb-4">
-                          <div className="flex items-start gap-3">
-                            <div className="w-7 h-7 rounded-lg bg-accent-subtle flex items-center justify-center flex-shrink-0">
-                              <Lightbulb className="w-3.5 h-3.5 text-accent" />
+                        {/* ── Card Header: clear ownership of the narrative ── */}
+                        <div className="px-5 pt-5 pb-4">
+                          <div className="flex items-start gap-3.5">
+                            <div className="w-8 h-8 rounded-lg bg-accent-subtle flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <Lightbulb className="w-4 h-4 text-accent" />
                             </div>
-                            <div className="pt-0.5">
-                              <h4 className="text-sm font-semibold text-text-primary">
+                            <div>
+                              <h4 className="text-base font-semibold text-text-primary tracking-tight leading-snug">
                                 {step.phasedDiscovery.title}
                               </h4>
-                              <span className="text-xs text-text-tertiary mt-0.5 block">
+                              <span className="text-[11px] text-text-tertiary mt-1 block">
                                 {step.phasedDiscovery.period}
                               </span>
                             </div>
                           </div>
                         </div>
 
-                        {/* Phases — vertical mini-timeline */}
-                        <div className="px-5 pb-2">
+                        {/* ── Subtle separator between header and phases ── */}
+                        <div className="mx-5 h-px bg-gradient-to-r from-stroke/60 via-stroke/30 to-transparent" />
+
+                        {/* ── Phases: understated waypoints, not competing headlines ── */}
+                        <div className="px-5 pt-4 pb-2">
                           {step.phasedDiscovery.phases.map((phase, phaseIndex) => (
                             <motion.div
                               key={phase.label}
@@ -252,33 +249,37 @@ const Philosophy = () => {
                               transition={{ duration: 0.35, delay: 0.5 + phaseIndex * 0.1, ease: [0.16, 1, 0.3, 1] }}
                               className="relative pl-6 pb-5 last:pb-3"
                             >
-                              {/* Timeline connector */}
+                              {/* Timeline connector line */}
                               {phaseIndex < step.phasedDiscovery!.phases.length - 1 && (
-                                <div className="absolute left-[5px] top-[10px] bottom-0 w-px bg-gradient-to-b from-accent/30 to-accent/5" />
+                                <div className="absolute left-[4.5px] top-[12px] bottom-0 w-px bg-gradient-to-b from-accent/25 to-accent/5" />
                               )}
-                              {/* Timeline dot */}
-                              <div className="absolute left-0 top-[5px] w-[11px] h-[11px] rounded-full border-2 border-accent/50 bg-mica" />
+                              {/* Timeline dot — small, refined */}
+                              <div className="absolute left-0 top-[5px] w-[10px] h-[10px] rounded-full border-[1.5px] border-accent/40 bg-mica" />
 
-                              <span className="text-xs font-semibold text-accent uppercase tracking-wider">
+                              {/* Phase label: quiet, elegant — acts as a whispered signpost */}
+                              <span className="text-[11px] font-medium text-accent/70 tracking-wide">
                                 {phase.label}
                               </span>
-                              <p className="text-sm text-text-secondary leading-relaxed mt-1.5">
+                              <p className="text-[13px] text-text-secondary leading-relaxed mt-1">
                                 {phase.content}
                               </p>
                             </motion.div>
                           ))}
                         </div>
 
-                        {/* YouTube link footer */}
-                        <div className="border-t border-stroke/60 px-5 py-3">
+                        {/* ── Footer CTA ── */}
+                        <div className="border-t border-stroke/40 px-5 py-3 bg-layer-active/30">
                           <a
                             href={step.phasedDiscovery.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-xs font-medium text-accent hover:text-accent-light transition-colors group/link"
+                            className="inline-flex items-center gap-2.5 text-xs font-medium text-accent hover:text-accent-light transition-colors group/link"
                           >
-                            <span>Watch the Fix on YouTube</span>
-                            <ExternalLink className="w-3 h-3 opacity-60 group-hover/link:opacity-100 transition-opacity" />
+                            <span className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center group-hover/link:bg-accent/20 transition-colors">
+                              <Play className="w-2.5 h-2.5 text-accent ml-[1px]" fill="currentColor" />
+                            </span>
+                            <span>Watch the 40-second fix</span>
+                            <ExternalLink className="w-3 h-3 opacity-50 group-hover/link:opacity-100 transition-opacity" />
                           </a>
                         </div>
                       </motion.div>
@@ -318,7 +319,7 @@ const Philosophy = () => {
               </p>
             </div>
 
-            {/* Visual Transformation Grid - Cards with inline hover description */}
+            {/* Visual Transformation Grid — "Rack Focus" hover cards */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
               {[
                 { verb: 'Reveal', icon: '◐', description: 'Making the invisible visible — uncovering hidden patterns' },
@@ -333,20 +334,19 @@ const Philosophy = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }} viewport={SCROLL_ANIMATION_VP}
                   transition={{ duration: 0.3, delay: 0.35 + index * 0.05 }}
-                  className="group relative p-4 sm:p-5 rounded-xl bg-layer border border-stroke hover:border-accent/40 hover:bg-layer-hover transition-all duration-500 ease-out overflow-hidden min-h-[100px] sm:min-h-[110px]"
+                  className="transform-card relative rounded-xl bg-layer border border-stroke hover:border-accent/30 overflow-hidden min-h-[100px] sm:min-h-[110px]"
                 >
-                  {/* Default state - icon and verb centered */}
-                  <div className="absolute inset-0 p-4 sm:p-5 flex flex-col items-center justify-center text-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:-translate-y-3">
-                    <span className="block text-2xl sm:text-3xl text-accent/50 mb-2 transition-colors duration-500 group-hover:text-accent">
+                  {/* Resting state — icon + verb, scales down & blurs on hover */}
+                  <div className="card-resting absolute inset-0 p-4 sm:p-5 flex flex-col items-center justify-center text-center">
+                    <span className="card-icon block text-2xl sm:text-3xl text-accent/40 mb-2">
                       {item.icon}
                     </span>
                     <span className="text-sm font-medium text-text-primary">
                       {item.verb}
                     </span>
                   </div>
-                  
-                  {/* Hover state - description revealed */}
-                  <div className="absolute inset-0 p-4 sm:p-5 flex flex-col justify-center items-center text-center opacity-0 translate-y-3 transition-all duration-500 ease-out delay-75 group-hover:opacity-100 group-hover:translate-y-0">
+                  {/* Revealed state — verb + description, sharpens into focus */}
+                  <div className="card-revealed absolute inset-0 p-4 sm:p-5 flex flex-col justify-center items-center text-center">
                     <span className="text-accent font-semibold text-sm mb-2">
                       {item.verb}
                     </span>
@@ -440,7 +440,6 @@ const Philosophy = () => {
                 understand them at their core: <span className="text-accent">what problem</span> each 
                 pattern solves, <span className="text-accent">how</span> it solves it, and <span className="text-accent">where it falls short</span>.
               </p>
-              
               <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
                 {[
                   { label: 'Minimal', desc: 'Every component earns its place' },
@@ -477,13 +476,11 @@ const Philosophy = () => {
             <div className="inline-block p-4 rounded-full bg-layer mb-6">
                <Infinity className="w-6 h-6 text-accent" />
             </div>
-            
             <blockquote className="text-xl lg:text-2xl text-text-primary mb-6 font-light">
               "<span className="italic">Creating what hasn't been built before,</span>
               <br />
               <em className="text-accent font-normal italic">one innovation at a time.</em>"
             </blockquote>
-            
             <div className="w-12 h-1 bg-accent mx-auto rounded-full opacity-50" />
           </motion.div>
         </section>

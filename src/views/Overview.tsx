@@ -31,7 +31,6 @@ export function Overview({ onNavigate }: OverviewProps) {
           <h1 className="text-3xl sm:text-4xl font-semibold text-text-primary tracking-tight mb-3">
             {personal.name}
           </h1>
-          
           <p className="text-xl text-text-secondary mb-4">
             {personal.role}
           </p>

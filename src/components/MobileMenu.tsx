@@ -82,7 +82,6 @@ export function MobileMenu({
             onClick={onClose}
             className="fixed inset-0 bg-overlay z-50 lg:hidden"
           />
-          
           {/* Slide-up panel */}
           <motion.div
             initial={{ y: "100%" }}
@@ -199,7 +198,6 @@ export function MobileMenu({
                 <p className="text-[10px] font-medium text-text-tertiary uppercase tracking-wider px-3">
                   Appearance
                 </p>
-                
                 {/* Light/Dark Toggle */}
                 <div className="px-3">
                   <p className="text-xs text-text-secondary mb-3 font-medium flex items-center gap-2">

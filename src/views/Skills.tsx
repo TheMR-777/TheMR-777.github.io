@@ -23,11 +23,9 @@ const useIsMobile = () => {
 const useDelayedHover = (delay: number = 500) => {
   const [isVisible, setIsVisible] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  
   const onMouseEnter = () => {
     timeoutRef.current = setTimeout(() => setIsVisible(true), delay);
   };
-  
   const onMouseLeave = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -35,13 +33,11 @@ const useDelayedHover = (delay: number = 500) => {
     }
     setIsVisible(false);
   };
-  
   useEffect(() => {
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, []);
-  
   return { isVisible, onMouseEnter, onMouseLeave };
 };
 
@@ -54,7 +50,6 @@ function SkillBar({ level, years }: { level: string; years: string }) {
     'Intermediate': 60
   };
   const percentage = levelMap[level] || 50;
-  
   return (
     <div className="flex items-center gap-3 flex-shrink-0">
       <span className="text-[10px] text-text-disabled w-8 text-right">{years}</span>
@@ -196,7 +191,6 @@ export function Skills() {
                   </div>
                   <SkillBar level={lang.level} years={lang.years} />
                 </div>
-                
                 {/* Tags row — all visible */}
                 <div className="mt-2 flex flex-wrap items-center gap-1.5">
                   {lang.tags.map((tag: string, idx: number) => (
@@ -207,7 +201,6 @@ export function Skills() {
                       {tag}
                     </span>
                   ))}
-                  
                   {/* "+N more" indicator with tooltip popover */}
                   {lang.extraTags && lang.extraTags.length > 0 && (
                     <SkillTooltip
@@ -382,7 +375,6 @@ export function Skills() {
                 { label: "Writing", score: 7.0, color: "bg-text-secondary", delay: 0.3 },
                 { label: "Speaking", score: 7.0, color: "bg-text-secondary", delay: 0.4 }
               ] : [];
-              
               return (
                 <div
                   key={cert.name}
@@ -414,7 +406,6 @@ export function Skills() {
                       {cert.breakdown}
                     </p>
                   )}
-                  
                   {/* IELTS tap/hover indicator */}
                   {isIELTS && (
                     <p className="text-[10px] text-accent mt-1.5 flex items-center gap-1 cursor-default">
@@ -422,7 +413,6 @@ export function Skills() {
                       {isMobile ? 'Tap the card to see score breakdown' : 'Hover to see score breakdown'}
                     </p>
                   )}
-                  
                   {/* IELTS Score Breakdown Popover - Desktop (hover with delay) */}
                   {isIELTS && !isMobile && (
                     <AnimatePresence>
@@ -442,7 +432,6 @@ export function Skills() {
                               </span>
                               <span className="text-lg font-semibold text-accent">7.5</span>
                             </div>
-                            
                             {/* Score bars */}
                             <div className="space-y-2.5">
                               {ieltsScores.map((item) => (
@@ -464,12 +453,10 @@ export function Skills() {
                                 </div>
                               ))}
                             </div>
-                            
                             {/* Footer note */}
                             <p className="text-[10px] text-text-disabled mt-3 pt-2 border-t border-stroke">
                               British Council • Academic
                             </p>
-                            
                             {/* Arrow */}
                             <div className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-2 h-2 bg-mica border-r border-b border-stroke rotate-45" />
                           </div>
@@ -477,7 +464,6 @@ export function Skills() {
                       )}
                     </AnimatePresence>
                   )}
-                  
                   {/* IELTS Score Breakdown - Mobile (fixed position on tap) */}
                   {isIELTS && isMobile && showIeltsPopover && (
                     <>
@@ -495,7 +481,6 @@ export function Skills() {
                             </span>
                             <span className="text-xl font-semibold text-accent">7.5</span>
                           </div>
-                          
                           {/* Score bars */}
                           <div className="space-y-3">
                             {ieltsScores.map((item) => (
@@ -517,7 +502,6 @@ export function Skills() {
                               </div>
                             ))}
                           </div>
-                          
                           {/* Footer */}
                           <p className="text-xs text-text-disabled mt-4 pt-3 border-t border-stroke text-center">
                             British Council • Academic
@@ -550,7 +534,6 @@ export function Skills() {
             </h2>
           </div>
         </div>
-        
         <p className="text-xs text-text-secondary leading-relaxed mb-5">
           {skills.ai.description}
         </p>
@@ -637,7 +620,6 @@ export function Skills() {
             <span className="text-[10px] text-text-tertiary">Pre-Coursework Self-Study</span>
           </div>
         </div>
-        
         <p className="text-xs text-text-secondary leading-relaxed mb-4">
           {skills.dsa.description}
         </p>
@@ -685,7 +667,6 @@ export function Skills() {
               {education.period}
             </p>
           </div>
-          
           {/* CGPA & Percentage Visual */}
           <div className="flex items-center justify-center md:justify-start gap-8 flex-wrap">
             <CgpaRing value={3.73} total={4.0} label="CGPA" />

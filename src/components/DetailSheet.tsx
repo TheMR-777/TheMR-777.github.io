@@ -22,12 +22,10 @@ const DetailSheet: React.FC<DetailSheetProps> = ({
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
-    
     if (isOpen) {
       window.addEventListener('keydown', handleEsc);
       document.body.style.overflow = 'hidden';
     }
-    
     return () => {
       window.removeEventListener('keydown', handleEsc);
       document.body.style.overflow = '';
@@ -48,7 +46,6 @@ const DetailSheet: React.FC<DetailSheetProps> = ({
             className="fixed inset-0 bg-overlay z-40"
             aria-hidden="true"
           />
-          
           {/* Desktop: Slide from right */}
           <motion.aside
             initial={{ x: '100%' }}
@@ -67,7 +64,6 @@ const DetailSheet: React.FC<DetailSheetProps> = ({
           >
             {/* Subtle top accent */}
             <div className="h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
-            
             {/* Header */}
             <header className="flex-shrink-0 px-6 py-5 border-b border-divider bg-mica">
               <div className="flex items-start justify-between gap-4">
@@ -100,7 +96,6 @@ const DetailSheet: React.FC<DetailSheetProps> = ({
                 {children}
               </div>
             </div>
-            
             {/* Footer hint */}
             <footer className="flex-shrink-0 px-6 py-3 border-t border-divider bg-mica">
               <p className="text-[11px] text-text-disabled text-center">
@@ -136,7 +131,6 @@ const DetailSheet: React.FC<DetailSheetProps> = ({
                 >
                   <ChevronDown size={24} strokeWidth={1.5} />
                 </button>
-                
                 {/* Title */}
                 <div className="flex-1 min-w-0">
                   <h2 

@@ -99,7 +99,6 @@ export const Tooltip: React.FC<TooltipProps> = ({
       onClick={handleTap}
     >
       {children}
-      
       <AnimatePresence>
         {isVisible && (
           <>
@@ -124,7 +123,6 @@ export const Tooltip: React.FC<TooltipProps> = ({
                   <p className="text-xs text-text-secondary leading-relaxed">
                     {content.description}
                   </p>
-                  
                   {action && (
                     <button
                       onClick={(e) => {
@@ -167,7 +165,6 @@ export const Tooltip: React.FC<TooltipProps> = ({
                     }
                   `}
                 />
-                
                 {/* Content */}
                 <div className="relative">
                   {content.meta && (
@@ -181,7 +178,6 @@ export const Tooltip: React.FC<TooltipProps> = ({
                   <p className="text-xs text-text-secondary leading-relaxed">
                     {content.description}
                   </p>
-                  
                   {action && (
                     <button
                       onClick={(e) => {

@@ -131,7 +131,6 @@ export function Experience({ onNavigate }: ExperienceProps) {
               >
                 {/* Subtle top accent line on hover */}
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/0 to-transparent group-hover:via-accent/50 transition-all duration-500" />
-                
                 <stat.icon className="w-4 h-4 text-accent mb-2.5 group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
                 <div className="text-2xl font-semibold text-text-primary tracking-tight">{stat.value}</div>
                 <div className="text-xs font-medium text-text-secondary mt-0.5">{stat.label}</div>

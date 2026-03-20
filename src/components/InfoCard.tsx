@@ -26,7 +26,6 @@ export const InfoCard: React.FC<InfoCardProps> = ({
   compact = false,
 }) => {
   const isInteractive = onClick || href;
-  
   const content = (
     <motion.div
       whileHover={isInteractive ? { y: -1 } : undefined}
@@ -49,25 +48,21 @@ export const InfoCard: React.FC<InfoCardProps> = ({
             <Icon className="w-4 h-4 text-accent" strokeWidth={1.5} />
           </div>
         )}
-        
         <div className="flex-1 min-w-0">
           {meta && (
             <span className="text-[10px] uppercase tracking-wider text-accent font-medium">
               {meta}
             </span>
           )}
-          
           <h3 className={`${compact ? 'text-sm' : 'text-[15px]'} font-medium text-text-primary truncate`}>
             {title}
           </h3>
-          
           {subtitle && (
             <p className="text-sm text-text-secondary mt-0.5">
               {subtitle}
             </p>
           )}
         </div>
-        
         {/* Action indicator */}
         {isInteractive && (
           <div className="flex-shrink-0 text-text-disabled group-hover:text-text-tertiary transition-colors">
@@ -79,14 +74,12 @@ export const InfoCard: React.FC<InfoCardProps> = ({
           </div>
         )}
       </div>
-      
       {/* Description */}
       {description && (
         <p className={`text-xs text-text-secondary leading-relaxed mt-3 ${compact ? 'line-clamp-2' : 'line-clamp-3'}`}>
           {description}
         </p>
       )}
-      
       {/* Tags */}
       {tags && tags.length > 0 && (
         <div className="flex flex-wrap gap-1.5 mt-3">

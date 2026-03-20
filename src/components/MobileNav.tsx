@@ -27,7 +27,6 @@ export function MobileNav({ activeTab, setActiveTab, onOpenMenu }: MobileNavProp
     <nav className="fixed bottom-0 left-0 right-0 z-40 lg:hidden">
       {/* Frosted glass background with subtle top shadow */}
       <div className="absolute inset-0 bg-mica/95 backdrop-blur-2xl border-t border-stroke shadow-[0_-4px_16px_rgba(0,0,0,0.08)]" />
-      
       {/* Safe area spacer for notched devices */}
       <div className="relative flex items-stretch justify-around px-2 h-16 pb-safe">
         {navItems.map((item) => {
@@ -49,7 +48,6 @@ export function MobileNav({ activeTab, setActiveTab, onOpenMenu }: MobileNavProp
                   transition={{ type: "spring", stiffness: 500, damping: 35 }}
                 />
               )}
-              
               <item.icon 
                 className={cn(
                   "relative w-5 h-5 transition-transform duration-200",
@@ -66,7 +64,6 @@ export function MobileNav({ activeTab, setActiveTab, onOpenMenu }: MobileNavProp
             </button>
           );
         })}
-        
         {/* Menu button */}
         <button
           onClick={onOpenMenu}

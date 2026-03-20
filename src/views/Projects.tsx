@@ -140,7 +140,6 @@ export function Projects() {
                   <p className="text-xs text-text-secondary leading-relaxed line-clamp-2">
                     {project.description}
                   </p>
-                  
                   {/* Tech inline */}
                   <div className="flex flex-wrap gap-1.5 mt-2.5">
                     {project.tech.slice(0, 3).map((t) => (

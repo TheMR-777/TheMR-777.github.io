@@ -67,22 +67,22 @@ export const portfolioData = {
       },
       {
         title: "Succeeding Within the Failures",
-        content: "Sometimes the original goal remains out of reach—but along the way, I stumble upon something profound. A technique. An insight. A connection I hadn't anticipated. These discoveries often prove more valuable than the goal itself. Failure, in this framing, isn't an endpoint—it's a checkpoint where unexpected treasures reveal themselves.",
+        content: "Sometimes the original goal remains out of reach—but along the way, I stumble upon something profound. A technique. An insight. A connection I hadn't anticipated.",
         discovery: {
           title: "The Granite 2000000 Incident",
-          period: "July 2022 · University, 5th Semester",
+          period: "July 2022 · Summer Holidays",
           phases: [
             {
-              label: "The Corruption",
-              content: "After three years away from gaming, I launched Far Cry 6 during summer holidays — and was truly feeling it again. Then, mid-autosave, the electricity cut out. When power returned, the game greeted me with a cryptic 'Error: Granite 2000000.' Months of progress, gone. The internet had no solution — it was an open, unresolved issue across the Far Cry community."
+              label: "The Blackout",
+              content: "After three years away from gaming, I was deep into Far Cry 6 — truly feeling it again. Then, mid-autosave, the electricity cut. The game returned with a cryptic 'Error: Granite 2000000.' Months of progress, gone. No solution existed anywhere online."
             },
             {
-              label: "The Investigation",
-              content: "I refused to accept it. Drawing on my background in data recovery, I located the save files and began a forensic examination. One file — the autosave — was the right size but filled entirely with null bytes. A dead end, until I noticed something: each save file had a numbered counterpart (e.g., _01 and _02). I opened the counterpart of the corrupted file — and it had real data. I replaced the corrupted autosave with its counterpart, loaded the game — and it resumed from the exact moment of interruption."
+              label: "The Discovery",
+              content: "Drawing on my data recovery background, I forensically examined the save files. The autosave was the right size — but filled entirely with null bytes. Dead end, until I noticed each file had a numbered counterpart. The corrupted file's counterpart held real data. I swapped them. The game resumed from the exact moment of interruption."
             },
             {
-              label: "The Aftermath",
-              content: "I didn't just fix it and move on. I repeated the process multiple times to understand the mechanics, then distilled everything into a 40-second YouTube video — every step explained with utmost clarity while respecting the viewer's time. I shared it across forums where the issue was open. It went viral. The fix proved applicable to Far Cry 5, New Dawn, and Far Cry 4 as well. I still receive appreciation comments to this day."
+              label: "The Ripple",
+              content: "I verified the fix, then distilled it into a 40-second YouTube video — every step explained with utmost clarity. It went viral. The fix applied to Far Cry 5, New Dawn, and 4 as well. I still receive appreciation comments to this day."
             }
           ],
           link: "https://www.youtube.com/watch?v=cPH_SZKI_Cg"
@@ -273,7 +273,6 @@ export const portfolioData = {
       location: "Remote/Hybrid",
       summary: "Transforming enterprise systems into multi-tenant SaaS platforms. Engineered flagship systems including the Employee Monitoring Suite (200% productivity boost, zero defects) and comprehensive ERP platform.",
       description: "Progressed from UI/UX to leading core platform modules and multi-tenant migration decisions. My focus has been on building reusable primitives that power every business module—not one-off solutions.",
-      
       aceProjects: [
         {
           name: "Employee Monitoring Suite",
@@ -453,7 +452,6 @@ export const portfolioData = {
           tech: [".NET", "Source Generators", "Structured Logging", "Serilog"]
         }
       ],
-      
       highlights: [
         "Architected Employee Monitoring Suite solo — zero defects at launch",
         "Engineered Evolver: chromium-inspired cross-platform auto-update engine",

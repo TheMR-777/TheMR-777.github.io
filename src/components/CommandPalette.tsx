@@ -193,7 +193,6 @@ export function CommandPalette({ isOpen, onClose, onNavigate }: CommandPalettePr
   // Filter commands based on query
   const filteredCommands = useMemo(() => {
     if (!query.trim()) return commands;
-    
     const lowerQuery = query.toLowerCase();
     return commands.filter((cmd) => {
       const matchLabel = cmd.label.toLowerCase().includes(lowerQuery);

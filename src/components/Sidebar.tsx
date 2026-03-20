@@ -117,7 +117,6 @@ export function Sidebar({ activeTab, setActiveTab, onOpenCommandPalette }: Sideb
                   transition={{ type: "spring", stiffness: 500, damping: 35 }}
                 />
               )}
-              
               <item.icon 
                 className={cn(
                   "w-[18px] h-[18px] shrink-0 transition-colors",
