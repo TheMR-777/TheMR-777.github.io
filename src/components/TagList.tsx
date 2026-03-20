@@ -21,7 +21,7 @@ const toneClasses: Record<TagTone, string> = {
  */
 export function TagList({ items, tone = "accent", className, itemClassName, children }: TagListProps) {
   return (
-    <div className={cn("flex flex-wrap gap-2", className)}>
+    <div className={cn("flex flex-wrap items-center gap-2", className)}>
       {items.map((item) => (
         <span
           key={item}
