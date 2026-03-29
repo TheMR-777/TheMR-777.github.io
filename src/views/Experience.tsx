@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Building2, Calendar, MapPin, ChevronRight, ChevronDown,
-  Sparkles, Target, Layers, Shield, Zap, Globe, Radio, Cog, FileText,
+  Sparkles, Target, Layers, Shield, Zap, Globe, Radio, Cog, FileText, BarChart3,
   TrendingUp, Award, Users, Rocket
 } from "lucide-react";
 import { portfolioData, type Experience, type AceProject } from "../data/portfolio";
@@ -28,7 +28,8 @@ const projectIcons: Record<string, typeof Layers> = {
   "External Partner Integrations": Globe,
   "Real-time Infrastructure": Radio,
   "Background Jobs Framework": Cog,
-  "Logging Framework": FileText
+  "Logging Framework": FileText,
+  "Unified Reporting Engine": BarChart3
 };
 
 export function Experience({ onNavigate }: ExperienceProps) {
@@ -47,7 +48,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
       detail: "via Employee Monitoring Suite",
       tooltip: {
         title: "200% Productivity Increase",
-        description: "The Employee Monitoring Suite — engineered solo over one year — enabled a measurable 200% productivity boost across teams.",
+        description: "The Employee Monitoring Suite — engineered solo over one year — enabled a measurable 200% productivity boost across the entire organization.",
         action: { label: "View project", section: "flagship-projects" }
       }
     },
@@ -75,12 +76,12 @@ export function Experience({ onNavigate }: ExperienceProps) {
     },
     { 
       icon: Rocket, 
-      value: "9+", 
+      value: "10+", 
       label: "Enterprise Systems", 
       detail: "engineered at ACE",
       tooltip: {
-        title: "9+ Enterprise Systems",
-        description: "From the Employee Monitoring Suite and ERP platform to Background Jobs, Logging, and Password Vault — a comprehensive engineering footprint.",
+        title: "10+ Enterprise Systems",
+        description: "From the Employee Monitoring Suite and ERP platform to Background Jobs, Logging, and Reporting Engine — a comprehensive engineering footprint.",
         action: { label: "Explore all", section: "experience-timeline" }
       }
     }

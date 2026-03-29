@@ -4,3 +4,4 @@ dist/
 .env
 synch_update.py
 .dataset.md
+tsconfig.tsbuildinfo

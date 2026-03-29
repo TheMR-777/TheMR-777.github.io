@@ -219,8 +219,8 @@ export const portfolioData = {
       { name: "System Architecture", description: "Microservices, Event-Driven, Multi-tenant, DDD, CQRS" },
       { name: "Cryptography", description: "AES-256, RSA-4096, ECC, Key Management, Zero-Knowledge" },
       { name: "Performance Engineering", description: "Optimization, Profiling, Low-latency, Memory-aware" },
-      { name: "Security Engineering", description: "Penetration Testing, Zero-Trust, Secure-by-Design" },
-      { name: "AI Integration", description: "Prompt Engineering, LLM Integration, AI-accelerated workflows" }
+      { name: "Polyglot Software Engineering", description: "Cross-language Design, C#/.NET + Python, C++ Interop" },
+      { name: "AI Integration", description: "Prompt Engineering, LLM Integration, AI-accelerated workflows" },
     ],
     ai: {
       title: "AI as Force Multiplier",
@@ -450,6 +450,31 @@ export const portfolioData = {
             "Adopted alongside Background Jobs Framework"
           ],
           tech: [".NET", "Source Generators", "Structured Logging", "Serilog"]
+        },
+        {
+          name: "Unified Reporting Engine",
+          type: "Microservice • Polyglot",
+          period: "2025 — Present",
+          summary: "Python-based microservice that replaced years of fragmented reporting across ACE with a single, zero-overhead solution.",
+          description: "ACE had an years-long, company-wide reporting problem: every project — EMS, ERP, Laravel-based services, and more — handled reporting independently, resulting in brittle, unreliable, badly designed, non-customizable, and rigid implementations. I proposed a microservice-based architecture with Python 3.14 as the primary reporting engine, leveraging its rich library ecosystem for flexible report generation and data presentation. I solely developed the engine (since nobody had specialization in polyglot application development), keeping the implementation minimal by design — exposing the underlying library APIs directly, requiring zero overhead for maintenance or custom development. The engine is now integrated across EMS, ERP, and multiple Laravel-based projects, becoming ACE's internal industry standard for reporting.",
+          architecturalHighlights: [
+            "Microservice architecture — language-agnostic integration via HTTP/REST",
+            "Python 3.14 core — leveraging rich library ecosystem (ReportLab, OpenPyXL, Pandas, Jinja2)",
+            "Zero-overhead API design: exposes underlying library capabilities directly, no wrapper abstraction tax",
+            "Minimal implementation philosophy — maximum flexibility with minimum maintenance surface",
+            "Unified report templates with runtime-configurable customization",
+            "Data export in multiple formats: PDF, Excel, CSV, with consistent styling",
+            "Polyglot integration — seamlessly consumed by .NET, Angular, and Laravel projects",
+            "Sole developer in a polyglot-first engineering approach"
+          ],
+          impact: [
+            "Solved an years-long, company-wide reporting fragmentation problem",
+            "Replaced independent, brittle implementations across 5+ projects",
+            "Became ACE's internal standard for all reporting needs",
+            "Zero maintenance overhead due to direct API pass-through design",
+            "Demonstrated polyglot software engineering at enterprise scale"
+          ],
+          tech: ["Python 3.14", "ReportLab", "OpenPyXL", "Pandas", "FastAPI", "Microservices"]
         }
       ],
       highlights: [
@@ -459,6 +484,7 @@ export const portfolioData = {
         "Led ERP Platform Engineering: Rules, Approvals, Rights, Notifications",
         "Built unbreakable Background Jobs Framework — adopted company-wide",
         "Engineered pluggable Logging Framework for in-depth observability",
+        "Built Unified Reporting Engine in Python — became ACE's reporting standard",
         "Integrated Mastercard, HBL, and PNB payment services",
         "Received direct commendation from CTO for architectural innovations"
       ],
@@ -568,6 +594,23 @@ export const portfolioData = {
         "Transformed tools into marketable SaaS product",
         "90% reduction in module development time",
         "Multi-company support without code changes"
+      ],
+      link: "#"
+    },
+    {
+      title: "Unified Reporting Engine",
+      category: "Microservice • Polyglot",
+      tech: ["Python 3.14", "ReportLab", "OpenPyXL", "Pandas", "FastAPI"],
+      summary: "Python-based microservice that replaced years of fragmented, per-project reporting across ACE with a single, zero-overhead solution.",
+      description: "Every project at ACE handled reporting independently, resulting in brittle, unreliable, and non-customizable implementations. Proposed and solely built a microservice reporting engine in Python 3.14, leveraging its rich library ecosystem. The design philosophy: expose the underlying library APIs directly with zero wrapper overhead.",
+      challenge: "Years of fragmented reporting across 5+ services and projects — each with its own brittle, badly designed, rigid implementation. Inconsistent outputs, unmaintainable code, and no customization support.",
+      approach: "Designed a language-agnostic microservice consumed via REST. Chose Python 3.14 for its unmatched library ecosystem (ReportLab, OpenPyXL, Pandas, Jinja2). Kept the implementation minimal — the API surface mirrors the underlying libraries directly, requiring zero maintenance overhead for new report types. Polyglot integration ensures .NET, Angular, and Laravel projects consume it seamlessly.",
+      impact: [
+        "Solved an years-long company-wide problem",
+        "Replaced 5+ independent brittle implementations",
+        "Became ACE's internal standard for reporting",
+        "Zero maintenance overhead via direct API design",
+        "Demonstrated enterprise-grade polyglot engineering"
       ],
       link: "#"
     },
