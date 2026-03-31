@@ -1,82 +1,48 @@
 import { motion } from 'framer-motion';
-import { Lightbulb, Compass, Target, Layers, Sparkles, Infinity, BookOpen, ExternalLink, Play } from 'lucide-react';
+import { Lightbulb, Compass, Target, Layers, Sparkles, Infinity, BookOpen, ExternalLink, Play, type LucideIcon } from 'lucide-react';
 import { SCROLL_ANIMATION_VP } from '../constants/animations';
+import { portfolioData } from '../data/portfolio';
+
+const { philosophy } = portfolioData;
+
+const iconMap: Record<string, LucideIcon> = {
+  compass: Compass,
+  layers: Layers,
+  target: Target,
+  lightbulb: Lightbulb,
+  sparkles: Sparkles,
+  bookOpen: BookOpen,
+};
+
+const principles = philosophy.principles.map((p) => ({
+  ...p,
+  icon: iconMap[p.icon] || Lightbulb,
+}));
+
+const journeySteps = philosophy.sections.map((section) => {
+  const step: {
+    title: string;
+    content: string;
+    highlight: string;
+    discovery?: { title: string; story: string };
+    phasedDiscovery?: { title: string; period: string; phases: { label: string; content: string }[]; link: string };
+  } = {
+    title: section.title,
+    content: (section as any).content,
+    highlight: (section as any).highlight,
+  };
+  if ((section as any).discovery) {
+    step.discovery = (section as any).discovery;
+  }
+  if ((section as any).phasedDiscovery) {
+    step.phasedDiscovery = (section as any).phasedDiscovery;
+  }
+  return step;
+});
+
+const { toolsPhilosophy } = philosophy;
 
 const Philosophy = () => {
-  const principles = [
-    {
-      icon: Compass,
-      title: 'Question the Status Quo',
-      description: 'I don\'t accept "because that\'s how it\'s done." I question existing implementations and seek deeper understanding.',
-    },
-    {
-      icon: Layers,
-      title: 'Simplicity as Sophistication',
-      description: 'True mastery shows in making complex things simple. I eliminate unnecessary complexity and find elegant paths.',
-    },
-    {
-      icon: Target,
-      title: 'Optimization Instinct',
-      description: 'I naturally spot inefficiencies—where small changes yield disproportionate gains.',
-    },
-    {
-      icon: Lightbulb,
-      title: 'Domain-Specific Solutions',
-      description: 'Each problem deserves a solution tailored to its unique constraints, not forced generic templates.',
-    },
-    {
-      icon: Sparkles,
-      title: 'Continuous Betterment',
-      description: 'Making things genuinely better, not just different. Seeking meaningful improvements that create lasting value.',
-    },
-    {
-      icon: BookOpen,
-      title: 'Philosophical Depth',
-      description: 'I think deeply about the "why" behind decisions. Understanding systems holistically, building intuition over recipes.',
-    },
-  ];
-
-  const journeySteps = [
-    {
-      title: 'The Journey Over the Goal',
-      content: 'Whether architecting a comprehensive system or spending hours refining a Fibonacci sequence, the experience is the same: an insatiable curiosity that drives me to discover one more micro-optimization, one more elegant simplification.',
-      highlight: 'The destination is just a waypoint—the real reward is the infinite richness of the journey itself.',
-    },
-    {
-      title: 'The Beauty in Fundamentals',
-      content: 'I vividly remember iterating on fundamental algorithms for far longer than anyone would consider "reasonable"—not because I had to, but because each iteration revealed something new. A zero-branch Fibonacci by seeding with −1 and 1. A sieve optimization that shaved microseconds.',
-      highlight: 'These aren\'t just technical wins; they\'re discoveries.',
-      discovery: {
-        title: "Rediscovering Horner's Method",
-        story: "During university, frustrated with the heavy calculations of binary-to-decimal conversion (even with shortcuts), I experimented and found my own technique: start from the leftmost 1, move right — multiply the result by 2, add the next digit. Repeat until the end. Years later, I learned I had independently discovered Horner's Method of base conversion — a moment that validated my trust in mathematical intuition."
-      }
-    },
-    {
-      title: 'Succeeding Within the Failures',
-      content: 'Sometimes the original goal remains out of reach—but along the way, I stumble upon something profound. A technique. An insight. A connection I hadn\'t anticipated.',
-      highlight: 'Failure isn\'t an endpoint—it\'s a checkpoint where unexpected treasures reveal themselves.',
-      phasedDiscovery: {
-        title: 'The Granite 2000000 Incident',
-        period: 'July 2022 · Summer Holidays',
-        phases: [
-          {
-            label: 'The Blackout',
-            content: 'After three years away from gaming, I was deep into Far Cry 6 and genuinely enjoying it again. Then, mid-autosave, electricity went out. On reboot, the game showed "Error: Granite 2000000." Months of progress looked gone, and no real fix existed online.',
-          },
-          {
-            label: 'The Discovery',
-            content: 'Using my data recovery instincts, I inspected the save files. One autosave had the right size but only null bytes. Then I noticed each file had a numbered counterpart (_01 / _02). The counterpart had real data. I replaced the corrupted file with it and loaded the game from the exact interrupted moment.',
-          },
-          {
-            label: 'The Ripple',
-            content: 'I validated the method repeatedly, then compressed the fix into a 40-second YouTube tutorial. It spread quickly across forums and helped players in Far Cry 5, New Dawn, and Far Cry 4 too. I still receive appreciation comments today.',
-          },
-        ],
-        link: 'https://www.youtube.com/watch?v=cPH_SZKI_Cg',
-      },
-    },
-  ];
-
   return (
     <div className="philosophy-hero min-h-full">
       <div className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-12 pt-8 sm:pt-16 pb-24 sm:pb-24 relative">
@@ -301,7 +267,7 @@ const Philosophy = () => {
             <div className="flex items-center gap-3 mb-8 sm:mb-10">
               <div className="w-3 h-3 rounded-full bg-accent ring-4 ring-content hidden lg:block lg:-ml-[25px]" />
               <h2 className="text-sm font-medium text-text-tertiary uppercase tracking-wide">
-                Tools That Transform
+                {toolsPhilosophy.title}
               </h2>
             </div>
 
@@ -321,14 +287,7 @@ const Philosophy = () => {
 
             {/* Visual Transformation Grid — "Rack Focus" hover cards */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
-              {[
-                { verb: 'Reveal', icon: '◐', description: 'Making the invisible visible — uncovering hidden patterns' },
-                { verb: 'Simplify', icon: '◇', description: 'Reducing complexity to clarity — distilling essence' },
-                { verb: 'Automate', icon: '↻', description: 'Freeing humans from repetitive, mundane work' },
-                { verb: 'Connect', icon: '⬡', description: 'Bridging isolated systems — creating synergy' },
-                { verb: 'Simulate', icon: '◈', description: 'Replacing costly trials with digital insight' },
-                { verb: 'Empower', icon: '△', description: 'Enabling capabilities that didn\'t exist before' },
-              ].map((item, index) => (
+              {toolsPhilosophy.grid.map((item, index) => (
                 <motion.div
                   key={item.verb}
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -362,18 +321,18 @@ const Philosophy = () => {
             <div className="flex items-center justify-center gap-3 sm:gap-4 py-6">
               <div className="h-px flex-1 max-w-8 sm:max-w-12 bg-gradient-to-r from-transparent to-stroke" />
               <div className="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-xs text-text-tertiary tracking-[0.15em] sm:tracking-[0.25em] uppercase font-medium">
-                <span>Input</span>
+                <span>{toolsPhilosophy.mantra.input}</span>
                 <span className="text-accent/50">→</span>
-                <span className="text-accent">Transformation</span>
+                <span className="text-accent">{toolsPhilosophy.mantra.transformation}</span>
                 <span className="text-accent/50">→</span>
-                <span>Value</span>
+                <span>{toolsPhilosophy.mantra.output}</span>
               </div>
               <div className="h-px flex-1 max-w-8 sm:max-w-12 bg-gradient-to-l from-transparent to-stroke" />
             </div>
 
             {/* Closing Thought */}
             <p className="text-center text-sm text-text-tertiary italic">
-              Software worth building leaves the world different than it found it.
+              {toolsPhilosophy.closingThought}
             </p>
           </motion.div>
         </section>

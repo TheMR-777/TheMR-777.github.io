@@ -55,11 +55,13 @@ export const portfolioData = {
     sections: [
       {
         title: "The Journey Over the Goal",
-        content: "The scale of the goal has never mattered to me—what matters is the journey of getting there. Whether I'm architecting a comprehensive system like mr_crypt or the Employee Monitoring Suite, or spending hours refining something as 'simple' as a Fibonacci sequence, the experience is the same: an insatiable curiosity that drives me to discover one more micro-optimization, one more elegant simplification, one more insight I hadn't seen before."
+        content: "Whether architecting a comprehensive system or spending hours refining a Fibonacci sequence, the experience is the same: an insatiable curiosity that drives me to discover one more micro-optimization, one more elegant simplification.",
+        highlight: "The destination is just a waypoint—the real reward is the infinite richness of the journey itself."
       },
       {
         title: "The Beauty in Fundamentals",
-        content: "I vividly remember iterating on fundamental algorithms for far longer than anyone would consider 'reasonable'—not because I had to, but because each iteration revealed something new. A zero-branch Fibonacci by seeding with −1 and 1. A sieve optimization that shaved microseconds. These aren't just technical wins; they're discoveries, and each one felt as profound as solving a major architectural problem.",
+        content: "I vividly remember iterating on fundamental algorithms for far longer than anyone would consider \"reasonable\"—not because I had to, but because each iteration revealed something new. A zero-branch Fibonacci by seeding with −1 and 1. A sieve optimization that shaved microseconds.",
+        highlight: "These aren't just technical wins; they're discoveries.",
         discovery: {
           title: "Rediscovering Horner's Method",
           story: "During university, frustrated with the heavy calculations of binary-to-decimal conversion (even with shortcuts), I experimented and found my own technique: start from the leftmost 1, move right — multiply the result by 2, add the next digit. Repeat until the end. Years later, I learned I had independently discovered Horner's Method of base conversion — a moment that validated my trust in mathematical intuition."
@@ -68,21 +70,22 @@ export const portfolioData = {
       {
         title: "Succeeding Within the Failures",
         content: "Sometimes the original goal remains out of reach—but along the way, I stumble upon something profound. A technique. An insight. A connection I hadn't anticipated.",
-        discovery: {
+        highlight: "Failure isn't an endpoint—it's a checkpoint where unexpected treasures reveal themselves.",
+        phasedDiscovery: {
           title: "The Granite 2000000 Incident",
           period: "July 2022 · Summer Holidays",
           phases: [
             {
               label: "The Blackout",
-              content: "After three years away from gaming, I was deep into Far Cry 6 — truly feeling it again. Then, mid-autosave, the electricity cut. The game returned with a cryptic 'Error: Granite 2000000.' Months of progress, gone. No solution existed anywhere online."
+              content: "After three years away from gaming, I was deep into Far Cry 6 and genuinely enjoying it again. Then, mid-autosave, electricity went out. On reboot, the game showed \"Error: Granite 2000000.\" Months of progress looked gone, and no real fix existed online."
             },
             {
               label: "The Discovery",
-              content: "Drawing on my data recovery background, I forensically examined the save files. The autosave was the right size — but filled entirely with null bytes. Dead end, until I noticed each file had a numbered counterpart. The corrupted file's counterpart held real data. I swapped them. The game resumed from the exact moment of interruption."
+              content: "Using my data recovery instincts, I inspected the save files. One autosave had the right size but only null bytes. Then I noticed each file had a numbered counterpart (_01 / _02). The counterpart had real data. I replaced the corrupted file with it and loaded the game from the exact interrupted moment."
             },
             {
               label: "The Ripple",
-              content: "I verified the fix, then distilled it into a 40-second YouTube video — every step explained with utmost clarity. It went viral. The fix applied to Far Cry 5, New Dawn, and 4 as well. I still receive appreciation comments to this day."
+              content: "I validated the method repeatedly, then compressed the fix into a 40-second YouTube tutorial. It spread quickly across forums and helped players in Far Cry 5, New Dawn, and Far Cry 4 too. I still receive appreciation comments today."
             }
           ],
           link: "https://www.youtube.com/watch?v=cPH_SZKI_Cg"
@@ -90,33 +93,40 @@ export const portfolioData = {
       },
       {
         title: "Beyond Computer Science",
-        content: "This philosophy extends far beyond computing. It applies to Mathematics, where a proof's elegance can be refined endlessly. It applies to Physics, where understanding one concept unlocks intuition for a dozen others. It applies to every domain where depth is possible—and depth is always possible."
+        content: "This philosophy extends far beyond computing. It applies to Mathematics, where a proof's elegance can be refined endlessly. It applies to Physics, where understanding one concept unlocks intuition for a dozen others. It applies to every domain where depth is possible—and depth is always possible.",
+        highlight: "Computer Science is only one language of discovery; every domain is a fractal, where curiosity reveals that there is no bottom—only deeper truth and beauty."
       }
     ],
     principles: [
       {
+        icon: "compass",
         title: "Questioning the Status Quo",
-        description: "I don't accept 'because that's how it's done' as an answer. I question existing implementations, challenge assumptions, and seek deeper understanding."
+        description: "I don't accept \"because that's how it's done.\" I question existing implementations and seek deeper understanding."
       },
       {
+        icon: "layers",
         title: "Simplicity as Sophistication",
-        description: "True mastery shows in making complex things simple, not simple things complex. I constantly seek to eliminate unnecessary complexity and find elegant paths."
+        description: "True mastery shows in making complex things simple. I eliminate unnecessary complexity and find elegant paths."
       },
       {
+        icon: "target",
         title: "Optimization Instinct",
-        description: "I naturally spot inefficiencies and improvement opportunities. This isn't premature optimization; it's seeing where small changes yield disproportionate gains."
+        description: "I naturally spot inefficiencies—where small changes yield disproportionate gains."
       },
       {
+        icon: "lightbulb",
         title: "Domain-Specific Solutions",
-        description: "Each problem deserves a solution tailored to its unique constraints. I craft patterns and architectures specific to the domain rather than forcing generic templates."
+        description: "Each problem deserves a solution tailored to its unique constraints, not forced generic templates."
       },
       {
+        icon: "sparkles",
         title: "Continuous Betterment",
-        description: "I'm driven by making things genuinely better, not just different. Whether it's a codebase, process, or interface, I seek meaningful improvements that create lasting value."
+        description: "Making things genuinely better, not just different. Seeking meaningful improvements that create lasting value."
       },
       {
+        icon: "bookOpen",
         title: "Philosophical Depth",
-        description: "I think deeply about the 'why' behind decisions. Understanding systems holistically, building intuition over recipes."
+        description: "I think deeply about the \"why\" behind decisions. Understanding systems holistically, building intuition over recipes."
       }
     ],
     toolsPhilosophy: {
@@ -125,7 +135,21 @@ export const portfolioData = {
       content: "There is a philosophy I hold deeply about the kind of software worth building. In the most distilled form, much of corporate software — including the ERP systems I've engineered — is sophisticated notekeeping. We record, organize, and retrieve. It's necessary, and I take pride in doing it exceptionally well. But it's not what sets my soul on fire.",
       essence: "What truly excites me is building tools that transform. Software where you provide an input and receive something genuinely new in return — a processed value, an insight, a capability that didn't exist before. Not storage, but synthesis. Not records, but results.",
       examples: "Every personal project I build follows this principle. A physics simulation that reveals hidden patterns. A schema analyzer that untangles database relationships. A markdown converter that eliminates hours of manual work. A CLI tool that automates tedious cleanup. These are small, sometimes simple — but each one takes something in and produces something of real, tangible value.",
-      closing: "This is the kind of engineering that matters to me: building things that actually do something. Tools that process, transform, and create — not just remember."
+      closing: "This is the kind of engineering that matters to me: building things that actually do something. Tools that process, transform, and create — not just remember.",
+      grid: [
+        { verb: "Reveal", icon: "◐", description: "Making the invisible visible — uncovering hidden patterns" },
+        { verb: "Simplify", icon: "◇", description: "Reducing complexity to clarity — distilling essence" },
+        { verb: "Automate", icon: "↻", description: "Freeing humans from repetitive, mundane work" },
+        { verb: "Connect", icon: "⬡", description: "Bridging isolated systems — creating synergy" },
+        { verb: "Simulate", icon: "◈", description: "Replacing costly trials with digital insight" },
+        { verb: "Empower", icon: "△", description: "Enabling capabilities that didn't exist before" }
+      ],
+      mantra: {
+        input: "Input",
+        transformation: "Transformation",
+        output: "Value"
+      },
+      closingThought: "Software worth building leaves the world different than it found it."
     },
     coreInsight: "This is my innermost driving force. I don't pursue projects for the end result alone; I pursue them for what I'll discover along the way. It's why I can spend weeks on something others finish in hours, and why the 'simplest' problems often teach me the most."
   },
