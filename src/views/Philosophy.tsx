@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Lightbulb, Compass, Target, Layers, Sparkles, Infinity, BookOpen, ExternalLink, Play, type LucideIcon } from 'lucide-react';
+import { Lightbulb, Compass, Target, Layers, Sparkles, Infinity, BookOpen, ExternalLink, Play, Brain, type LucideIcon } from 'lucide-react';
 import { SCROLL_ANIMATION_VP } from '../constants/animations';
 import { portfolioData } from '../data/portfolio';
 
@@ -12,6 +12,7 @@ const iconMap: Record<string, LucideIcon> = {
   lightbulb: Lightbulb,
   sparkles: Sparkles,
   bookOpen: BookOpen,
+  brain: Brain,
 };
 
 const principles = philosophy.principles.map((p) => ({
@@ -26,6 +27,7 @@ const journeySteps = philosophy.sections.map((section) => {
     highlight: string;
     discovery?: { title: string; story: string };
     phasedDiscovery?: { title: string; period: string; phases: { label: string; content: string }[]; link: string };
+    metaSkill?: { title: string; story: string };
   } = {
     title: section.title,
     content: (section as any).content,
@@ -36,6 +38,9 @@ const journeySteps = philosophy.sections.map((section) => {
   }
   if ((section as any).phasedDiscovery) {
     step.phasedDiscovery = (section as any).phasedDiscovery;
+  }
+  if ((section as any).metaSkill) {
+    step.metaSkill = (section as any).metaSkill;
   }
   return step;
 });
@@ -97,9 +102,9 @@ const Philosophy = () => {
                 <div className="hidden sm:flex flex-col items-center pt-1">
                   <div className="w-8 h-8 rounded-lg bg-accent-subtle flex items-center justify-center">
                     <Sparkles className="w-4 h-4 text-accent" />
-                  </div>
+              </div>
                   <div className="flex-1 w-px bg-gradient-to-b from-accent/20 to-transparent mt-3" />
-                </div>
+            </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-base lg:text-lg text-text-secondary leading-relaxed">
                     Whether I'm architecting a comprehensive system like the{' '}
@@ -250,6 +255,35 @@ const Philosophy = () => {
                         </div>
                       </motion.div>
                     )}
+
+                    {/* Meta-Skill story — The Ultimate Mindset */}
+                    {step.metaSkill && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8 }}
+                        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
+                        transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                        className="ml-10 mt-6 p-6 rounded-xl discovery-artifact bg-mica border border-stroke"
+                      >
+                        <div className="flex items-start gap-3 mb-3">
+                          <div className="w-8 h-8 rounded-lg bg-accent-subtle flex items-center justify-center flex-shrink-0">
+                            <Brain className="w-4 h-4 text-accent" />
+                          </div>
+                          <h4 className="text-base font-semibold text-text-primary pt-1">
+                            {step.metaSkill.title}
+                          </h4>
+                        </div>
+                        <p className="text-sm text-text-secondary leading-relaxed pl-11">
+                          {step.metaSkill.story}
+                        </p>
+                        <div className="mt-4 ml-11 flex items-center gap-2">
+                          <div className="h-px flex-1 bg-gradient-to-r from-accent/20 to-transparent" />
+                          <span className="text-[10px] text-accent/60 tracking-widest uppercase font-medium">
+                            Explore. Connect. Transcend.
+                          </span>
+                          <div className="h-px flex-1 bg-gradient-to-l from-accent/20 to-transparent" />
+                        </div>
+                      </motion.div>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -393,32 +427,52 @@ const Philosophy = () => {
               </h2>
             </div>
 
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-layer to-layer/50 border border-stroke">
-              <p className="text-lg text-text-secondary leading-relaxed mb-8">
-                I don't just <span className="text-text-primary">memorize</span> patterns—I 
-                understand them at their core: <span className="text-accent">what problem</span> each 
-                pattern solves, <span className="text-accent">how</span> it solves it, and <span className="text-accent">where it falls short</span>.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
-                {[
-                  { label: 'Minimal', desc: 'Every component earns its place' },
-                  { label: 'Efficient', desc: 'Performance as first-class citizen' },
-                  { label: 'Extendable', desc: 'New features integrate seamlessly' },
-                  { label: 'Maintainable', desc: 'Clear separation of concerns' },
-                  { label: 'Consistent', desc: 'Deterministic, no surprises' },
-                  { label: 'Elegant', desc: 'Thoughtful in every detail' },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex items-center gap-3 py-2 border-b border-stroke/50 last:border-0"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                    <div>
-                      <span className="text-sm font-medium text-text-primary">{item.label}</span>
-                      <span className="text-sm text-text-tertiary"> — {item.desc}</span>
+            <div className="p-8 rounded-2xl bg-gradient-to-br from-layer to-layer/50 border border-stroke overflow-hidden relative group/arch">
+              {/* Resting state — blurs on hover */}
+              <div className="arch-rest transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                <p className="text-lg text-text-secondary leading-relaxed mb-8">
+                  I don't just <span className="text-text-primary">memorize</span> patterns—I 
+                  understand them at their core: <span className="text-accent">what problem</span> each 
+                  pattern solves, <span className="text-accent">how</span> it solves it, and <span className="text-accent">where it falls short</span>.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+                  {[
+                    { label: 'Minimal', desc: 'Every component earns its place' },
+                    { label: 'Efficient', desc: 'Performance as first-class citizen' },
+                    { label: 'Extendable', desc: 'New features integrate seamlessly' },
+                    { label: 'Maintainable', desc: 'Clear separation of concerns' },
+                    { label: 'Consistent', desc: 'Deterministic, no surprises' },
+                    { label: 'Elegant', desc: 'Thoughtful in every detail' },
+                  ].map((item) => (
+                    <div
+                      key={item.label}
+                      className="flex items-center gap-3 py-2 border-b border-stroke/50 last:border-0"
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                      <div>
+                        <span className="text-sm font-medium text-text-primary">{item.label}</span>
+                        <span className="text-sm text-text-tertiary"> — {item.desc}</span>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* Revealed state — fades in on hover */}
+              <div className="arch-reveal absolute inset-0 flex flex-col justify-center items-center text-center opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5" />
+                <div className="relative z-10 px-6">
+                  <p className="text-sm text-text-tertiary mb-3">
+                    Patterns are the surface. Understanding is what lies beneath.
+                  </p>
+                  <p className="text-base text-text-primary font-light leading-relaxed mb-4">
+                    I don't just build systems — I build the intuition that builds systems.
+                  </p>
+                  <div className="w-8 h-px bg-accent/40 mx-auto mb-4" />
+                  <p className="text-xs text-text-tertiary">
+                    <span className="text-accent font-medium">Learn how to learn,</span> and everything else follows.
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>

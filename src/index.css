@@ -545,3 +545,45 @@ a:focus-visible,
   opacity: 0.04;
   mix-blend-mode: multiply;
 }
+
+/* ============================================
+   Architectural Philosophy — Blur-to-Reveal
+   Hovering the card blurs the surface content
+   and fades in the deeper philosophy beneath.
+   ============================================ */
+.arch-rest {
+  transition:
+    filter 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group\/arch:hover .arch-rest {
+  filter: blur(8px);
+  opacity: 0.15;
+  transform: scale(0.97);
+}
+
+.arch-reveal {
+  transition:
+    opacity 400ms cubic-bezier(0.16, 1, 0.3, 1) 100ms,
+    transform 400ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
+  transform: translateY(8px);
+}
+
+.group\/arch:hover .arch-reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.arch-reveal {
+  transition:
+    opacity 400ms cubic-bezier(0.16, 1, 0.3, 1) 100ms,
+    transform 400ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
+  transform: translateY(8px);
+}
+
+.group\/arch:hover .arch-reveal {
+  opacity: 1;
+  transform: translateY(0);
+}

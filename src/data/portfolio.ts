@@ -43,7 +43,7 @@ export const portfolioData = {
       },
       {
         name: "Psychology",
-        description: "Nurtured by my psychologist mother's open conversations. I study cognitive biases, learning science, and social dynamics to design humane products and lead better teams."
+        description: "Nurtured by my psychologist mother's open conversations. I study cognitive biases and learning science — because understanding how the mind learns is the most valuable thing I have learned."
       }
     ]
   },
@@ -95,38 +95,37 @@ export const portfolioData = {
         title: "Beyond Computer Science",
         content: "This philosophy extends far beyond computing. It applies to Mathematics, where a proof's elegance can be refined endlessly. It applies to Physics, where understanding one concept unlocks intuition for a dozen others. It applies to every domain where depth is possible—and depth is always possible.",
         highlight: "Computer Science is only one language of discovery; every domain is a fractal, where curiosity reveals that there is no bottom—only deeper truth and beauty."
+      },
+      {
+        title: "Learning How to Learn",
+        content: "Along the way of my life, I learned something most people never do — how to actually learn. Not to remember, not to follow footsteps, but to build connections. To relate a new concept to something I already know, and integrate it so deeply into my intuition that it becomes part of how I think. That is the real skill — and it compounds across every domain I touch.",
+        highlight: "Not learning to remember — learning to learn.",
+        metaSkill: {
+          title: "The Ultimate Mindset",
+          story: "That is where I am heading — toward a mindset that strives for perfection and accuracy. Every realm I explore — Astronomy, Physics, Psychology — is not random curiosity. Each one builds pathways that make me sharper in every other."
+        }
       }
     ],
     principles: [
       {
         icon: "compass",
-        title: "Questioning the Status Quo",
-        description: "I don't accept \"because that's how it's done.\" I question existing implementations and seek deeper understanding."
+        title: "Beyond the Recipe",
+        description: "I don't accept surface answers. I challenge existing implementations and build connections between ideas — until knowledge becomes intuition."
       },
       {
         icon: "layers",
-        title: "Simplicity as Sophistication",
-        description: "True mastery shows in making complex things simple. I eliminate unnecessary complexity and find elegant paths."
-      },
-      {
-        icon: "target",
-        title: "Optimization Instinct",
-        description: "I naturally spot inefficiencies—where small changes yield disproportionate gains."
+        title: "Precision",
+        description: "True mastery shows in removing what doesn't belong. I cut complexity and spot inefficiencies — small changes, disproportionate gains."
       },
       {
         icon: "lightbulb",
-        title: "Domain-Specific Solutions",
+        title: "Adaptability",
         description: "Each problem deserves a solution tailored to its unique constraints, not forced generic templates."
       },
       {
         icon: "sparkles",
-        title: "Continuous Betterment",
-        description: "Making things genuinely better, not just different. Seeking meaningful improvements that create lasting value."
-      },
-      {
-        icon: "bookOpen",
-        title: "Philosophical Depth",
-        description: "I think deeply about the \"why\" behind decisions. Understanding systems holistically, building intuition over recipes."
+        title: "Evolution",
+        description: "Making things genuinely better, not just different. Refining until the result feels inevitable."
       }
     ],
     toolsPhilosophy: {
