@@ -690,6 +690,15 @@ export const portfolioData = {
   // Personal Craft — smaller, passion-driven tools that transform
   personalProjects: [
     {
+      title: "SchemaFlow",
+      category: "Data Architecture • Visual Query Builder",
+      description: "Born during the development of my Reporting Engine — I needed a way to let users visually wire up database tables and see live SQL output. What started as a stakeholder demo evolved into a standalone, open-source visual query builder. Paste your DDL, drag tables onto a canvas, connect columns, and watch the SQL write itself. Co-engineered with Gemini 3.1 Pro, and one of the projects I feel truly embodies my philosophy: take something genuinely complex in, deliver something meaningfully elegant out.",
+      origin: "Evolved from an enterprise stakeholder demo into an open-source, pluggable query builder",
+      tech: ["React 19", "TypeScript", "React Flow", "Zustand", "Tailwind CSS 4", "Framer Motion"],
+      link: "https://themr-777.github.io/SchemaFlow/",
+      repo: "https://github.com/TheMR-777/SchemaFlow"
+    },
+    {
       title: "Schema Weaver",
       category: "Developer Tool • Visualization",
       description: "Always struggled to visualize relationships between SQL tables. So I built a tool that takes raw SQL schemas (supports TablePlus exports out of the box), smartly identifies relationships using robust heuristics based on naming conventions and foreign key patterns, and renders an auto-decluttered 3D visualization showing which columns link which tables. The algorithm always produces clean, readable layouts.",
