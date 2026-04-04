@@ -133,7 +133,7 @@ export const portfolioData = {
       subtitle: "The distinction between storing information and creating value",
       content: "There is a philosophy I hold deeply about the kind of software worth building. In the most distilled form, much of corporate software — including the ERP systems I've engineered — is sophisticated notekeeping. We record, organize, and retrieve. It's necessary, and I take pride in doing it exceptionally well. But it's not what sets my soul on fire.",
       essence: "What truly excites me is building tools that transform. Software where you provide an input and receive something genuinely new in return — a processed value, an insight, a capability that didn't exist before. Not storage, but synthesis. Not records, but results.",
-      examples: "Every personal project I build follows this principle. A physics simulation that reveals hidden patterns. A schema analyzer that untangles database relationships. A markdown converter that eliminates hours of manual work. A CLI tool that automates tedious cleanup. These are small, sometimes simple — but each one takes something in and produces something of real, tangible value.",
+      examples: "Every personal project I build follows this principle. SchemaFlow transforms raw SQL DDLs into visual, interactive query canvases. Schema Weaver untangles database relationships into auto-decluttered 3D maps. The Moiré Effect Demo turns a real-world physics observation into interactive understanding. GitHubify-MD eliminates hours of broken Markdown-to-HTML conversion. Even Simple Smart Cleanup automates tedious system maintenance I'd otherwise do by hand. These are small, sometimes simple — but each one takes something in and produces something of real, tangible value.",
       closing: "This is the kind of engineering that matters to me: building things that actually do something. Tools that process, transform, and create — not just remember.",
       grid: [
         { verb: "Reveal", icon: "◐", description: "Making the invisible visible — uncovering hidden patterns" },
@@ -157,22 +157,22 @@ export const portfolioData = {
     genesis: {
       title: "The Genesis",
       period: "Age 3-10",
-      description: "My journey began at age 3, influenced by my uncle who ran a computer lab in Rawalpindi. Early exposure through games like GTA Vice City and SEGA Master Collection wasn't just entertainment—it was the foundation of my lifelong passion. When gifted a high-spec PC with Windows XP, limited access became my greatest teacher. I learned to troubleshoot independently, often finding myself more capable than local tech experts."
+      description: "My journey began at age 3, shaped by my uncle's computer. What started with GTA Vice City and SEGA wasn't just entertainment — it planted the seed of an insatiable curiosity about how systems work. When gifted a Windows XP PC, limited access became my greatest teacher: I learned to troubleshoot, experiment, and discover independently — a pattern that would define everything I build today."
     },
     awakening: {
       title: "The Awakening",
       period: "Teenage Years",
-      description: "Watching 'Inkeshaaf' on 24 News sparked my passion for ethical hacking. I set an ambitious goal: hack my Android phone from another Android—a challenge many considered impossible. Over a year, I mastered Linux, Python, networking, and pioneered mobile-to-mobile penetration testing. My article became the second most-read on Null Byte (2018-2020), and I founded an international cybersecurity community spanning 6 countries."
+      description: "Watching 'Inkeshaaf' on 24 News ignited my passion for ethical hacking. I set an 'impossible' goal: hack an Android from another Android. Over a year, I learned Linux, Python, and networking from first principles — pioneering mobile-to-mobile penetration testing. That work became the 2nd most-read Null Byte article (2018-2020) and led me to found a cybersecurity community across 6 countries. The security mindset I built here later shaped every system I've secured since."
     },
     academic: {
       title: "Academic Excellence",
       period: "2019-2023",
-      description: "At University of the Punjab, I achieved a 3.73 CGPA while going far beyond curriculum. Became an unofficial C++ teaching assistant in my second semester, served as deputy class representative during COVID-19, and was the first team to complete both FYP and research papers simultaneously."
+      description: "At University of the Punjab, I earned a 3.73 CGPA while pursuing depth far beyond the curriculum — implementing every data structure and algorithm in modern C++ a full year before coursework, because understanding beats memorization. Became an unofficial C++ teaching assistant in my second semester, collaborated with a visiting PhD professor on quantum computing simulations, and was the first team to complete both FYP and research papers simultaneously."
     },
     professional: {
       title: "Professional Evolution",
       period: "2023-Present",
-      description: "My industry transition was strategic and calculated. After a TeqHolic internship in Flutter, I was offered an AI team position at Rev9 Solutions — which I leveraged to secure my role at ACE Money Transfer, where the CTO selected me immediately. Now serving as .NET Developer & Architecture Consultant, I've transformed enterprise systems and engineered flagship products. The defining achievement: devoting an entire year to the Employee Monitoring Suite — a system I consider a professional masterpiece."
+      description: "My industry entry was strategic: a TeqHolic Flutter internship, a leveraged Rev9 AI team offer, and a direct CTO selection at ACE Money Transfer. Now as .NET Developer & Architecture Consultant, I've channeled every skill — from low-level C++ and cryptography to polyglot system design — into enterprise-grade products. The defining achievement: devoting an entire year to the Employee Monitoring Suite, a system I consider a professional masterpiece and a crucible for every engineering principle I hold."
     }
   },
 
