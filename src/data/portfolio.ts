@@ -690,15 +690,6 @@ export const portfolioData = {
   // Personal Craft — smaller, passion-driven tools that transform
   personalProjects: [
     {
-      title: "Moiré Effect Demo",
-      category: "Physics • Visualization",
-      description: "Spotted a mesmerizing pattern on a van's metal door during a ride home and couldn't rest until I understood it. Turned out to be the Moiré effect — an optical interference phenomenon. Built an interactive demo to develop intuitive understanding of the mechanism, and it fascinated not just me, but friends and colleagues alike.",
-      origin: "Curiosity from observing a real-world physics phenomenon",
-      tech: ["HTML/CSS/JS", "Canvas", "Gemini 3", "Claude Opus 4.5"],
-      link: "https://themr-777.github.io/moire-effect-demo/",
-      repo: "https://github.com/TheMR-777/moire-effect-demo"
-    },
-    {
       title: "Schema Weaver",
       category: "Developer Tool • Visualization",
       description: "Always struggled to visualize relationships between SQL tables. So I built a tool that takes raw SQL schemas (supports TablePlus exports out of the box), smartly identifies relationships using robust heuristics based on naming conventions and foreign key patterns, and renders an auto-decluttered 3D visualization showing which columns link which tables. The algorithm always produces clean, readable layouts.",
@@ -706,6 +697,14 @@ export const portfolioData = {
       tech: ["Three.js", "JavaScript", "SQL Parsing"],
       link: "https://themr-777.github.io/schema-weaver/",
       repo: "https://github.com/TheMR-777/schema-weaver"
+    },
+    {
+      title: "LetItGo",
+      category: "Mobile • Personal",
+      description: "A minimalist, aesthetically crafted Android app that saves timestamps and shows elapsed time in years, months, days, hours, minutes, and seconds. Designed with obsessive attention to UI elegance. Supports multiple memories — I've saved my birthday, job joining date, graduation, and more. It's a tiny app with a lot of heart.",
+      origin: "Wanting a beautiful way to visualize the passage of time",
+      tech: ["Flutter", "Dart", "Local Storage", "Material Design"],
+      repo: "https://github.com/TheMR-777/just_letitgo"
     },
     {
       title: "GitHubify-MD",
@@ -716,6 +715,15 @@ export const portfolioData = {
       repo: "https://github.com/TheMR-777/githubify-md"
     },
     {
+      title: "Moiré Effect Demo",
+      category: "Physics • Visualization",
+      description: "Spotted a mesmerizing pattern on a van's metal door during a ride home and couldn't rest until I understood it. Turned out to be the Moiré effect — an optical interference phenomenon. Built an interactive demo to develop intuitive understanding of the mechanism, and it fascinated not just me, but friends and colleagues alike.",
+      origin: "Curiosity from observing a real-world physics phenomenon",
+      tech: ["HTML/CSS/JS", "Canvas", "Gemini 3", "Claude Opus 4.5"],
+      link: "https://themr-777.github.io/moire-effect-demo/",
+      repo: "https://github.com/TheMR-777/moire-effect-demo"
+    },
+    {
       title: "Simple Smart Cleanup",
       category: "Utility • Automation",
       description: "A simple Python program I've been maintaining for a while. It scans and cleans specific directories on my system regularly. Configurable, extensible — users can add their own target locations. It's simple, very simple, but has proven genuinely useful for keeping my system tidy. Shared it because good tools deserve to be shared.",
@@ -723,14 +731,6 @@ export const portfolioData = {
       tech: ["Python", "OS APIs", "Configuration"],
       repo: "https://github.com/TheMR-777/simple-smart-cleanup.py"
     },
-    {
-      title: "LetItGo",
-      category: "Mobile • Personal",
-      description: "A minimalist, aesthetically crafted Android app that saves timestamps and shows elapsed time in years, months, days, hours, minutes, and seconds. Designed with obsessive attention to UI elegance. Supports multiple memories — I've saved my birthday, job joining date, graduation, and more. It's a tiny app with a lot of heart.",
-      origin: "Wanting a beautiful way to visualize the passage of time",
-      tech: ["Flutter", "Dart", "Local Storage", "Material Design"],
-      repo: "https://github.com/TheMR-777/just_letitgo"
-    }
   ],
 
   publications: [
