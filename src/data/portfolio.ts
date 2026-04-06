@@ -575,7 +575,7 @@ export const portfolioData = {
       category: "Flagship • Enterprise",
       tech: [".NET", "Blazor", "GraphQL", "ApexCharts", "Micro-ORM"],
       summary: "Company-wide monitoring system achieving 200% productivity boost with zero defects at launch.",
-      description: "Single-handedly designed and engineered over the course of one year. This project was a crucible for my understanding of design patterns—I understood them at their core, enabling a custom architecture that wasn't constrained by textbook templates.",
+      description: "Single-handedly designed and engineered over the course of one year — the longest I've dedicated to any single system. This experience really solidified my approach to architecture: I didn't memorize patterns, I understood them at their core, enabling a custom architecture unconstrained by the templates.",
       challenge: "The company lacked visibility into remote work patterns. Existing solutions were either invasive, inaccurate, or lacked context-aware reporting. Privacy concerns made aggressive tracking unacceptable.",
       approach: "Engineered a privacy-conscious, OS-level monitoring agent that respects boundaries while providing meaningful insights. Built a real-time Blazor dashboard with GraphQL for efficient data pipelines. Used Micro-ORM for high-throughput logging without the overhead of full ORMs.",
       architecturalPhilosophy: "The result was minimal and elegant (no unnecessary abstractions), efficient and optimized (performance as first-class citizen), extendable (new features without architectural surgery), maintainable (clear separation of concerns), and consistent (deterministic behavior in production).",
@@ -593,7 +593,7 @@ export const portfolioData = {
       category: "Simulation • Research",
       tech: ["C# 13", ".NET 9", "Python", "NumPy", "SciPy", "WPF"],
       summary: "Sophisticated simulation engine enabling UWB deployment planning without physical hardware.",
-      description: "Client needed to validate UWB anchor placements before expensive physical installation. Built a hybrid .NET/Python system modeling signal propagation with material-specific attenuation.",
+      description: "Client needed to validate UWB anchor placements before expensive physical installation. My deep interest in physics — signal propagation, electromagnetic attenuation, and computational geometry — made this a uniquely natural fit. Built a hybrid (polyglot) .NET/Python system modeling signal behavior with material-specific precision.",
       challenge: "Deploying UWB anchors requires expensive physical testing. Mistakes in placement are costly to fix. The client needed virtual validation before drilling holes.",
       approach: "Built a hybrid simulation engine: .NET for UI, core logic, and geometric calculations; Python (NumPy/SciPy) for signal propagation modeling and heatmap generation. Implemented material-specific attenuation for walls, glass, and obstacles.",
       impact: [
@@ -625,7 +625,7 @@ export const portfolioData = {
       category: "Microservice • Polyglot",
       tech: ["Python 3.14", "ReportLab", "OpenPyXL", "Pandas", "FastAPI"],
       summary: "Python-based microservice that replaced years of fragmented, per-project reporting across ACE with a single, zero-overhead solution.",
-      description: "Every project at ACE handled reporting independently, resulting in brittle, unreliable, and non-customizable implementations. Proposed and solely built a microservice reporting engine in Python 3.14, leveraging its rich library ecosystem. The design philosophy: expose the underlying library APIs directly with zero wrapper overhead.",
+      description: "Every project at ACE handled reporting independently — brittle, unreliable, non-customizable. I proposed and solely built a microservice reporting engine in Python 3.14, leveraging its rich library ecosystem. The design philosophy: expose underlying library APIs directly with zero wrapper overhead. The need for dynamic, visual query construction during this project also gave birth to SchemaFlow — now an open-source standalone tool.",
       challenge: "Years of fragmented reporting across 5+ services and projects — each with its own brittle, badly designed, rigid implementation. Inconsistent outputs, unmaintainable code, and no customization support.",
       approach: "Designed a language-agnostic microservice consumed via REST. Chose Python 3.14 for its unmatched library ecosystem (ReportLab, OpenPyXL, Pandas, Jinja2). Kept the implementation minimal — the API surface mirrors the underlying libraries directly, requiring zero maintenance overhead for new report types. Polyglot integration ensures .NET, Angular, and Laravel projects consume it seamlessly.",
       impact: [
@@ -642,7 +642,7 @@ export const portfolioData = {
       category: "Security • Cryptography",
       tech: ["C++", ".NET", "OpenSSL", "AES-256", "RSA-4096"],
       summary: "Multi-layered encryption system with custom cryptographic protocols exceeding industry standards.",
-      description: "Financial credentials required security beyond standard password managers. Designed a defense-in-depth architecture with custom auditing and key rotation.",
+      description: "Financial credentials demanded security beyond standard password managers — and years of ethical hacking gave me the perspective to design it right. Built a defense-in-depth architecture with custom auditing and key rotation.",
       challenge: "Storing sensitive financial credentials required higher security than off-the-shelf solutions. Needed custom auditing, key rotation, and compliance with internal policies.",
       approach: "Designed multi-layered security: inner loops use C++ for raw cryptographic operations via OpenSSL wrappers; outer layers use .NET for secure memory management and PWA interface. Implemented zero-knowledge principles.",
       impact: [
@@ -701,7 +701,7 @@ export const portfolioData = {
     {
       title: "Schema Weaver",
       category: "Developer Tool • Visualization",
-      description: "Always struggled to visualize relationships between SQL tables. So I built a tool that takes raw SQL schemas (supports TablePlus exports out of the box), smartly identifies relationships using robust heuristics based on naming conventions and foreign key patterns, and renders an auto-decluttered 3D visualization showing which columns link which tables. The algorithm always produces clean, readable layouts.",
+      description: "Always struggled to visualize relationships between SQL tables. So I built a tool that takes raw SQL schemas (supports TablePlus exports out of the box), smartly identifies relationships using robust heuristics based on naming conventions and foreign key patterns, and renders an auto-decluttered 3D visualization showing which columns link which tables. A spiritual predecessor to SchemaFlow — where this one reveals structure, that one builds queries.",
       origin: "Frustration with manual DBML conversion and relationship mapping",
       tech: ["Three.js", "JavaScript", "SQL Parsing"],
       link: "https://themr-777.github.io/schema-weaver/",
@@ -710,7 +710,7 @@ export const portfolioData = {
     {
       title: "LetItGo",
       category: "Mobile • Personal",
-      description: "A minimalist, aesthetically crafted Android app that saves timestamps and shows elapsed time in years, months, days, hours, minutes, and seconds. Designed with obsessive attention to UI elegance. Supports multiple memories — I've saved my birthday, job joining date, graduation, and more. It's a tiny app with a lot of heart.",
+      description: "Built a minimalist Android app that saves timestamps and shows elapsed time down to the second — because I wanted a beautiful way to watch time flow. I've saved my birthday, job joining date, graduation, and more. Designed with obsessive attention to UI elegance, it's a tiny app with a lot of heart — and proof that depth can be found in the simplest ideas.",
       origin: "Wanting a beautiful way to visualize the passage of time",
       tech: ["Flutter", "Dart", "Local Storage", "Material Design"],
       repo: "https://github.com/TheMR-777/just_letitgo"
@@ -726,7 +726,7 @@ export const portfolioData = {
     {
       title: "Moiré Effect Demo",
       category: "Physics • Visualization",
-      description: "Spotted a mesmerizing pattern on a van's metal door during a ride home and couldn't rest until I understood it. Turned out to be the Moiré effect — an optical interference phenomenon. Built an interactive demo to develop intuitive understanding of the mechanism, and it fascinated not just me, but friends and colleagues alike.",
+      description: "Spotted a mesmerizing pattern on a van's metal door during a ride home and couldn't rest until I understood it. Turned out to be the Moiré effect — an optical interference phenomenon. Built an interactive demo to develop the kind of intuitive understanding I chase in all my physics explorations — and it fascinated not just me, but friends and colleagues alike.",
       origin: "Curiosity from observing a real-world physics phenomenon",
       tech: ["HTML/CSS/JS", "Canvas", "Gemini 3", "Claude Opus 4.5"],
       link: "https://themr-777.github.io/moire-effect-demo/",
@@ -735,7 +735,7 @@ export const portfolioData = {
     {
       title: "Simple Smart Cleanup",
       category: "Utility • Automation",
-      description: "A simple Python program I've been maintaining for a while. It scans and cleans specific directories on my system regularly. Configurable, extensible — users can add their own target locations. It's simple, very simple, but has proven genuinely useful for keeping my system tidy. Shared it because good tools deserve to be shared.",
+      description: "A simple Python program I've maintained for a while — it scans and cleans specific directories on my system regularly. Configurable and extensible, users can add their own target locations. It's simple, genuinely simple, but has proven remarkably useful. Shared it because good tools deserve to be shared, no matter how small.",
       origin: "Personal need for systematic, repeatable system maintenance",
       tech: ["Python", "OS APIs", "Configuration"],
       repo: "https://github.com/TheMR-777/simple-smart-cleanup.py"
