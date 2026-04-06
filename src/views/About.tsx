@@ -246,9 +246,11 @@ export function About() {
                       {phase.period}
                     </span>
                   </div>
-                  <p className="text-xs text-text-secondary leading-relaxed">
-                    {phase.description}
-                  </p>
+                  <StyledText 
+                    text={phase.description} 
+                    className="text-xs text-text-secondary leading-relaxed" 
+                    as="p" 
+                  />
                 </div>
               </div>
             ))}
@@ -286,9 +288,14 @@ export function About() {
                 <h3 className="text-sm font-medium text-text-primary mb-2">
                   {interest.name}
                 </h3>
-                <p className="text-xs text-text-secondary leading-relaxed">
+                {/* <p className="text-xs text-text-secondary leading-relaxed">
                   {interest.description}
-                </p>
+                </p> */}
+                <StyledText 
+                  text={interest.description} 
+                  className="text-xs text-text-secondary leading-relaxed" 
+                  as="p" 
+                />
               </div>
             );
           })}

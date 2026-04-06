@@ -7,6 +7,7 @@ import { Surface } from "../components/Surface";
 import type { NavigateFn } from "../types/navigation";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
 import { overviewSocialLinks } from "../config/social";
+import { StyledText } from "../lib/styledText";
 
 interface OverviewProps {
   onNavigate: NavigateFn;
@@ -44,9 +45,11 @@ export function Overview({ onNavigate }: OverviewProps) {
           </div>
 
           {/* Tagline */}
-          <p className="text-base text-text-secondary leading-relaxed max-w-2xl mb-8">
-            {personal.about}
-          </p>
+          <StyledText 
+            text={personal.about}
+            className="text-base text-text-secondary leading-relaxed max-w-2xl mb-8"
+            as="p"
+          />
 
           {/* Social Links */}
           <div className="flex items-center gap-3">

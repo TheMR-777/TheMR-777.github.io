@@ -18,6 +18,7 @@ import { Surface } from "../components/Surface";
 import { TagList } from "../components/TagList";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
 import { hasArchitecturalPhilosophy } from "../lib/portfolioGuards";
+import { StyledText } from "../lib/styledText";
 
 export function Projects() {
   const { projects, personalProjects } = portfolioData;
@@ -86,9 +87,11 @@ export function Projects() {
                   />
                 </div>
 
-                <p className="text-xs text-text-secondary leading-relaxed mb-4 line-clamp-3">
-                  {project.summary}
-                </p>
+                <StyledText 
+                  text={project.summary} 
+                  className="text-xs text-text-secondary leading-relaxed mb-4 line-clamp-3" 
+                  as="p" 
+                />
 
                 <TagList
                   items={project.tech.slice(0, 4)}
@@ -150,9 +153,11 @@ export function Projects() {
                       {project.category}
                     </span>
                   </div>
-                  <p className="text-xs text-text-secondary leading-relaxed line-clamp-2">
-                    {project.description}
-                  </p>
+                  <StyledText 
+                    text={project.description} 
+                    className="text-xs text-text-secondary leading-relaxed line-clamp-2" 
+                    as="p" 
+                  />
                   <TagList
                     items={project.tech.slice(0, 3)}
                     tone="muted"
@@ -212,16 +217,20 @@ export function Projects() {
       >
         {selectedProject && (
           <>
-            <p className="text-sm text-text-secondary leading-relaxed">
-              {selectedProject.description}
-            </p>
+            <StyledText 
+              text={selectedProject.description} 
+              className="text-sm text-text-secondary leading-relaxed" 
+              as="p" 
+            />
 
             {selectedProject.challenge && (
               <DetailSection title="The Challenge" icon={AlertCircle}>
                 <Surface padding="md" className="rounded-lg">
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {selectedProject.challenge}
-                  </p>
+                  <StyledText 
+                    text={selectedProject.challenge} 
+                    className="text-sm text-text-secondary leading-relaxed" 
+                    as="p" 
+                  />
                 </Surface>
               </DetailSection>
             )}
@@ -229,9 +238,11 @@ export function Projects() {
             {hasArchitecturalPhilosophy(selectedProject) && (
               <DetailSection title="Architectural Philosophy">
                 <div className="p-4 rounded-lg bg-accent-subtle border border-accent/20">
-                  <p className="text-sm text-text-primary leading-relaxed italic">
-                    {selectedProject.architecturalPhilosophy}
-                  </p>
+                  <StyledText 
+                    text={selectedProject.architecturalPhilosophy} 
+                    className="text-sm text-text-primary leading-relaxed italic" 
+                    as="p" 
+                  />
                 </div>
               </DetailSection>
             )}
@@ -239,9 +250,11 @@ export function Projects() {
             {selectedProject.approach && (
               <DetailSection title="The Approach" icon={Lightbulb}>
                 <Surface padding="md" className="rounded-lg">
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {selectedProject.approach}
-                  </p>
+                  <StyledText 
+                    text={selectedProject.approach} 
+                    className="text-sm text-text-secondary leading-relaxed" 
+                    as="p" 
+                  />
                 </Surface>
               </DetailSection>
             )}
@@ -251,7 +264,7 @@ export function Projects() {
                 {selectedProject.impact.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-sm text-text-secondary">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
-                    {item}
+                    <StyledText text={item} />
                   </li>
                 ))}
               </ul>
@@ -286,18 +299,22 @@ export function Projects() {
         {selectedPersonal && (
           <>
             <DetailSection title="The Story" icon={Lightbulb}>
-              <p className="text-sm text-text-secondary leading-relaxed">
-                {selectedPersonal.description}
-              </p>
+              <StyledText 
+                text={selectedPersonal.description} 
+                className="text-sm text-text-secondary leading-relaxed" 
+                as="p" 
+              />
             </DetailSection>
 
             <Surface padding="md" className="rounded-lg">
               <span className="text-[10px] uppercase tracking-wider text-text-tertiary font-medium">
                 Origin
               </span>
-              <p className="text-sm text-text-secondary mt-1">
-                {selectedPersonal.origin}
-              </p>
+              <StyledText 
+                text={selectedPersonal.origin} 
+                className="text-sm text-text-secondary mt-1" 
+                as="p" 
+              />
             </Surface>
 
             <DetailSection title="Built With">

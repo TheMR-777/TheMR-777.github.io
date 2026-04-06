@@ -14,6 +14,7 @@ import { Tooltip } from "../components/Tooltip";
 import type { NavigateFn } from "../types/navigation";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
 import { getArchitecturalHighlights } from "../lib/portfolioGuards";
+import { StyledText } from "../lib/styledText";
 
 interface ExperienceProps {
   onNavigate?: NavigateFn;
@@ -217,9 +218,11 @@ export function Experience({ onNavigate }: ExperienceProps) {
                     </div>
 
                     {/* Summary */}
-                    <p className="text-xs text-text-secondary leading-relaxed">
-                      {job.summary}
-                    </p>
+                    <StyledText 
+                      text={job.summary} 
+                      className="text-xs text-text-secondary leading-relaxed" 
+                      as="p" 
+                    />
 
                     {/* Highlights - clean bullet list */}
                     {job.highlights && job.highlights.length > 0 && !isACE && (
@@ -231,7 +234,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
                               className="flex items-start gap-2 text-xs text-text-secondary"
                             >
                               <span className="w-1 h-1 rounded-full bg-accent mt-1.5 flex-shrink-0" />
-                              <span className="leading-relaxed">{highlight}</span>
+                              <StyledText text={highlight} className="leading-relaxed" as="span" />
                             </li>
                           ))}
                           {job.highlights.length > 3 && (
@@ -298,9 +301,11 @@ export function Experience({ onNavigate }: ExperienceProps) {
                                         strokeWidth={1.5} 
                                       />
                                     </div>
-                                        <p className="text-xs text-text-secondary mt-2 line-clamp-2">
-                                          {project.summary}
-                                        </p>
+                                        <StyledText 
+                                          text={project.summary} 
+                                          className="text-xs text-text-secondary mt-2 line-clamp-2" 
+                                          as="p" 
+                                        />
                                       </div>
                                     </div>
                                   </motion.div>
@@ -328,7 +333,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
                                     className="flex items-start gap-2.5 text-xs text-text-secondary p-3 rounded-lg bg-mica border border-stroke/30 hover:border-stroke transition-colors"
                                   >
                                     <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
-                                    <span className="leading-relaxed">{item}</span>
+                                    <StyledText text={item} className="leading-relaxed" as="span" />
                                   </motion.div>
                                 ))}
                               </div>
@@ -383,9 +388,11 @@ export function Experience({ onNavigate }: ExperienceProps) {
             </div>
 
             <DetailSection title="Overview">
-              <p className="text-sm text-text-secondary leading-relaxed">
-                {selectedExp.description}
-              </p>
+              <StyledText 
+                text={selectedExp.description} 
+                className="text-sm text-text-secondary leading-relaxed" 
+                as="p" 
+              />
             </DetailSection>
 
             {selectedExp.highlights && selectedExp.highlights.length > 0 && (
@@ -394,7 +401,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
                   {selectedExp.highlights.map((highlight, idx) => (
                     <div key={idx} className="flex items-start gap-2.5 text-sm text-text-secondary">
                       <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
-                      {highlight}
+                      <StyledText text={highlight} />
                     </div>
                   ))}
                 </div>
