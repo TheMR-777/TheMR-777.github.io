@@ -14,7 +14,7 @@ export const portfolioData = {
       "C++ Expert & Cryptography Specialist",
       "AI-Powered Innovation Engineer"
     ],
-    about: "A lifelong journey of innovation and engineering excellence, from age 3 to industry architect. I blend low-level mastery (C++, Cryptography) with high-level architecture (.NET, AI) to engineer solutions that haven't been built before — from enterprise platforms to open-source tools that transform how developers work.",
+    about: "A lifelong journey of [ac]innovation[/ac] and [ac]engineering excellence[/ac], from age 3 to industry architect. I blend [hi]low-level mastery[/hi] (C++, Cryptography) with [hi]high-level architecture[/hi] (.NET, AI) to engineer solutions that [em]haven't been built before[/em] — from enterprise platforms to open-source tools that transform how developers work.",
     social: {
       github: "https://github.com/TheMR-777",
       linkedin: "https://www.linkedin.com/in/777-ammar",
@@ -35,15 +35,15 @@ export const portfolioData = {
     interests: [
       {
         name: "Astronomy",
-        description: "Second-largest passion after computing. I study the cosmos through expert voices to build intuition—not rote facts—about black holes, stellar evolution, and cosmic structure."
+        description: "Second-largest passion after computing. I study the cosmos through expert voices to build [ac]intuition[/ac]—not rote facts—about black holes, stellar evolution, and cosmic structure."
       },
       {
         name: "Physics",
-        description: "A late-blooming love that became a core lens. I build intuitive models about electromagnetism, chip fabrication, GPUs, and hardware architectures through thoughtful exploration."
+        description: "A late-blooming love that became a core lens. I build intuitive models about electromagnetism, chip fabrication, GPUs, and hardware architectures through [hi]thoughtful exploration[/hi]."
       },
       {
         name: "Psychology",
-        description: "Nurtured by my psychologist mother's open conversations. I study cognitive biases and learning science — because understanding how the mind learns is the most valuable thing I have learned."
+        description: "Nurtured by my psychologist mother's open conversations. I study cognitive biases and learning science — because [em]understanding how the mind learns is the most valuable thing I have learned[/em]."
       }
     ]
   },
@@ -51,7 +51,8 @@ export const portfolioData = {
   philosophy: {
     title: "The Driving Force",
     subtitle: "The Joy of Discovery",
-    mainQuote: "The destination is just a waypoint—the real reward is the infinite richness of the journey itself.",
+    mainQuote: "The scale of the goal has [hi]never[/hi] mattered to me—what matters is the [ac]journey[/ac] of getting there.",
+    cardText: "Whether I'm architecting a comprehensive system like the [c=text-text-primary font-medium]Employee Monitoring Suite[/c], or spending hours refining something as \"simple\" as a prime number generation algorithm, the experience is the same: an [ac]insatiable curiosity[/ac] that drives me to discover one more micro-optimization, one more elegant simplification, one more insight I hadn't seen before.",
     sections: [
       {
         title: "The Journey Over the Goal",
@@ -131,8 +132,8 @@ export const portfolioData = {
     toolsPhilosophy: {
       title: "Tools That Transform",
       subtitle: "The distinction between storing information and creating value",
-      content: "There is a philosophy I hold deeply about the kind of software worth building. In the most distilled form, much of corporate software — including the ERP systems I've engineered — is sophisticated notekeeping. We record, organize, and retrieve. It's necessary, and I take pride in doing it exceptionally well. But it's not what sets my soul on fire.",
-      essence: "What truly excites me is building tools that transform. Software where you provide an input and receive something genuinely new in return — a processed value, an insight, a capability that didn't exist before. Not storage, but synthesis. Not records, but results.",
+      content: "Most software exists to [hi]remember[/hi] — to store records, log transactions, and keep notes organized. Important work, but not what ignites my passion.",
+      essence: "What excites me is building software that takes something [c=text-text-secondary]in[/c], and gives something [ac]genuinely new[/ac] back. Software that [ac]transforms[/ac].",
       examples: "Every personal project I build follows this principle. SchemaFlow transforms raw SQL DDLs into visual, interactive query canvases. Schema Weaver untangles database relationships into auto-decluttered 3D maps. The Moiré Effect Demo turns a real-world physics observation into interactive understanding. GitHubify-MD eliminates hours of broken Markdown-to-HTML conversion. Even Simple Smart Cleanup automates tedious system maintenance I'd otherwise do by hand. These are small, sometimes simple — but each one takes something in and produces something of real, tangible value.",
       closing: "This is the kind of engineering that matters to me: building things that actually do something. Tools that process, transform, and create — not just remember.",
       grid: [
@@ -150,6 +151,13 @@ export const portfolioData = {
       },
       closingThought: "Software worth building leaves the world different than it found it."
     },
+    architecturalPhilosophy: {
+      content: "I don't just [hi]memorize[/hi] patterns—I understand them at their core: [c=text-accent]what problem[/c] each pattern solves, [c=text-accent]how[/c] it solves it, and [c=text-accent]where it falls short[/c].",
+      revealText1: "Patterns are the surface. Understanding is what lies beneath.",
+      revealText2: "I don't just build systems — I build the intuition that builds systems.",
+      revealText3: "[ac]Learn how to learn,[/ac] and everything else follows."
+    },
+    closingQuote: "\"[i]Creating what hasn't been built before,[/i]<br/>[em]one innovation at a time.[/em]\"",
     coreInsight: "This is my innermost driving force. I don't pursue projects for the end result alone; I pursue them for what I'll discover along the way. It's why I can spend weeks on something others finish in hours, and why the 'simplest' problems often teach me the most."
   },
 

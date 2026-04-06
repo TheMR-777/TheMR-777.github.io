@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Lightbulb, Compass, Target, Layers, Sparkles, Infinity, BookOpen, ExternalLink, Play, Brain, type LucideIcon } from 'lucide-react';
 import { SCROLL_ANIMATION_VP } from '../constants/animations';
 import { portfolioData } from '../data/portfolio';
+import { StyledText } from '../lib/styledText';
 
 const { philosophy } = portfolioData;
 
@@ -78,13 +79,11 @@ const Philosophy = () => {
 
             <div className="relative">
               <div className="absolute left-0 top-1 bottom-1 w-0.5 rounded-full bg-accent/50" />
-              <p className="pl-5 text-lg lg:text-xl text-text-secondary font-light leading-relaxed">
-                The scale of the goal has{' '}
-                <span className="text-text-primary">never</span>{' '}
-                mattered to me—what matters is the{' '}
-                <span className="font-medium text-accent">journey</span>{' '}
-                of getting there.
-              </p>
+              <StyledText 
+                text={philosophy.mainQuote}
+                className="pl-5 text-lg lg:text-xl text-text-secondary font-light leading-relaxed"
+                as="p"
+              />
             </div>
           </motion.div>
         </section>
@@ -106,15 +105,11 @@ const Philosophy = () => {
                   <div className="flex-1 w-px bg-gradient-to-b from-accent/20 to-transparent mt-3" />
             </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-base lg:text-lg text-text-secondary leading-relaxed">
-                    Whether I'm architecting a comprehensive system like the{' '}
-                    <span className="text-text-primary font-medium">Employee Monitoring Suite</span>, or spending 
-                    hours refining something as "simple" as a prime number generation algorithm, the 
-                    experience is the same: an{' '}
-                    <span className="text-accent font-medium">insatiable curiosity</span>{' '}
-                    that drives me to discover one more micro-optimization, one more elegant 
-                    simplification, one more insight I hadn't seen before.
-                  </p>
+                  <StyledText 
+                    text={philosophy.cardText}
+                    className="text-base lg:text-lg text-text-secondary leading-relaxed"
+                    as="p"
+                  />
                 </div>
               </div>
             </div>
@@ -151,13 +146,9 @@ const Philosophy = () => {
                          {step.title}
                       </h3>
                     </div>
-                    <p className="text-text-secondary leading-relaxed pl-10">
-                      {step.content}
-                    </p>
+                    <StyledText text={step.content} className="text-text-secondary leading-relaxed pl-10" as="p" />
                     <div className="ml-10 mt-4 pl-4 border-l-2 border-accent/30 py-1">
-                      <p className="text-accent text-sm font-medium leading-relaxed italic">
-                        "{step.highlight}"
-                      </p>
+                      <StyledText text={`"${step.highlight}"`} className="text-accent text-sm font-medium leading-relaxed italic" as="p" />
                     </div>
 
                     {/* Discovery Story — simple format (Horner's Method) */}
@@ -307,16 +298,8 @@ const Philosophy = () => {
 
             {/* Core Statement - Expanded for clarity */}
             <div className="mb-8 space-y-4">
-              <p className="text-base lg:text-lg text-text-secondary leading-relaxed">
-                Most software exists to <span className="text-text-primary font-medium">remember</span> — 
-                to store records, log transactions, and keep notes organized. Important work, 
-                but not what ignites my passion.
-              </p>
-              <p className="text-base lg:text-lg text-text-primary leading-relaxed">
-                What excites me is building software that takes something <span className="text-text-secondary">in</span>, 
-                and gives something <span className="text-accent font-medium">genuinely new</span> back. 
-                Software that <span className="text-accent font-medium">transforms</span>.
-              </p>
+              <StyledText text={toolsPhilosophy.content} className="text-base lg:text-lg text-text-secondary leading-relaxed" as="p" />
+              <StyledText text={toolsPhilosophy.essence} className="text-base lg:text-lg text-text-primary leading-relaxed" as="p" />
             </div>
 
             {/* Visual Transformation Grid — "Rack Focus" hover cards */}
@@ -430,11 +413,11 @@ const Philosophy = () => {
             <div className="p-8 rounded-2xl bg-gradient-to-br from-layer to-layer/50 border border-stroke overflow-hidden relative group/arch">
               {/* Resting state — blurs on hover */}
               <div className="arch-rest transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                <p className="text-lg text-text-secondary leading-relaxed mb-8">
-                  I don't just <span className="text-text-primary">memorize</span> patterns—I 
-                  understand them at their core: <span className="text-accent">what problem</span> each 
-                  pattern solves, <span className="text-accent">how</span> it solves it, and <span className="text-accent">where it falls short</span>.
-                </p>
+                <StyledText 
+                  text={philosophy.architecturalPhilosophy.content}
+                  className="text-lg text-text-secondary leading-relaxed mb-8"
+                  as="p"
+                />
                 <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
                   {[
                     { label: 'Minimal', desc: 'Every component earns its place' },
@@ -462,16 +445,10 @@ const Philosophy = () => {
               <div className="arch-reveal absolute inset-0 flex flex-col justify-center items-center text-center opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5" />
                 <div className="relative z-10 px-6">
-                  <p className="text-sm text-text-tertiary mb-3">
-                    Patterns are the surface. Understanding is what lies beneath.
-                  </p>
-                  <p className="text-base text-text-primary font-light leading-relaxed mb-4">
-                    I don't just build systems — I build the intuition that builds systems.
-                  </p>
+                  <StyledText text={philosophy.architecturalPhilosophy.revealText1} className="text-sm text-text-tertiary mb-3" as="p" />
+                  <StyledText text={philosophy.architecturalPhilosophy.revealText2} className="text-base text-text-primary font-light leading-relaxed mb-4" as="p" />
                   <div className="w-8 h-px bg-accent/40 mx-auto mb-4" />
-                  <p className="text-xs text-text-tertiary">
-                    <span className="text-accent font-medium">Learn how to learn,</span> and everything else follows.
-                  </p>
+                  <StyledText text={philosophy.architecturalPhilosophy.revealText3} className="text-xs text-text-tertiary" as="p" />
                 </div>
               </div>
             </div>

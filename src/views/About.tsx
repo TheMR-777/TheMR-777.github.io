@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { portfolioData } from "../data/portfolio";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
+import { StyledText } from "../lib/styledText";
 
 export function About() {
   const {
@@ -208,9 +209,11 @@ export function About() {
         transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         className="mb-10 p-6 rounded-xl bg-layer border border-stroke"
       >
-        <p className="text-sm text-text-secondary leading-relaxed">
-          {personal.about}
-        </p>
+        <StyledText 
+          text={personal.about} 
+          className="text-sm text-text-secondary leading-relaxed" 
+          as="p" 
+        />
       </motion.section>
 
       {/* Journey Timeline */}
