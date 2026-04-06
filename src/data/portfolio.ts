@@ -294,8 +294,8 @@ export const portfolioData = {
       role: ".NET Developer & Architecture Consultant",
       period: "Jun 2023 — Present",
       location: "Remote/Hybrid",
-      summary: "Transforming enterprise systems into multi-tenant SaaS platforms. Engineered flagship systems including the Employee Monitoring Suite (200% productivity boost, zero defects) and comprehensive ERP platform.",
-      description: "Progressed from UI/UX to leading core platform modules and multi-tenant migration decisions. My focus has been on building reusable primitives that power every business module—not one-off solutions.",
+      summary: "Channeling every skill (including polyglot architecture) into transforming enterprise systems. Engineered flagship products including the Employee Monitoring Suite (200% productivity boost, zero defects) and a comprehensive ERP platform.",
+      description: "Progressed from UI/UX to leading core platform modules and multi-tenant migration decisions. My focus: building reusable primitives that power every business module. The same philosophy that drives my personal projects (tools that transform) shaped how I approached enterprise infrastructure.",
       aceProjects: [
         {
           name: "Employee Monitoring Suite",
@@ -393,7 +393,7 @@ export const portfolioData = {
           type: "Security • Cryptography",
           period: "2023",
           summary: "Multi-layered encryption system with custom cryptographic protocols exceeding industry standards.",
-          description: "Financial credentials required security beyond standard password managers. Designed a defense-in-depth architecture with custom auditing and key rotation.",
+          description: "Financial credentials demanded security beyond standard password managers — and years of ethical hacking gave me the perspective to design it right. Built a defense-in-depth architecture with custom auditing and key rotation, drawing on the same security-first mindset I developed being H4ck3R_777.",
           approach: "Designed multi-layered security: inner loops use C++ for raw cryptographic operations via OpenSSL wrappers; outer layers use .NET for secure memory management and PWA interface. Implemented zero-knowledge principles where applicable.",
           impact: [
             "Became critical company infrastructure",
@@ -479,7 +479,7 @@ export const portfolioData = {
           type: "Microservice • Polyglot",
           period: "2025 — Present",
           summary: "Python-based microservice that replaced years of fragmented reporting across ACE with a single, zero-overhead solution.",
-          description: "ACE had an years-long, company-wide reporting problem: every project — EMS, ERP, Laravel-based services, and more — handled reporting independently, resulting in brittle, unreliable, badly designed, non-customizable, and rigid implementations. I proposed a microservice-based architecture with Python 3.14 as the primary reporting engine, leveraging its rich library ecosystem for flexible report generation and data presentation. I solely developed the engine (since nobody had specialization in polyglot application development), keeping the implementation minimal by design — exposing the underlying library APIs directly, requiring zero overhead for maintenance or custom development. The engine is now integrated across EMS, ERP, and multiple Laravel-based projects, becoming ACE's internal industry standard for reporting.",
+          description: "ACE had a years-long, company-wide reporting problem: every project — EMS, ERP, Laravel-based services, and more — handled reporting independently, resulting in brittle, unreliable, and non-customizable implementations. I proposed a microservice-based architecture with Python 3.14 as the primary reporting engine, leveraging its rich library ecosystem for flexible report generation and data presentation. I solely developed the engine (since nobody had specialization in polyglot application development), keeping the implementation minimal by design — exposing the underlying library APIs directly, requiring zero overhead for maintenance or custom development. The engine is now integrated across EMS, ERP, and multiple Laravel-based projects, becoming ACE's internal industry standard for reporting. The need for dynamic, visual query construction during this project also gave birth to SchemaFlow — now an open-source standalone tool.",
           architecturalHighlights: [
             "Microservice architecture — language-agnostic integration via HTTP/REST",
             "Python 3.14 core — leveraging rich library ecosystem (ReportLab, OpenPyXL, Pandas, Jinja2)",
