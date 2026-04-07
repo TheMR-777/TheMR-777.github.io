@@ -14,7 +14,7 @@ export const portfolioData = {
       "C++ Expert & Cryptography Specialist",
       "AI-Powered Innovation Engineer"
     ],
-    about: "A lifelong journey of [ac]innovation[/ac] and [ac]engineering excellence[/ac], from age 3 to industry architect. I blend [hi]low-level mastery[/hi] (C++, Cryptography) with [hi]high-level architecture[/hi] (.NET, AI) to engineer solutions that [em]haven't been built before[/em] — from enterprise platforms to open-source tools that transform how developers work.",
+    about: "A lifelong journey of innovation and engineering excellence, from age 3 to industry architect. I blend low-level mastery (C++, Cryptography) with high-level architecture (.NET, AI) to engineer solutions that haven't been built before — from enterprise platforms to open-source tools that transform how developers work.",
     social: {
       github: "https://github.com/TheMR-777",
       linkedin: "https://www.linkedin.com/in/777-ammar",
@@ -255,7 +255,7 @@ export const portfolioData = {
     ],
     ai: {
       title: "AI as Force Multiplier",
-      description: "I leverage AI not as a crutch, but as an accelerator — treating it as a thinking partner that amplifies engineering velocity while maintaining quality and originality.",
+      description: "I leverage AI not as a crutch, but as an [ac]accelerator[/ac] — treating it as a thinking partner that [hi]amplifies engineering velocity[/hi] while maintaining quality and originality.",
       models: [
         { name: "Claude 4.6", variants: "Opus / Sonnet / Haiku" },
         { name: "GPTs", variants: "GPT-5.3, Codex-series" },
@@ -285,7 +285,7 @@ export const portfolioData = {
     },
     dsa: {
       title: "DSA Mastery",
-      description: "A full year before formal coursework, I implemented every fundamental data structure and algorithm in modern C++ — not procedural C, but proper OOP with RAII, move semantics, and STL-style interfaces.",
+      description: "A full year before formal coursework, I implemented every fundamental data structure and algorithm in [hi]modern C++[/hi] — not procedural C, but proper OOP with [ac]RAII[/ac], [ac]move semantics[/ac], and [ac]STL-style interfaces[/ac].",
       highlights: [
         "Trees (BST, AVL, Red-Black), Graphs, Heaps, Hash Tables",
         "Sorting (Quick, Merge, Heap), Searching (Binary, A*)",
@@ -302,8 +302,8 @@ export const portfolioData = {
       role: ".NET Developer & Architecture Consultant",
       period: "Jun 2023 — Present",
       location: "Remote/Hybrid",
-      summary: "Channeling every skill (including polyglot architecture) into transforming enterprise systems. Engineered flagship products including the Employee Monitoring Suite (200% productivity boost, zero defects) and a comprehensive ERP platform.",
-      description: "Progressed from UI/UX to leading core platform modules and multi-tenant migration decisions. My focus: building reusable primitives that power every business module. The same philosophy that drives my personal projects (tools that transform) shaped how I approached enterprise infrastructure.",
+      summary: "Channeling every skill (including polyglot architecture) into transforming enterprise systems. Engineered flagship products including the Employee Monitoring Suite achieving [ac]200% productivity boost[/ac] with [hi]zero defects[/hi] at launch, and a comprehensive ERP platform.",
+      description: "Progressed from UI/UX to leading core platform modules and multi-tenant migration decisions. My focus: building [hi]reusable primitives[/hi] that power every business module. The same philosophy that drives my personal projects (tools that [ac]transform[/ac]) shaped how I approached enterprise infrastructure.",
       aceProjects: [
         {
           name: "Employee Monitoring Suite",
@@ -532,8 +532,8 @@ export const portfolioData = {
       role: "Lead Developer & System Architect",
       period: "Dec 2024 — Jul 2025",
       location: "Remote",
-      summary: "Built sophisticated UWB Indoor Positioning Simulation System as a solo project, eliminating the need for costly physical testing.",
-      description: "Pioneered accurate indoor positioning simulation without physical hardware. Developed proprietary algorithms for signal propagation and created multi-layered visualization systems.",
+      summary: "Built sophisticated UWB Indoor Positioning Simulation System as a [hi]solo project[/hi], eliminating the need for [ac]costly physical testing[/ac].",
+      description: "[ac]Pioneered[/ac] accurate indoor positioning simulation without physical hardware. Developed proprietary algorithms for signal propagation and created multi-layered visualization systems.",
       highlights: [
         "First-principles simulation without physical hardware",
         "Real-time heatmap visualization with NumPy/SciPy",
@@ -583,10 +583,10 @@ export const portfolioData = {
       category: "Flagship • Enterprise",
       tech: [".NET", "Blazor", "GraphQL", "ApexCharts", "Micro-ORM"],
       summary: "Company-wide monitoring system achieving 200% productivity boost with zero defects at launch.",
-      description: "Single-handedly designed and engineered over the course of one year — the longest I've dedicated to any single system. This experience really solidified my approach to architecture: I didn't memorize patterns, I understood them at their core, enabling a custom architecture unconstrained by the templates.",
+      description: "Single-handedly designed and engineered over the course of one year — the longest I've dedicated to any single system. This experience [em]solidified my approach to architecture[/em]: I didn't memorize patterns, I understood them at their core, enabling a custom architecture unconstrained by the templates.",
       challenge: "The company lacked visibility into remote work patterns. Existing solutions were either invasive, inaccurate, or lacked context-aware reporting. Privacy concerns made aggressive tracking unacceptable.",
       approach: "Engineered a privacy-conscious, OS-level monitoring agent that respects boundaries while providing meaningful insights. Built a real-time Blazor dashboard with GraphQL for efficient data pipelines. Used Micro-ORM for high-throughput logging without the overhead of full ORMs.",
-      architecturalPhilosophy: "The result was minimal and elegant (no unnecessary abstractions), efficient and optimized (performance as first-class citizen), extendable (new features without architectural surgery), maintainable (clear separation of concerns), and consistent (deterministic behavior in production).",
+      architecturalPhilosophy: "The result was [hi]minimal and elegant[/hi] (no unnecessary abstractions), [hi]efficient and optimized[/hi] (performance as first-class citizen), [hi]extendable[/hi] (new features without architectural surgery), [hi]maintainable[/hi] (clear separation of concerns), and [hi]consistent[/hi] (deterministic behavior in production).",
       impact: [
         "Zero defects at production launch",
         "200% productivity increase measured company-wide",
@@ -601,7 +601,7 @@ export const portfolioData = {
       category: "Simulation • Research",
       tech: ["C# 13", ".NET 9", "Python", "NumPy", "SciPy", "WPF"],
       summary: "Sophisticated simulation engine enabling UWB deployment planning without physical hardware.",
-      description: "Client needed to validate UWB anchor placements before expensive physical installation. My deep interest in physics — signal propagation, electromagnetic attenuation, and computational geometry — made this a uniquely natural fit. Built a hybrid (polyglot) .NET/Python system modeling signal behavior with material-specific precision.",
+      description: "Client needed to validate UWB anchor placements before expensive physical installation. My deep interest in [ac]physics[/ac] — signal propagation, electromagnetic attenuation, and computational geometry — made this a uniquely natural fit. Built a hybrid (polyglot) .NET/Python system modeling signal behavior with material-specific precision.",
       challenge: "Deploying UWB anchors requires expensive physical testing. Mistakes in placement are costly to fix. The client needed virtual validation before drilling holes.",
       approach: "Built a hybrid simulation engine: .NET for UI, core logic, and geometric calculations; Python (NumPy/SciPy) for signal propagation modeling and heatmap generation. Implemented material-specific attenuation for walls, glass, and obstacles.",
       impact: [
@@ -665,8 +665,8 @@ export const portfolioData = {
       title: "mr_crypt",
       category: "Open Source • Library",
       tech: ["C++23", "OpenSSL 3.0+", "Template Metaprogramming"],
-      summary: "Revolutionary range-like syntax for C++ cryptography reducing implementation time by 10x.",
-      description: "OpenSSL's C-API is verbose and error-prone. Created a wrapper using C++23 ranges and template metaprogramming for type-safe, fluent cryptographic operations.",
+      summary: "[ac]Revolutionary[/ac] range-like syntax for C++ cryptography reducing implementation time by [hi]10x[/hi].",
+      description: "OpenSSL's C-API is verbose and error-prone. Created a wrapper using [ac]C++23 ranges[/ac] and [hi]template metaprogramming[/hi] for type-safe, fluent cryptographic operations.",
       challenge: "OpenSSL's C-API requires extensive boilerplate, manual memory management, and is difficult to use safely in modern C++ projects.",
       approach: "Leveraged C++23 ranges and concepts to create a fluent, type-safe API. Template metaprogramming ensures compile-time safety. Seamless OpenSSL 3.0+ integration.",
       impact: [
@@ -700,7 +700,7 @@ export const portfolioData = {
     {
       title: "SchemaFlow",
       category: "Data Architecture • Visual Query Builder",
-      description: "Born during the development of my Reporting Engine — I needed a way to let users visually wire up database tables and see live SQL output. What started as a stakeholder demo evolved into a standalone, open-source visual query builder. Paste your DDL, drag tables onto a canvas, connect columns, and watch the SQL write itself. Co-engineered with Gemini 3.1 Pro, and one of the projects I feel truly embodies my philosophy: take something genuinely complex in, deliver something meaningfully elegant out.",
+      description: "Born during the development of my Reporting Engine — I needed a way to let users visually wire up database tables and see live SQL output. What started as a stakeholder demo evolved into a standalone, open-source visual query builder. Paste your DDL, drag tables onto a canvas, connect columns, and watch the SQL write itself. Co-engineered with [hi]Gemini 3.1 Pro[/hi], and one of the projects I feel truly embodies my philosophy: take something genuinely complex [dim]in[/dim], deliver something meaningfully elegant [ac]out[/ac].",
       origin: "Evolved from an enterprise stakeholder demo into an open-source, pluggable query builder",
       tech: ["React 19", "TypeScript", "React Flow", "Zustand", "Tailwind CSS 4", "Framer Motion"],
       link: "https://themr-777.github.io/SchemaFlow/",
@@ -709,7 +709,7 @@ export const portfolioData = {
     {
       title: "Schema Weaver",
       category: "Developer Tool • Visualization",
-      description: "Always struggled to visualize relationships between SQL tables. So I built a tool that takes raw SQL schemas (supports TablePlus exports out of the box), smartly identifies relationships using robust heuristics based on naming conventions and foreign key patterns, and renders an auto-decluttered 3D visualization showing which columns link which tables. A spiritual predecessor to SchemaFlow — where this one reveals structure, that one builds queries.",
+      description: "Always struggled to visualize relationships between SQL tables. So I built a tool that takes raw SQL schemas (supports TablePlus exports out of the box), smartly identifies relationships using robust heuristics based on naming conventions and foreign key patterns, and renders an [ac]auto-decluttered 3D visualization[/ac] showing which columns link which tables. A spiritual predecessor to SchemaFlow — where this one reveals structure, that one builds queries.",
       origin: "Frustration with manual DBML conversion and relationship mapping",
       tech: ["Three.js", "JavaScript", "SQL Parsing"],
       link: "https://themr-777.github.io/schema-weaver/",
@@ -718,7 +718,7 @@ export const portfolioData = {
     {
       title: "LetItGo",
       category: "Mobile • Personal",
-      description: "Built a minimalist Android app that saves timestamps and shows elapsed time down to the second — because I wanted a beautiful way to watch time flow. I've saved my birthday, job joining date, graduation, and more. Designed with obsessive attention to UI elegance, it's a tiny app with a lot of heart — and proof that depth can be found in the simplest ideas.",
+      description: "Built a minimalist Android app that saves timestamps and shows elapsed time down to the second — because I wanted a beautiful way to watch time flow. I've saved my birthday, job joining date, graduation, and more. Designed with obsessive attention to UI elegance, it's a tiny app with a lot of heart — and proof that [em]depth can be found in the simplest ideas[/em].",
       origin: "Wanting a beautiful way to visualize the passage of time",
       tech: ["Flutter", "Dart", "Local Storage", "Material Design"],
       repo: "https://github.com/TheMR-777/just_letitgo"
@@ -734,7 +734,7 @@ export const portfolioData = {
     {
       title: "Moiré Effect Demo",
       category: "Physics • Visualization",
-      description: "Spotted a mesmerizing pattern on a van's metal door during a ride home and couldn't rest until I understood it. Turned out to be the Moiré effect — an optical interference phenomenon. Built an interactive demo to develop the kind of intuitive understanding I chase in all my physics explorations — and it fascinated not just me, but friends and colleagues alike.",
+      description: "Spotted a mesmerizing pattern on a van's metal door during a ride home and couldn't rest until I understood it. Turned out to be the Moiré effect — an optical interference phenomenon. Built an interactive demo to develop the kind of [ac]intuitive understanding[/ac] I chase in all my physics explorations — and it fascinated not just me, but friends and colleagues alike.",
       origin: "Curiosity from observing a real-world physics phenomenon",
       tech: ["HTML/CSS/JS", "Canvas", "Gemini 3", "Claude Opus 4.5"],
       link: "https://themr-777.github.io/moire-effect-demo/",
@@ -876,9 +876,9 @@ export const portfolioData = {
     title: "CyberMACS Erasmus Mundus Joint Master",
     year: "2024",
     status: "Reserved Seat (Full Scholarship Category) → Full Tuition Waiver Offered → Declined",
-    summary: "Selected through a highly competitive process for the Erasmus Mundus Joint Master Program in Cybersecurity. The interview, intended for 15 minutes, extended to over an hour as the panel explored my technical expertise in depth.",
+    summary: "Selected through a highly competitive process for the Erasmus Mundus Joint Master Program in Cybersecurity. The interview, intended for [dim]15 minutes[/dim], extended to [ac]over an hour[/ac] as the panel explored my technical expertise in depth.",
     details: "Despite being placed on the reserved list initially for the Full Scholarship category, I was later offered a full tuition fee waiver and insurance coverage. I made the most difficult decision of my academic life by declining, due to relocation and living costs exceeding feasibility at the time.",
-    significance: "This milestone remains a powerful symbol of international recognition and reflects my principle-driven approach of pursuing opportunities sustainably."
+    significance: "This milestone remains a powerful symbol of international recognition and reflects my [hi]principle-driven approach[/hi] of pursuing opportunities sustainably."
   },
 
   community: {
@@ -900,13 +900,13 @@ export const portfolioData = {
       sessions: "50+",
       studentsMentored: "20+",
       topics: ["C++", "System Design", "Data Structures", "Security Fundamentals", "Python", "Cryptography", "Reverse Engineering", "Social Engineering"],
-      description: "Conducted 50+ peer programming sessions and mentored 20+ students in C++ and system design. Created educational content reaching thousands globally through Null Byte articles and community forums."
+      description: "Conducted 50+ peer programming sessions and mentored [hi]20+ students[/hi] in C++ and system design. Created educational content reaching [ac]thousands globally[/ac] through Null Byte articles and community forums."
     },
     openSource: [
       {
         project: "mr_crypt",
         role: "Creator & Principal Engineer",
-        description: "Revolutionary C++23 cryptography library with range-like syntax and 10x reduction in implementation boilerplate.",
+        description: "[ac]Revolutionary[/ac] C++23 cryptography library with range-like syntax and [hi]10x reduction[/hi] in implementation boilerplate.",
         link: "https://github.com/TheMR-777/mr_crypt"
       },
       {

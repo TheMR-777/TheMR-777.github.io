@@ -288,9 +288,6 @@ export function About() {
                 <h3 className="text-sm font-medium text-text-primary mb-2">
                   {interest.name}
                 </h3>
-                {/* <p className="text-xs text-text-secondary leading-relaxed">
-                  {interest.description}
-                </p> */}
                 <StyledText 
                   text={interest.description} 
                   className="text-xs text-text-secondary leading-relaxed" 
@@ -388,15 +385,19 @@ export function About() {
               </span>
             ))}
           </div>
-          <p className="text-xs text-text-secondary leading-relaxed mb-3">
-            {cyberMACS.summary}
-          </p>
+          <StyledText
+            text={cyberMACS.summary}
+            className="text-xs text-text-secondary leading-relaxed mb-3"
+            as="p"
+          />
           <p className="text-xs text-text-tertiary leading-relaxed mb-3">
             {cyberMACS.details}
           </p>
-          <p className="text-xs text-text-tertiary leading-relaxed italic">
-            {cyberMACS.significance}
-          </p>
+          <StyledText
+            text={cyberMACS.significance}
+            className="text-xs text-text-tertiary leading-relaxed italic"
+            as="p"
+          />
         </div>
       </motion.section>
 
@@ -483,9 +484,11 @@ export function About() {
                 </p>
               </div>
             </div>
-            <p className="text-xs text-text-secondary leading-relaxed mb-3">
-              {community.mentorship.description}
-            </p>
+            <StyledText
+              text={community.mentorship.description}
+              className="text-xs text-text-secondary leading-relaxed mb-3"
+              as="p"
+            />
             <div className="flex flex-wrap gap-1.5">
               {community.mentorship.topics.map((t) => (
                 <span
@@ -532,7 +535,7 @@ export function About() {
                     {os.role}
                   </span>
                 </div>
-                <p className="text-xs text-text-secondary">{os.description}</p>
+                <StyledText text={os.description} className="text-xs text-text-secondary" as="p" />
               </div>
               <ExternalLink className="w-3.5 h-3.5 text-text-disabled flex-shrink-0 mt-1" />
             </a>
@@ -563,9 +566,11 @@ export function About() {
           <p className="text-xs text-text-tertiary mb-3">
             {quantumResearch.collaborator} • {quantumResearch.institution}
           </p>
-          <p className="text-xs text-text-secondary leading-relaxed mb-4">
-            {quantumResearch.description}
-          </p>
+          <StyledText
+            text={quantumResearch.description}
+            className="text-xs text-text-secondary leading-relaxed mb-4"
+            as="p"
+          />
           <ul className="space-y-1.5">
             {quantumResearch.contributions.map((c) => (
               <li

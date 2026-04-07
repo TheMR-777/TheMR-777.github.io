@@ -6,6 +6,7 @@ import { portfolioData } from "../data/portfolio";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { useDelayedHover } from "../hooks/useDelayedHover";
+import { StyledText } from "../lib/styledText";
 
 const { preUniversityEducation } = portfolioData;
 
@@ -119,9 +120,11 @@ export function Skills() {
             <h2 className="text-sm font-semibold text-text-primary mb-1">
               The Mentor Influence
             </h2>
-            <p className="text-xs text-text-secondary leading-relaxed">
-              My C++ journey was shaped by <span className="text-accent font-medium">TheCherno's</span> mentorship — instilling a discipline of performance-first thinking, explicit trade-off reasoning, and attention to every detail. This mindset now informs all my work, from .NET to TypeScript.
-            </p>
+            <StyledText
+              text="My C++ journey was shaped by [ac]TheCherno's[/ac] mentorship — instilling a discipline of performance-first thinking, explicit trade-off reasoning, and attention to every detail. This mindset now informs all my work, from .NET to TypeScript."
+              className="text-xs text-text-secondary leading-relaxed"
+              as="p"
+            />
           </div>
         </div>
       </motion.section>
@@ -502,9 +505,11 @@ export function Skills() {
             </h2>
           </div>
         </div>
-        <p className="text-xs text-text-secondary leading-relaxed mb-5">
-          {skills.ai.description}
-        </p>
+        <StyledText
+          text={skills.ai.description}
+          className="text-xs text-text-secondary leading-relaxed mb-5"
+          as="p"
+        />
 
         <div className="grid sm:grid-cols-2 gap-4">
           {/* Models */}
@@ -588,9 +593,11 @@ export function Skills() {
             <span className="text-[10px] text-text-tertiary">Pre-Coursework Self-Study</span>
           </div>
         </div>
-        <p className="text-xs text-text-secondary leading-relaxed mb-4">
-          {skills.dsa.description}
-        </p>
+        <StyledText
+          text={skills.dsa.description}
+          className="text-xs text-text-secondary leading-relaxed mb-4"
+          as="p"
+        />
 
         <div className="grid sm:grid-cols-2 gap-2">
           {skills.dsa.highlights.map((highlight, idx) => (

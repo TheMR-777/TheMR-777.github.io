@@ -463,17 +463,21 @@ export function Experience({ onNavigate }: ExperienceProps) {
             </div>
 
             <DetailSection title="Overview">
-              <p className="text-sm text-text-secondary leading-relaxed">
-                {selectedAceProject.description}
-              </p>
+              <StyledText
+                text={selectedAceProject.description}
+                className="text-sm text-text-secondary leading-relaxed"
+                as="p"
+              />
             </DetailSection>
 
             {selectedAceProject.architecturalPhilosophy && (
               <DetailSection title="Architectural Philosophy">
                 <div className="p-4 rounded-lg bg-accent-subtle border border-accent/20">
-                  <p className="text-sm text-text-primary leading-relaxed italic">
-                    {selectedAceProject.architecturalPhilosophy}
-                  </p>
+                  <StyledText
+                    text={selectedAceProject.architecturalPhilosophy}
+                    className="text-sm text-text-primary leading-relaxed italic"
+                    as="p"
+                  />
                 </div>
                 {selectedAceProject.architecturalOutcomes && (
                   <div className="mt-3 space-y-1.5">
@@ -491,9 +495,11 @@ export function Experience({ onNavigate }: ExperienceProps) {
             {selectedAceProject.approach && (
               <DetailSection title="The Approach">
                 <Surface padding="md" className="rounded-lg">
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {selectedAceProject.approach}
-                  </p>
+                  <StyledText
+                    text={selectedAceProject.approach}
+                    className="text-sm text-text-secondary leading-relaxed"
+                    as="p"
+                  />
                 </Surface>
               </DetailSection>
             )}
@@ -519,9 +525,11 @@ export function Experience({ onNavigate }: ExperienceProps) {
                       <h5 className="text-sm font-medium text-text-primary mb-1">
                         {mod.name}
                       </h5>
-                      <p className="text-xs text-text-secondary leading-relaxed mb-2">
-                        {mod.description}
-                      </p>
+                      <StyledText
+                        text={mod.description}
+                        className="text-xs text-text-secondary leading-relaxed mb-2"
+                        as="p"
+                      />
                       <span className="text-[10px] text-accent font-medium">
                         → {mod.impact}
                       </span>
