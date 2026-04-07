@@ -165,22 +165,22 @@ export const portfolioData = {
     genesis: {
       title: "The Genesis",
       period: "Age 3-10",
-      description: "My journey began at age 3, shaped by my uncle's computer. What started with GTA Vice City and SEGA wasn't just entertainment — it planted the seed of an insatiable curiosity about how systems work. When gifted a Windows XP PC, limited access became my greatest teacher: I learned to troubleshoot, experiment, and discover independently — a pattern that would define everything I build today."
+      description: "My journey began at age 3, shaped by my uncle's computer. What started with GTA Vice City and SEGA wasn't just entertainment — it planted the seed of an [ac]insatiable curiosity[/ac] about how systems work. When gifted a Windows XP PC, limited access became my greatest teacher: I learned to [hi]troubleshoot[/hi], [hi]experiment[/hi], and [hi]discover independently[/hi] — a pattern that would define everything I build today."
     },
     awakening: {
       title: "The Awakening",
       period: "Teenage Years",
-      description: "Watching 'Inkeshaaf' on 24 News ignited my passion for ethical hacking. I set an 'impossible' goal: hack an Android from another Android. Over a year, I learned Linux, Python, and networking from first principles — pioneering mobile-to-mobile penetration testing. That work became the 2nd most-read Null Byte article (2018-2020) and led me to found a cybersecurity community across 6 countries. The security mindset I built here later shaped every system I've secured since."
+      description: "Watching 'Inkeshaaf' on 24 News ignited my passion for [ac]ethical hacking[/ac]. I set an 'impossible' goal: hack an Android from another Android. Over a year, I learned Linux, Python, and networking from first principles — pioneering [hi]mobile-to-mobile penetration testing[/hi]. That work became the 2nd most-read Null Byte article (2018-2020) and led me to found a cybersecurity community across 6 countries. The security mindset I built here later shaped every system I've secured since."
     },
     academic: {
       title: "Academic Excellence",
       period: "2019-2023",
-      description: "At University of the Punjab, I earned a 3.73 CGPA while pursuing depth far beyond the curriculum — implementing every data structure and algorithm in modern C++ a full year before coursework, because understanding beats memorization. Became an unofficial C++ teaching assistant in my second semester, collaborated with a visiting PhD professor on quantum computing simulations, and was the first team to complete both FYP and research papers simultaneously."
+      description: "At University of the Punjab, I earned a [ac]3.73 CGPA[/ac] while pursuing depth far beyond the curriculum — implementing every data structure and algorithm in [hi]modern C++[/hi] a full year before coursework, because [em]understanding beats memorization[/em]. Became an unofficial C++ teaching assistant in my second semester, collaborated with a visiting PhD professor on quantum computing simulations, and was the first team to complete both FYP and research papers simultaneously."
     },
     professional: {
       title: "Professional Evolution",
       period: "2023-Present",
-      description: "My industry entry was strategic: a TeqHolic Flutter internship, a leveraged Rev9 AI team offer, and a direct CTO selection at ACE Money Transfer. Now as .NET Developer & Architecture Consultant, I've channeled every skill — from low-level C++ and cryptography to polyglot system design — into enterprise-grade products. The defining achievement: devoting an entire year to the Employee Monitoring Suite, a system I consider a professional masterpiece and a crucible for every engineering principle I hold."
+      description: "My industry entry was strategic: a TeqHolic Flutter internship, a leveraged Rev9 AI team offer, and a direct CTO selection at ACE Money Transfer. Now as .NET Developer & Architecture Consultant, I've channeled every skill — from low-level C++ and cryptography to polyglot system design — into enterprise-grade products. The defining achievement: devoting an entire year to the [c=text-text-primary font-medium]Employee Monitoring Suite[/c], a system I consider a [ac]professional masterpiece[/ac] and a crucible for every engineering principle I hold."
     }
   },
 
@@ -890,16 +890,16 @@ export const portfolioData = {
       countries: ["Iran", "Pakistan", "India", "Australia", "Finland", "Bangladesh"],
       achievements: [
         "Grew from 2 to 13 dedicated members organically",
-        "Fostered knowledge sharing and collaborative learning across time zones",
-        "Recruited local students, creating university-wide interest in security",
+        "Fostered knowledge sharing and collaborative learning globally",
+        "Recruited local students, sparking university-wide security interest",
         "Developed innovative security testing methodologies as a group",
-        "Mentored members from beginner to intermediate security skill levels"
+        "Mentored members from beginner to intermediate security levels"
       ]
     },
     mentorship: {
       sessions: "50+",
       studentsMentored: "20+",
-      topics: ["C++", "System Design", "Data Structures", "Security Fundamentals"],
+      topics: ["C++", "System Design", "Data Structures", "Security Fundamentals", "Python", "Cryptography", "Reverse Engineering", "Social Engineering"],
       description: "Conducted 50+ peer programming sessions and mentored 20+ students in C++ and system design. Created educational content reaching thousands globally through Null Byte articles and community forums."
     },
     openSource: [
