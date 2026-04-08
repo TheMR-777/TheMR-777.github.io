@@ -167,9 +167,11 @@ const Philosophy = () => {
                             {step.discovery.title}
                           </h4>
                         </div>
-                        <p className="text-sm text-text-secondary leading-relaxed pl-10">
-                          {step.discovery.story}
-                        </p>
+                        <StyledText
+                          text={step.discovery.story}
+                          className="text-sm text-text-secondary leading-relaxed pl-10"
+                          as="p"
+                        />
                       </motion.div>
                     )}
 
@@ -222,9 +224,11 @@ const Philosophy = () => {
                               <span className="text-[11px] font-medium text-accent/70 tracking-wide">
                                 {phase.label}
                               </span>
-                              <p className="text-[13px] text-text-secondary leading-relaxed mt-1">
-                                {phase.content}
-                              </p>
+                              <StyledText
+                                text={phase.content}
+                                className="text-[13px] text-text-secondary leading-relaxed mt-1"
+                                as="p"
+                              />
                             </motion.div>
                           ))}
                         </div>
@@ -263,9 +267,11 @@ const Philosophy = () => {
                             {step.metaSkill.title}
                           </h4>
                         </div>
-                        <p className="text-sm text-text-secondary leading-relaxed pl-11">
-                          {step.metaSkill.story}
-                        </p>
+                        <StyledText
+                          text={step.metaSkill.story}
+                          className="text-sm text-text-secondary leading-relaxed pl-11"
+                          as="p"
+                        />
                         <div className="mt-4 ml-11 flex items-center gap-2">
                           <div className="h-px flex-1 bg-gradient-to-r from-accent/20 to-transparent" />
                           <span className="text-[10px] text-accent/60 tracking-widest uppercase font-medium">
@@ -326,9 +332,11 @@ const Philosophy = () => {
                     <span className="text-accent font-semibold text-sm mb-2">
                       {item.verb}
                     </span>
-                    <p className="text-xs text-text-secondary leading-relaxed">
-                      {item.description}
-                    </p>
+                    <StyledText
+                      text={item.description}
+                      className="text-xs text-text-secondary leading-relaxed"
+                      as="p"
+                    />
                   </div>
                 </motion.div>
               ))}
@@ -348,9 +356,7 @@ const Philosophy = () => {
             </div>
 
             {/* Closing Thought */}
-            <p className="text-center text-sm text-text-tertiary italic">
-              {toolsPhilosophy.closingThought}
-            </p>
+            <StyledText text={toolsPhilosophy.closingThought} className="text-center text-sm text-text-tertiary italic" as="p" />
           </motion.div>
         </section>
 
@@ -385,9 +391,11 @@ const Philosophy = () => {
                       <h3 className="font-semibold text-text-primary group-hover:text-accent transition-colors">
                         {principle.title}
                       </h3>
-                      <p className="text-sm text-text-secondary leading-relaxed">
-                        {principle.description}
-                      </p>
+                      <StyledText
+                        text={principle.description}
+                        className="text-sm text-text-secondary leading-relaxed"
+                        as="p"
+                      />
                     </div>
                   </div>
                 </motion.div>

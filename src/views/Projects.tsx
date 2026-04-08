@@ -226,11 +226,9 @@ export function Projects() {
             {selectedProject.challenge && (
               <DetailSection title="The Challenge" icon={AlertCircle}>
                 <Surface padding="md" className="rounded-lg">
-                  <StyledText 
-                    text={selectedProject.challenge} 
-                    className="text-sm text-text-secondary leading-relaxed" 
-                    as="p" 
-                  />
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {selectedProject.challenge}
+                  </p>
                 </Surface>
               </DetailSection>
             )}
@@ -250,11 +248,9 @@ export function Projects() {
             {selectedProject.approach && (
               <DetailSection title="The Approach" icon={Lightbulb}>
                 <Surface padding="md" className="rounded-lg">
-                  <StyledText 
-                    text={selectedProject.approach} 
-                    className="text-sm text-text-secondary leading-relaxed" 
-                    as="p" 
-                  />
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {selectedProject.approach}
+                  </p>
                 </Surface>
               </DetailSection>
             )}
@@ -264,7 +260,7 @@ export function Projects() {
                 {selectedProject.impact.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-sm text-text-secondary">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
-                    <StyledText text={item} />
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -310,11 +306,9 @@ export function Projects() {
               <span className="text-[10px] uppercase tracking-wider text-text-tertiary font-medium">
                 Origin
               </span>
-              <StyledText 
-                text={selectedPersonal.origin} 
-                className="text-sm text-text-secondary mt-1" 
-                as="p" 
-              />
+              <p className="text-sm text-text-secondary mt-1">
+                {selectedPersonal.origin}
+              </p>
             </Surface>
 
             <DetailSection title="Built With">

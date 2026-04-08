@@ -401,7 +401,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
                   {selectedExp.highlights.map((highlight, idx) => (
                     <div key={idx} className="flex items-start gap-2.5 text-sm text-text-secondary">
                       <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
-                      <StyledText text={highlight} />
+                      {highlight}
                     </div>
                   ))}
                 </div>
