@@ -98,6 +98,11 @@ export const portfolioData = {
         highlight: "Computer Science is only one language of discovery; every domain is a fractal, where curiosity reveals that there is no bottom—only deeper truth and beauty."
       },
       {
+        title: "The Discipline of Restraint",
+        content: "Design and formatting should be like seasoning — [hi]precise application[/hi] enhances, but over-application ruins. Silence is as important as sound. Quiet zones give the eye a resting point, allowing the accents to speak. I believe in highlighting the [ac]core essence[/ac] and letting the surrounding structure remain elegantly plain. This portfolio itself is a living testament — every accent, every highlight, every silent plain-text zone was a [em]deliberate design choice[/em].",
+        highlight: "If everything is accented, nothing is. True sophistication lies in what you choose not to highlight."
+      },
+      {
         title: "Learning How to Learn",
         content: "Along the way of my life, I learned something most people never do — how to actually learn. Not to remember, not to follow footsteps, but to build connections. To relate a new concept to something I already know, and integrate it so deeply into my intuition that it becomes part of how I think. That is the real skill — and it compounds across every domain I touch.",
         highlight: "Not learning to remember — learning to learn.",
@@ -747,6 +752,15 @@ export const portfolioData = {
       origin: "Personal need for systematic, repeatable system maintenance",
       tech: ["Python", "OS APIs", "Configuration"],
       repo: "https://github.com/TheMR-777/simple-smart-cleanup.py"
+    },
+    {
+      title: "MyPortfolio",
+      category: "Design • Self-Reference",
+      description: "The portfolio you're reading right now. Engineered from scratch with a Fluent UI 2 / WinUI 3 / Acrylic-Mica-Frosty design language — every translucent layer, every accent glow, every quiet zone is a [em]deliberate design choice[/em]. Features a custom [ac]StyledText markup engine[/ac] that parses inline formatting tags directly from the data layer, separating content from presentation with surgical precision. This project is a living testament to the [hi]Discipline of Restraint[/hi] — where true sophistication lies in what you choose not to highlight.",
+      origin: "The need for a portfolio that doesn't just present work, but embodies the philosophy behind it",
+      tech: ["React 19", "TypeScript", "Tailwind CSS 4", "Framer Motion", "Vite"],
+      link: "https://themr-777.github.io/MyPortfolio-v3/",
+      repo: "https://github.com/TheMR-777/MyPortfolio-v3"
     },
   ],
 
