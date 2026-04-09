@@ -704,7 +704,7 @@ export const portfolioData = {
   personalProjects: [
     {
       title: "SchemaFlow",
-      category: "Data Architecture • Visual Query Builder",
+      category: "Developer Tool • Visualization",
       description: "Born during the development of my Reporting Engine — I needed a way to let users visually wire up database tables and see live SQL output. What started as a stakeholder demo evolved into a standalone, open-source visual query builder. Paste your DDL, drag tables onto a canvas, connect columns, and watch the SQL write itself. Co-engineered with [hi]Gemini 3.1 Pro[/hi], and one of the projects I feel truly embodies my philosophy: take something genuinely complex [dim]in[/dim], deliver something meaningfully elegant [ac]out[/ac].",
       origin: "Evolved from an enterprise stakeholder demo into an open-source, pluggable query builder",
       tech: ["React 19", "TypeScript", "React Flow", "Zustand", "Tailwind CSS 4", "Framer Motion"],
