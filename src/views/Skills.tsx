@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Code2, Layers, Wrench, Brain, Award, GraduationCap, Sparkles, BookOpen, Shield, Cpu, Zap } from "lucide-react";
 import { SkillTooltip } from "../components/SkillTooltip";
-import { portfolioData } from "../data/portfolio";
+import { portfolioData } from "../lib/portfolioDAL";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { useDelayedHover } from "../hooks/useDelayedHover";

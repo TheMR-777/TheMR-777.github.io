@@ -1,4 +1,4 @@
-import type { AceProject, Project } from "../data/portfolio";
+import type { AceProject, Project } from "./portfolioDAL";
 
 interface WithArchitecturalHighlights {
   architecturalHighlights: string[];

@@ -22,7 +22,7 @@ import {
   ChevronDown,
   MessageCircle,
 } from "lucide-react";
-import { portfolioData } from "../data/portfolio";
+import { portfolioData } from "../lib/portfolioDAL";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
 import { StyledText } from "../lib/styledText";
 

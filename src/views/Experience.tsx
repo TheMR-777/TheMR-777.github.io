@@ -5,7 +5,7 @@ import {
   Sparkles, Target, Layers, Shield, Zap, Globe, Radio, Cog, FileText, BarChart3,
   TrendingUp, Award, Users, Rocket
 } from "lucide-react";
-import { portfolioData, type Experience, type AceProject } from "../data/portfolio";
+import { portfolioData, type Experience, type AceProject } from "../lib/portfolioDAL";
 import DetailSheet from "../components/DetailSheet";
 import { DetailSection } from "../components/DetailSection";
 import { Surface } from "../components/Surface";
@@ -324,7 +324,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
                                 </p>
                               </div>
                               <div className="grid sm:grid-cols-2 gap-2.5">
-                                {job.impact.map((item, idx) => (
+                                {job.impact?.map((item, idx) => (
                                   <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, y: 4 }}

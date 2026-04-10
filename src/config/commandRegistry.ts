@@ -9,7 +9,7 @@ import {
   Sun,
 } from "lucide-react";
 import { accentColors, type AccentColor, type ThemeMode } from "../contexts/ThemeContext";
-import { portfolioData } from "../data/portfolio";
+import { portfolioData } from "../lib/portfolioDAL";
 import { sidebarNavItems } from "./navigation";
 import type { CommandCategory, CommandItem } from "../types/command";
 import type { TabId } from "../types/navigation";

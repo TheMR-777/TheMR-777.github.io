@@ -1,5 +1,5 @@
 import { Github, Globe, Linkedin, Mail, type LucideIcon } from "lucide-react";
-import { portfolioData } from "../data/portfolio";
+import { portfolioData } from "../lib/portfolioDAL";
 
 export interface SocialLink {
   label: string;

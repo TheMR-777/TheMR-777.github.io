@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
-import { portfolioData } from "../data/portfolio";
+import { portfolioData } from "../lib/portfolioDAL";
 import { Tooltip } from "../components/Tooltip";
 import { SectionHeader } from "../components/SectionHeader";
 import { Surface } from "../components/Surface";

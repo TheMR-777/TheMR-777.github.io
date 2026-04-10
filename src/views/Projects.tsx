@@ -11,7 +11,7 @@ import {
   Sparkles,
   ArrowUpRight,
 } from "lucide-react";
-import { portfolioData, type Project, type PersonalProject } from "../data/portfolio";
+import { portfolioData, type Project, type PersonalProject } from "../lib/portfolioDAL";
 import DetailSheet from "../components/DetailSheet";
 import { DetailSection } from "../components/DetailSection";
 import { Surface } from "../components/Surface";
@@ -237,7 +237,7 @@ export function Projects() {
               <DetailSection title="Architectural Philosophy">
                 <div className="p-4 rounded-lg bg-accent-subtle border border-accent/20">
                   <StyledText 
-                    text={selectedProject.architecturalPhilosophy} 
+                    text={selectedProject.architecturalPhilosophy!} 
                     className="text-sm text-text-primary leading-relaxed italic" 
                     as="p" 
                   />
@@ -257,7 +257,7 @@ export function Projects() {
 
             <DetailSection title="Measurable Impact" icon={Target}>
               <ul className="space-y-2 pl-5">
-                {selectedProject.impact.map((item, idx) => (
+                {selectedProject.impact?.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-sm text-text-secondary">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
                     {item}

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Lightbulb, Compass, Target, Layers, Sparkles, Infinity, BookOpen, ExternalLink, Play, Brain, type LucideIcon } from 'lucide-react';
 import { SCROLL_ANIMATION_VP } from '../constants/animations';
-import { portfolioData } from '../data/portfolio';
+import { portfolioData } from '../lib/portfolioDAL';
 import { StyledText } from '../lib/styledText';
 
 const { philosophy } = portfolioData;
