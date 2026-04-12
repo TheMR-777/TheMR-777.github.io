@@ -235,9 +235,11 @@ export function Overview({ onNavigate }: OverviewProps) {
                   <ArrowRight className="w-3.5 h-3.5 text-text-disabled group-hover:text-text-tertiary group-hover:translate-x-0.5 transition-all" />
                 </div>
               </div>
-              <p className="text-xs text-text-secondary line-clamp-2">
-                {job.summary}
-              </p>
+              <StyledText
+                text={job.summary}
+                className="text-xs text-text-secondary line-clamp-2"
+                mode="plain"
+              />
             </div>
           ))}
         </div>
