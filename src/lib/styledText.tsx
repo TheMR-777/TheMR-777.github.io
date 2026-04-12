@@ -155,17 +155,23 @@ export interface StyledTextProps {
   className?: string;
   /** Element type for the wrapper if className is provided. Defaults to inline React.Fragment otherwise. */
   as?: React.ElementType;
+  /** Whether to apply the rich text formatting. Defaults to true. */
+  enabled?: boolean;
 }
 
-export function StyledText({ text, className, as: Wrapper = "span" }: StyledTextProps) {
-  const parsedTree = useMemo(() => parseStyledText(text), [text]);
-  const hasMarkup = typeof text === "string" && text.includes("[");
+export function StyledText({ text, className, as: Wrapper = "span", enabled = true }: StyledTextProps) {
+  const hasMarkup = enabled && typeof text === "string" && text.includes("[");
+
+  if (!enabled) {
+    return className ? <Wrapper className={className}>{text}</Wrapper> : <>{text}</>;
+  }
 
   // Zero-overhead fast path: if no markup, just return string inside wrapper
   if (!hasMarkup) {
     return className ? <Wrapper className={className}>{text}</Wrapper> : <>{text}</>;
   }
 
+  const parsedTree = useMemo(() => parseStyledText(text), [text]);
   const rendered = parsedTree.map((node, i) => renderNode(node, i));
 
   if (className || Wrapper !== "span") {
