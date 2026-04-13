@@ -14,7 +14,7 @@ interface OverviewProps {
 }
 
 export function Overview({ onNavigate }: OverviewProps) {
-  const { personal, experience, projects, skills } = portfolioData;
+  const { personal, featuredExperiences, featuredProjects, skills, personalProjects } = portfolioData;
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-8 py-6 sm:py-12 pb-24 sm:pb-12">
@@ -215,7 +215,7 @@ export function Overview({ onNavigate }: OverviewProps) {
         />
 
         <div className="space-y-3">
-          {experience.slice(0, 2).map((job) => (
+          {featuredExperiences.map((job) => (
             <div
               key={job.company}
               onClick={() => onNavigate("experience")}
@@ -262,7 +262,7 @@ export function Overview({ onNavigate }: OverviewProps) {
         />
 
         <div className="grid md:grid-cols-2 gap-4">
-          {projects.slice(0, 4).map((project) => (
+          {featuredProjects.map((project) => (
             <div
               key={project.title}
               onClick={() => onNavigate("projects")}
@@ -314,7 +314,7 @@ export function Overview({ onNavigate }: OverviewProps) {
         />
 
         <div className="space-y-2">
-          {portfolioData.personalProjects.slice(0, 3).map((project) => (
+          {personalProjects.slice(0, 3).map((project) => (
             <Surface
               key={project.title}
               onClick={() => onNavigate("projects")}

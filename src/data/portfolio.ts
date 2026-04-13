@@ -10,7 +10,7 @@ export const projectsDb: Record<string, ProjectEntity> = {
     summary: 'Company-wide monitoring system achieving 200% productivity boost with zero defects at launch.',
     description: 'Single-handedly designed and engineered over the course of one year — the longest I\'ve dedicated to any single system. This experience [em]solidified my approach to architecture[/em]: I didn\'t memorize patterns, I understood them at their core, enabling a custom architecture unconstrained by the templates.',
     descriptionAce: 'Single-handedly designed and engineered over the course of one year. Treated as a personal masterpiece, blending architecture, UI/UX, real-time data processing, and security. Widely recognized inside ACE for directly enabling productivity improvements and setting a new benchmark for internal tools. Also includes the Evolver auto-update engine — see its dedicated entry below.',
-    
+
     category: 'Flagship • Enterprise',
     challenge: 'The company lacked visibility into remote work patterns. Existing solutions were either invasive, inaccurate, or lacked context-aware reporting. Privacy concerns made aggressive tracking unacceptable.',
     approach: 'Engineered a privacy-conscious, OS-level monitoring agent that respects boundaries while providing meaningful insights. Built a real-time Blazor dashboard with GraphQL for efficient data pipelines. Used Micro-ORM for high-throughput logging without the overhead of full ORMs.',
@@ -26,6 +26,7 @@ export const projectsDb: Record<string, ProjectEntity> = {
 
     isFlagship: true,
     isAceProject: true,
+    featured: true,
     typeAce: 'Flagship • Solo Project',
     periodAce: '1 Year Development',
     architecturalPhilosophyAce: 'This project was a crucible for my understanding of design patterns. I didn\'t just memorize patterns—I understood them at their core: what problem each pattern solves, how it solves it, why it was even needed, and where it falls short. This depth of understanding enabled me to architect a custom architecture that wasn\'t constrained by textbook templates.',
@@ -83,6 +84,7 @@ export const projectsDb: Record<string, ProjectEntity> = {
 
     isFlagship: true,
     isAceProject: true,
+    featured: true,
     typeAce: 'Platform • Architecture',
     periodAce: '2023 — Dec 2025',
     modules: [
@@ -242,6 +244,7 @@ export const projectsDb: Record<string, ProjectEntity> = {
 
     isFlagship: true,
     isAceProject: true,
+    featured: true,
     typeAce: 'Microservice • Polyglot',
     periodAce: '2025 — Present',
     architecturalHighlights: [
@@ -279,7 +282,8 @@ export const projectsDb: Record<string, ProjectEntity> = {
       'Exceptional client praise for attention to detail'
     ],
     link: '#',
-    isFlagship: true
+    isFlagship: true,
+    featured: true
   },
   'mr-crypt': {
     id: 'mr-crypt',
@@ -462,6 +466,7 @@ export const experiencesDb: Record<string, ExperienceEntity> = {
     role: '.NET Developer & Architecture Consultant',
     period: 'Jun 2023 — Present',
     location: 'Remote/Hybrid',
+    featured: true,
     summary: 'Channeling every skill (including polyglot architecture) into transforming enterprise systems. Engineered flagship products including the Employee Monitoring Suite achieving [ac]200% productivity boost[/ac] with [hi]zero defects[/hi] at launch, and a comprehensive ERP platform.',
     description: 'Progressed from UI/UX to leading core platform modules and multi-tenant migration decisions. My focus: building [hi]reusable primitives[/hi] that power every business module. The same philosophy that drives my personal projects (tools that [ac]transform[/ac]) shaped how I approached enterprise infrastructure.',
     highlights: [
@@ -492,6 +497,7 @@ export const experiencesDb: Record<string, ExperienceEntity> = {
     role: 'Lead Developer & System Architect',
     period: 'Dec 2024 — Jul 2025',
     location: 'Remote',
+    featured: true,
     summary: 'Built sophisticated UWB Indoor Positioning Simulation System as a [hi]solo project[/hi], eliminating the need for [ac]costly physical testing[/ac].',
     description: '[ac]Pioneered[/ac] accurate indoor positioning simulation without physical hardware. Developed proprietary algorithms for signal propagation and created multi-layered visualization systems.',
     highlights: [

@@ -38,6 +38,7 @@ export interface ProjectEntity {
   isPersonalCraft?: boolean;
   isAceProject?: boolean;
   isOpenSource?: boolean;
+  featured?: boolean;
 }
 
 export interface ExperienceEntity {
@@ -53,4 +54,5 @@ export interface ExperienceEntity {
   tech: string[];
   modules?: { name: string; description: string; impact: string }[];
   associatedProjectIds?: string[];
+  featured?: boolean;
 }
