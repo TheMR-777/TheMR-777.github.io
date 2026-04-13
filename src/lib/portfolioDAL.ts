@@ -186,11 +186,15 @@ export const Selectors = {
   },
 
   getFeaturedProjects(projectsDb: Record<string, ProjectEntity>): FlagshipProject[] {
-    return filterProjects(projectsDb, p => p.featured, mapToFlagshipProject);
+    return filterProjects(projectsDb, p => p.isFlagship && p.featured, mapToFlagshipProject);
   },
   
   getPersonalProjects(projectsDb: Record<string, ProjectEntity>): PersonalProjectDisplay[] {
     return filterProjects(projectsDb, p => p.isPersonalCraft, mapToPersonalProject);
+  },
+
+  getFeaturedPersonalProjects(projectsDb: Record<string, ProjectEntity>): PersonalProjectDisplay[] {
+    return filterProjects(projectsDb, p => p.isPersonalCraft && p.featured, mapToPersonalProject);
   },
 
   getOpenSourceProjects(projectsDb: Record<string, ProjectEntity>): OpenSourceProject[] {
@@ -228,6 +232,10 @@ export const portfolioData = {
 
   get featuredProjects() {
     return Selectors.getFeaturedProjects(RawData.projectsDb);
+  },
+
+  get featuredPersonalProjects() {
+    return Selectors.getFeaturedPersonalProjects(RawData.projectsDb);
   },
 
   get featuredExperiences() {

@@ -14,7 +14,7 @@ interface OverviewProps {
 }
 
 export function Overview({ onNavigate }: OverviewProps) {
-  const { personal, featuredExperiences, featuredProjects, skills, personalProjects } = portfolioData;
+  const { personal, featuredExperiences, featuredProjects, skills, featuredPersonalProjects } = portfolioData;
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-8 py-6 sm:py-12 pb-24 sm:pb-12">
@@ -314,7 +314,7 @@ export function Overview({ onNavigate }: OverviewProps) {
         />
 
         <div className="space-y-2">
-          {personalProjects.slice(0, 3).map((project) => (
+          {featuredPersonalProjects.map((project) => (
             <Surface
               key={project.title}
               onClick={() => onNavigate("projects")}

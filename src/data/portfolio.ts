@@ -337,7 +337,7 @@ export const projectsDb: Record<string, ProjectEntity> = {
     origin: 'Evolved from an enterprise stakeholder demo into an open-source, pluggable query builder',
     link: 'https://themr-777.github.io/SchemaFlow/',
     repo: 'https://github.com/TheMR-777/SchemaFlow',
-    
+
     isPersonalCraft: true
   },
   'schema-weaver': {
@@ -351,7 +351,8 @@ export const projectsDb: Record<string, ProjectEntity> = {
     link: 'https://themr-777.github.io/schema-weaver/',
     repo: 'https://github.com/TheMR-777/schema-weaver',
 
-    isPersonalCraft: true
+    isPersonalCraft: true,
+    featured: true
   },
   'letitgo': {
     id: 'letitgo',
@@ -363,7 +364,8 @@ export const projectsDb: Record<string, ProjectEntity> = {
     origin: 'Wanting a beautiful way to visualize the passage of time',
     repo: 'https://github.com/TheMR-777/just_letitgo',
 
-    isPersonalCraft: true
+    isPersonalCraft: true,
+    featured: true
   },
   'githubify-md': {
     id: 'githubify-md',
@@ -375,7 +377,8 @@ export const projectsDb: Record<string, ProjectEntity> = {
     origin: 'Broken CSS in existing VS Code Markdown export plugins',
     repo: 'https://github.com/TheMR-777/githubify-md',
 
-    isPersonalCraft: true
+    isPersonalCraft: true,
+    featured: true
   },
   'moire-effect': {
     id: 'moire-effect',
@@ -413,7 +416,8 @@ export const projectsDb: Record<string, ProjectEntity> = {
     link: 'https://themr-777.github.io/MyPortfolio-v3/',
     repo: 'https://github.com/TheMR-777/MyPortfolio-v3',
 
-    isPersonalCraft: true
+    isPersonalCraft: true,
+    featured: true
   },
 
   // Open Source Contributions
