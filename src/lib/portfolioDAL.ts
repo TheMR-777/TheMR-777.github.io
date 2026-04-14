@@ -247,6 +247,10 @@ export const portfolioData = {
     get openSource() {
       return Selectors.getOpenSourceProjects(RawData.projectsDb);
     }
+  },
+
+  get footers() {
+    return RawData.footers;
   }
 };
 

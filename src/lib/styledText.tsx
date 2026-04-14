@@ -29,6 +29,7 @@ export const DEFAULT_TAG_REGISTRY: TagRegistry = {
   hi: { element: "span", className: "text-text-primary font-medium" },
   dim: { element: "span", className: "text-text-tertiary" },
   em: { element: "em", className: "text-accent italic" },
+  dt: { element: "span", className: "discovery-text italic font-medium" },
   sm: { element: "small", className: "text-xs" },
   code: {
     element: "code",

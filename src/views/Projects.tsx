@@ -19,8 +19,10 @@ import { TagList } from "../components/TagList";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
 import { hasArchitecturalPhilosophy } from "../lib/portfolioGuards";
 import { StyledText } from "../lib/styledText";
+import { PageFooter } from "../components/PageFooter";
+import type { NavigateFn } from "../types/navigation";
 
-export function Projects() {
+export function Projects({ onNavigate }: { onNavigate: NavigateFn }) {
   const { projects, personalProjects } = portfolioData;
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedPersonal, setSelectedPersonal] = useState<PersonalProject | null>(null);
@@ -342,6 +344,12 @@ export function Projects() {
           </>
         )}
       </DetailSheet>
+
+      {/* Footer Nudge */}
+      <PageFooter 
+        {...portfolioData.footers.projects}
+        onNavigate={onNavigate}
+      />
     </div>
   );
 }

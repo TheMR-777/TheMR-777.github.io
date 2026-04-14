@@ -15,6 +15,8 @@ import type { NavigateFn } from "../types/navigation";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
 import { getArchitecturalHighlights } from "../lib/portfolioGuards";
 import { StyledText } from "../lib/styledText";
+import { PageFooter } from "../components/PageFooter";
+
 
 interface ExperienceProps {
   onNavigate?: NavigateFn;
@@ -564,6 +566,14 @@ export function Experience({ onNavigate }: ExperienceProps) {
           </>
         )}
       </DetailSheet>
+
+      {/* Footer Nudge */}
+      {onNavigate && (
+        <PageFooter 
+          {...portfolioData.footers.experience}
+          onNavigate={onNavigate}
+        />
+      )}
     </div>
   );
 }

@@ -25,8 +25,11 @@ import {
 import { portfolioData } from "../lib/portfolioDAL";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
 import { StyledText } from "../lib/styledText";
+import { PageFooter } from "../components/PageFooter";
+import type { NavigateFn } from "../types/navigation";
 
-export function About() {
+
+export function About({ onNavigate }: { onNavigate: NavigateFn }) {
   const {
     personal,
     journey,
@@ -838,6 +841,10 @@ export function About() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    <PageFooter 
+      {...portfolioData.footers.about}
+      onNavigate={onNavigate}
+    />
+  </div>
   );
 }

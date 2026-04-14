@@ -7,6 +7,8 @@ import { SCROLL_ANIMATION_VP } from "../constants/animations";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { useDelayedHover } from "../hooks/useDelayedHover";
 import { StyledText } from "../lib/styledText";
+import { PageFooter } from "../components/PageFooter";
+import type { NavigateFn } from "../types/navigation";
 
 const { preUniversityEducation } = portfolioData;
 
@@ -82,7 +84,7 @@ function CgpaRing({ value, total, label }: { value: number; total: number; label
   );
 }
 
-export function Skills() {
+export function Skills({ onNavigate }: { onNavigate: NavigateFn }) {
   const { skills, certifications, education } = portfolioData;
   const isMobile = useIsMobile();
   const [showIeltsPopover, setShowIeltsPopover] = useState(false);
@@ -708,6 +710,12 @@ export function Skills() {
           </div>
         </div>
       </motion.section>
+
+      {/* Footer Nudge */}
+      <PageFooter 
+        {...portfolioData.footers.skills}
+        onNavigate={onNavigate}
+      />
     </div>
   );
 }

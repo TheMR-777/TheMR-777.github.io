@@ -52,15 +52,15 @@ export function App() {
       case "home":
         return <Overview onNavigate={handleNavigate} />;
       case "about":
-        return <About />;
+        return <About onNavigate={handleNavigate} />;
       case "philosophy":
         return <Philosophy />;
       case "experience":
         return <Experience onNavigate={handleNavigate} />;
       case "projects":
-        return <Projects />;
+        return <Projects onNavigate={handleNavigate} />;
       case "skills":
-        return <Skills />;
+        return <Skills onNavigate={handleNavigate} />;
       default:
         return <Overview onNavigate={handleNavigate} />;
     }

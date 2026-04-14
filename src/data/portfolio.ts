@@ -1039,3 +1039,32 @@ export const vulnerabilityDiscoveries = [
     type: "Information Exposure"
   }
 ];
+
+export const footers = {
+  overview: {
+    quote: "Creating what hasn't been built before, [dt]one innovation at a time.[/dt]",
+    nudge: "Read my philosophy",
+    target: "philosophy" as const
+  },
+  skills: {
+    quote: "Every skill listed here was forged in the fire of real systems — [dt]not only through tutorials.[/dt]",
+    nudge: "See where these skills were tested",
+    target: "experience" as const
+  },
+  projects: {
+    quote: "Behind every project here lies a deliberate choice of [dt]tools, patterns, and architectures.[/dt]",
+    nudge: "Explore the technical depth",
+    target: { tab: "skills", section: "skills-core" } as const
+  },
+  experience: {
+    quote: "Architecture isn't just about code — it's shaped by [dt]who you are and what you've lived.[/dt]",
+    nudge: "Discover the journey",
+    target: "about" as const
+  },
+  about: {
+    quote: "Everything you've read so far was built on a single foundation — [dt]the joy of discovery.[/dt]",
+    nudge: "Read my philosophy",
+    target: "philosophy" as const
+  }
+};
+

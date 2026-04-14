@@ -4,6 +4,7 @@ import { portfolioData } from "../lib/portfolioDAL";
 import { Tooltip } from "../components/Tooltip";
 import { SectionHeader } from "../components/SectionHeader";
 import { Surface } from "../components/Surface";
+import { PageFooter } from "../components/PageFooter";
 import type { NavigateFn } from "../types/navigation";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
 import { overviewSocialLinks } from "../config/social";
@@ -342,25 +343,10 @@ export function Overview({ onNavigate }: OverviewProps) {
       </motion.section>
 
       {/* Signature */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }} viewport={SCROLL_ANIMATION_VP}
-        transition={{ delay: 0.5, duration: 0.6 }}
-        className="mt-20 mb-8 flex flex-col items-center text-center"
-      >
-        <div className="w-8 h-px bg-stroke mb-6" />
-        <p className="text-sm text-text-tertiary leading-relaxed">
-          "Creating what hasn't been built before,{" "}
-          <span className="discovery-text italic font-medium">one innovation at a time.</span>"
-        </p>
-        <button 
-          onClick={() => onNavigate("philosophy")}
-          className="group flex items-center gap-1.5 mt-4 text-xs text-text-disabled hover:text-accent transition-colors"
-        >
-          <span>Read my philosophy</span>
-          <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-        </button>
-      </motion.div>
+      <PageFooter 
+        {...portfolioData.footers.overview}
+        onNavigate={onNavigate}
+      />
     </div>
   );
 }
