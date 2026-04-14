@@ -36,7 +36,7 @@ const projectIcons: Record<string, typeof Layers> = {
 };
 
 export function Experience({ onNavigate }: ExperienceProps) {
-  const { experience } = portfolioData;
+  const { experience, computedStats } = portfolioData;
   const [selectedExp, setSelectedExp] = useState<Experience | null>(null);
   const [selectedAceProject, setSelectedAceProject] = useState<AceProject | null>(null);
   const [expandedCompany, setExpandedCompany] = useState<string | null>("ACE Money Transfer");
@@ -79,11 +79,11 @@ export function Experience({ onNavigate }: ExperienceProps) {
     },
     { 
       icon: Rocket, 
-      value: "10+", 
+      value: `${computedStats.aceProjects}+`, 
       label: "Enterprise Systems", 
       detail: "engineered at ACE",
       tooltip: {
-        title: "10+ Enterprise Systems",
+        title: `${computedStats.aceProjects}+ Enterprise Systems`,
         description: "From the Employee Monitoring Suite and ERP platform to Background Jobs, Logging, and Reporting Engine — a comprehensive engineering footprint.",
         action: { label: "Explore all", section: "experience-timeline" }
       }

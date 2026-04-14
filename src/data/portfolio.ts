@@ -573,7 +573,6 @@ export const personal = {
   },
   stats: {
     experience: "6+ Years",
-    projects: "20+",
     productivity: "200%",
     cgpa: "3.73"
   },

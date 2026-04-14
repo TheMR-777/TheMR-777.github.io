@@ -23,7 +23,7 @@ import { PageFooter } from "../components/PageFooter";
 import type { NavigateFn } from "../types/navigation";
 
 export function Projects({ onNavigate }: { onNavigate: NavigateFn }) {
-  const { projects, personalProjects } = portfolioData;
+  const { projects, personalProjects, computedStats } = portfolioData;
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedPersonal, setSelectedPersonal] = useState<PersonalProject | null>(null);
 
@@ -57,7 +57,7 @@ export function Projects({ onNavigate }: { onNavigate: NavigateFn }) {
             <Sparkles className="w-3.5 h-3.5 text-accent" />
           </div>
           <h2 className="text-sm font-medium text-text-tertiary uppercase tracking-wider">
-            Flagship Projects
+            Flagship Projects<span className="text-text-disabled ml-1.5 font-normal">· {computedStats.flagshipProjects}</span>
           </h2>
         </div>
 
@@ -125,7 +125,7 @@ export function Projects({ onNavigate }: { onNavigate: NavigateFn }) {
             <Wrench className="w-3.5 h-3.5 text-accent" />
           </div>
           <h2 className="text-sm font-medium text-text-tertiary uppercase tracking-wider">
-            Personal Craft
+            Personal Craft<span className="text-text-disabled ml-1.5 font-normal">· {computedStats.personalCraftProjects}</span>
           </h2>
         </div>
         <p className="text-xs text-text-tertiary mb-6 ml-9">

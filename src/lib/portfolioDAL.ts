@@ -251,6 +251,22 @@ export const portfolioData = {
 
   get footers() {
     return RawData.footers;
+  },
+
+  /** Dynamically computed stats derived from the normalized data collections */
+  get computedStats() {
+    const allProjects = Object.values(RawData.projectsDb);
+    return {
+      totalProjects: allProjects.length,
+      flagshipProjects: allProjects.filter(p => p.isFlagship).length,
+      personalCraftProjects: allProjects.filter(p => p.isPersonalCraft).length,
+      openSourceProjects: allProjects.filter(p => p.isOpenSource).length,
+      aceProjects: allProjects.filter(p => p.isAceProject).length,
+      uniqueTechnologies: new Set(allProjects.flatMap(p => p.tech)).size,
+      totalPublications: RawData.publications.length,
+      totalNullbyteArticles: RawData.nullbyteArticles.length,
+      totalVulnerabilities: RawData.vulnerabilityDiscoveries.length,
+    };
   }
 };
 

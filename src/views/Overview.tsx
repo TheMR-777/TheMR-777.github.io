@@ -15,7 +15,7 @@ interface OverviewProps {
 }
 
 export function Overview({ onNavigate }: OverviewProps) {
-  const { personal, featuredExperiences, featuredProjects, skills, featuredPersonalProjects } = portfolioData;
+  const { personal, featuredExperiences, featuredProjects, skills, featuredPersonalProjects, computedStats } = portfolioData;
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-8 py-6 sm:py-12 pb-24 sm:pb-12">
@@ -103,8 +103,8 @@ export function Overview({ onNavigate }: OverviewProps) {
 
           <Tooltip
             content={{
-              title: "20+ Projects Delivered",
-              description: "Enterprise systems, open source libraries, research simulations, and mobile applications across diverse domains.",
+              title: `${computedStats.totalProjects}+ Projects Delivered`,
+              description: `${computedStats.flagshipProjects} flagship, ${computedStats.personalCraftProjects} personal craft, and ${computedStats.openSourceProjects} open source — spanning enterprise platforms, research simulations, and mobile applications.`,
               meta: "Portfolio"
             }}
             action={{
@@ -114,7 +114,7 @@ export function Overview({ onNavigate }: OverviewProps) {
           >
             <div className="p-4 rounded-xl bg-layer border border-stroke hover:border-stroke-hover transition-colors cursor-default">
               <div className="text-2xl font-semibold text-text-primary mb-1">
-                {personal.stats.projects}
+                {computedStats.totalProjects}+
               </div>
               <div className="text-xs text-text-tertiary">
                 Projects
