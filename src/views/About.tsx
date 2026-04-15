@@ -16,6 +16,7 @@ import {
   Globe,
   Users,
   GitBranch,
+  Github,
   Shield,
   Award,
   BookOpen,
@@ -23,6 +24,8 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { portfolioData } from "../lib/portfolioDAL";
+import { useGitHubStats, GITHUB_USERNAME_EXPORT } from "../hooks/useGitHubStats";
+import { useTheme } from "../contexts/ThemeContext";
 import { SCROLL_ANIMATION_VP } from "../constants/animations";
 import { StyledText } from "../lib/styledText";
 import { PageFooter } from "../components/PageFooter";
@@ -546,6 +549,9 @@ export function About({ onNavigate }: { onNavigate: NavigateFn }) {
         </div>
       </motion.section>
 
+      {/* GitHub Activity — Live presence, the proof behind the contributions */}
+      <GitHubActivitySection />
+
       {/* Quantum Research */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
@@ -848,3 +854,239 @@ export function About({ onNavigate }: { onNavigate: NavigateFn }) {
   </div>
   );
 }
+
+/* ──────────────────────────────────────────────────────────────
+   GitHub Activity Section
+   Live stats fetched from the public API, cached per session.
+   Contribution chart via ghchart.rshah.org — zero dependencies.
+   Theme & accent reactive — adapts to all 8 accent colors
+   and dark/light modes via CSS filters.
+   ────────────────────────────────────────────────────────────── */
+
+function SkeletonPulse({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`rounded bg-stroke animate-pulse ${className}`}
+      style={{ animationDuration: "1.8s" }}
+    />
+  );
+}
+
+function GitHubActivitySection() {
+  const gh = useGitHubStats();
+  const { resolvedMode, accent } = useTheme();
+  const isDark = resolvedMode === "dark";
+
+  // Extract hex without '#' for the ghchart URL
+  const chartHex = accent.value.replace("#", "");
+
+  const metricCards = [
+    { value: gh.publicRepos, label: "Repositories", icon: "📦" },
+    { value: gh.publicGists, label: "Gists", icon: "📝" },
+    { value: `${gh.accountYears}+`, label: "Years Active", icon: "📅" },
+    { value: gh.languages.length, label: "Languages", icon: "🔤" },
+  ];
+
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={SCROLL_ANIMATION_VP}
+      transition={{ duration: 0.4, delay: 0.37, ease: [0.16, 1, 0.3, 1] }}
+      className="mb-10"
+    >
+      <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center gap-2">
+          <Github className="w-4 h-4 text-accent" strokeWidth={1.5} />
+          <h2 className="text-lg font-semibold text-text-primary">
+            GitHub Activity
+          </h2>
+        </div>
+        <a
+          href={`https://github.com/${GITHUB_USERNAME_EXPORT}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 text-[11px] text-text-tertiary hover:text-accent transition-colors group"
+        >
+          <span>@{GITHUB_USERNAME_EXPORT}</span>
+          <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+        </a>
+      </div>
+
+      <div className="rounded-xl bg-layer border border-stroke overflow-hidden">
+        {/* ─── Contribution Chart ─── */}
+        <div className="p-4 sm:p-5 pb-3 sm:pb-4">
+          <div
+            className="rounded-xl border border-stroke/60 p-3 sm:p-4 transition-colors overflow-x-auto min-h-[120px] flex items-center"
+            style={{
+              backgroundColor: isDark
+                ? "rgba(0, 0, 0, 0.15)"
+                : "rgba(255, 255, 255, 0.4)",
+              color: "var(--accent-default)", // SVG currentColor will now inherit this!
+            }}
+          >
+            {gh.contributionSvg ? (
+              <div 
+                className="w-full h-auto transition-all"
+                style={{
+                  minWidth: "600px",
+                  opacity: 0.9,
+                }}
+                dangerouslySetInnerHTML={{ 
+                  __html: gh.contributionSvg
+                }}
+              />
+            ) : (
+              <img
+                src={`https://ghchart.rshah.org/${chartHex}/${GITHUB_USERNAME_EXPORT}`}
+                alt={`${GITHUB_USERNAME_EXPORT}'s GitHub contribution chart`}
+                className="w-full h-auto min-w-[600px] transition-all"
+                loading="lazy"
+                style={{
+                  filter: isDark
+                    ? "invert(0.92) hue-rotate(180deg) brightness(1.2) contrast(0.85) saturate(1.1)"
+                    : "none",
+                  opacity: isDark ? 0.85 : 0.95,
+                }}
+              />
+            )}
+          </div>
+        </div>
+
+        {/* ─── Stats Grid ─── */}
+        <div className="px-4 sm:px-5 pb-3 sm:pb-4">
+          <div className="grid grid-cols-4 gap-2 sm:gap-3">
+            {metricCards.map((metric, idx) => (
+              <motion.div
+                key={metric.label}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={SCROLL_ANIMATION_VP}
+                transition={{
+                  delay: 0.08 + idx * 0.05,
+                  duration: 0.35,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="group p-2.5 sm:p-3 rounded-xl border border-stroke/40 text-center transition-all hover:bg-layer hover:border-stroke hover:shadow-sm"
+                style={{
+                  backgroundColor: isDark
+                    ? "rgba(0, 0, 0, 0.12)" // Soft dark background
+                    : "rgba(255, 255, 255, 0.5)",
+                }}
+              >
+                {gh.isLoading ? (
+                  <>
+                    <SkeletonPulse className="h-5 w-8 mx-auto mb-1.5" />
+                    <SkeletonPulse className="h-2.5 w-12 mx-auto" />
+                  </>
+                ) : (
+                  <>
+                    <div className="text-base sm:text-lg font-semibold text-text-primary tabular-nums group-hover:text-accent transition-colors">
+                      {metric.value}
+                    </div>
+                    <div className="text-[9px] sm:text-[10px] text-text-tertiary mt-0.5 leading-tight">
+                      {metric.label}
+                    </div>
+                  </>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* ─── Language Distribution ─── */}
+        <div className="px-4 sm:px-5 pb-4 sm:pb-5">
+          <div className="flex items-baseline gap-2 mb-3">
+            <span className="text-[10px] font-medium text-text-tertiary uppercase tracking-wider">
+              Languages
+            </span>
+            <div className="flex-1 h-px bg-stroke" />
+            <span className="text-[10px] text-text-disabled italic">
+              public repos
+            </span>
+          </div>
+
+          {gh.isLoading ? (
+            <>
+              <SkeletonPulse className="h-2 w-full rounded-full mb-3" />
+              <div className="flex gap-4">
+                <SkeletonPulse className="h-3 w-20" />
+                <SkeletonPulse className="h-3 w-16" />
+                <SkeletonPulse className="h-3 w-12" />
+              </div>
+            </>
+          ) : (
+            <>
+              {/* Stacked bar */}
+              <div className="flex h-2 rounded-full overflow-hidden gap-[1px]">
+                {gh.languages.map((lang, idx) => (
+                  <motion.div
+                    key={lang.name}
+                    className="h-full"
+                    style={{
+                      backgroundColor: lang.color,
+                      borderRadius:
+                        idx === 0
+                          ? "9999px 0 0 9999px"
+                          : idx === gh.languages.length - 1
+                          ? "0 9999px 9999px 0"
+                          : "0",
+                    }}
+                    initial={{ width: 0, opacity: 0 }}
+                    whileInView={{ width: `${lang.percentage}%`, opacity: 1 }}
+                    viewport={SCROLL_ANIMATION_VP}
+                    transition={{
+                      width: {
+                        duration: 0.7,
+                        delay: 0.15 + idx * 0.05,
+                        ease: [0.16, 1, 0.3, 1],
+                      },
+                      opacity: {
+                        duration: 0.3,
+                        delay: 0.1 + idx * 0.05,
+                      },
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* Legend */}
+              <div className="flex flex-wrap gap-x-3 sm:gap-x-4 gap-y-1.5 mt-3">
+                {gh.languages.map((lang) => (
+                  <div
+                    key={lang.name}
+                    className="flex items-center gap-1.5 group/lang"
+                  >
+                    <span
+                      className="w-[7px] h-[7px] rounded-full flex-shrink-0 ring-1 ring-inset ring-white/10"
+                      style={{ backgroundColor: lang.color }}
+                    />
+                    <span className="text-[11px] text-text-secondary group-hover/lang:text-text-primary transition-colors">
+                      {lang.name}
+                    </span>
+                    <span className="text-[10px] text-text-disabled tabular-nums">
+                      {lang.percentage}%
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* ─── Footer CTA ─── */}
+        <a
+          href={`https://github.com/${GITHUB_USERNAME_EXPORT}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 px-5 py-3 border-t border-stroke text-xs text-text-tertiary hover:text-accent hover:bg-layer-hover transition-all group"
+        >
+          <Github className="w-3.5 h-3.5" strokeWidth={1.5} />
+          <span>View full profile on GitHub</span>
+          <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
+        </a>
+      </div>
+    </motion.section>
+  );
+}
+
