@@ -1,4 +1,4 @@
-# MyPortfolio-v3
+# My Portfolio
 
 A modern, high-performance personal portfolio built with React, Vite, and Tailwind CSS. This project showcases my professional journey, philosophy, projects, and technical expertise as a Software Architect & Security Engineer.
 
