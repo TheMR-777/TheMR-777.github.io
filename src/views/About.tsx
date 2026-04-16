@@ -872,6 +872,39 @@ function SkeletonPulse({ className = "" }: { className?: string }) {
   );
 }
 
+function GitHubChartSkeleton() {
+  return (
+    <div className="w-full flex items-center justify-center min-w-[600px] py-2">
+      <svg width="100%" height="auto" viewBox="0 0 663 104" preserveAspectRatio="xMidYMid meet" className="opacity-80">
+        {Array.from({ length: 53 }).map((_, weekIdx) => (
+          Array.from({ length: 7 }).map((_, dayIdx) => (
+            <motion.rect
+              key={`${weekIdx}-${dayIdx}`}
+              x={27 + weekIdx * 12}
+              y={20 + dayIdx * 12}
+              width="10"
+              height="10"
+              rx="2"
+              ry="2"
+              fill="currentColor"
+              initial={{ opacity: 0.05 }}
+              animate={{
+                opacity: [0.05, 0.18, 0.05],
+              }}
+              transition={{
+                duration: 2.5 + Math.random() * 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: Math.random() * 5,
+              }}
+            />
+          ))
+        ))}
+      </svg>
+    </div>
+  );
+}
+
 function GitHubActivitySection() {
   const gh = useGitHubStats();
   const { resolvedMode, accent } = useTheme();
@@ -925,30 +958,21 @@ function GitHubActivitySection() {
               color: "var(--accent-default)", // SVG currentColor will now inherit this!
             }}
           >
-            {gh.contributionSvg ? (
-              <div 
-                className="w-full h-auto transition-all"
+            {gh.contributionSvg && !gh.isLoading ? (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.9 }}
+                transition={{ duration: 0.5 }}
+                className="w-full h-auto"
                 style={{
                   minWidth: "600px",
-                  opacity: 0.9,
                 }}
                 dangerouslySetInnerHTML={{ 
                   __html: gh.contributionSvg
                 }}
               />
             ) : (
-              <img
-                src={`https://ghchart.rshah.org/${chartHex}/${GITHUB_USERNAME_EXPORT}`}
-                alt={`${GITHUB_USERNAME_EXPORT}'s GitHub contribution chart`}
-                className="w-full h-auto min-w-[600px] transition-all"
-                loading="lazy"
-                style={{
-                  filter: isDark
-                    ? "invert(0.92) hue-rotate(180deg) brightness(1.2) contrast(0.85) saturate(1.1)"
-                    : "none",
-                  opacity: isDark ? 0.85 : 0.95,
-                }}
-              />
+              <GitHubChartSkeleton />
             )}
           </div>
         </div>
