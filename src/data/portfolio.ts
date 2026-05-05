@@ -266,6 +266,30 @@ export const projectsDb: Record<string, ProjectEntity> = {
       'Demonstrated polyglot software engineering at enterprise scale'
     ]
   },
+  'overwatch': {
+    id: 'overwatch',
+    title: 'Overwatch',
+    tech: ['.NET 10', 'C#', 'Blazor', 'Fluent UI 2', 'Cryptography', 'JSON/XML Parsers', 'Big Data'],
+    summary: 'Flagship service monitoring system replacing legacy down-detectors with custom response criteria parsing and fine-grained rights management.',
+    description: 'Legacy monitoring at ACE was rigid and hardcoded—requiring custom updates for each partner. I sat down with the CEO to architect a full-scale flagship status product: Overwatch. Engineered dynamic partner onboarding with encrypted custom headers, dynamic HTTP request payloads, and an [ac]expression-based response validation engine[/ac] supporting XML/JSON (e.g., `posts[5].name <contains> "great" AND posts[0].id <equals> 1024`). Underneath, a highly optimized parser processes only the required payload segments on-demand, handling big data streams with [hi]minimal memory footprint[/hi]. Coupled with a fine-grained, button-level rights engine and an in-depth analytics dashboard supporting [hi]on-the-fly evidence verification[/hi] and direct PDF/Excel exports.',
+    descriptionAce: 'Tackled an architectural overhaul of a legacy partner-monitoring system, transforming it into a full-scale enterprise flagship product at the direct request of the CEO. Replaced hardcoded scripts with a dynamic partner onboarding engine featuring encrypted header storage, custom request/response payload configuration, and a [ac]logical expression rules engine[/ac] for validating JSON/XML responses. To support big data parsing under high load, I built a highly optimized, on-demand response parser. Also engineered a highly granular, module-agnostic rights system that controls access down to the button level, alongside an analytical dashboard that provides audit evidence down to the individual HTTP response received.',
+    category: 'Flagship • Full-Stack / Security',
+    challenge: 'The legacy "ACE Status" project was hardcoded and rigid. Every new partner service required custom code updates for request headers, payloads, authentication, and success verification logic, making scaling impossible and introducing high maintenance overhead.',
+    approach: 'Collaborated with the CEO to architect Overwatch from the ground up on modern Blazor and .NET 10. Designed a dynamic partner onboarding interface with encrypted header storage, basic/custom authentication, and on-the-fly Base URL overrides. Built a custom logical expression evaluator allowing administrators to define complex verification rules (e.g., matching XML/JSON array values using logical AND/OR blocks) with no code changes. Implemented a module-agnostic rights engine to manage user actions down to specific UI buttons, and integrated our Python-based reporting microservice for CEO-requested PDF and Excel reports.',
+    impact: [
+      'Transformed legacy down-detector into a flagship enterprise-grade product',
+      '100% dynamic partner onboarding with zero code changes or deployments',
+      'Logical rules engine supporting complex JSON/XML response verification',
+      'Highly granular rights management controlling UI elements down to individual buttons',
+      'In-depth analytics dashboard providing complete audit evidence down to the HTTP payload'
+    ],
+    link: '#',
+    isFlagship: true,
+    isAceProject: true,
+    featured: true,
+    typeAce: 'Flagship • Full-Stack / Security',
+    periodAce: '2024 — Present'
+  },
   'uwb-sim': {
     id: 'uwb-sim',
     title: 'UWB Indoor Positioning Simulation',
@@ -477,6 +501,7 @@ export const experiencesDb: Record<string, ExperienceEntity> = {
       'Architected Employee Monitoring Suite solo — zero defects at launch',
       'Engineered Evolver: chromium-inspired cross-platform auto-update engine',
       'Designed \'ACE Password Vault\' with multi-layered cryptography',
+      'Architected Overwatch: flagship status & monitoring engine with dynamic XML/JSON response criteria parsing',
       'Led ERP Platform Engineering: Rules, Approvals, Rights, Notifications',
       'Built unbreakable Background Jobs Framework — adopted company-wide',
       'Engineered pluggable Logging Framework for in-depth observability',
@@ -493,7 +518,7 @@ export const experiencesDb: Record<string, ExperienceEntity> = {
     ],
     tech: ['.NET 9', 'Blazor', 'Angular', 'GraphQL', 'SignalR', 'PostgreSQL', 'C++'],
     associatedProjectIds: [
-      'ems', 'evolver', 'erp-core', 'erp-modules', 'ace-vault', 'external-partner-integrations', 'real-time-infrastructure', 'background-jobs-framework', 'logging-framework', 'reporting-engine'
+      'ems', 'evolver', 'erp-core', 'erp-modules', 'ace-vault', 'overwatch', 'external-partner-integrations', 'real-time-infrastructure', 'background-jobs-framework', 'logging-framework', 'reporting-engine'
     ]
   },
   'mimos': {

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Building2, Calendar, MapPin, ChevronRight, ChevronDown,
-  Sparkles, Target, Layers, Shield, Zap, Globe, Radio, Cog, FileText, BarChart3,
+  Sparkles, Target, Layers, Shield, Zap, Globe, Radio, Cog, FileText, BarChart3, Activity,
   TrendingUp, Award, Users, Rocket
 } from "lucide-react";
 import { portfolioData, type Experience, type AceProject } from "../lib/portfolioDAL";
@@ -28,6 +28,7 @@ const projectIcons: Record<string, typeof Layers> = {
   "ERP Platform Core": Layers,
   "ERP Business Modules": Zap,
   "ACE Password Vault": Shield,
+  "Overwatch": Activity,
   "External Partner Integrations": Globe,
   "Real-time Infrastructure": Radio,
   "Background Jobs Framework": Cog,
