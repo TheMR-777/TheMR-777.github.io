@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
+import {
   Building2, Calendar, MapPin, ChevronRight, ChevronDown,
   Sparkles, Target, Layers, Shield, Zap, Globe, Radio, Cog, FileText, BarChart3, Activity,
   TrendingUp, Award, Users, Rocket
@@ -45,10 +45,10 @@ export function Experience({ onNavigate }: ExperienceProps) {
 
   // Key impact stats across all experiences
   const impactStats = [
-    { 
-      icon: TrendingUp, 
-      value: "200%", 
-      label: "Productivity Boost", 
+    {
+      icon: TrendingUp,
+      value: "200%",
+      label: "Productivity Boost",
       detail: "via Employee Monitoring Suite",
       tooltip: {
         title: "200% Productivity Increase",
@@ -56,10 +56,10 @@ export function Experience({ onNavigate }: ExperienceProps) {
         action: { label: "View project", section: "flagship-projects" }
       }
     },
-    { 
-      icon: Award, 
-      value: "Zero", 
-      label: "Defects at Launch", 
+    {
+      icon: Award,
+      value: "Zero",
+      label: "Defects at Launch",
       detail: "flagship monitoring system",
       tooltip: {
         title: "Zero-Defect Launch",
@@ -67,10 +67,10 @@ export function Experience({ onNavigate }: ExperienceProps) {
         action: { label: "See approach", section: "flagship-projects" }
       }
     },
-    { 
-      icon: Users, 
-      value: "6", 
-      label: "Countries Reached", 
+    {
+      icon: Users,
+      value: "6",
+      label: "Countries Reached",
       detail: "via cybersecurity community",
       tooltip: {
         title: "Global Cybersecurity Community",
@@ -78,10 +78,10 @@ export function Experience({ onNavigate }: ExperienceProps) {
         action: { label: "View community", section: "about-community" }
       }
     },
-    { 
-      icon: Rocket, 
-      value: `${computedStats.aceProjects}+`, 
-      label: "Enterprise Systems", 
+    {
+      icon: Rocket,
+      value: `${computedStats.aceProjects}+`,
+      label: "Enterprise Systems",
       detail: "engineered at ACE",
       tooltip: {
         title: `${computedStats.aceProjects}+ Enterprise Systems`,
@@ -196,14 +196,14 @@ export function Experience({ onNavigate }: ExperienceProps) {
                         </div>
                       </div>
                       {isACE ? (
-                        <ChevronDown 
+                        <ChevronDown
                           className={`w-4 h-4 text-text-disabled group-hover:text-text-tertiary transition-all flex-shrink-0 mt-1 ${isExpanded ? 'rotate-180' : ''}`}
-                          strokeWidth={1.5} 
+                          strokeWidth={1.5}
                         />
                       ) : (
-                        <ChevronRight 
-                          className="w-4 h-4 text-text-disabled group-hover:text-text-tertiary group-hover:translate-x-0.5 transition-all flex-shrink-0 mt-1" 
-                          strokeWidth={1.5} 
+                        <ChevronRight
+                          className="w-4 h-4 text-text-disabled group-hover:text-text-tertiary group-hover:translate-x-0.5 transition-all flex-shrink-0 mt-1"
+                          strokeWidth={1.5}
                         />
                       )}
                     </div>
@@ -221,10 +221,10 @@ export function Experience({ onNavigate }: ExperienceProps) {
                     </div>
 
                     {/* Summary */}
-                    <StyledText 
-                      text={job.summary} 
-                      className="text-xs text-text-secondary leading-relaxed" 
-                      as="p" 
+                    <StyledText
+                      text={job.summary}
+                      className="text-xs text-text-secondary leading-relaxed"
+                      as="p"
                     />
 
                     {/* Highlights - clean bullet list */}
@@ -237,8 +237,8 @@ export function Experience({ onNavigate }: ExperienceProps) {
                           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                           className="overflow-hidden"
                         >
-                          <div className="mt-4 pt-3 border-t border-stroke/50">
-                            <ul className="space-y-1.5">
+                          <div className="mt-4 pt-3 border-t border-stroke/50 flex items-end justify-between gap-4">
+                            <ul className="space-y-1.5 flex-1">
                               {job.highlights.slice(0, 3).map((highlight, idx) => (
                                 <li
                                   key={idx}
@@ -248,12 +248,12 @@ export function Experience({ onNavigate }: ExperienceProps) {
                                   <StyledText text={highlight} className="leading-relaxed" as="span" />
                                 </li>
                               ))}
-                              {job.highlights.length > 3 && (
-                                <li className="text-[10px] text-text-disabled pl-3">
-                                  +{job.highlights.length - 3} more highlights
-                                </li>
-                              )}
                             </ul>
+                            {job.highlights.length > 3 && (
+                              <div className="text-[10px] text-text-disabled shrink-0 pt-0.5 whitespace-nowrap">
+                                +{job.highlights.length - 3} more
+                              </div>
+                            )}
                           </div>
                         </motion.div>
                       )}
@@ -300,24 +300,24 @@ export function Experience({ onNavigate }: ExperienceProps) {
                                         <Icon className="w-4 h-4 text-accent" strokeWidth={1.5} />
                                       </div>
                                       <div className="flex-1 min-w-0">
-                                                                            <div className="flex items-start justify-between gap-2">
-                                      <div>
-                                        <h4 className="text-sm font-medium text-text-primary group-hover/project:text-accent transition-colors">
-                                          {project.name}
-                                        </h4>
-                                        <p className="text-[10px] text-text-tertiary mt-0.5">
-                                          {project.type} • {project.period}
-                                        </p>
-                                      </div>
-                                      <ChevronRight 
-                                        className="w-3.5 h-3.5 text-text-disabled group-hover/project:text-accent group-hover/project:translate-x-0.5 transition-all flex-shrink-0 mt-0.5" 
-                                        strokeWidth={1.5} 
-                                      />
-                                    </div>
-                                        <StyledText 
-                                          text={project.summary} 
-                                          className="text-xs text-text-secondary mt-2 line-clamp-2" 
-                                          as="p" 
+                                        <div className="flex items-start justify-between gap-2">
+                                          <div>
+                                            <h4 className="text-sm font-medium text-text-primary group-hover/project:text-accent transition-colors">
+                                              {project.name}
+                                            </h4>
+                                            <p className="text-[10px] text-text-tertiary mt-0.5">
+                                              {project.type} • {project.period}
+                                            </p>
+                                          </div>
+                                          <ChevronRight
+                                            className="w-3.5 h-3.5 text-text-disabled group-hover/project:text-accent group-hover/project:translate-x-0.5 transition-all flex-shrink-0 mt-0.5"
+                                            strokeWidth={1.5}
+                                          />
+                                        </div>
+                                        <StyledText
+                                          text={project.summary}
+                                          className="text-xs text-text-secondary mt-2 line-clamp-2"
+                                          as="p"
                                         />
                                       </div>
                                     </div>
@@ -401,10 +401,10 @@ export function Experience({ onNavigate }: ExperienceProps) {
             </div>
 
             <DetailSection title="Overview">
-              <StyledText 
-                text={selectedExp.description} 
-                className="text-sm text-text-secondary leading-relaxed" 
-                as="p" 
+              <StyledText
+                text={selectedExp.description}
+                className="text-sm text-text-secondary leading-relaxed"
+                as="p"
               />
             </DetailSection>
 
@@ -580,7 +580,7 @@ export function Experience({ onNavigate }: ExperienceProps) {
 
       {/* Footer Nudge */}
       {onNavigate && (
-        <PageFooter 
+        <PageFooter
           {...portfolioData.footers.experience}
           onNavigate={onNavigate}
         />

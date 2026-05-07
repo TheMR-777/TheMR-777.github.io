@@ -270,7 +270,7 @@ export const projectsDb: Record<string, ProjectEntity> = {
     id: 'overwatch',
     title: 'Overwatch',
     tech: ['.NET 10', 'C#', 'Blazor', 'Fluent UI 2', 'Cryptography', 'JSON/XML Parsers', 'Big Data'],
-    summary: 'Flagship service monitoring system replacing legacy down-detectors with custom response criteria parsing and fine-grained rights management.',
+    summary: 'Flagship service monitoring system with custom response criteria parsing and fine-grained rights management.',
     description: 'Legacy monitoring at ACE was rigid and hardcoded—requiring custom updates for each partner. I sat down with the CEO to architect a full-scale flagship status product: Overwatch. Engineered dynamic partner onboarding with encrypted custom headers, dynamic HTTP request payloads, and an [ac]expression-based response validation engine[/ac] supporting XML/JSON (e.g., `posts[5].name <contains> "great" AND posts[0].id <equals> 1024`). Underneath, a highly optimized parser processes only the required payload segments on-demand, handling big data streams with [hi]minimal memory footprint[/hi]. Coupled with a fine-grained, button-level rights engine and an in-depth analytics dashboard supporting [hi]on-the-fly evidence verification[/hi] and direct PDF/Excel exports.',
     descriptionAce: 'Tackled an architectural overhaul of a legacy partner-monitoring system, transforming it into a full-scale enterprise flagship product at the direct request of the CEO. Replaced hardcoded scripts with a dynamic partner onboarding engine featuring encrypted header storage, custom request/response payload configuration, and a [ac]logical expression rules engine[/ac] for validating JSON/XML responses. To support big data parsing under high load, I built a highly optimized, on-demand response parser. Also engineered a highly granular, module-agnostic rights system that controls access down to the button level, alongside an analytical dashboard that provides audit evidence down to the individual HTTP response received.',
     category: 'Flagship • Full-Stack / Security',
@@ -325,7 +325,7 @@ export const projectsDb: Record<string, ProjectEntity> = {
       'Active open source maintenance'
     ],
     link: 'https://github.com/TheMR-777/mr_crypt',
-    
+
     isFlagship: true,
     isOpenSource: true,
     roleOpenSource: 'Creator & Principal Engineer'
@@ -346,10 +346,10 @@ export const projectsDb: Record<string, ProjectEntity> = {
       'Recognition for elegant architecture'
     ],
     link: '#',
-    
+
     isFlagship: true
   },
-  
+
   // Personal Projects
   'schemaflow': {
     id: 'schemaflow',
@@ -857,52 +857,52 @@ export const journey = {
 
 export const skills = {
   languages: [
-    { 
-      name: "C++", 
-      level: "Expert", 
-      years: "6+", 
+    {
+      name: "C++",
+      level: "Expert",
+      years: "6+",
       tags: ["Modern C++23/26", "Template Metaprogramming"],
       extraTags: ["STL", "SFINAE & Concepts", "Lock-free Programming", "Memory Management", "RAII", "Move Semantics"]
     },
-    { 
-      name: "C# / .NET", 
-      level: "Advanced", 
-      years: "3+", 
+    {
+      name: "C# / .NET",
+      level: "Advanced",
+      years: "3+",
       tags: [".NET 9", "LINQ", "Async/Await"],
       extraTags: ["Blazor", "EF Core", "Source Generators", "Minimal APIs", "SignalR"]
     },
-    { 
-      name: "Python", 
-      level: "Intermediate", 
-      years: "5+", 
+    {
+      name: "Python",
+      level: "Intermediate",
+      years: "5+",
       tags: ["Scientific Computing", "Automation", "ML"],
       extraTags: ["NumPy", "SciPy", "Matplotlib", "Rich TUI", "Scripting"]
     },
-    { 
-      name: "TypeScript", 
-      level: "Intermediate", 
-      years: "2+", 
+    {
+      name: "TypeScript",
+      level: "Intermediate",
+      years: "2+",
       tags: ["Angular", "Node.js", "ES6+"],
       extraTags: ["Type Safety", "Generics", "RxJS", "PrimeNG"]
     },
-    { 
-      name: "SQL", 
-      level: "Advanced", 
-      years: "4+", 
+    {
+      name: "SQL",
+      level: "Advanced",
+      years: "4+",
       tags: ["Complex Queries", "Optimization"],
       extraTags: ["PostgreSQL", "Stored Procedures", "Indexing", "Query Planning"]
     },
-    { 
-      name: "Dart", 
-      level: "Proficient", 
-      years: "3+", 
+    {
+      name: "Dart",
+      level: "Proficient",
+      years: "3+",
       tags: ["Flutter", "State Management"],
       extraTags: ["Provider", "Riverpod", "Material Design", "Responsive UI"]
     },
-    { 
-      name: "MATLAB", 
-      level: "Intermediate", 
-      years: "2+", 
+    {
+      name: "MATLAB",
+      level: "Intermediate",
+      years: "2+",
       tags: ["Signal Processing", "Simulation"],
       extraTags: ["Visualization", "Numerical Methods", "Quantum Simulations"]
     }
