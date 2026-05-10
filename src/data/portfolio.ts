@@ -491,7 +491,7 @@ export const experiencesDb: Record<string, ExperienceEntity> = {
   'ace': {
     id: 'ace',
     company: 'ACE Money Transfer',
-    role: '.NET Developer & Architecture Consultant',
+    role: 'Software Engineer & AI Solutions Architect',
     period: 'Jun 2023 — Present',
     location: 'Remote/Hybrid',
     featured: true,
@@ -524,7 +524,7 @@ export const experiencesDb: Record<string, ExperienceEntity> = {
   'mimos': {
     id: 'mimos',
     company: 'MIMOS Berhad (Malaysia)',
-    role: 'Lead Developer & System Architect',
+    role: 'Software Engineer & Researcher',
     period: 'Dec 2024 — Jul 2025',
     location: 'Remote',
     featured: true,
