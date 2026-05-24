@@ -286,7 +286,7 @@ export const projectsDb: Record<string, ProjectEntity> = {
     link: '#',
     isFlagship: true,
     isAceProject: true,
-    featured: true,
+    // featured: true,
     typeAce: 'Flagship • Full-Stack / Security',
     periodAce: '2024 — Present'
   },
