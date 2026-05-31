@@ -829,7 +829,36 @@ export const philosophy = {
     revealText3: "[ac]Learn how to learn,[/ac] and everything else follows."
   },
   closingQuote: "\"[i]Creating what hasn't been built before,[/i]<br/>[em]one innovation at a time.[/em]\"",
-  coreInsight: "This is my innermost driving force. I don't pursue projects for the end result alone; I pursue them for what I'll discover along the way. It's why I can spend weeks on something others finish in hours, and why the 'simplest' problems often teach me the most."
+  coreInsight: "This is my innermost driving force. I don't pursue projects for the end result alone; I pursue them for what I'll discover along the way. It's why I can spend weeks on something others finish in hours, and why the 'simplest' problems often teach me the most.",
+  wisdomHierarchy: {
+    title: "The Four Levels of Knowledge",
+    attribution: "Ancient Persian Proverb",
+    levels: [
+      {
+        index: 1,
+        statement: "He who knows not, and knows not that he knows not, is a fool—shun him.",
+        essence: "Unconscious incompetence"
+      },
+      {
+        index: 2,
+        statement: "He who knows not, and knows that he knows not, is hungry—teach him.",
+        essence: "Conscious incompetence",
+        selfAssessment: true
+      },
+      {
+        index: 3,
+        statement: "He who knows, and knows not that he knows, is asleep—wake him.",
+        essence: "Unconscious competence"
+      },
+      {
+        index: 4,
+        statement: "He who knows, and knows that he knows, is wise—follow him.",
+        essence: "Conscious competence",
+        aspiration: true
+      }
+    ],
+    personalReflection: "I consider myself at Level 2—hungry to learn, capable of building robust and secure systems, but deeply aware of how much more there is to know. My goal is to reach Level 4: not just knowing more, but knowing deeply enough to architect autonomous, intelligent agents that self-optimize and self-secure. The gap between these levels is precisely what drives every project, every late-night optimization, and every domain I explore."
+  }
 };
 
 export const journey = {
