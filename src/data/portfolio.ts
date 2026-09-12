@@ -618,7 +618,7 @@ export const personal = {
     },
     {
       name: "Psychology",
-      description: "Nurtured by my psychologist mother's open conversations. I study cognitive biases and learning science — because [em]understanding how the mind learns is the most valuable thing I have learned[/em]."
+      description: "Nurtured by my psychologist mother's open conversations. I study cognitive biases, human behavior, and learning science. This directly informs my engineering: I design user-centric interfaces and cognitive models for AI agents that align with how humans naturally reason and perceive information."
     }
   ]
 };
@@ -865,22 +865,22 @@ export const journey = {
   genesis: {
     title: "The Genesis",
     period: "Age 3-10",
-    description: "My journey began at age 3, shaped by my uncle's computer. What started with GTA Vice City and SEGA wasn't just entertainment — it planted the seed of an [ac]insatiable curiosity[/ac] about how systems work. When gifted a Windows XP PC, limited access became my greatest teacher: I learned to [hi]troubleshoot[/hi], [hi]experiment[/hi], and [hi]discover independently[/hi] — a pattern that would define everything I build today."
+    description: "My journey began at age 3 in Rawalpindi, shaped by my uncle's computer lab. What started with GTA Vice City and SEGA wasn't just entertainment — it planted the seed of an [ac]insatiable curiosity[/ac] about how systems work. When gifted a PC in Jhelum, limited access and geographical isolation became my greatest teachers: troubleshooting Windows XP configurations without internet or English skills turned me from a gamer into a self-taught technician."
   },
   awakening: {
     title: "The Awakening",
     period: "Teenage Years",
-    description: "Watching 'Inkeshaaf' on 24 News ignited my passion for [ac]ethical hacking[/ac]. I set an 'impossible' goal: hack an Android from another Android. Over a year, I learned Linux, Python, and networking from first principles — pioneering [hi]mobile-to-mobile penetration testing[/hi]. That work became the 2nd most-read Null Byte article (2018-2020) and led me to found a cybersecurity community across 6 countries. The security mindset I built here later shaped every system I've secured since."
+    description: "Watching 'Inkeshaaf' on 24 News ignited my passion for [ac]ethical hacking[/ac]. Lacking high-end computing resources, I set an 'impossible' goal: hack an Android from another Android using only mobile power. Over a year, I mastered Linux, Python, and shell scripting—pioneering [hi]mobile-to-mobile penetration testing[/hi]. This research became Null Byte's 2nd most-read article globally and founded a 6-country cybersecurity community."
   },
   academic: {
     title: "Academic Excellence",
     period: "2019-2023",
-    description: "At University of the Punjab, I earned a [ac]3.73 CGPA[/ac] while pursuing depth far beyond the curriculum — implementing every data structure and algorithm in [hi]modern C++[/hi] a full year before coursework, because [em]understanding beats memorization[/em]. Became an unofficial C++ teaching assistant in my second semester, collaborated with a visiting PhD professor on quantum computing simulations, and was the first team to complete both FYP and research papers simultaneously."
+    description: "At University of the Punjab, I earned a [ac]3.73 CGPA[/ac] while pursuing depth far beyond the curriculum—implementing DSA in [hi]modern C++[/hi] a year early. Served as unofficial C++ teaching assistant from my second semester and deputy class representative managing online learning during COVID-19. First team to simultaneously ship both our Capstone project (Costaz) and two peer-reviewed research papers."
   },
   professional: {
     title: "Professional Evolution",
     period: "2023-Present",
-    description: "My industry entry was strategic: a TeqHolic Flutter internship, a leveraged Rev9 AI team offer, and a direct CTO selection at ACE Money Transfer. Now as .NET Developer & Architecture Consultant, I've channeled every skill — from low-level C++ and cryptography to polyglot system design — into enterprise-grade products. The defining achievement: devoting an entire year to the [c=text-text-primary font-medium]Employee Monitoring Suite[/c], a system I consider a [ac]professional masterpiece[/ac] and a crucible for every engineering principle I hold."
+    description: "My industry entry was strategic, leading to a direct selection at ACE Money Transfer. As Developer & Architecture Consultant, I've transformed enterprise systems. Beyond EMS—my solo [ac]professional masterpiece[/ac]—I co-engineered SchemaFlow and formulated a vision for [hi]Intelligent Scaffolding[/hi]: AI agents translating conversational requests into deterministic enterprise systems. My medium-term focus is establishing a Pakistan-based SME Venture Studio and AI Commons to democratize trustworthy AI."
   }
 };
 
@@ -1196,13 +1196,13 @@ export const quantumResearch = {
   collaborator: "Visiting PhD Professor",
   institution: "University of the Punjab",
   duration: "2023 — 2024",
-  description: "Collaborated with a visiting PhD professor on quantum computing and photonics simulations. Developed specialized simulation tools modeling quantum phenomena and photon behavior.",
+  description: "Collaborated with a visiting PhD professor specializing in quantum computing. This relationship became a vital bridge between theoretical academia and practical research. I delivered high-fidelity C++, Python, and MATLAB prototypes for mirror-array and emitter-detector setups, while she coached me on framing hypotheses and writing for publications. We maintained a steady communication channel even after her relocation to Poland, a bidirectional mentorship that directly raised the bar for my subsequent indoor positioning simulation for MIMOS Berhad.",
   contributions: [
-    "Developed simulation tools in Python and MATLAB",
-    "Modeled quantum phenomena and photon behavior",
-    "Created visualization for mirror arrays, emitters, and detectors",
-    "Supported research initiatives extending to Malaysia",
-    "Advanced understanding of quantum optics through hands-on implementation"
+    "Developed C++, Python, and MATLAB prototypes for quantum optics simulation",
+    "Modeled quantum phenomena, photon behavior, and mirror-array emitter-detector setups",
+    "Maintained steady research cadence and WhatsApp communication post-relocation to Poland",
+    "Bidirectional mentorship: traded programming prototypes for academic writing coaching",
+    "Directly informed the high-precision computational physics modeling used later for MIMOS Berhad"
   ]
 };
 
@@ -1252,6 +1252,376 @@ export const footers = {
     quote: "Everything you've read so far was built on a single foundation — [dt]the joy of discovery.[/dt]",
     nudge: "Read my philosophy",
     target: "philosophy" as const
+  },
+  achievements: {
+    quote: "Every number above was earned through relentless engineering — [dt]discover the philosophy behind it.[/dt]",
+    nudge: "Read the philosophy",
+    target: "philosophy" as const
+  }
+};
+
+// --- ACHIEVEMENTS PAGE DATA ---
+// Curated constellation of achievements surfaced by the Achievements page.
+export const achievements = {
+  headline: "Achievements",
+  subtitle: "A constellation of milestones — each one a story of relentless pursuit.",
+
+  heroStats: [
+    { label: "Global Offers", value: 4, icon: "globe" },
+    { label: "Research Papers", value: 2, icon: "bookOpen" },
+    { label: "Security Articles", value: 10, icon: "shield" },
+    { label: "Vulns Discovered", value: 3, icon: "bug" },
+    { label: "Countries Reached", value: 6, icon: "mapPin" },
+    { label: "Students Mentored", value: 20, icon: "users", suffix: "+" },
+  ],
+
+  constellations: [
+    {
+      id: "international-recognition",
+      title: "International Recognition",
+      subtitle: "Where the work met the world stage",
+      icon: "trophy",
+      items: [
+        {
+          title: "Imperial College London",
+          badge: "Offer Letter Received",
+          badgeVariant: "accent" as const,
+          description: "Ranked [ac]#2 worldwide[/ac] and [hi]#1 in Europe[/hi]. An unconditional offer from here isn't an acknowledgment — it's a statement that my profile meets the bar set by the world's most competitive applicant pool.",
+          meta: "MSc via Chevening • 2025",
+          linkTarget: { tab: "about" as const, section: "about-recognition" },
+          linkLabel: "Full recognition story"
+        },
+        {
+          title: "CyberMACS Erasmus Mundus",
+          badge: "Tuition Waiver + Insurance",
+          badgeVariant: "accent" as const,
+          description: "Selected through a rigorous process — the panel interview extended from 15 minutes to over an hour exploring my technical expertise.",
+          meta: "EU Joint Program • 2025",
+          linkTarget: { tab: "about" as const, section: "about-recognition" },
+          linkLabel: "Full recognition story"
+        },
+        {
+          title: "University of York",
+          badge: "80% Scholarship",
+          badgeVariant: "muted" as const,
+          description: "York independently awarded an 80% tuition scholarship based on academic and professional merit — separate from Chevening.",
+          meta: "MSc via Chevening • 2025"
+        },
+        {
+          title: "ESIEE Paris",
+          badge: "Eiffel Nomination",
+          badgeVariant: "muted" as const,
+          description: "Admitted and nominated for the France Excellence Eiffel Scholarship — a prestigious opportunity for the top international candidates.",
+          meta: "MSc • 2025"
+        },
+      ]
+    },
+    {
+      id: "security-legacy",
+      title: "The Security Legacy",
+      subtitle: "From H4ck3R_777 to enterprise architect",
+      icon: "shield",
+      items: [
+        {
+          title: "Null Byte — 2nd Most-Read Article Globally",
+          badge: "2018-2020",
+          badgeVariant: "accent" as const,
+          description: "Pioneered [ac]mobile-to-mobile penetration testing[/ac] — a technique many considered impossible without traditional computing. Published 10 security research articles as [hi]H4ck3R_777[/hi], with the top article reaching 2nd most-read on the entire platform.",
+          meta: "10 articles published",
+          linkTarget: { tab: "about" as const, section: "about-nullbyte" },
+          linkLabel: "Read articles"
+        },
+        {
+          title: "Enterprise Vulnerability Discoveries",
+          badge: "3 Vulnerabilities",
+          badgeVariant: "muted" as const,
+          description: "Identified critical security flaws at ACE Money Transfer (HRMS broken access control, ticketing system IDOR) and CyberMACS portal (information exposure) — each responsibly disclosed and patched.",
+          linkTarget: { tab: "about" as const, section: "about-vulnerabilities" },
+          linkLabel: "View discoveries"
+        },
+        {
+          title: "ACE Password Vault",
+          badge: "Zero Incidents",
+          badgeVariant: "accent" as const,
+          description: "Designed multi-layered cryptographic system with C++ and .NET — custom protocols exceeding industry standards. Became [hi]critical company infrastructure[/hi] protecting the most sensitive credentials.",
+          linkTarget: { tab: "projects" as const, section: "projects-root" },
+          linkLabel: "View project"
+        },
+        {
+          title: "International Cybersecurity Community",
+          badge: "6 Countries",
+          badgeVariant: "muted" as const,
+          description: "Founded and led a community spanning Iran, Pakistan, India, Australia, Finland, and Bangladesh — 13 mentors collaborating on security testing methodologies.",
+          meta: "2018 — 2022 • 4 years",
+          linkTarget: { tab: "about" as const, section: "about-community" },
+          linkLabel: "Community details"
+        },
+      ]
+    },
+    {
+      id: "research-innovation",
+      title: "Research & Innovation",
+      subtitle: "Publications, collaborations, and visions",
+      icon: "microscope",
+      items: [
+        {
+          title: "Peer-Reviewed Research Publications",
+          badge: "2 Papers",
+          badgeVariant: "accent" as const,
+          description: "Co-authored two published papers on paddy leaf disease detection using AI and image processing — in [hi]Quantum Journal of Social Sciences and Humanities[/hi] and [hi]Quantum Journal of Engineering, Science and Technology[/hi].",
+          meta: "2023 • University of the Punjab"
+        },
+        {
+          title: "Quantum Computing & Photonics Simulation",
+          badge: "Research Collaboration",
+          badgeVariant: "muted" as const,
+          description: "Collaborated with a visiting PhD professor — delivering high-fidelity C++, Python, and MATLAB prototypes for mirror-array and emitter-detector setups. A bidirectional mentorship that directly informed the UWB simulation for MIMOS Berhad.",
+          meta: "2023 — 2024"
+        },
+        {
+          title: "UWB Indoor Positioning Simulation",
+          badge: "Solo Project",
+          badgeVariant: "accent" as const,
+          description: "Built a first-principles simulation engine for MIMOS Berhad (Malaysia) — [ac]eliminating costly physical testing[/ac]. Simulation accuracy within 5% of physical results. Compressed deployment timeline from months to days.",
+          linkTarget: { tab: "projects" as const, section: "projects-root" },
+          linkLabel: "View project"
+        },
+      ]
+    },
+    {
+      id: "engineering-impact",
+      title: "Engineering Impact",
+      subtitle: "Measured outcomes, proven results",
+      icon: "trendingUp",
+      items: [
+        {
+          title: "Employee Monitoring Suite",
+          badge: "200% Productivity",
+          badgeVariant: "accent" as const,
+          description: "Engineered solo over one year — [ac]zero defects[/ac] at production launch, 35% reduction in unauthorized breaks, recognized by CTO as a [hi]professional masterpiece[/hi], and established as company standard.",
+          linkTarget: { tab: "experience" as const, section: "experience-root" },
+          linkLabel: "View at ACE"
+        },
+        {
+          title: "ERP Platform Transformation",
+          badge: "Multi-Tenant SaaS",
+          badgeVariant: "muted" as const,
+          description: "Transformed fragmented tools into a unified multi-tenant platform — 90% reduction in module development time, 5+ business modules shipped, reusable subsystems (rules, approvals, notifications, audit) powering enterprise-wide operations.",
+          linkTarget: { tab: "experience" as const, section: "experience-root" },
+          linkLabel: "View at ACE"
+        },
+        {
+          title: "Unified Reporting Engine",
+          badge: "Company Standard",
+          badgeVariant: "accent" as const,
+          description: "Solved an [ac]years-long company-wide problem[/ac] — replaced 5+ independent brittle implementations with a single Python microservice. Now ACE's internal standard for all reporting needs.",
+          linkTarget: { tab: "projects" as const, section: "projects-root" },
+          linkLabel: "View project"
+        },
+        {
+          title: "Background Jobs Framework",
+          badge: "Adopted Company-Wide",
+          badgeVariant: "muted" as const,
+          description: "First built for EMS, this framework proved so robust that 3+ other projects adopted it to solve their persistent job management issues — [hi]unbreakable since launch[/hi], zero job failures.",
+        },
+        {
+          title: "mr_crypt — Open Source Impact",
+          badge: "10x Reduction",
+          badgeVariant: "accent" as const,
+          description: "Revolutionary [ac]range-like syntax[/ac] for C++ cryptography — reduced implementation boilerplate by 10x. Gained recognition in the C++ community through C++23 template metaprogramming and seamless OpenSSL 3.0+ integration.",
+          linkTarget: { tab: "projects" as const, section: "projects-root" },
+          linkLabel: "View project"
+        },
+      ]
+    },
+    {
+      id: "academic-excellence",
+      title: "Academic Excellence",
+      subtitle: "A 3.73 story of going beyond the syllabus",
+      icon: "graduationCap",
+      items: [
+        {
+          title: "3.73 / 4.0 CGPA — University of the Punjab",
+          badge: "BS Computer Science",
+          badgeVariant: "accent" as const,
+          description: "84% overall marks across 131 credit hours. Achieved a [ac]perfect 4.0 GPA[/ac] in Semester 5 — the highest point in a consistently strong trajectory.",
+          meta: "2019 — 2023",
+          linkTarget: { tab: "skills" as const, section: "skills-education" },
+          linkLabel: "Full credentials"
+        },
+        {
+          title: "First Team: FYP + Research Simultaneously",
+          badge: "Dual Achievement",
+          badgeVariant: "accent" as const,
+          description: "The first team in the department to simultaneously complete the final year project (Costaz) and co-author two peer-reviewed research papers — while maintaining a 3.73 CGPA."
+        },
+        {
+          title: "Unofficial C++ Teaching Assistant",
+          badge: "From 2nd Semester",
+          badgeVariant: "muted" as const,
+          description: "Recognized for C++ proficiency from early on — conducted 50+ peer programming sessions, mentored 20+ students, and established coding standards adopted by peers."
+        },
+        {
+          title: "DSA Mastery — One Year Ahead",
+          badge: "Self-Directed",
+          badgeVariant: "muted" as const,
+          description: "A full year before formal coursework, implemented every fundamental data structure and algorithm in [hi]modern C++[/hi] — proper OOP with RAII, move semantics, and STL-style interfaces. Benchmarked against reference implementations.",
+          linkTarget: { tab: "skills" as const, section: "skills-dsa" },
+          linkLabel: "View DSA details"
+        },
+      ]
+    },
+    {
+      id: "community-open-source",
+      title: "Community & Open Source",
+      subtitle: "Building bridges across borders",
+      icon: "gitBranch",
+      items: [
+        {
+          title: "Open Source Contributions",
+          badge: "4 Projects",
+          badgeVariant: "accent" as const,
+          description: "Active contributor to [hi]AvaloniaUI[/hi] (performance optimizations), [hi]Flutter[/hi] (architecture improvements), [hi]fluent_ui[/hi] (component development), and creator of [ac]mr_crypt[/ac] and [ac]MyUniversity[/ac].",
+          linkTarget: { tab: "about" as const, section: "about-community" },
+          linkLabel: "View contributions"
+        },
+        {
+          title: "Mentorship & Knowledge Sharing",
+          badge: "50+ Sessions",
+          badgeVariant: "muted" as const,
+          description: "Conducted 50+ peer programming sessions and mentored 20+ students in C++ and system design. Created educational content reaching [ac]thousands globally[/ac] through Null Byte and community forums."
+        },
+        {
+          title: "IELTS Academic — Band 7.5",
+          badge: "British Council",
+          badgeVariant: "muted" as const,
+          description: "Listening: 8.5, Reading: 7.0, Writing: 7.0, Speaking: 7.0 — demonstrating strong English proficiency for international academic and professional communication."
+        },
+      ]
+    }
+  ],
+
+  // Milestones — previously unsurfaced personal stories
+  milestones: [
+    {
+      title: "ARMA II NPC Traffic Module",
+      period: "Early Teenage Years",
+      description: "Decompiled and rebuilt an ARMA II module to embed custom NPC traffic scripts, creating an organic sandbox environment. Successfully repackaged and integrated it — running flawlessly on the first launch.",
+      significance: "First contact with reverse-engineering and binary-level thinking — a formative experience that foreshadowed the security and systems architecture career.",
+      icon: "gamepad"
+    },
+    {
+      title: "Intelligent Scaffolding Vision",
+      period: "2024 — Ongoing",
+      description: "An AI agent that accepts conversational queries, dynamically generates, reviews, and executes deterministic code, and registers it as a reusable module — bridging conversational requests with enterprise systems.",
+      significance: "The bridge between current enterprise engineering and the AI-first future — where the engineer becomes the orchestrator.",
+      icon: "brain"
+    },
+    {
+      title: "AI-Driven Monitoring Proposal",
+      period: "2024",
+      description: "Proposed an AI-driven evolution of the Employee Monitoring Suite to automate worklogging and reduce human interference. Technical leadership validated the architecture — fueling the desire to pursue AI in a research-oriented environment.",
+      significance: "Demonstrated initiative to push beyond the status quo and validated that the AI vision had real architectural merit.",
+      icon: "sparkles"
+    },
+  ],
+
+  // Trajectory — forward-looking vision
+  trajectory: {
+    title: "The Trajectory",
+    core: "I envision AI not as a tool for incremental productivity gains, but as the foundation for [ac]societal transformation[/ac] — a future where AI handles all necessary work, freeing humanity to pursue passions, creativity, and voluntary contribution.",
+    pillars: [
+      {
+        name: "Open-Source Ethos",
+        description: "People contribute voluntarily because they want to, not because they must to survive."
+      },
+      {
+        name: "Breaking Exploitative Cycles",
+        description: "AI can break the cycles where humans exploit each other through economic necessity and survival pressures."
+      },
+      {
+        name: "Passion Over Desperation",
+        description: "Building toward a world where technology eliminates coerced labor and humans contribute out of passion."
+      }
+    ],
+    entrepreneurVision: {
+      title: "SME Venture Studio & AI Commons",
+      description: "Medium-term vision of establishing a Pakistan-based SME Venture Studio — working collaboratively with startups in a family-like, non-greedy relationship. Also envisions an AI Commons to democratize trustworthy AI."
+    },
+  },
+};
+
+// --- EXTENDED PERSONAL DATA ---
+// These exports represent deeply personal context, raw achievements, and aspirational visions.
+// They are surfaced by the Achievements page and may be referenced by future portfolio variants.
+
+export const personalMilestones = {
+  armaModding: {
+    title: 'ARMA II NPC Traffic Module',
+    period: 'Early Teenage Years',
+    tech: ['SQF Scripting', 'Decompilation', 'Game Modding', 'File System'],
+    summary: 'Decompiled and rebuilt ARMA II module to embed custom NPC traffic scripts, creating an organic sandbox environment.',
+    description: 'Frustrated by the manual setup needed for every custom mission, decompiled a packaged game addon, reverse-engineered its source code, and refactored the bindings to embed a custom-written GTA-like traffic script. Successfully repackaged and integrated it into the game\'s world editor, running flawlessly on the first launch. This early triumph sparked my lifelong fascination with reverse-engineering and systems modding.',
+    significance: 'First contact with reverse-engineering and binary-level thinking — a formative experience that foreshadowed the security and systems architecture career.'
+  },
+  intelligentScaffolding: {
+    title: 'Intelligent Scaffolding Vision',
+    period: '2024 — Ongoing',
+    tech: ['LLM Code Generation', 'Reinforcement Learning', 'Natural Language Understanding', 'AI Safety & Alignment'],
+    summary: 'Deep architectural concept for AI agents bridging conversational requests with deterministic enterprise systems.',
+    description: 'Born from daily customer sessions at ACE where unique client requests spawned weeks of deterministic coding. Proposed an ambitious solution: an AI agent that accepts conversational queries (e.g., "Show me last month\'s reconciliation discrepancies..."), dynamically generates, reviews, and executes the deterministic code, and registers it as a reusable module. Focuses on building autonomous agents that safely and auditably self-optimize and self-secure enterprise frameworks.',
+    wisdomMapping: 'Moving from Level 2 (building robust deterministic systems) toward Level 4 (architecting self-optimizing intelligent agents) in the four-level wisdom hierarchy.',
+    significance: 'The bridge between current enterprise engineering and the AI-first future — where the engineer becomes the orchestrator.'
+  },
+  aiDrivenMonitoring: {
+    title: 'AI-Driven Employee Monitoring Proposal',
+    period: '2024',
+    description: 'At ACE, proposed an AI-driven evolution of the Employee Monitoring Suite to automate worklogging and reduce human interference — eliminating the trust issues that manual monitoring creates. Developed the plan with a fellow colleague and presented to the CTO, who fully supported the architecture. However, commercial pressures redirected focus to ERP development, and the opportunity never materialized. This fueled the desire to pursue AI in a more research-oriented environment.',
+    significance: 'Demonstrated initiative to push beyond the status quo and validated that the AI vision had real architectural merit.'
+  }
+};
+
+export const aiVision = {
+  title: "Vision for AI-Driven Society",
+  core: "I envision AI not as a tool for incremental productivity gains, but as the foundation for societal transformation — a future where AI handles all necessary work, freeing humanity to pursue passions, creativity, and voluntary contribution.",
+  pillars: [
+    {
+      name: "Open-Source Ethos",
+      description: "People contribute voluntarily because they want to, not because they must to survive. Open source will ultimately prevail as the dominant model when survival is decoupled from labor."
+    },
+    {
+      name: "Breaking Exploitative Cycles",
+      description: "Not just technical challenges, but how humans exploit each other through economic necessity, how survival pressures create harmful hierarchies, and how AI can break these cycles."
+    },
+    {
+      name: "Passion Over Desperation",
+      description: "Building toward a world where technology eliminates coerced labor, where humans contribute out of passion rather than desperation, and where we can focus on solving humanity's self-inflicted challenges."
+    }
+  ],
+  inspiration: "Inspired by thinkers like Elon Musk who articulate similar visions, and aiming to contribute — however incrementally — to building systems that move us toward this future.",
+  childhoodCuriosity: "Since childhood, I've wondered how to make computers 'think.' Whenever I designed a system, I always considered: what would happen if it were truly intelligent? Not with lots of if-statements, but genuinely intelligent. This curiosity drove me to explore AI not just as a tool, but as a fundamental shift in computing."
+};
+
+export const personalAttributes = [
+  { name: "Self-Taught Problem Solver", description: "Learning independently since childhood" },
+  { name: "Systems Thinker", description: "Seeing connections across diverse domains" },
+  { name: "Innovation Driver", description: "Consistently pushing boundaries of what's possible" },
+  { name: "Knowledge Synthesizer", description: "Combining diverse fields for novel solutions" },
+  { name: "Community Builder", description: "Creating and nurturing technical communities" },
+  { name: "Continuous Learner", description: "Treating every challenge as a growth opportunity" },
+  { name: "Obsessive Documenter", description: "Deep passion for documenting every learning journey; GitHub serves as a comprehensive knowledge repository — nothing learned goes undocumented" }
+];
+
+export const careerAnecdotes = {
+  rev9Leverage: {
+    title: "Rev9 Solutions Leverage",
+    description: "Before ACE, was offered a position on Rev9 Solutions' AI team. Used this as strategic leverage during negotiations, ultimately choosing ACE for financial stability and enterprise-scale growth opportunities.",
+    significance: "Demonstrated strategic career decision-making and validated AI-readiness even at the start of professional career."
+  },
+  entrepreneurVision: {
+    title: "SME Venture Studio & AI Commons",
+    description: "Medium-term vision of establishing a Pakistan-based SME Venture Studio to help smaller firms — working collaboratively with startups in a family-like, non-greedy relationship. Also envisions an AI Commons to democratize trustworthy AI, removing the barriers that current startup-boosters create with inaccessible pricing.",
+    significance: "Entrepreneur mindset driven by a desire to level the playing field and create genuine value rather than extract it."
   }
 };
 

@@ -199,6 +199,50 @@ export function Overview({ onNavigate }: OverviewProps) {
         </div>
       </motion.section>
 
+      {/* Achievements Teaser */}
+      <motion.section
+        className="mb-16"
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
+        transition={{ duration: 0.4, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <SectionHeader
+          title="Milestones & Achievements"
+          action={{
+            label: "Explore all",
+            onClick: () => onNavigate("achievements"),
+            icon: ArrowRight,
+          }}
+        />
+        
+        <div 
+          onClick={() => onNavigate("achievements")}
+          className="group relative p-6 rounded-xl bg-layer border border-stroke cursor-pointer hover:bg-layer-hover hover:border-accent/30 transition-all overflow-hidden"
+        >
+          {/* Subtle cosmic gradient background overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-accent/[0.03] to-transparent pointer-events-none" />
+          <div className="absolute top-0 right-0 w-48 h-48 bg-accent/[0.04] blur-3xl rounded-full translate-x-1/4 -translate-y-1/4 pointer-events-none" />
+
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="flex-1 min-w-0">
+              <span className="text-[10px] uppercase tracking-wider text-accent font-semibold block mb-1">
+                Constellation of Impact
+              </span>
+              <h3 className="text-sm font-medium text-text-primary group-hover:text-accent transition-colors mb-2">
+                Discovering, Securing, and Scaling Systems
+              </h3>
+              <p className="text-xs text-text-secondary leading-relaxed max-w-2xl">
+                A timeline of C++ security libraries, enterprise vulnerability discoveries, international academic publications, null-byte hacking articles, and community leadership — connected by a single thread: the joy of discovery.
+              </p>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs text-accent font-medium mt-2 md:mt-0 flex-shrink-0 group-hover:text-accent-light transition-colors">
+              <span>Explore Constellations</span>
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Recent Experience */}
       <motion.section 
         className="mb-16"

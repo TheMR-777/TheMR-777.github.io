@@ -589,3 +589,45 @@ a:focus-visible,
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ============================================
+   ACHIEVEMENTS PAGE STYLES
+   ============================================ */
+
+/* Hero gradient overlay with celestial/constellation vibe */
+[data-theme="dark"] .achievements-hero {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 15%, hsl(var(--accent-hsl) / 0.09) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 50% at 80% 70%, hsl(var(--accent-hsl) / 0.06) 0%, transparent 50%),
+    var(--bg-content);
+}
+
+[data-theme="light"] .achievements-hero {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 15%, hsl(var(--accent-hsl) / 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 50% at 80% 70%, hsl(var(--accent-hsl) / 0.04) 0%, transparent 50%),
+    var(--bg-content);
+}
+
+.achievements-title {
+  font-family: "Segoe UI Variable Display", "Segoe UI Variable", "Segoe UI", "Inter", system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+/* Stat counter and spotlight card styles */
+.stat-counter-card, .spotlight-card {
+  transition: transform var(--duration-normal) var(--easing), border-color var(--duration-normal) var(--easing), box-shadow var(--duration-normal) var(--easing);
+}
+
+.stat-counter-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.spotlight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
