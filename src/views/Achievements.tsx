@@ -129,8 +129,7 @@ export function Achievements({ onNavigate }: { onNavigate: NavigateFn }) {
         </section>
 
         {/* ─── Constellation Sections ─── */}
-        {achievements.constellations.map((constellation, cIdx) => {
-          const Icon = iconMap[constellation.icon] || Trophy;
+        {achievements.constellations.map((constellation) => {
           return (
             <section
               key={constellation.id}

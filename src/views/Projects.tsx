@@ -11,6 +11,7 @@ import {
   Sparkles,
   ArrowUpRight,
   Monitor,
+  Cog,
 } from "lucide-react";
 import { portfolioData, type Project, type PersonalProject } from "../lib/portfolioDAL";
 import DetailSheet from "../components/DetailSheet";
@@ -306,6 +307,41 @@ export function Projects({ onNavigate }: { onNavigate: NavigateFn }) {
                     {selectedProject.approach}
                   </p>
                 </Surface>
+              </DetailSection>
+            )}
+
+            {selectedProject.architecturalHighlights && selectedProject.architecturalHighlights.length > 0 && (
+              <DetailSection title="Architectural Highlights" icon={Cog}>
+                <Surface padding="md" className="rounded-lg space-y-2">
+                  {selectedProject.architecturalHighlights.map((highlight, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5 text-sm text-text-secondary">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
+                      <StyledText text={highlight} as="span" />
+                    </div>
+                  ))}
+                </Surface>
+              </DetailSection>
+            )}
+
+            {selectedProject.modules && selectedProject.modules.length > 0 && (
+              <DetailSection title="Core Subsystems & Capabilities" icon={Sparkles}>
+                <div className="space-y-3">
+                  {selectedProject.modules.map((mod, idx) => (
+                    <Surface key={idx} padding="md" className="rounded-lg">
+                      <h5 className="text-sm font-medium text-text-primary mb-1">
+                        {mod.name}
+                      </h5>
+                      <StyledText
+                        text={mod.description}
+                        className="text-xs text-text-secondary leading-relaxed mb-2"
+                        as="p"
+                      />
+                      <span className="text-[10px] text-accent font-medium">
+                        → {mod.impact}
+                      </span>
+                    </Surface>
+                  ))}
+                </div>
               </DetailSection>
             )}
 

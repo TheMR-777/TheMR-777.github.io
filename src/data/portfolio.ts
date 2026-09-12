@@ -226,18 +226,20 @@ export const projectsDb: Record<string, ProjectEntity> = {
   'reporting-engine': {
     id: 'reporting-engine',
     title: 'Unified Reporting Engine',
-    tech: ['Python 3.14', 'ReportLab', 'OpenPyXL', 'Pandas', 'FastAPI'],
-    summary: 'Python-based microservice that replaced years of fragmented, per-project reporting with a single, zero-overhead solution.',
-    description: 'Every project at ACE handled reporting independently — brittle, unreliable, non-customizable. I proposed and solely built a microservice reporting engine in Python 3.14, leveraging its rich library ecosystem. The design philosophy: expose underlying library APIs directly with zero wrapper overhead. The need for dynamic, visual query construction during this project also gave birth to SchemaFlow — now an open-source standalone tool.',
-    descriptionAce: 'ACE had a years-long, company-wide reporting problem: every project — EMS, ERP, Laravel-based services, and more — handled reporting independently, resulting in brittle, unreliable, and non-customizable implementations. I proposed a microservice-based architecture with Python 3.14 as the primary reporting engine, leveraging its rich library ecosystem for flexible report generation and data presentation. I solely developed the engine (since nobody had specialization in polyglot application development), keeping the implementation minimal by design — exposing the underlying library APIs directly, requiring zero overhead for maintenance or custom development. The engine is now integrated across EMS, ERP, and multiple Laravel-based projects, becoming ACE\'s internal industry standard for reporting. The need for dynamic, visual query construction during this project also gave birth to SchemaFlow — now an open-source standalone tool.',
+    tech: ['Python 3.14', 'Jupyter Kernel', 'Google Gemini API', 'Graph Schemas (DAG)', 'Pytest', 'FastAPI', 'ReportLab', 'OpenPyXL', 'Pandas'],
+    summary: 'Python-based microservice that replaced years of fragmented, per-project reporting with a single, zero-overhead solution — now evolved into an AI-augmented analytics platform with embedded Jupyter notebooks, Gemini-powered code generation, graph-based schema inheritance, and 3,000+ automated tests.',
+    description: 'Every project at ACE handled reporting independently — brittle, unreliable, non-customizable. I proposed and solely built a microservice reporting engine in Python 3.14, leveraging its rich library ecosystem. The design philosophy: expose underlying library APIs directly with zero wrapper overhead. Over time, I evolved it far beyond its original scope — orchestrating an embedded Jupyter Notebook environment inside the ERP, integrating Google Gemini endpoints for on-the-fly Python script generation (inspired by Google Colab), engineering a graph-based schema definition model to eliminate cross-module duplication, adding frequency-based audit snapshots, and hardening everything with a 3,000+ test case suite. The need for dynamic, visual query construction during this project also gave birth to SchemaFlow — now an open-source standalone tool.',
+    descriptionAce: 'ACE had a years-long, company-wide reporting problem: every project — EMS, ERP, Laravel-based services, and more — handled reporting independently, resulting in brittle, unreliable, and non-customizable implementations. I proposed a microservice-based architecture with Python 3.14 as the primary reporting engine, leveraging its rich library ecosystem for flexible report generation and data presentation. I solely developed the engine (since nobody had specialization in polyglot application development), keeping the implementation minimal by design — exposing the underlying library APIs directly, requiring zero overhead for maintenance or custom development. Over time, I evolved the engine into a full-scale analytics workspace: orchestrating a Jupyter Notebook runtime directly inside the ERP for custom Python analytics with notebook persistence, sharing, and curated financial visualization presets. Integrated Google Gemini API endpoints for on-the-fly Python code generation inspired by Google Colab\'s generative workflows. Transitioned from rigid JSON schemas to a directed graph schema architecture enabling dataset inheritance — a massive time saver for the accounting team. Added frequency-based snapshot persistence for strict financial audits. I led the engineering and architecture, with implementation workloads steered through Claude Fable and GPT-6 Astra flagship models, and authored a 3,000+ test suite to guarantee unbreakable reliability. The engine is now integrated across EMS, ERP, and multiple Laravel-based projects, becoming ACE\'s internal industry standard. The accounting team, the treasury team, their heads, managers, our manager, the CEO, and the CTO all praised the reporting engine, calling it a "marvel of engineering" and a true feat of engineering at ACE. The need for dynamic, visual query construction during this project also gave birth to SchemaFlow — now an open-source standalone tool.',
     category: 'Microservice • Polyglot',
-    challenge: 'Years of fragmented reporting across 5+ services and projects — each with its own brittle, badly designed, rigid implementation. Inconsistent outputs, unmaintainable code, and no customization support.',
-    approach: 'Designed a language-agnostic microservice consumed via REST. Chose Python 3.14 for its unmatched library ecosystem (ReportLab, OpenPyXL, Pandas, Jinja2). Kept the implementation minimal — the API surface mirrors the underlying libraries directly, requiring zero maintenance overhead for new report types. Polyglot integration ensures .NET, Angular, and Laravel projects consume it seamlessly.',
+    challenge: 'Years of fragmented reporting across 5+ services and projects — each with its own brittle, badly designed, rigid implementation. Inconsistent outputs, unmaintainable code, and no customization support. Financial teams needed dynamic ad-hoc analytics, strict audit trails, and bespoke visualizations but were blocked by slow engineering release cycles.',
+    approach: 'Designed a language-agnostic microservice consumed via REST. Chose Python 3.14 for its unmatched library ecosystem (ReportLab, OpenPyXL, Pandas, Jinja2). Kept the implementation minimal — the API surface mirrors the underlying libraries directly, requiring zero maintenance overhead for new report types. Polyglot integration ensures .NET, Angular, and Laravel projects consume it seamlessly. Later evolved the architecture with an embedded Jupyter Notebook workspace inside the ERP, Google Gemini endpoints for natural-language-to-Python generation, a directed graph schema engine for composable, inheritable datasets, immutable audit snapshots, and a 3,000+ test case test harness.',
     impact: [
-      'Solved an years-long company-wide problem',
+      'Solved a years-long company-wide problem',
       'Replaced 5+ independent brittle implementations',
       'Became ACE\'s internal standard for reporting',
       'Zero maintenance overhead via direct API design',
+      'Praised by Accounting, Treasury, Managers, CEO, and CTO as a "marvel of engineering" and ACE\'s greatest engineering feat',
+      '3,000+ automated test suite guaranteeing production reliability and zero regressions',
       'Demonstrated enterprise-grade polyglot engineering'
     ],
     link: '#',
@@ -247,22 +249,61 @@ export const projectsDb: Record<string, ProjectEntity> = {
     featured: true,
     typeAce: 'Microservice • Polyglot',
     periodAce: '2025 — Present',
+    modules: [
+      {
+        name: 'Embedded Jupyter Notebook Runtime',
+        description: 'Orchestrated interactive Python/Jupyter kernel execution directly inside the ERP interface. Features notebook persistence, workspace sharing, and execution sandboxing.',
+        impact: 'Enabled financial teams to run bespoke Python analytics without local environments'
+      },
+      {
+        name: 'Gemini AI Script & Query Generation',
+        description: 'Integrated Google Gemini endpoints inspired by Google Colab AI workflows. Translates natural language reporting queries into validated, executable Python analysis scripts on the fly.',
+        impact: 'Accelerated complex report generation from days to seconds'
+      },
+      {
+        name: 'Graph-Based Schema Inheritance Engine',
+        description: 'Replaced redundant JSON schema definitions with a directed acyclic graph (DAG) schema model. Allows new reports to inherit, extend, and compose existing dataset pipelines.',
+        impact: 'Eliminated schema duplication and saved hundreds of hours for accounting'
+      },
+      {
+        name: 'Financial Visualization Presets',
+        description: 'Curated library of plug-and-play visual components tailored for Treasury & Accounting (cash flows, currency variance, multi-year forecasting, liquidity graphs).',
+        impact: 'Turnkey board-ready financial visualizations out of the box'
+      },
+      {
+        name: 'Frequency-Based Audit Snapshots',
+        description: 'Scheduled reporting engine with immutable dataset snapshots capturing point-in-time state for regulatory compliance and financial audits.',
+        impact: '100% auditable historical financial data integrity'
+      },
+      {
+        name: '3,000+ Automated Test Suite',
+        description: 'Relentless test harness exercising the execution engine, graph resolution algorithms, script sandboxing, and output renderers under high load.',
+        impact: 'Zero regressions across rapid feature expansions; rock-solid reliability'
+      }
+    ],
     architecturalHighlights: [
       'Microservice architecture — language-agnostic integration via HTTP/REST',
       'Python 3.14 core — leveraging rich library ecosystem (ReportLab, OpenPyXL, Pandas, Jinja2)',
       'Zero-overhead API design: exposes underlying library capabilities directly, no wrapper abstraction tax',
-      'Minimal implementation philosophy — maximum flexibility with minimum maintenance surface',
-      'Unified report templates with runtime-configurable customization',
-      'Data export in multiple formats: PDF, Excel, CSV, with consistent styling',
+      'Direct Python (Jupyter) Notebook runtime orchestration embedded inside ERP',
+      'Generative AI code pipeline using Google Gemini endpoints for instant Python script generation',
+      'Graph-based schema engine replacing JSON duplication with dataset inheritance',
+      '3,000+ comprehensive automated test suite hammering reliability, edge cases, and performance',
+      'Immutable point-in-time dataset snapshots for scheduled compliance audits',
       'Polyglot integration — seamlessly consumed by .NET, Angular, and Laravel projects',
+      'Multi-agent implementation orchestration using Claude Fable and GPT-6 Astra flagship models',
       'Sole developer in a polyglot-first engineering approach'
     ],
-    techAce: ['Python 3.14', 'ReportLab', 'OpenPyXL', 'Pandas', 'FastAPI', 'Microservices'],
+    techAce: ['Python 3.14', 'Jupyter Kernel', 'Google Gemini API', 'Graph Schemas', 'Pytest (3,000+ Tests)', 'FastAPI', 'Pandas', 'ReportLab', 'OpenPyXL', 'Microservices'],
     impactAce: [
-      'Solved an years-long, company-wide reporting fragmentation problem',
+      'Solved a years-long, company-wide reporting fragmentation problem',
       'Replaced independent, brittle implementations across 5+ projects',
       'Became ACE\'s internal standard for all reporting needs',
       'Zero maintenance overhead due to direct API pass-through design',
+      'Praised by CEO, CTO, and executive leadership as a "marvel of engineering" and greatest feat at ACE',
+      '3,000+ automated test suite ensuring flawless stability across continuous feature additions',
+      'Pioneered in-ERP Python Jupyter notebooks with Google Gemini generative code synthesis',
+      'Graph-based dataset inheritance eliminating schema duplication and saving massive time for accounting',
       'Demonstrated polyglot software engineering at enterprise scale'
     ]
   },
@@ -495,7 +536,7 @@ export const experiencesDb: Record<string, ExperienceEntity> = {
     period: 'Jun 2023 — Present',
     location: 'Remote/Hybrid',
     featured: true,
-    summary: 'Channeling every skill (including polyglot architecture) into transforming enterprise systems. Engineered flagship products including the Employee Monitoring Suite achieving [ac]200% productivity boost[/ac] with [hi]zero defects[/hi] at launch, and a comprehensive ERP platform.',
+    summary: 'Channeling every skill (including polyglot and AI architecture) into transforming enterprise systems. Engineered dual masterpieces: the Employee Monitoring Suite ([ac]200% productivity boost[/ac], [hi]zero defects[/hi] at launch) and the AI-augmented Unified Reporting Engine hailed by the CEO and CTO as a [hi]"marvel of engineering"[/hi].',
     description: 'Progressed from UI/UX to leading core platform modules and multi-tenant migration decisions. My focus: building [hi]reusable primitives[/hi] that power every business module. I also championed the adoption of [ac]AI agentic workflows[/ac] (Cursor), successfully pitching it to the C-suite and accelerating my deployment speed by [hi]100x[/hi] while focusing strictly on core architecture.',
     highlights: [
       'Architected Employee Monitoring Suite solo — zero defects at launch',
@@ -505,7 +546,7 @@ export const experiencesDb: Record<string, ExperienceEntity> = {
       'Led ERP Platform Engineering: Rules, Approvals, Rights, Notifications',
       'Built unbreakable Background Jobs Framework — adopted company-wide',
       'Engineered pluggable Logging Framework for in-depth observability',
-      'Built Unified Reporting Engine in Python — became ACE\'s reporting standard',
+      'Architected Unified Reporting Engine with embedded Jupyter notebooks, Gemini AI script generation, graph-based schemas, and 3,000+ tests — praised by CEO, CTO, and Treasury as a "marvel of engineering"',
       'Integrated Mastercard, HBL, and PNB payment services',
       'Pioneered AI agentic workflows (Cursor), successfully pitching to C-suite and achieving 100x deployment acceleration',
       'Received direct commendation from CTO for architectural innovations'
@@ -513,10 +554,12 @@ export const experiencesDb: Record<string, ExperienceEntity> = {
     impact: [
       '200% productivity increase via Employee Monitoring Suite',
       '35% reduction in unauthorized breaks',
+      '3,000+ automated test suite achieving complete stability and zero regressions across reporting',
+      'Hailed across executive leadership (CEO, CTO, Treasury) as ACE\'s greatest engineering feat',
       '5+ major modules standardized on new platform',
       'Multi-tenant architecture enabling SaaS transformation'
     ],
-    tech: ['.NET 9', 'Blazor', 'Angular', 'GraphQL', 'SignalR', 'PostgreSQL', 'C++'],
+    tech: ['.NET 9', 'Python 3.14', 'Jupyter Kernel', 'Google Gemini', 'Blazor', 'Angular', 'GraphQL', 'SignalR', 'PostgreSQL', 'C++'],
     associatedProjectIds: [
       'ems', 'evolver', 'erp-core', 'erp-modules', 'ace-vault', 'overwatch', 'external-partner-integrations', 'real-time-infrastructure', 'background-jobs-framework', 'logging-framework', 'reporting-engine'
     ]
@@ -880,7 +923,7 @@ export const journey = {
   professional: {
     title: "Professional Evolution",
     period: "2023-Present",
-    description: "My industry entry was strategic, leading to a direct selection at ACE Money Transfer. As Developer & Architecture Consultant, I've transformed enterprise systems. Beyond EMS—my solo [ac]professional masterpiece[/ac]—I co-engineered SchemaFlow and formulated a vision for [hi]Intelligent Scaffolding[/hi]: AI agents translating conversational requests into deterministic enterprise systems. My medium-term focus is establishing a Pakistan-based SME Venture Studio and AI Commons to democratize trustworthy AI."
+    description: "My industry entry was strategic, leading to a direct selection at ACE Money Transfer. As Developer & Architecture Consultant, I've transformed enterprise systems. Alongside EMS—my solo [ac]professional masterpiece[/ac]—I architected the Unified Reporting Engine with embedded Jupyter notebooks, Gemini-powered code generation, graph schemas, and 3,000+ tests, hailed by the CEO and CTO as a [hi]\"marvel of engineering\"[/hi]. This transformed my vision for [hi]Intelligent Scaffolding[/hi] from concept into living enterprise reality. My medium-term focus is establishing a Pakistan-based SME Venture Studio and AI Commons to democratize trustworthy AI."
   }
 };
 
@@ -902,10 +945,10 @@ export const skills = {
     },
     {
       name: "Python",
-      level: "Intermediate",
+      level: "Advanced",
       years: "5+",
-      tags: ["Scientific Computing", "Automation", "ML"],
-      extraTags: ["NumPy", "SciPy", "Matplotlib", "Rich TUI", "Scripting"]
+      tags: ["FastAPI", "Jupyter Kernel", "Google Gemini API", "Pandas"],
+      extraTags: ["Graph Schemas", "Pytest (3,000+ Tests)", "NumPy", "SciPy", "Matplotlib", "ReportLab", "OpenPyXL"]
     },
     {
       name: "TypeScript",
@@ -947,19 +990,21 @@ export const skills = {
     { name: "OpenSSL", category: "Security", tags: ["Cryptography", "TLS", "Certificates"] }
   ],
   core: [
-    { name: "System Architecture", description: "Microservices, Event-Driven, Multi-tenant, DDD, CQRS" },
+    { name: "System Architecture", description: "Microservices, Event-Driven, Multi-tenant, Graph Schemas, DDD, CQRS" },
     { name: "Cryptography", description: "AES-256, RSA-4096, ECC, Key Management, Zero-Knowledge" },
     { name: "Performance Engineering", description: "Optimization, Profiling, Low-latency, Memory-aware" },
-    { name: "Polyglot Software Engineering", description: "Cross-language Design, C#/.NET + Python, C++ Interop" },
-    { name: "Agentic Engineering & Orchestration", description: "Multi-agent workflows, 100x acceleration, Strict AI quality control" },
+    { name: "Polyglot Software Engineering", description: "Cross-language Design, C#/.NET + Python (Jupyter, FastAPI), C++ Interop" },
+    { name: "Agentic Engineering & Orchestration", description: "Multi-agent workflows, 100x acceleration, Strict AI quality control, 3,000+ test harnesses" },
   ],
   ai: {
     title: "Agentic Engineering & Orchestration",
-    description: "For the past 1.5 years, since the boom of agentic development, I have mastered [hi]AI-driven workflows[/hi] and multi-agent orchestration. Instead of writing boilerplate, I command multiple agents (via Cursor, Gemini CLI and OpenCode) to handle implementations while I focus entirely on [ac]core software engineering[/ac], security, architecture, and UI/UX. I am notoriously strict about my values — iteratively reviewing and refining the AI's output until it perfectly matches my standards. At ACE Money Transfer, after successfully convincing the PMs, CTO, and CEO, I deployed Cursor into my workflow, accelerating my deployment speed up to [ac]100x[/ac] without ever compromising on quality.",
+    description: "For the past 1.5+ years, I have pushed AI-driven engineering to its absolute vanguard. Instead of writing boilerplate, I command fleets of frontier AI agents (orchestrating Claude Fable and GPT-6 Astra models) to handle rapid implementation workloads while I rigorously focus on core software engineering, security, architecture, and UI/UX. I am notoriously strict about quality—coupling multi-agent orchestration with comprehensive automated test suites (such as my 3,000+ test case harness for the ACE Reporting Engine) to ensure unyielding production reliability. At ACE Money Transfer, after successfully pitching AI workflows to the PMs, CTO, and CEO, I accelerated deployment speed up to [ac]100x[/ac] without ever compromising on quality, earning unanimous acclaim from leadership.",
     models: [
+      { name: "Claude Fable", variants: "Flagship Implementation & Code Synthesis" },
+      { name: "GPT-6 Astra", variants: "Flagship Reasoning & Execution" },
+      { name: "Gemini 3.1", variants: "Pro, Flash, Colab-style Workflows" },
       { name: "Claude 4.7", variants: "Opus / Sonnet / Haiku" },
       { name: "GPTs", variants: "GPT-5.5, Codex-series" },
-      { name: "Gemini 3.1", variants: "Pro, Flash" },
       { name: "Grok 4.3", variants: "Thinking, Fast" },
       { name: "GLM 5.1", variants: "Air" },
       { name: "Kimi K2.7", variants: "" },
@@ -981,12 +1026,13 @@ export const skills = {
       { name: "Design Arena", link: "https://designarena.ai" }
     ],
     skills: [
-      "Multi-agent orchestration for end-to-end feature implementation",
+      "Multi-agent orchestration for end-to-end feature implementation (Claude Fable, GPT-6 Astra)",
+      "Production LLM integration (Google Gemini endpoints for live code synthesis)",
+      "Automated test harness engineering (3,000+ test cases) to stress-test AI-generated systems",
       "Strict iterative refinement and quality control of AI outputs",
-      "Advanced prompt engineering for complex code generation",
-      "AI-assisted architecture design and review",
-      "LLM integration into production systems",
-      "Systematic prompting for research and synthesis"
+      "Advanced prompt engineering for complex, zero-defect code generation",
+      "AI-assisted architecture design, schema synthesis, and review",
+      "Systematic prompting for research, optimization, and synthesis"
     ]
   },
   dsa: {
@@ -1411,10 +1457,11 @@ export const achievements = {
           linkLabel: "View at ACE"
         },
         {
-          title: "Unified Reporting Engine",
-          badge: "Company Standard",
+          title: "Unified Reporting Engine & AI Analytics",
+          badge: "Marvel of Engineering",
           badgeVariant: "accent" as const,
-          description: "Solved an [ac]years-long company-wide problem[/ac] — replaced 5+ independent brittle implementations with a single Python microservice. Now ACE's internal standard for all reporting needs.",
+          description: "Hailed across executive leadership—from the CEO and CTO to Treasury and Accounting—as a [hi]\"marvel of engineering\"[/hi] and ACE's greatest engineering feat. Integrated embedded [ac]Jupyter Notebooks[/ac] and [ac]Gemini-powered code generation[/ac] into ERP, engineered graph-based schema inheritance, and guaranteed unbreakable reliability with a [hi]3,000+ test suite[/hi].",
+          meta: "C-Suite Commended • 3,000+ Tests",
           linkTarget: { tab: "projects" as const, section: "projects-root" },
           linkLabel: "View project"
         },
@@ -1511,10 +1558,10 @@ export const achievements = {
       icon: "gamepad"
     },
     {
-      title: "Intelligent Scaffolding Vision",
-      period: "2024 — Ongoing",
-      description: "An AI agent that accepts conversational queries, dynamically generates, reviews, and executes deterministic code, and registers it as a reusable module — bridging conversational requests with enterprise systems.",
-      significance: "The bridge between current enterprise engineering and the AI-first future — where the engineer becomes the orchestrator.",
+      title: "Intelligent Scaffolding: Vision to Reality",
+      period: "2024 — Shipped in Production",
+      description: "Originally formulated as an architectural vision to translate conversational queries into deterministic code modules, I successfully realized this paradigm in enterprise production within the Reporting Engine: empowering users with Google Gemini AI code generation, embedded Jupyter notebook execution, and graph schema inheritance.",
+      significance: "Brought an ambitious AI architectural thesis into live enterprise production — proving that the engineer can orchestrate autonomous intelligence with uncompromising reliability.",
       icon: "brain"
     },
     {
@@ -1565,13 +1612,13 @@ export const personalMilestones = {
     significance: 'First contact with reverse-engineering and binary-level thinking — a formative experience that foreshadowed the security and systems architecture career.'
   },
   intelligentScaffolding: {
-    title: 'Intelligent Scaffolding Vision',
-    period: '2024 — Ongoing',
-    tech: ['LLM Code Generation', 'Reinforcement Learning', 'Natural Language Understanding', 'AI Safety & Alignment'],
-    summary: 'Deep architectural concept for AI agents bridging conversational requests with deterministic enterprise systems.',
-    description: 'Born from daily customer sessions at ACE where unique client requests spawned weeks of deterministic coding. Proposed an ambitious solution: an AI agent that accepts conversational queries (e.g., "Show me last month\'s reconciliation discrepancies..."), dynamically generates, reviews, and executes the deterministic code, and registers it as a reusable module. Focuses on building autonomous agents that safely and auditably self-optimize and self-secure enterprise frameworks.',
-    wisdomMapping: 'Moving from Level 2 (building robust deterministic systems) toward Level 4 (architecting self-optimizing intelligent agents) in the four-level wisdom hierarchy.',
-    significance: 'The bridge between current enterprise engineering and the AI-first future — where the engineer becomes the orchestrator.'
+    title: 'Intelligent Scaffolding: Vision to Reality',
+    period: '2024 — Realized in Production',
+    tech: ['LLM Code Generation', 'Google Gemini API', 'Jupyter Kernel', 'Graph Schemas', 'Pytest (3,000+ Tests)'],
+    summary: 'Deep architectural paradigm bridging conversational requests with deterministic enterprise systems — successfully materialized in the ACE Reporting Engine.',
+    description: 'Born from daily customer sessions at ACE where unique client requests spawned weeks of deterministic coding. Proposed an ambitious solution: an AI agent that accepts conversational queries, dynamically generates, reviews, and executes deterministic code, and registers it as a reusable module. Successfully delivered this paradigm into production through the ERP Reporting Engine — integrating Google Gemini endpoints for on-the-fly Python script generation inside an embedded Jupyter notebook runtime, backed by graph schema inheritance and 3,000+ automated test cases.',
+    wisdomMapping: 'Transitioned from Level 2 (building robust deterministic systems) directly into Level 4 (architecting and orchestrating self-optimizing intelligent agents) in live enterprise production.',
+    significance: 'The living bridge between enterprise data engineering and the AI-first future — turning the engineer into the orchestrator and earning highest praise from the CEO and CTO.'
   },
   aiDrivenMonitoring: {
     title: 'AI-Driven Employee Monitoring Proposal',
