@@ -1,4 +1,4 @@
-export type TabId = "home" | "about" | "philosophy" | "experience" | "projects" | "skills";
+export type TabId = "home" | "about" | "philosophy" | "achievements" | "experience" | "projects" | "skills";
 
 // Navigation target with optional in-view anchor section.
 export interface NavigationOptions {

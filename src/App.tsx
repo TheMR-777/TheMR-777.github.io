@@ -10,6 +10,7 @@ import { Projects } from "./views/Projects";
 import { Skills } from "./views/Skills";
 import { About } from "./views/About";
 import Philosophy from "./views/Philosophy";
+import { Achievements } from "./views/Achievements";
 import type { NavigateFn, TabId } from "./types/navigation";
 import { resolveNavigationTarget } from "./lib/navigation";
 import { useCommandHotkey } from "./hooks/useCommandHotkey";
@@ -55,6 +56,8 @@ export function App() {
         return <About onNavigate={handleNavigate} />;
       case "philosophy":
         return <Philosophy />;
+      case "achievements":
+        return <Achievements onNavigate={handleNavigate} />;
       case "experience":
         return <Experience onNavigate={handleNavigate} />;
       case "projects":

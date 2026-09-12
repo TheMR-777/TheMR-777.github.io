@@ -28,6 +28,7 @@ import {
   History,
   Code2,
   GitFork,
+  ArrowRight,
 } from "lucide-react";
 import { portfolioData } from "../lib/portfolioDAL";
 import { useGitHubStats, GITHUB_USERNAME_EXPORT } from "../hooks/useGitHubStats";
@@ -221,7 +222,7 @@ export function About({ onNavigate }: { onNavigate: NavigateFn }) {
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
         transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-        className="mb-10 p-6 rounded-xl bg-layer border border-stroke"
+        className="mb-6 p-6 rounded-xl bg-layer border border-stroke"
       >
         <StyledText 
           text={personal.about} 
@@ -229,6 +230,27 @@ export function About({ onNavigate }: { onNavigate: NavigateFn }) {
           as="p" 
         />
       </motion.section>
+
+      {/* Achievements CTA Card */}
+      <motion.section
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }} viewport={SCROLL_ANIMATION_VP}
+        transition={{ duration: 0.4, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+        className="mb-10 p-5 rounded-xl bg-layer border border-stroke flex items-center justify-between gap-4 hover:border-accent/30 transition-all cursor-pointer group"
+        onClick={() => onNavigate("achievements")}
+      >
+        <div className="flex-1 min-w-0">
+          <h3 className="text-sm font-medium text-text-primary group-hover:text-accent transition-colors flex items-center gap-2">
+            <Trophy className="w-4 h-4 text-accent" strokeWidth={1.5} />
+            Explore the Achievements & Trajectory
+          </h3>
+          <p className="text-xs text-text-secondary mt-1 leading-relaxed">
+            An interactive visualization of international recognitions, security research, community contributions, and forward-looking AI vision.
+          </p>
+        </div>
+        <ArrowRight className="w-4 h-4 text-text-tertiary group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+      </motion.section>
+
 
       {/* Journey Timeline */}
       <motion.section
@@ -455,6 +477,16 @@ export function About({ onNavigate }: { onNavigate: NavigateFn }) {
             className="text-xs text-text-tertiary leading-relaxed italic"
             as="p"
           />
+        </div>
+
+        <div className="mt-4 flex justify-end">
+          <button
+            onClick={() => onNavigate("achievements")}
+            className="inline-flex items-center gap-1.5 text-xs text-accent hover:text-accent-light font-medium transition-colors group"
+          >
+            <span>View detailed honors & stats on the Achievements page</span>
+            <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+          </button>
         </div>
       </motion.section>
 

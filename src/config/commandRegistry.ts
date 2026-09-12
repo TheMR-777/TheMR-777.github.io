@@ -23,6 +23,10 @@ const navigationMeta: Record<TabId, NavMeta> = {
     description: "Engineering mindset & principles",
     keywords: ["philosophy", "mindset", "principles", "values", "driving force"],
   },
+  achievements: {
+    description: "Achievements & milestones",
+    keywords: ["achievements", "awards", "recognition", "milestones", "accomplishments", "trophy"],
+  },
   experience: { description: "Work history", keywords: ["experience", "work", "job", "career", "history"] },
   projects: { description: "Portfolio projects", keywords: ["projects", "portfolio", "work", "showcase"] },
   skills: { description: "Technical expertise", keywords: ["skills", "tech", "stack", "expertise", "abilities"] },

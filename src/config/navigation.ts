@@ -1,4 +1,4 @@
-import { Briefcase, FolderKanban, Home, Sparkles, User, Wrench, type LucideIcon } from "lucide-react";
+import { Briefcase, FolderKanban, Home, Sparkles, Trophy, User, Wrench, type LucideIcon } from "lucide-react";
 import type { TabId } from "../types/navigation";
 
 export interface NavItem {
@@ -11,6 +11,7 @@ export const sidebarNavItems: NavItem[] = [
   { id: "home", label: "Home", icon: Home },
   { id: "about", label: "About", icon: User },
   { id: "philosophy", label: "Philosophy", icon: Sparkles },
+  { id: "achievements", label: "Achievements", icon: Trophy },
   { id: "experience", label: "Experience", icon: Briefcase },
   { id: "projects", label: "Projects", icon: FolderKanban },
   { id: "skills", label: "Skills", icon: Wrench },
@@ -25,5 +26,6 @@ export const mobilePrimaryNavItems: NavItem[] = [
 
 export const mobileExtraNavItems: NavItem[] = [
   { id: "philosophy", label: "Philosophy", icon: Sparkles },
+  { id: "achievements", label: "Achievements", icon: Trophy },
   { id: "skills", label: "Skills & Credentials", icon: Wrench },
 ];
