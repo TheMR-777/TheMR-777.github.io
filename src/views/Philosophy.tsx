@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Lightbulb, Compass, Target, Layers, Sparkles, Infinity, 
-  BookOpen, ExternalLink, Play, Brain, ChevronDown, 
-  type LucideIcon 
+import {
+  Lightbulb, Compass, Target, Layers, Sparkles, Infinity,
+  BookOpen, Play, Brain, ChevronDown,
+  type LucideIcon
 } from 'lucide-react';
 import { SCROLL_ANIMATION_VP } from '../constants/animations';
 import { portfolioData } from '../lib/portfolioDAL';

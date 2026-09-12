@@ -25,6 +25,8 @@ export interface FlagshipProject {
   challenge?: string;
   approach?: string;
   architecturalPhilosophy?: string;
+  modules?: { name: string; description: string; impact: string }[];
+  architecturalHighlights?: string[];
 }
 
 export interface PersonalProjectDisplay {
@@ -90,6 +92,8 @@ const mapToFlagshipProject = (p: ProjectEntity): FlagshipProject => {
   if (p.challenge) res.challenge = p.challenge;
   if (p.approach) res.approach = p.approach;
   if (p.architecturalPhilosophy) res.architecturalPhilosophy = p.architecturalPhilosophy;
+  if (p.modules) res.modules = p.modules;
+  if (p.architecturalHighlights) res.architecturalHighlights = p.architecturalHighlights;
   return res;
 };
 
@@ -182,23 +186,23 @@ const filterExperiences = (
 // Use the abstracted mapper and filter functions internally
 export const Selectors = {
   getFlagshipProjects(projectsDb: Record<string, ProjectEntity>): FlagshipProject[] {
-    return filterProjects(projectsDb, p => p.isFlagship, mapToFlagshipProject);
+    return filterProjects(projectsDb, p => !!p.isFlagship, mapToFlagshipProject);
   },
 
   getFeaturedProjects(projectsDb: Record<string, ProjectEntity>): FlagshipProject[] {
-    return filterProjects(projectsDb, p => p.isFlagship && p.featured, mapToFlagshipProject);
+    return filterProjects(projectsDb, p => !!p.isFlagship && !!p.featured, mapToFlagshipProject);
   },
   
   getPersonalProjects(projectsDb: Record<string, ProjectEntity>): PersonalProjectDisplay[] {
-    return filterProjects(projectsDb, p => p.isPersonalCraft, mapToPersonalProject);
+    return filterProjects(projectsDb, p => !!p.isPersonalCraft, mapToPersonalProject);
   },
 
   getFeaturedPersonalProjects(projectsDb: Record<string, ProjectEntity>): PersonalProjectDisplay[] {
-    return filterProjects(projectsDb, p => p.isPersonalCraft && p.featured, mapToPersonalProject);
+    return filterProjects(projectsDb, p => !!p.isPersonalCraft && !!p.featured, mapToPersonalProject);
   },
 
   getOpenSourceProjects(projectsDb: Record<string, ProjectEntity>): OpenSourceProject[] {
-    return filterProjects(projectsDb, p => p.isOpenSource, mapToOpenSourceProject);
+    return filterProjects(projectsDb, p => !!p.isOpenSource, mapToOpenSourceProject);
   },
 
   getExperiences(experiencesDb: Record<string, ExperienceEntity>, projectsDb: Record<string, ProjectEntity>): ExperienceDisplay[] {
@@ -206,7 +210,7 @@ export const Selectors = {
   },
 
   getFeaturedExperiences(experiencesDb: Record<string, ExperienceEntity>, projectsDb: Record<string, ProjectEntity>): ExperienceDisplay[] {
-    return filterExperiences(experiencesDb, projectsDb, exp => exp.featured);
+    return filterExperiences(experiencesDb, projectsDb, exp => !!exp.featured);
   }
 };
 

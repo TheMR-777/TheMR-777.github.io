@@ -990,11 +990,8 @@ function GitHubChartSkeleton() {
 
 function GitHubActivitySection() {
   const gh = useGitHubStats();
-  const { resolvedMode, accent } = useTheme();
+  const { resolvedMode } = useTheme();
   const isDark = resolvedMode === "dark";
-
-  // Extract hex without '#' for the ghchart URL
-  const chartHex = accent.value.replace("#", "");
 
   const forkedRepos = gh.publicRepos - gh.originalRepos;
   const originalPct = gh.publicRepos > 0 ? Math.round((gh.originalRepos / gh.publicRepos) * 100) : 0;
