@@ -223,6 +223,38 @@ export const projectsDb: Record<string, ProjectEntity> = {
       'Adopted alongside Background Jobs Framework'
     ]
   },
+  'apple-mdm': {
+    id: 'apple-mdm',
+    title: 'Apple MDM Platform',
+    tech: ['.NET 10', 'React', 'nanoMDM', 'microMDM', 'SCEP', 'Apple MDM'],
+    summary: 'Company-wide Apple device management platform — a .NET 10 orchestrator commanding open-source MDM microservices, targeting 1,000+ devices.',
+    description: 'What began as a monitoring enhancement inside the Employee Monitoring Suite revealed itself as a much bigger world. Months of deep research into Apple\'s MDM ecosystem — the entire device lifecycle, from initial configuration to maximum controllability — grew into a standalone platform: a .NET 10 backend orchestrating dedicated open-source MDM microservices (nanoMDM, microMDM, and SCEP for certificate enrollment), fronted by a custom-built React control panel.',
+    descriptionAce: 'A direct initiative, undertaken in collaboration with the CEO, the CTO, the accounting team, and the monitoring team. Originating as a superior monitoring and hardware-access-restriction effort within the Employee Monitoring Suite, it grew into a standalone device-management platform after months of research into Apple\'s MDM ecosystem — securing the necessary rights and subscriptions and mastering the full lifecycle through iterative trial and error. A .NET 10 orchestrator commands open-source MDM services (nanoMDM, microMDM, and SCEP certificate enrollment), while a custom React server UI delivers a polished, colorful experience inspired by shadcn/ui — without compromising design principles. Slated for company-wide rollout across 1,000+ devices in early 2027, following complete testing, verification, compliance checks, and audits.',
+    category: 'Infrastructure • Device Management',
+    challenge: 'Superior monitoring and restricted access to hardware and the operating system could not be achieved by in-house tooling alone. The company adopted Apple\'s own MDM stack as the foundation — but standing it up meant mastering an entire unfamiliar ecosystem: enrollment flows, certificates, subscriptions, and compliance requirements.',
+    approach: 'Spent months researching every aspect of Apple\'s MDM lifecycle — from zero configuration to maximum controllability — gathering resources, securing the necessary rights and subscriptions, and validating every assumption through trial and error. Architected a .NET 10 backend as the single control plane orchestrating open-source MDM microservices, and designed a custom React server UI: shadcn/ui-inspired, more colorful, design principles uncompromised.',
+    architecturalHighlights: [
+      '.NET 10 orchestrator as the single control plane over open-source MDM microservices',
+      'nanoMDM, microMDM, and SCEP services composed into one coherent platform',
+      'Full Apple MDM lifecycle support — from initial configuration to maximum controllability',
+      'Hardware- and OS-level access restriction for company devices',
+      'Custom React server UI — shadcn/ui-inspired, more colorful, design principles uncompromised',
+      'Staged rollout gated by testing, verification, compliance checks, and audits'
+    ],
+    impact: [
+      'Direct initiative spanning the CEO, CTO, accounting, and monitoring teams',
+      'Months of research distilled into end-to-end MDM lifecycle mastery',
+      'Production rollout targeted for early 2027 across 1,000+ company devices',
+      'Standalone platform born from within the Employee Monitoring Suite'
+    ],
+    link: '#',
+
+    isFlagship: true,
+    isAceProject: true,
+    // featured: true,
+    typeAce: 'Infrastructure • Device Management',
+    periodAce: 'Mid 2026 — Early 2027'
+  },
   'reporting-engine': {
     id: 'reporting-engine',
     title: 'Unified Reporting Engine',
@@ -548,6 +580,7 @@ export const experiencesDb: Record<string, ExperienceEntity> = {
       'Led ERP Platform Engineering: Rules, Approvals, Rights, Notifications',
       'Built unbreakable Background Jobs Framework — adopted company-wide',
       'Engineered pluggable Logging Framework for in-depth observability',
+      'Spearheading Apple MDM Platform: .NET 10 orchestration of nanoMDM/microMDM/SCEP microservices for company-wide hardware and OS access control',
       'Architected Unified Reporting Engine with embedded Jupyter notebooks, Gemini AI script generation, graph-based schemas, and 3,000+ tests — praised by CEO, CTO, and Treasury as a "marvel of engineering"',
       'Integrated Mastercard, HBL, and PNB payment services',
       'Pioneered AI agentic workflows (Cursor), successfully pitching to C-suite and achieving 100x deployment acceleration',
@@ -565,7 +598,7 @@ export const experiencesDb: Record<string, ExperienceEntity> = {
     ],
     tech: ['.NET 9', 'Python 3.14', 'Jupyter Kernel', 'Google Gemini', 'Blazor', 'Angular', 'GraphQL', 'SignalR', 'PostgreSQL', 'C++'],
     associatedProjectIds: [
-      'ems', 'evolver', 'erp-core', 'erp-modules', 'ace-vault', 'overwatch', 'external-partner-integrations', 'real-time-infrastructure', 'background-jobs-framework', 'logging-framework', 'reporting-engine'
+      'ems', 'evolver', 'erp-core', 'erp-modules', 'ace-vault', 'overwatch', 'external-partner-integrations', 'real-time-infrastructure', 'background-jobs-framework', 'logging-framework', 'apple-mdm', 'reporting-engine'
     ]
   },
   'mimos': {
@@ -991,7 +1024,8 @@ export const skills = {
     { name: "SignalR / gRPC", category: "Real-time", tags: ["WebSockets", "Streaming", "Bi-directional"] },
     { name: "GraphQL", category: "API", tags: ["Hot Chocolate", "Subscriptions", "Type-safe"] },
     { name: "Entity Framework", category: "ORM", tags: ["Code-First", "Migrations", "LINQ"] },
-    { name: "OpenSSL", category: "Security", tags: ["Cryptography", "TLS", "Certificates"] }
+    { name: "OpenSSL", category: "Security", tags: ["Cryptography", "TLS", "Certificates"] },
+    { name: "Apple MDM (nanoMDM / microMDM / SCEP)", category: "Device Management", tags: ["OS-level Control", "Device Lifecycle", "Orchestration"] }
   ],
   core: [
     { name: "System Architecture", description: "Microservices, Event-Driven, Multi-tenant, Graph Schemas, DDD, CQRS" },
@@ -1474,6 +1508,15 @@ export const achievements = {
           badge: "Adopted Company-Wide",
           badgeVariant: "muted" as const,
           description: "First built for EMS, this framework proved so robust that 3+ other projects adopted it to solve their persistent job management issues — [hi]unbreakable since launch[/hi], zero job failures.",
+        },
+        {
+          title: "Apple MDM Platform",
+          badge: "1,000+ Devices",
+          badgeVariant: "accent" as const,
+          description: "A direct initiative in collaboration with the CEO and CTO — a [ac].NET 10 orchestrator[/ac] commanding open-source MDM microservices (nanoMDM, microMDM, SCEP) for company-wide hardware and OS access control. Born inside the Employee Monitoring Suite, now a standalone platform targeting [hi]company-wide rollout in early 2027[/hi].",
+          meta: "In Development • Mid 2026 — Early 2027",
+          linkTarget: { tab: "projects" as const, section: "projects-root" },
+          linkLabel: "View project"
         },
         {
           title: "mr_crypt — Open Source Impact",
