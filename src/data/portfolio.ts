@@ -373,11 +373,13 @@ export const projectsDb: Record<string, ProjectEntity> = {
     description: 'Client needed to validate UWB anchor placements before expensive physical installation. My deep interest in [ac]physics[/ac] — signal propagation, electromagnetic attenuation, and computational geometry — made this a uniquely natural fit. Built a hybrid (polyglot) .NET/Python system modeling signal behavior with material-specific precision.',
     category: 'Simulation • Research',
     challenge: 'Deploying UWB anchors requires expensive physical testing. Mistakes in placement are costly to fix. The client needed virtual validation before drilling holes.',
-    approach: 'Built a hybrid simulation engine: .NET for UI, core logic, and geometric calculations; Python (NumPy/SciPy) for signal propagation modeling and heatmap generation. Implemented material-specific attenuation for walls, glass, and obstacles.',
+    approach: 'Built a hybrid simulation engine: .NET for UI, core logic, and geometric calculations; Python (NumPy/SciPy) for signal propagation modeling and heatmap generation. Implemented material-specific attenuation for walls, glass, and obstacles, with ToA/TDoA localization and real-time heatmaps that regenerate as nodes move.',
     impact: [
       'Reduced deployment costs by approximately 60%',
       'Compressed timeline from months to days',
       'Simulation accuracy within 5% of physical tests',
+      'ToA/TDoA localization with on-map accuracy indicators',
+      'Delivered across five milestones with full source code, documentation, and end-user training',
       'Exceptional client praise for attention to detail'
     ],
     link: '#',
@@ -614,6 +616,8 @@ export const experiencesDb: Record<string, ExperienceEntity> = {
       'First-principles simulation without physical hardware',
       'Real-time heatmap visualization with NumPy/SciPy',
       'Material-specific signal attenuation modeling',
+      'ToA/TDoA localization with accuracy indicators',
+      'Five-milestone consultancy delivery: full source code, documentation, training workshop, support window',
       'Received exceptional praise for accuracy and attention to detail'
     ],
     modules: [
@@ -1231,6 +1235,15 @@ export const internationalRecognition = {
       note: "Selected through a rigorous process — the panel interview extended from 15 minutes to over an hour exploring my technical expertise. The interviewers were impressed by my practical approaches.",
     },
     {
+      institution: "University of Southampton",
+      country: "United Kingdom",
+      program: "MSc (via Chevening Scholarship)",
+      year: "2025",
+      outcome: "Offer Letter Received",
+      highlight: false,
+      note: "Another offer earned through the Chevening application cycle — one more data point in a consistent pattern of international recognition.",
+    },
+    {
       institution: "University of York",
       country: "United Kingdom",
       program: "MSc (via Chevening Scholarship 2025/26)",
@@ -1280,10 +1293,12 @@ export const quantumResearch = {
   collaborator: "Visiting PhD Professor",
   institution: "University of the Punjab",
   duration: "2023 — 2024",
-  description: "Collaborated with a visiting PhD professor specializing in quantum computing. This relationship became a vital bridge between theoretical academia and practical research. I delivered high-fidelity C++, Python, and MATLAB prototypes for mirror-array and emitter-detector setups, while she coached me on framing hypotheses and writing for publications. We maintained a steady communication channel even after her relocation to Poland, a bidirectional mentorship that directly raised the bar for my subsequent indoor positioning simulation for MIMOS Berhad.",
+  description: "Collaborated with a visiting PhD professor specializing in quantum computing, within an international research team spanning SUT (Poland), Oxford (UK), and UMPSA (Malaysia). This relationship became a vital bridge between theoretical academia and practical research. I delivered high-fidelity C++, Python, and MATLAB prototypes for mirror-array and emitter-detector setups, while she coached me on framing hypotheses and writing for publications. We maintained a steady communication channel even after her relocation to Poland, a bidirectional mentorship that directly raised the bar for my subsequent indoor positioning simulation for MIMOS Berhad.",
   contributions: [
     "Developed C++, Python, and MATLAB prototypes for quantum optics simulation",
     "Modeled quantum phenomena, photon behavior, and mirror-array emitter-detector setups",
+    "Built a fully-documented Mach-Zehnder Interferometer simulation in Julia + QuantumOptics.jl — second-quantised modeling across four progressive variants, each with runnable code and written explanation",
+    "Designed and delivered a pulse-laser simulation system for the team — Julia scientific backend (standalone CLI-usable by design) with a C#/WPF frontend — to the appreciation of the professor and researchers",
     "Maintained steady research cadence and WhatsApp communication post-relocation to Poland",
     "Bidirectional mentorship: traded programming prototypes for academic writing coaching",
     "Directly informed the high-precision computational physics modeling used later for MIMOS Berhad"
@@ -1351,7 +1366,7 @@ export const achievements = {
   subtitle: "A constellation of milestones — each one a story of relentless pursuit.",
 
   heroStats: [
-    { label: "Global Offers", value: 4, icon: "globe" },
+    { label: "Global Offers", value: 5, icon: "globe" },
     { label: "Research Papers", value: 2, icon: "bookOpen" },
     { label: "Security Articles", value: 10, icon: "shield" },
     { label: "Vulns Discovered", value: 3, icon: "bug" },
@@ -1383,6 +1398,13 @@ export const achievements = {
           meta: "EU Joint Program • 2025",
           linkTarget: { tab: "about" as const, section: "about-recognition" },
           linkLabel: "Full recognition story"
+        },
+        {
+          title: "University of Southampton",
+          badge: "Offer Letter Received",
+          badgeVariant: "muted" as const,
+          description: "Earned through the same Chevening application cycle — another offer from a globally competitive institution.",
+          meta: "MSc via Chevening • 2025"
         },
         {
           title: "University of York",
