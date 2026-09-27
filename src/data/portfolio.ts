@@ -514,8 +514,8 @@ export const projectsDb: Record<string, ProjectEntity> = {
     description: 'The portfolio you\'re reading right now. Engineered from scratch with a Fluent UI 2 / WinUI 3 / Acrylic-Mica-Frosty design language — every translucent layer, every accent glow, every quiet zone is a [em]deliberate design choice[/em]. Features a custom [ac]StyledText markup engine[/ac] that parses inline formatting tags directly from the data layer, separating content from presentation with surgical precision. This project is a living testament to the [hi]Discipline of Restraint[/hi] — where true sophistication lies in what you choose not to highlight.',
     category: 'Design • Self-Reference',
     origin: 'The need for a portfolio that doesn\'t just present work, but embodies the philosophy behind it',
-    link: 'https://themr-777.github.io/MyPortfolio-v3/',
-    repo: 'https://github.com/TheMR-777/MyPortfolio-v3',
+    link: 'https://themr-777.github.io/',
+    repo: 'https://github.com/TheMR-777/TheMR-777.github.io',
 
     isPersonalCraft: true,
     featured: true
