@@ -520,6 +520,19 @@ export const projectsDb: Record<string, ProjectEntity> = {
     isPersonalCraft: true,
     featured: true
   },
+  'portfolio-v4': {
+    id: 'portfolio-v4',
+    title: 'MyPortfolio v4',
+    tech: ['React 19', 'TypeScript', 'Tailwind CSS 4', 'Framer Motion', 'Vite'],
+    summary: 'The same career, distilled to a single page of paper and ink.',
+    description: 'A deliberate counterweight to this site. v3 answers [em]what did you build[/em] — long-form, every case study, every metric. v4 tries to answer [em]what are you like[/em], which needs a different shape entirely: one page, one accent at a time, nothing decorative. Both are driven by the same source dataset, so neither can quietly drift from the facts. A working argument that the discipline of restraint applies to a person, not just to an interface.',
+    category: 'Design • Self-Reference',
+    origin: 'The recognition section here had grown to five institutions and a long project list. Compression was the honest response — not deletion, distillation.',
+    link: 'https://themr-777.github.io/MyPortfolio-v4/',
+    repo: 'https://github.com/TheMR-777/MyPortfolio-v4',
+    isPersonalCraft: true,
+    featured: true
+  },
 
   // Open Source Contributions
   'avalonia': {
