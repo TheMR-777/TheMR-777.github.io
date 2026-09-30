@@ -72,8 +72,8 @@ export const projectsDb: Record<string, ProjectEntity> = {
     description: 'Transformed fragmented internal tools into a unified, multi-tenant SaaS ecosystem. Architected reusable engines (Approvals, Rules, Notifications, Rights) rather than one-off module logic.',
     descriptionAce: 'Built and standardized ERP as a multi-tenant platform by engineering reusable core subsystems—not one-off module logic. Every business module now plugs into this backbone.',
     category: 'SaaS • Architecture',
-    challenge: 'Legacy tools were fragmented, single-tenant, and hard to maintain. Adding a new module meant reinventing authentication, approvals, and logging from scratch.',
-    approach: 'Architected a \'SaaS Backbone\' containing generic Approvals, Rules, Notifications, and Rights engines. Business modules plug into this backbone. Used EAV patterns for flexibility and multi-tenant isolation.',
+    challenge: 'Two mature-but-fragmented legacy systems — AMS (Accounts Management) and TMS (Treasury Management) — plus scattered departmental tools were single-tenant and hard to maintain. Adding a new module meant reinventing authentication, approvals, and logging from scratch.',
+    approach: 'Absorbed AMS and TMS into a single multi-tenant platform rather than discarding them: their logic was lifted into a shared \'SaaS Backbone\' of generic Approvals, Rules, Notifications, and Rights engines, so capabilities once trapped inside one system became primitives every module could use. Used EAV patterns for flexibility and multi-tenant isolation.',
     impact: [
       'Enabled rapid rollout of 5+ business modules',
       'Transformed tools into marketable SaaS product',
@@ -1093,7 +1093,8 @@ export const skills = {
 export const publications = [
   {
     title: "Identification of Paddy Disease Along Its Processing Time",
-    authors: "Khan, S.N., Khan, S.U., Khan, M.A., Ansar, M.U., et al.",
+    authors: "Khan, S.N., Khan, S.U., Khan, M.A., Ansar, M.U., Shakeel, G.S., Ahmed, M., Zahid, N., & Ahmad, F.",
+    authorNote: "Third author of nine, under Prof. S. N. Khan",
     journal: "Quantum Journal of Social Sciences and Humanities",
     volume: "4(3), 72-80",
     doi: "10.55197/qjssh.v4i3.251",
@@ -1102,6 +1103,7 @@ export const publications = [
   {
     title: "Paddy Leaf Disease Symptoms Detection Through Artificial Neural Network",
     authors: "Khan, S.N., Khan, S.U., Ahmed, S., Khan, M.A., Khan, J.",
+    authorNote: "Third author of six, under Prof. S. N. Khan",
     journal: "Quantum Journal of Engineering, Science and Technology",
     volume: "4(4), 1-10",
     year: "2023",
@@ -1189,11 +1191,33 @@ export const education = {
   period: "2019 - 2023",
   cgpa: "3.73 / 4.0",
   percentage: "84%",
+  creditHours: 131,
+  registrar: {
+    registrationNo: "2019-UJ-163",
+    rollNo: "BSCS-F19-M-63",
+    department: "Information Technology",
+    session: "BS Computer Science (Morning)"
+  },
+  marks: {
+    total: 4900,
+    obtained: 4099
+  },
+  semesters: [
+    { semester: 1, creditHours: 16, gpa: 3.81, cgpa: 3.81 },
+    { semester: 2, creditHours: 17, gpa: 3.65, cgpa: 3.73 },
+    { semester: 3, creditHours: 16, gpa: 3.89, cgpa: 3.78 },
+    { semester: 4, creditHours: 17, gpa: 3.54, cgpa: 3.72 },
+    { semester: 5, creditHours: 16, gpa: 4.00, cgpa: 3.77 },
+    { semester: 6, creditHours: 16, gpa: 3.66, cgpa: 3.75 },
+    { semester: 7, creditHours: 18, gpa: 3.62, cgpa: 3.73 },
+    { semester: 8, creditHours: 15, gpa: 3.74, cgpa: 3.73 }
+  ],
   achievements: [
     "Unofficial C++ teaching assistant from 2nd semester",
     "Deputy class representative during COVID-19",
     "First team to complete FYP and research simultaneously",
-    "Collaborated with visiting PhD professor on quantum computing"
+    "Collaborated with visiting PhD professor on quantum computing",
+    "Perfect 4.00 GPA semester in Semester 5"
   ]
 };
 
@@ -1221,27 +1245,27 @@ export const internationalRecognition = {
       country: "United Kingdom",
       program: "MSc (via Chevening Scholarship 2025/26)",
       year: "2025",
-      outcome: "Offer Letter Received",
+      outcome: "Offer Letter Received — Declined",
       highlight: true,
-      note: "Ranked [ac]#2 worldwide[/ac] and [hi]#1 in Europe[/hi]. An unconditional offer from here isn't an acknowledgment — it's a statement that my profile meets the bar set by the world's most competitive applicant pool.",
+      note: "Ranked [ac]#2 worldwide[/ac] and [hi]#1 in Europe[/hi]. An unconditional offer from here isn't an acknowledgment — it's a statement that my profile meets the bar set by the world's most competitive applicant pool. Declined because the place came with no funding attached.",
     },
     {
       institution: "CyberMACS Erasmus Mundus",
       country: "EU (Joint Program)",
       program: "Erasmus Mundus Joint Master in Cybersecurity",
       year: "2025",
-      outcome: "Tuition Waiver + Insurance Offered",
+      outcome: "Tuition Waiver + Insurance — Declined",
       highlight: true,
-      note: "Selected through a rigorous process — the panel interview extended from 15 minutes to over an hour exploring my technical expertise. The interviewers were impressed by my practical approaches.",
+      note: "Selected through a rigorous process — the panel interview extended from 15 minutes to over an hour exploring my technical expertise. A reserved seat that later became a [hi]full tuition waiver with insurance[/hi]. I declined it anyway: an Erasmus Mundus joint MSc relocates you between partner institutions across Europe, and nobody was funding the cost of living. Tuition was never the obstacle — the cost of arriving was.",
     },
     {
       institution: "University of Southampton",
       country: "United Kingdom",
       program: "MSc (via Chevening Scholarship)",
       year: "2025",
-      outcome: "Offer Letter Received",
+      outcome: "Offer Letter Received — Declined",
       highlight: false,
-      note: "Another offer earned through the Chevening application cycle — one more data point in a consistent pattern of international recognition.",
+      note: "Another offer earned through the Chevening application cycle. Declined because the Chevening award itself did not come through, which left the place unfunded.",
     },
     {
       institution: "University of York",
@@ -1250,7 +1274,7 @@ export const internationalRecognition = {
       year: "2025",
       outcome: "Offer Letter + 80% Scholarship",
       highlight: false,
-      note: "York independently awarded an 80% tuition scholarship based on academic and professional merit — a recognition separate from Chevening.",
+      note: "York independently awarded an 80% tuition scholarship based on academic and professional merit — a recognition separate from Chevening. The remaining 20%, plus relocation, was still beyond what I could carry.",
     },
     {
       institution: "ESIEE Paris",
@@ -1259,10 +1283,10 @@ export const internationalRecognition = {
       year: "2025",
       outcome: "Admission + Eiffel Nomination",
       highlight: false,
-      note: "Admitted and nominated by the university for the France Excellence Eiffel Scholarship — prestigious opportunity for the top international candidates.",
+      note: "Admitted and nominated by the university for the France Excellence Eiffel Scholarship. A nomination rather than an award — the fees themselves remained unaffordable.",
     },
   ],
-  closing: "Each application resulted in an institutional offer — a consistent pattern of recognition from universities that accept only the most competitive candidates globally. The decisions to decline were always [hi]principle-driven[/hi]: pursuing opportunities sustainably, never recklessly.",
+  closing: "Each application resulted in an institutional offer — a consistent pattern of recognition from universities that accept only the most competitive candidates globally. [hi]None of them were taken up, and the reason was always the same[/hi]: not ability, but what the place cost. CyberMACS is the clearest case — a fully funded seat I still could not reach, because the tuition was covered and the living was not. I would rather state that plainly than dress it up as a choice between opportunities, because it wasn't one. The merit is settled; the funding is what is missing.",
 };
 
 export const community = {
@@ -1293,6 +1317,11 @@ export const quantumResearch = {
   collaborator: "Visiting PhD Professor",
   institution: "University of the Punjab",
   duration: "2023 — 2024",
+  collaborators: [
+    { name: "Prof. Kamarul Hawari", affiliation: "UMPSA (Malaysia)" },
+    { name: "Prof. Muhammad Aamir Khan", affiliation: "University of Oxford (UK)" },
+    { name: "Research Assoc. Sundas Naqeeb Khan", affiliation: "Silesian University of Technology (Poland)" }
+  ],
   description: "Collaborated with a visiting PhD professor specializing in quantum computing, within an international research team spanning SUT (Poland), Oxford (UK), and UMPSA (Malaysia). This relationship became a vital bridge between theoretical academia and practical research. I delivered high-fidelity C++, Python, and MATLAB prototypes for mirror-array and emitter-detector setups, while she coached me on framing hypotheses and writing for publications. We maintained a steady communication channel even after her relocation to Poland, a bidirectional mentorship that directly raised the bar for my subsequent indoor positioning simulation for MIMOS Berhad.",
   contributions: [
     "Developed C++, Python, and MATLAB prototypes for quantum optics simulation",
@@ -1366,7 +1395,7 @@ export const achievements = {
   subtitle: "A constellation of milestones — each one a story of relentless pursuit.",
 
   heroStats: [
-    { label: "Global Offers", value: 5, icon: "globe" },
+    { label: "Global Offers", value: 5, icon: "globe", suffix: "" },
     { label: "Research Papers", value: 2, icon: "bookOpen" },
     { label: "Security Articles", value: 10, icon: "shield" },
     { label: "Vulns Discovered", value: 3, icon: "bug" },
@@ -1383,41 +1412,41 @@ export const achievements = {
       items: [
         {
           title: "Imperial College London",
-          badge: "Offer Letter Received",
+          badge: "Offer — Declined",
           badgeVariant: "accent" as const,
-          description: "Ranked [ac]#2 worldwide[/ac] and [hi]#1 in Europe[/hi]. An unconditional offer from here isn't an acknowledgment — it's a statement that my profile meets the bar set by the world's most competitive applicant pool.",
+          description: "Ranked [ac]#2 worldwide[/ac] and [hi]#1 in Europe[/hi]. An unconditional offer from here isn't an acknowledgment — it's a statement that my profile meets the bar set by the world's most competitive applicant pool. Declined because the place came with no funding attached.",
           meta: "MSc via Chevening • 2025",
           linkTarget: { tab: "about" as const, section: "about-recognition" },
           linkLabel: "Full recognition story"
         },
         {
           title: "CyberMACS Erasmus Mundus",
-          badge: "Tuition Waiver + Insurance",
+          badge: "Full Waiver — Declined",
           badgeVariant: "accent" as const,
-          description: "Selected through a rigorous process — the panel interview extended from 15 minutes to over an hour exploring my technical expertise.",
+          description: "A reserved seat that became a complete tuition waiver with insurance, selected through an interview that ran from 15 minutes to over an hour. Declined because the joint MSc relocates you across Europe, and the cost of living was not funded — tuition was never the obstacle.",
           meta: "EU Joint Program • 2025",
           linkTarget: { tab: "about" as const, section: "about-recognition" },
           linkLabel: "Full recognition story"
         },
         {
           title: "University of Southampton",
-          badge: "Offer Letter Received",
+          badge: "Offer — Declined",
           badgeVariant: "muted" as const,
-          description: "Earned through the same Chevening application cycle — another offer from a globally competitive institution.",
+          description: "Earned through the same Chevening application cycle. Declined because the Chevening award did not come through, leaving the place unfunded.",
           meta: "MSc via Chevening • 2025"
         },
         {
           title: "University of York",
           badge: "80% Scholarship",
           badgeVariant: "muted" as const,
-          description: "York independently awarded an 80% tuition scholarship based on academic and professional merit — separate from Chevening.",
+          description: "York independently awarded an 80% tuition scholarship based on academic and professional merit — separate from Chevening. The remaining 20% plus relocation was still out of reach.",
           meta: "MSc via Chevening • 2025"
         },
         {
           title: "ESIEE Paris",
           badge: "Eiffel Nomination",
           badgeVariant: "muted" as const,
-          description: "Admitted and nominated for the France Excellence Eiffel Scholarship — a prestigious opportunity for the top international candidates.",
+          description: "Admitted and nominated for the France Excellence Eiffel Scholarship — a nomination rather than an award, with fees still outstanding.",
           meta: "MSc • 2025"
         },
       ]
@@ -1474,7 +1503,7 @@ export const achievements = {
           title: "Peer-Reviewed Research Publications",
           badge: "2 Papers",
           badgeVariant: "accent" as const,
-          description: "Co-authored two published papers on paddy leaf disease detection using AI and image processing — in [hi]Quantum Journal of Social Sciences and Humanities[/hi] and [hi]Quantum Journal of Engineering, Science and Technology[/hi].",
+          description: "Co-authored two peer-reviewed papers on paddy leaf disease detection using AI and image processing — in [hi]Quantum Journal of Social Sciences and Humanities[/hi] and [hi]Quantum Journal of Engineering, Science and Technology[/hi]. Third author on both, under Prof. S. N. Khan, who led the work.",
           meta: "2023 • University of the Punjab"
         },
         {
@@ -1686,7 +1715,7 @@ export const personalMilestones = {
     tech: ['LLM Code Generation', 'Google Gemini API', 'Jupyter Kernel', 'Graph Schemas', 'Pytest (3,000+ Tests)'],
     summary: 'Deep architectural paradigm bridging conversational requests with deterministic enterprise systems — successfully materialized in the ACE Reporting Engine.',
     description: 'Born from daily customer sessions at ACE where unique client requests spawned weeks of deterministic coding. Proposed an ambitious solution: an AI agent that accepts conversational queries, dynamically generates, reviews, and executes deterministic code, and registers it as a reusable module. Successfully delivered this paradigm into production through the ERP Reporting Engine — integrating Google Gemini endpoints for on-the-fly Python script generation inside an embedded Jupyter notebook runtime, backed by graph schema inheritance and 3,000+ automated test cases.',
-    wisdomMapping: 'Transitioned from Level 2 (building robust deterministic systems) directly into Level 4 (architecting and orchestrating self-optimizing intelligent agents) in live enterprise production.',
+    wisdomMapping: 'A concrete step along the ladder: from Level 2 (building robust deterministic systems) toward Level 4 (architecting self-optimizing, self-securing systems). The Reporting Engine is the furthest I have climbed — not the summit, and I do not claim to have arrived.',
     significance: 'The living bridge between enterprise data engineering and the AI-first future — turning the engineer into the orchestrator and earning highest praise from the CEO and CTO.'
   },
   aiDrivenMonitoring: {
